@@ -381,9 +381,27 @@ export default function GoldenHealthMockup() {
             </div>
             <div className="rounded-[2rem] bg-[#14261c] p-8 text-white shadow-2xl shadow-[#14261c]/20">
               <div className="space-y-6">
-                <div className="flex gap-4"><span className="mt-1 text-[#d3aa45]">📍</span><div><p className="font-semibold">Lago Zúrich 96, Ampliación Granada</p><p className="text-white/70">{t.addressMeta}</p></div></div>
-                <div className="flex gap-4"><span className="mt-1 text-[#d3aa45]">✉</span><div><p className="font-semibold">silvia.delmoral@goldenhealth.com.mx</p><p className="text-white/70">{t.emailMeta}</p></div></div>
-                <div className="flex gap-4"><span className="mt-1 text-[#d3aa45]">☎</span><div><p className="font-semibold">+55 55 5417 8009</p><p className="text-white/70">{t.phoneMeta}</p></div></div>
+                <div className="flex items-start gap-4">
+                  <span className="mt-1 shrink-0 text-[#d3aa45]">📍</span>
+                  <div className="min-w-0">
+                    <p className="font-semibold break-words">Lago Zúrich 96, Ampliación Granada</p>
+                    <p className="text-white/70 break-words">{t.addressMeta}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="mt-1 shrink-0 text-[#d3aa45]">✉</span>
+                  <div className="min-w-0">
+                    <p className="font-semibold break-all">silvia.delmoral@goldenhealth.com.mx</p>
+                    <p className="text-white/70 break-words">{t.emailMeta}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="mt-1 shrink-0 text-[#d3aa45]">☎</span>
+                  <div className="min-w-0">
+                    <p className="font-semibold break-words">+55 55 5417 8009</p>
+                    <p className="text-white/70 break-words">{t.phoneMeta}</p>
+                  </div>
+                </div>
               </div>
 
               <div className="mt-9 grid gap-3 sm:grid-cols-2">
