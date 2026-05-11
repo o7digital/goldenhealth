@@ -1,0 +1,351 @@
+const services = [
+  {
+    icon: "✦",
+    title: "Medicina de longevidad",
+    text: "Evaluación integral para entender energía, metabolismo, inflamación, hábitos y objetivos de salud.",
+  },
+  {
+    icon: "♡",
+    title: "Anti-aging funcional",
+    text: "Protocolos personalizados para vitalidad, prevención, recuperación y bienestar a largo plazo.",
+  },
+  {
+    icon: "◌",
+    title: "Hidratación intravenosa",
+    text: "Terapias de soporte con enfoque clínico para rendimiento, equilibrio y recuperación profunda.",
+  },
+  {
+    icon: "☘",
+    title: "Nutrición celular",
+    text: "Planes de alimentación y suplementación diseñados para mejorar salud metabólica y calidad de vida.",
+  },
+  {
+    icon: "⌁",
+    title: "Ciencia del deporte",
+    text: "Estrategias para personas activas que buscan fuerza, resistencia, descanso y mejor desempeño físico.",
+  },
+  {
+    icon: "◎",
+    title: "Equilibrio cuerpo-mente",
+    text: "Un enfoque integral que une medicina, hábitos, bienestar emocional y prevención inteligente.",
+  },
+];
+
+const method = [
+  ["01", "Diagnóstico", "Primero entendemos tu estado actual: energía, sueño, nutrición, estrés, hábitos y objetivos."],
+  ["02", "Protocolo", "Diseñamos una ruta personalizada con terapias, nutrición, suplementación y seguimiento."],
+  ["03", "Acompañamiento", "Medimos progreso, ajustamos el plan y construimos hábitos sostenibles a largo plazo."],
+];
+
+const products = [
+  "Suplementación premium",
+  "Protocolos funcionales",
+  "Menú Golden Health",
+  "Programas integrales",
+];
+
+const keywords = [
+  "Longevidad", "Anti-aging", "Salud celular", "Medicina preventiva", "Nutrición funcional", "CDMX"
+];
+
+export default function GoldenHealthMockup() {
+  return (
+    <div className="min-h-screen bg-[#f7f3ea] text-[#17231c] selection:bg-[#d3aa45]/30">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/30 bg-[#f7f3ea]/90 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+          <div className="flex items-center gap-3">
+            <div className="relative flex h-12 w-12 items-center justify-center rounded-full bg-[#1f3b2c] text-xl text-[#f4c96b] shadow-lg shadow-[#1f3b2c]/20">
+              ✦
+              <span className="absolute -right-1 -top-1 h-4 w-4 rounded-full border-2 border-[#f7f3ea] bg-[#d3aa45]" />
+            </div>
+            <div>
+              <p className="text-lg font-semibold tracking-[0.22em] text-[#1f3b2c]">GOLDEN</p>
+              <p className="-mt-1 text-xs uppercase tracking-[0.36em] text-[#9b7a2f]">Health MX</p>
+            </div>
+          </div>
+
+          <nav className="hidden items-center gap-8 text-sm font-medium text-[#314136] md:flex">
+            <a href="#metodo" className="hover:text-[#9b7a2f]">Método</a>
+            <a href="#terapias" className="hover:text-[#9b7a2f]">Terapias</a>
+            <a href="#tienda" className="hover:text-[#9b7a2f]">Tienda</a>
+            <a href="#contacto" className="hover:text-[#9b7a2f]">Contacto</a>
+          </nav>
+
+          <a
+            href="#contacto"
+            className="hidden rounded-full bg-[#1f3b2c] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1f3b2c]/20 transition hover:-translate-y-0.5 hover:bg-[#14261c] md:inline-flex"
+          >
+            Agenda tu valoración
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section className="relative overflow-hidden px-5 pb-16 pt-32 lg:px-8 lg:pb-24 lg:pt-40">
+          <div className="absolute left-[-10%] top-20 h-96 w-96 rounded-full bg-[#d8b65e]/20 blur-3xl" />
+          <div className="absolute bottom-0 right-[-5%] h-[30rem] w-[30rem] rounded-full bg-[#1f3b2c]/10 blur-3xl" />
+          <div className="absolute left-1/2 top-24 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#d3aa45]/40 to-transparent" />
+
+          <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="relative z-10">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#d8b65e]/40 bg-white/75 px-4 py-2 text-sm font-medium text-[#7a612c] shadow-sm">
+                <span className="h-2 w-2 rounded-full bg-[#d3aa45]" /> Clínica de longevidad y bienestar integral en CDMX
+              </div>
+
+              <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-[#14261c] md:text-7xl">
+                Salud celular para vivir mejor, no solo vivir más.
+              </h1>
+
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-[#4d5d51]">
+                Golden Health integra medicina preventiva, terapias biológicas, nutrición funcional y protocolos anti-aging para personas que buscan energía, equilibrio y bienestar medible.
+              </p>
+
+              <div className="mt-7 flex flex-wrap gap-2">
+                {keywords.map((item) => (
+                  <span key={item} className="rounded-full border border-[#d8b65e]/35 bg-white/60 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-[#756133]">
+                    {item}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+                <a
+                  href="#contacto"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d3aa45] px-7 py-4 font-semibold text-[#14261c] shadow-xl shadow-[#d3aa45]/25 transition hover:-translate-y-0.5 hover:bg-[#c99c32]"
+                >
+                  Agendar valoración →
+                </a>
+                <a
+                  href="#metodo"
+                  className="inline-flex items-center justify-center rounded-full border border-[#1f3b2c]/20 bg-white/70 px-7 py-4 font-semibold text-[#1f3b2c] transition hover:-translate-y-0.5 hover:bg-white"
+                >
+                  Conocer el método
+                </a>
+              </div>
+
+              <div className="mt-10 grid max-w-2xl grid-cols-3 gap-4">
+                {[
+                  ["360°", "enfoque integral"],
+                  ["CDMX", "consulta médica"],
+                  ["Premium", "protocolos avanzados"],
+                ].map(([value, label]) => (
+                  <div key={value} className="rounded-3xl bg-white/75 p-4 shadow-sm ring-1 ring-black/5 backdrop-blur">
+                    <p className="text-2xl font-semibold text-[#1f3b2c]">{value}</p>
+                    <p className="mt-1 text-xs uppercase tracking-wide text-[#6f7c70]">{label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -left-6 top-10 z-10 hidden rounded-3xl bg-white p-5 shadow-2xl shadow-[#1f3b2c]/10 ring-1 ring-black/5 md:block">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9b7a2f]">Vitalidad</p>
+                <p className="mt-2 text-3xl font-semibold text-[#14261c]">+ energía</p>
+              </div>
+              <div className="absolute -right-4 bottom-20 z-10 hidden rounded-3xl bg-[#14261c] p-5 text-white shadow-2xl shadow-[#1f3b2c]/20 md:block">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#d3aa45]">Plan</p>
+                <p className="mt-2 text-2xl font-semibold">Personalizado</p>
+              </div>
+
+              <div className="relative overflow-hidden rounded-[2.7rem] bg-[#1f3b2c] p-4 shadow-2xl shadow-[#1f3b2c]/25">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(244,201,107,0.35),transparent_35%),radial-gradient(circle_at_85%_70%,rgba(255,255,255,0.16),transparent_30%)]" />
+                <div className="relative h-[590px] overflow-hidden rounded-[2.2rem] bg-gradient-to-br from-[#33543d] via-[#102017] to-[#0a130f]">
+                  <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/10 to-transparent" />
+                  <div className="absolute left-8 top-8 rounded-full bg-white/12 px-4 py-2 text-sm font-medium text-white backdrop-blur-md">
+                    Regeneración · Anti-Aging · Vitalidad
+                  </div>
+
+                  <div className="absolute left-1/2 top-[43%] h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d3aa45]/25" />
+                  <div className="absolute left-1/2 top-[43%] h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/20" />
+                  <div className="absolute left-1/2 top-[43%] h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d3aa45]/20 blur-xl" />
+                  <div className="absolute left-1/2 top-[43%] flex h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#d3aa45] text-6xl text-[#14261c] shadow-2xl">
+                    ⌁
+                  </div>
+
+                  <div className="absolute bottom-8 left-8 right-8 rounded-[2rem] bg-white/94 p-7 shadow-2xl backdrop-blur-xl">
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-2 text-[#d3aa45]">
+                        {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
+                      </div>
+                      <span className="rounded-full bg-[#f4ead0] px-3 py-1 text-xs font-semibold text-[#7a612c]">Mockup premium</span>
+                    </div>
+                    <h2 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-[#14261c]">
+                      Un plan médico diseñado alrededor de tu bienestar.
+                    </h2>
+                    <p className="mt-3 text-sm leading-6 text-[#5c675f]">
+                      Valoración, protocolo personalizado, seguimiento y hábitos sostenibles para transformar tu salud desde la raíz.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="metodo" className="px-5 pb-24 lg:px-8">
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-[#14261c] p-8 text-white shadow-2xl shadow-[#14261c]/15 lg:p-12">
+            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#d3aa45]">Método Golden Health</p>
+                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">
+                  Una experiencia médica, estética y funcional en una sola ruta.
+                </h2>
+                <p className="mt-5 leading-8 text-white/70">
+                  Este bloque ayuda a que la cliente vea un sitio más ordenado, más premium y mucho más fácil de vender.
+                </p>
+              </div>
+              <div className="grid gap-4 md:grid-cols-3">
+                {method.map(([num, title, text]) => (
+                  <div key={title} className="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
+                    <span className="text-sm font-semibold text-[#d3aa45]">{num}</span>
+                    <p className="mt-4 text-xl font-semibold">{title}</p>
+                    <p className="mt-3 text-sm leading-6 text-white/68">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="terapias" className="px-5 py-24 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Terapias y servicios</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">
+                Salud de alto nivel, presentada con claridad y confianza.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-[#607064]">
+                La nueva arquitectura permite explicar cada servicio, mejorar conversión y preparar el sitio para SEO médico local en Ciudad de México.
+              </p>
+            </div>
+
+            <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {services.map(({ icon, title, text }) => (
+                <div key={title} className="group rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1f3b2c]/10">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4ead0] text-2xl text-[#9b7a2f] transition group-hover:bg-[#1f3b2c] group-hover:text-[#d3aa45]">
+                    {icon}
+                  </div>
+                  <h3 className="mt-6 text-xl font-semibold text-[#14261c]">{title}</h3>
+                  <p className="mt-3 leading-7 text-[#607064]">{text}</p>
+                  <p className="mt-6 inline-flex text-sm font-semibold text-[#9b7a2f]">Ver detalle →</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-5 pb-24 lg:px-8">
+          <div className="mx-auto grid max-w-7xl items-center gap-10 rounded-[2.7rem] bg-[#ecdfbf] p-8 lg:grid-cols-[1fr_0.9fr] lg:p-12">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#8a6a24]">Experiencia del paciente</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">
+                Más confianza desde el primer scroll.
+              </h2>
+              <p className="mt-5 max-w-2xl text-lg leading-8 text-[#4f5c50]">
+                El rediseño debe mostrar autoridad médica, cercanía y resultados posibles sin prometer milagros. Eso protege la marca y mejora la conversión.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                ["Consulta clara", "Explicación simple del proceso y próximos pasos."],
+                ["Contenido médico", "Artículos, videos y educación para generar confianza."],
+                ["Agenda visible", "Botón fijo a WhatsApp o formulario de valoración."],
+                ["SEO local", "Páginas optimizadas para terapias y búsquedas en CDMX."],
+              ].map(([title, text]) => (
+                <div key={title} className="rounded-3xl bg-white/65 p-6 shadow-sm ring-1 ring-black/5">
+                  <p className="font-semibold text-[#14261c]">{title}</p>
+                  <p className="mt-2 text-sm leading-6 text-[#667166]">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="tienda" className="px-5 pb-24 lg:px-8">
+          <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="bg-[#e7d39b] p-10 lg:p-14">
+              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#14261c] text-2xl text-[#d3aa45]">
+                🛍
+              </div>
+              <h2 className="mt-8 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">
+                Tienda Golden Health
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-[#3f493f]">
+                Una sección de productos más limpia, con categorías claras, fichas premium y llamadas a compra o consulta.
+              </p>
+              <button className="mt-8 rounded-full bg-[#14261c] px-6 py-4 font-semibold text-white shadow-lg shadow-[#14261c]/20">
+                Ver categorías →
+              </button>
+            </div>
+            <div className="grid gap-4 p-8 md:grid-cols-2 lg:p-12">
+              {products.map((product) => (
+                <div key={product} className="rounded-3xl border border-[#efe6cd] bg-[#fbf8ef] p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-lg">
+                  <p className="text-lg font-semibold text-[#14261c]">{product}</p>
+                  <p className="mt-2 text-sm leading-6 text-[#6a756d]">Ficha optimizada para confianza, SEO y conversión.</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contacto" className="px-5 py-24 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Contacto</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">
+                Un cierre claro para convertir visitas en citas.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-[#607064]">
+                Dirección, teléfono, correo y formulario deben estar visibles, con una llamada directa a WhatsApp y agenda.
+              </p>
+              <div className="mt-8 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5">
+                <p className="font-semibold text-[#14261c]">Propuesta comercial</p>
+                <p className="mt-2 text-sm leading-6 text-[#607064]">
+                  Este mockup se puede presentar como fase 1: rediseño visual, estructura SEO, contenidos base y preparación para agenda/WhatsApp.
+                </p>
+              </div>
+            </div>
+            <div className="rounded-[2rem] bg-[#14261c] p-8 text-white shadow-2xl shadow-[#14261c]/20">
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <span className="mt-1 text-[#d3aa45]">📍</span>
+                  <div>
+                    <p className="font-semibold">Lago Zúrich 96, Ampliación Granada</p>
+                    <p className="text-white/70">Miguel Hidalgo, CP 11529, Ciudad de México</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <span className="mt-1 text-[#d3aa45]">✉</span>
+                  <div>
+                    <p className="font-semibold">silvia.delmoral@goldenhealth.com.mx</p>
+                    <p className="text-white/70">Atención personalizada</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <span className="mt-1 text-[#d3aa45]">☎</span>
+                  <div>
+                    <p className="font-semibold">+55 55 5417 8009</p>
+                    <p className="text-white/70">WhatsApp / llamadas</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-9 grid gap-3 sm:grid-cols-2">
+                <input className="rounded-2xl border border-white/10 bg-white/10 px-4 py-4 text-white placeholder:text-white/50 outline-none focus:border-[#d3aa45]/60" placeholder="Nombre" />
+                <input className="rounded-2xl border border-white/10 bg-white/10 px-4 py-4 text-white placeholder:text-white/50 outline-none focus:border-[#d3aa45]/60" placeholder="Teléfono" />
+                <textarea className="min-h-28 rounded-2xl border border-white/10 bg-white/10 px-4 py-4 text-white placeholder:text-white/50 outline-none focus:border-[#d3aa45]/60 sm:col-span-2" placeholder="¿Qué objetivo de salud te gustaría trabajar?" />
+                <button className="rounded-full bg-[#d3aa45] px-6 py-4 font-semibold text-[#14261c] transition hover:-translate-y-0.5 hover:bg-[#c99c32] sm:col-span-2">
+                  Enviar solicitud
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <a href="#contacto" className="fixed bottom-5 right-5 z-50 rounded-full bg-[#1f3b2c] px-5 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#1f3b2c]/30">
+        WhatsApp / Agenda
+      </a>
+    </div>
+  );
+}
