@@ -5,38 +5,44 @@ const services = [
     icon: "✦",
     title: "Medicina de longevidad",
     text: "Evaluación integral para entender energía, metabolismo, inflamación, hábitos y objetivos de salud.",
+    en: "Longevity medicine with a full assessment of energy, metabolism, inflammation, habits, and goals.",
   },
   {
     icon: "♡",
     title: "Anti-aging funcional",
     text: "Protocolos personalizados para vitalidad, prevención, recuperación y bienestar a largo plazo.",
+    en: "Functional anti-aging protocols for vitality, prevention, recovery, and long-term wellbeing.",
   },
   {
     icon: "◌",
     title: "Hidratación intravenosa",
     text: "Terapias de soporte con enfoque clínico para rendimiento, equilibrio y recuperación profunda.",
+    en: "Clinically guided IV support for performance, balance, and deep recovery.",
   },
   {
     icon: "☘",
     title: "Nutrición celular",
     text: "Planes de alimentación y suplementación diseñados para mejorar salud metabólica y calidad de vida.",
+    en: "Cellular nutrition plans designed to improve metabolic health and quality of life.",
   },
   {
     icon: "⌁",
     title: "Ciencia del deporte",
     text: "Estrategias para personas activas que buscan fuerza, resistencia, descanso y mejor desempeño físico.",
+    en: "Sports science strategies for strength, endurance, recovery, and physical performance.",
   },
   {
     icon: "◎",
     title: "Equilibrio cuerpo-mente",
     text: "Un enfoque integral que une medicina, hábitos, bienestar emocional y prevención inteligente.",
+    en: "An integrated body-mind approach combining medicine, habits, emotional wellbeing, and prevention.",
   },
 ];
 
 const method = [
-  ["01", "Diagnóstico", "Primero entendemos tu estado actual: energía, sueño, nutrición, estrés, hábitos y objetivos."],
-  ["02", "Protocolo", "Diseñamos una ruta personalizada con terapias, nutrición, suplementación y seguimiento."],
-  ["03", "Acompañamiento", "Medimos progreso, ajustamos el plan y construimos hábitos sostenibles a largo plazo."],
+  ["01", "Diagnóstico", "Primero entendemos tu estado actual: energía, sueño, nutrición, estrés, hábitos y objetivos.", "Diagnosis", "We first understand your current state: energy, sleep, nutrition, stress, habits, and goals."],
+  ["02", "Protocolo", "Diseñamos una ruta personalizada con terapias, nutrición, suplementación y seguimiento.", "Protocol", "We design a personalized path with therapies, nutrition, supplementation, and follow-up."],
+  ["03", "Acompañamiento", "Medimos progreso, ajustamos el plan y construimos hábitos sostenibles a largo plazo.", "Guidance", "We measure progress, adjust the plan, and build sustainable long-term habits."],
 ];
 
 const products = [
@@ -132,7 +138,7 @@ export default function GoldenHealthMockup() {
             <div className="max-w-3xl">
               <div className="inline-flex items-center rounded-full border border-white/25 bg-white/15 px-4 py-2 text-sm font-medium text-white shadow-sm backdrop-blur">
                 <span className="mr-2 h-2 w-2 rounded-full bg-[#d3aa45]" />
-                Clínica de longevidad y bienestar integral en CDMX
+                Clínica de longevidad y bienestar integral en CDMX · Longevity clinic
               </div>
 
               <h1 className="mt-8 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-white md:text-7xl">
@@ -141,6 +147,9 @@ export default function GoldenHealthMockup() {
 
               <p className="mt-7 max-w-2xl text-lg leading-8 text-white/82">
                 Golden Health integra medicina preventiva, terapias biológicas, nutrición funcional y protocolos anti-aging para personas que buscan energía, equilibrio y bienestar medible.
+              </p>
+              <p className="mt-3 max-w-2xl text-base leading-7 text-white/68">
+                Golden Health combines preventive medicine, biological therapies, functional nutrition, and anti-aging protocols for measurable energy, balance, and wellbeing.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-2">
@@ -194,13 +203,18 @@ export default function GoldenHealthMockup() {
                 <p className="mt-5 leading-8 text-white/70">
                   Este bloque ayuda a que la cliente vea un sitio más ordenado, más premium y mucho más fácil de vender.
                 </p>
+                <p className="mt-3 leading-7 text-white/55">
+                  A medical, aesthetic, and functional experience in one clear path.
+                </p>
               </div>
               <div className="grid gap-4 md:grid-cols-3">
-                {method.map(([num, title, text]) => (
+                {method.map(([num, title, text, titleEn, textEn]) => (
                   <div key={title} className="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
                     <span className="text-sm font-semibold text-[#d3aa45]">{num}</span>
                     <p className="mt-4 text-xl font-semibold">{title}</p>
                     <p className="mt-3 text-sm leading-6 text-white/68">{text}</p>
+                    <p className="mt-4 text-sm font-semibold text-[#d3aa45]/90">{titleEn}</p>
+                    <p className="mt-2 text-sm leading-6 text-white/50">{textEn}</p>
                   </div>
                 ))}
               </div>
@@ -218,16 +232,20 @@ export default function GoldenHealthMockup() {
               <p className="mt-5 text-lg leading-8 text-[#607064]">
                 La nueva arquitectura permite explicar cada servicio, mejorar conversión y preparar el sitio para SEO médico local en Ciudad de México.
               </p>
+              <p className="mt-3 text-base leading-7 text-[#7a867b]">
+                A clear service structure designed for trust, conversion, and local medical SEO in Mexico City.
+              </p>
             </div>
 
             <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {services.map(({ icon, title, text }) => (
+              {services.map(({ icon, title, text, en }) => (
                 <div key={title} className="group rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1f3b2c]/10">
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4ead0] text-2xl text-[#9b7a2f] transition group-hover:bg-[#1f3b2c] group-hover:text-[#d3aa45]">
                     {icon}
                   </div>
                   <h3 className="mt-6 text-xl font-semibold text-[#14261c]">{title}</h3>
                   <p className="mt-3 leading-7 text-[#607064]">{text}</p>
+                  <p className="mt-3 text-sm leading-6 text-[#879184]">{en}</p>
                   <p className="mt-6 inline-flex text-sm font-semibold text-[#9b7a2f]">Ver detalle →</p>
                 </div>
               ))}
@@ -244,6 +262,9 @@ export default function GoldenHealthMockup() {
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-[#4f5c50]">
                 El rediseño debe mostrar autoridad médica, cercanía y resultados posibles sin prometer milagros. Eso protege la marca y mejora la conversión.
+              </p>
+              <p className="mt-3 max-w-2xl text-base leading-7 text-[#738073]">
+                The experience communicates medical authority, warmth, and realistic progress without overpromising.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -274,6 +295,9 @@ export default function GoldenHealthMockup() {
               <p className="mt-5 text-lg leading-8 text-[#3f493f]">
                 Una sección de productos más limpia, con categorías claras, fichas premium y llamadas a compra o consulta.
               </p>
+              <p className="mt-3 text-base leading-7 text-[#657063]">
+                A cleaner product section with clear categories, premium cards, and calls to purchase or consult.
+              </p>
               <button className="mt-8 rounded-full bg-[#14261c] px-6 py-4 font-semibold text-white shadow-lg shadow-[#14261c]/20">
                 Ver categorías →
               </button>
@@ -298,6 +322,9 @@ export default function GoldenHealthMockup() {
               </h2>
               <p className="mt-5 text-lg leading-8 text-[#607064]">
                 Dirección, teléfono, correo y formulario deben estar visibles, con una llamada directa a WhatsApp y agenda.
+              </p>
+              <p className="mt-3 text-base leading-7 text-[#7a867b]">
+                Address, phone, email, and form remain visible, with direct WhatsApp and booking access.
               </p>
               <div className="mt-8 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5">
                 <p className="font-semibold text-[#14261c]">Propuesta comercial</p>
