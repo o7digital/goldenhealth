@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const services = [
   {
     icon: "✦",
@@ -48,7 +50,40 @@ const keywords = [
   "Longevidad", "Anti-aging", "Salud celular", "Medicina preventiva", "Nutrición funcional", "CDMX"
 ];
 
+const sliderImages = [
+  {
+    src: "/slider/slider1.png",
+    alt: "Golden Health lifestyle and wellness moment",
+    label: "Longevidad activa",
+  },
+  {
+    src: "/slider/slider2.png",
+    alt: "Golden Health premium health experience",
+    label: "Vitalidad diaria",
+  },
+  {
+    src: "/slider/slider3.png",
+    alt: "Golden Health wellness and body performance",
+    label: "Bienestar integral",
+  },
+  {
+    src: "/slider/slider4.png",
+    alt: "Golden Health premium protocols and care",
+    label: "Protocolos personalizados",
+  },
+];
+
 export default function GoldenHealthMockup() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % sliderImages.length);
+    }, 4000);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#f7f3ea] text-[#17231c] selection:bg-[#d3aa45]/30">
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/30 bg-[#f7f3ea]/90 backdrop-blur-xl">
@@ -150,16 +185,34 @@ export default function GoldenHealthMockup() {
               <div className="relative overflow-hidden rounded-[2.7rem] bg-[#1f3b2c] p-4 shadow-2xl shadow-[#1f3b2c]/25">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(244,201,107,0.35),transparent_35%),radial-gradient(circle_at_85%_70%,rgba(255,255,255,0.16),transparent_30%)]" />
                 <div className="relative h-[590px] overflow-hidden rounded-[2.2rem] bg-gradient-to-br from-[#33543d] via-[#102017] to-[#0a130f]">
-                  <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/10 to-transparent" />
+                  {sliderImages.map((slide, index) => (
+                    <img
+                      key={slide.src}
+                      src={slide.src}
+                      alt={slide.alt}
+                      className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+                        activeSlide === index ? "opacity-100" : "opacity-0"
+                      }`}
+                    />
+                  ))}
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#102017]/10 to-[#102017]/75" />
+                  <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/15 to-transparent" />
                   <div className="absolute left-8 top-8 rounded-full bg-white/12 px-4 py-2 text-sm font-medium text-white backdrop-blur-md">
-                    Regeneración · Anti-Aging · Vitalidad
+                    {sliderImages[activeSlide].label}
                   </div>
 
-                  <div className="absolute left-1/2 top-[43%] h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#d3aa45]/25" />
-                  <div className="absolute left-1/2 top-[43%] h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/20" />
-                  <div className="absolute left-1/2 top-[43%] h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d3aa45]/20 blur-xl" />
-                  <div className="absolute left-1/2 top-[43%] flex h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#d3aa45] text-6xl text-[#14261c] shadow-2xl">
-                    ⌁
+                  <div className="absolute bottom-40 left-8 z-10 flex gap-2">
+                    {sliderImages.map((slide, index) => (
+                      <button
+                        key={slide.src}
+                        type="button"
+                        aria-label={`Mostrar slide ${index + 1}`}
+                        onClick={() => setActiveSlide(index)}
+                        className={`h-2 rounded-full transition-all ${
+                          activeSlide === index ? "w-8 bg-[#d3aa45]" : "w-2 bg-white/55"
+                        }`}
+                      />
+                    ))}
                   </div>
 
                   <div className="absolute bottom-8 left-8 right-8 rounded-[2rem] bg-white/94 p-7 shadow-2xl backdrop-blur-xl">
