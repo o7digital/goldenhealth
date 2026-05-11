@@ -52,24 +52,20 @@ const keywords = [
 
 const sliderImages = [
   {
-    src: "/slider/slider1.png",
-    alt: "Golden Health lifestyle and wellness moment",
-    label: "Longevidad activa",
+    src: "/images/golden-health/consulta-medica.jpg",
+    alt: "Consulta médica Golden Health",
   },
   {
-    src: "/slider/slider2.png",
-    alt: "Golden Health premium health experience",
-    label: "Vitalidad diaria",
+    src: "/images/golden-health/terapia-iv.jpg",
+    alt: "Terapia intravenosa Golden Health",
   },
   {
-    src: "/slider/slider3.png",
-    alt: "Golden Health wellness and body performance",
-    label: "Bienestar integral",
+    src: "/images/golden-health/nutricion.jpg",
+    alt: "Nutrición funcional Golden Health",
   },
   {
-    src: "/slider/slider4.png",
-    alt: "Golden Health premium protocols and care",
-    label: "Protocolos personalizados",
+    src: "/images/golden-health/comunidad.jpg",
+    alt: "Comunidad Golden Health",
   },
 ];
 
@@ -116,28 +112,40 @@ export default function GoldenHealthMockup() {
       </header>
 
       <main>
-        <section className="relative overflow-hidden px-5 pb-16 pt-32 lg:px-8 lg:pb-24 lg:pt-40">
-          <div className="absolute left-[-10%] top-20 h-96 w-96 rounded-full bg-[#d8b65e]/20 blur-3xl" />
-          <div className="absolute bottom-0 right-[-5%] h-[30rem] w-[30rem] rounded-full bg-[#1f3b2c]/10 blur-3xl" />
-          <div className="absolute left-1/2 top-24 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#d3aa45]/40 to-transparent" />
+        <section className="relative min-h-[90vh] overflow-hidden">
+          <div className="absolute inset-0">
+            {sliderImages.map((slide, index) => (
+              <img
+                key={slide.src}
+                src={slide.src}
+                alt={slide.alt}
+                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+                  activeSlide === index ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#102017]/90 via-[#102017]/55 to-[#102017]/20" />
+            <div className="absolute inset-0 bg-[#102017]/10" />
+          </div>
 
-          <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="relative z-10">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#d8b65e]/40 bg-white/75 px-4 py-2 text-sm font-medium text-[#7a612c] shadow-sm">
-                <span className="h-2 w-2 rounded-full bg-[#d3aa45]" /> Clínica de longevidad y bienestar integral en CDMX
+          <div className="relative z-10 mx-auto flex min-h-[90vh] max-w-7xl items-center px-5 pt-28 lg:px-8">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center rounded-full border border-white/25 bg-white/15 px-4 py-2 text-sm font-medium text-white shadow-sm backdrop-blur">
+                <span className="mr-2 h-2 w-2 rounded-full bg-[#d3aa45]" />
+                Clínica de longevidad y bienestar integral en CDMX
               </div>
 
-              <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-[#14261c] md:text-7xl">
+              <h1 className="mt-8 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-white md:text-7xl">
                 Salud celular para vivir mejor, no solo vivir más.
               </h1>
 
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-[#4d5d51]">
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-white/82">
                 Golden Health integra medicina preventiva, terapias biológicas, nutrición funcional y protocolos anti-aging para personas que buscan energía, equilibrio y bienestar medible.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-2">
                 {keywords.map((item) => (
-                  <span key={item} className="rounded-full border border-[#d8b65e]/35 bg-white/60 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-[#756133]">
+                  <span key={item} className="rounded-full border border-white/20 bg-white/12 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur">
                     {item}
                   </span>
                 ))}
@@ -152,84 +160,24 @@ export default function GoldenHealthMockup() {
                 </a>
                 <a
                   href="#metodo"
-                  className="inline-flex items-center justify-center rounded-full border border-[#1f3b2c]/20 bg-white/70 px-7 py-4 font-semibold text-[#1f3b2c] transition hover:-translate-y-0.5 hover:bg-white"
+                  className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/12 px-7 py-4 font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20"
                 >
                   Conocer el método
                 </a>
               </div>
 
-              <div className="mt-10 grid max-w-2xl grid-cols-3 gap-4">
-                {[
-                  ["360°", "enfoque integral"],
-                  ["CDMX", "consulta médica"],
-                  ["Premium", "protocolos avanzados"],
-                ].map(([value, label]) => (
-                  <div key={value} className="rounded-3xl bg-white/75 p-4 shadow-sm ring-1 ring-black/5 backdrop-blur">
-                    <p className="text-2xl font-semibold text-[#1f3b2c]">{value}</p>
-                    <p className="mt-1 text-xs uppercase tracking-wide text-[#6f7c70]">{label}</p>
-                  </div>
+              <div className="mt-10 flex gap-2">
+                {sliderImages.map((slide, index) => (
+                  <button
+                    key={slide.src}
+                    type="button"
+                    aria-label={`Mostrar slide ${index + 1}`}
+                    onClick={() => setActiveSlide(index)}
+                    className={`h-2 rounded-full transition-all ${
+                      activeSlide === index ? "w-12 bg-[#d3aa45]" : "w-6 bg-white/35"
+                    }`}
+                  />
                 ))}
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="absolute -left-6 top-10 z-10 hidden rounded-3xl bg-white p-5 shadow-2xl shadow-[#1f3b2c]/10 ring-1 ring-black/5 md:block">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#9b7a2f]">Vitalidad</p>
-                <p className="mt-2 text-3xl font-semibold text-[#14261c]">+ energía</p>
-              </div>
-              <div className="absolute -right-4 bottom-20 z-10 hidden rounded-3xl bg-[#14261c] p-5 text-white shadow-2xl shadow-[#1f3b2c]/20 md:block">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#d3aa45]">Plan</p>
-                <p className="mt-2 text-2xl font-semibold">Personalizado</p>
-              </div>
-
-              <div className="relative overflow-hidden rounded-[2.7rem] bg-[#1f3b2c] p-4 shadow-2xl shadow-[#1f3b2c]/25">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(244,201,107,0.35),transparent_35%),radial-gradient(circle_at_85%_70%,rgba(255,255,255,0.16),transparent_30%)]" />
-                <div className="relative h-[590px] overflow-hidden rounded-[2.2rem] bg-gradient-to-br from-[#33543d] via-[#102017] to-[#0a130f]">
-                  {sliderImages.map((slide, index) => (
-                    <img
-                      key={slide.src}
-                      src={slide.src}
-                      alt={slide.alt}
-                      className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-                        activeSlide === index ? "opacity-100" : "opacity-0"
-                      }`}
-                    />
-                  ))}
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-[#102017]/10 to-[#102017]/75" />
-                  <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white/15 to-transparent" />
-                  <div className="absolute left-8 top-8 rounded-full bg-white/12 px-4 py-2 text-sm font-medium text-white backdrop-blur-md">
-                    {sliderImages[activeSlide].label}
-                  </div>
-
-                  <div className="absolute bottom-40 left-8 z-10 flex gap-2">
-                    {sliderImages.map((slide, index) => (
-                      <button
-                        key={slide.src}
-                        type="button"
-                        aria-label={`Mostrar slide ${index + 1}`}
-                        onClick={() => setActiveSlide(index)}
-                        className={`h-2 rounded-full transition-all ${
-                          activeSlide === index ? "w-8 bg-[#d3aa45]" : "w-2 bg-white/55"
-                        }`}
-                      />
-                    ))}
-                  </div>
-
-                  <div className="absolute bottom-8 left-8 right-8 rounded-[2rem] bg-white/94 p-7 shadow-2xl backdrop-blur-xl">
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-2 text-[#d3aa45]">
-                        {[...Array(5)].map((_, i) => <span key={i}>★</span>)}
-                      </div>
-                      <span className="rounded-full bg-[#f4ead0] px-3 py-1 text-xs font-semibold text-[#7a612c]">Mockup premium</span>
-                    </div>
-                    <h2 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-[#14261c]">
-                      Un plan médico diseñado alrededor de tu bienestar.
-                    </h2>
-                    <p className="mt-3 text-sm leading-6 text-[#5c675f]">
-                      Valoración, protocolo personalizado, seguimiento y hábitos sostenibles para transformar tu salud desde la raíz.
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
