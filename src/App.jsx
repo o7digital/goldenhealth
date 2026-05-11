@@ -129,7 +129,14 @@ const sliderImages = [
 export default function GoldenHealthMockup() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [language, setLanguage] = useState("es");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const t = copy[language];
+  const navLinks = [
+    ["#metodo", t.nav.method],
+    ["#terapias", t.nav.therapies],
+    ["#tienda", t.nav.shop],
+    ["#contacto", t.nav.contact],
+  ];
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -140,7 +147,7 @@ export default function GoldenHealthMockup() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#f7f3ea] text-[#17231c] selection:bg-[#d3aa45]/30">
+    <div className="min-h-screen overflow-x-hidden bg-[#f7f3ea] text-[#17231c] selection:bg-[#d3aa45]/30">
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/30 bg-[#f7f3ea]/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
           <div className="flex items-center gap-3">
@@ -155,10 +162,9 @@ export default function GoldenHealthMockup() {
           </div>
 
           <nav className="hidden items-center gap-8 text-sm font-medium text-[#314136] md:flex">
-            <a href="#metodo" className="hover:text-[#9b7a2f]">{t.nav.method}</a>
-            <a href="#terapias" className="hover:text-[#9b7a2f]">{t.nav.therapies}</a>
-            <a href="#tienda" className="hover:text-[#9b7a2f]">{t.nav.shop}</a>
-            <a href="#contacto" className="hover:text-[#9b7a2f]">{t.nav.contact}</a>
+            {navLinks.map(([href, label]) => (
+              <a key={href} href={href} className="hover:text-[#9b7a2f]">{label}</a>
+            ))}
           </nav>
 
           <div className="flex items-center gap-3">
@@ -167,7 +173,10 @@ export default function GoldenHealthMockup() {
                 <button
                   key={locale}
                   type="button"
-                  onClick={() => setLanguage(locale)}
+                  onClick={() => {
+                    setLanguage(locale);
+                    setMobileMenuOpen(false);
+                  }}
                   className={`rounded-full px-3 py-2 transition ${
                     language === locale ? "bg-[#1f3b2c] text-white" : "hover:bg-[#f4ead0]"
                   }`}
@@ -182,7 +191,39 @@ export default function GoldenHealthMockup() {
             >
               {t.cta}
             </a>
+            <button
+              type="button"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              className="inline-flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-[#1f3b2c]/15 bg-white/75 shadow-sm md:hidden"
+            >
+              <span className={`h-0.5 w-5 rounded-full bg-[#1f3b2c] transition ${mobileMenuOpen ? "translate-y-2 rotate-45" : ""}`} />
+              <span className={`h-0.5 w-5 rounded-full bg-[#1f3b2c] transition ${mobileMenuOpen ? "opacity-0" : ""}`} />
+              <span className={`h-0.5 w-5 rounded-full bg-[#1f3b2c] transition ${mobileMenuOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+            </button>
           </div>
+        </div>
+        <div className={`md:hidden ${mobileMenuOpen ? "block" : "hidden"}`}>
+          <nav className="mx-5 mb-4 rounded-[1.5rem] border border-[#1f3b2c]/10 bg-white/95 p-3 text-[#1f3b2c] shadow-xl shadow-[#1f3b2c]/10">
+            {navLinks.map(([href, label]) => (
+              <a
+                key={href}
+                href={href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-[#f4ead0]"
+              >
+                {label}
+              </a>
+            ))}
+            <a
+              href="#contacto"
+              onClick={() => setMobileMenuOpen(false)}
+              className="mt-2 flex items-center justify-center rounded-full bg-[#1f3b2c] px-4 py-3 text-sm font-semibold text-white"
+            >
+              {t.cta}
+            </a>
+          </nav>
         </div>
       </header>
 
