@@ -623,6 +623,7 @@ export default function GoldenHealthMockup() {
     path.startsWith("/programa-integral/") ? "programaDetalle" :
     path === "/tienda" ? "tienda" :
     path === "/consultas" ? "consultas" :
+    path === "/noticias" ? "noticias" :
     path === "/contacto" ? "contacto" :
     path.startsWith("/booking-calendar/") ? "booking" :
     path.startsWith("/producto/") ? "producto" :
@@ -636,7 +637,7 @@ export default function GoldenHealthMockup() {
     ["/historia", "Historia"],
     ["/tienda", t.nav.shop],
     ["/consultas", "Consultas"],
-    ["/#noticias", "Noticias"],
+    ["/noticias", "Noticias"],
     ["/contacto", t.nav.contact],
   ];
   const navigate = (event, href) => {
@@ -944,12 +945,16 @@ export default function GoldenHealthMockup() {
           </div>
         </section>
 
-        <section id="noticias" className="px-5 pb-24 lg:px-8">
+          </>
+        )}
+
+        {page === "noticias" && (
+        <section id="noticias" className="px-5 py-32 lg:px-8">
           <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-sm ring-1 ring-black/5 lg:p-12">
             <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Noticias</p>
-                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Comunidad Golden Health</h2>
+                <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Comunidad Golden Health</h1>
                 <p className="mt-5 text-lg leading-8 text-[#607064]">Videos, entrevistas, capsulas y testimonios de la comunidad Golden Health.</p>
               </div>
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -972,8 +977,6 @@ export default function GoldenHealthMockup() {
             </div>
           </div>
         </section>
-
-          </>
         )}
 
         {page === "programa" && (
