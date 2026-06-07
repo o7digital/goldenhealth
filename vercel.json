@@ -1,5 +1,9 @@
 {
   "framework": null,
   "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/historia", "destination": "/" },
+    { "source": "/contacto", "destination": "/" }
+  ]
 }

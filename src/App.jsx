@@ -211,16 +211,28 @@ export default function GoldenHealthMockup() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [language, setLanguage] = useState("es");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [path, setPath] = useState(() => window.location.pathname);
   const t = copy[language];
+  const page = path === "/historia" ? "historia" : path === "/contacto" ? "contacto" : "home";
   const navLinks = [
-    ["#metodo", t.nav.method],
-    ["#programa", "Programa"],
-    ["#terapias", t.nav.therapies],
-    ["#historia", "Historia"],
-    ["#tienda", t.nav.shop],
-    ["#noticias", "Noticias"],
-    ["#contacto", t.nav.contact],
+    ["/#metodo", t.nav.method],
+    ["/#programa", "Programa"],
+    ["/#terapias", t.nav.therapies],
+    ["/historia", "Historia"],
+    ["/#tienda", t.nav.shop],
+    ["/#noticias", "Noticias"],
+    ["/contacto", t.nav.contact],
   ];
+  const navigate = (event, href) => {
+    if (href.startsWith("/#")) {
+      return;
+    }
+    event.preventDefault();
+    window.history.pushState({}, "", href);
+    setPath(window.location.pathname);
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "instant" });
+  };
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -228,6 +240,12 @@ export default function GoldenHealthMockup() {
     }, 4000);
 
     return () => window.clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handlePopState = () => setPath(window.location.pathname);
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
   return (
@@ -247,7 +265,7 @@ export default function GoldenHealthMockup() {
 
           <nav className="hidden items-center gap-8 text-sm font-medium text-[#314136] md:flex">
             {navLinks.map(([href, label]) => (
-              <a key={href} href={href} className="hover:text-[#9b7a2f]">{label}</a>
+              <a key={href} href={href} onClick={(event) => navigate(event, href)} className="hover:text-[#9b7a2f]">{label}</a>
             ))}
           </nav>
 
@@ -270,7 +288,8 @@ export default function GoldenHealthMockup() {
               ))}
             </div>
             <a
-              href="#contacto"
+              href="/contacto"
+              onClick={(event) => navigate(event, "/contacto")}
               className="hidden rounded-full bg-[#1f3b2c] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1f3b2c]/20 transition hover:-translate-y-0.5 hover:bg-[#14261c] md:inline-flex"
             >
               {t.cta}
@@ -294,15 +313,18 @@ export default function GoldenHealthMockup() {
               <a
                 key={href}
                 href={href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(event) => {
+                  navigate(event, href);
+                  setMobileMenuOpen(false);
+                }}
                 className="block rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-[#f4ead0]"
               >
                 {label}
               </a>
             ))}
             <a
-              href="#contacto"
-              onClick={() => setMobileMenuOpen(false)}
+              href="/contacto"
+              onClick={(event) => navigate(event, "/contacto")}
               className="mt-2 flex items-center justify-center rounded-full bg-[#1f3b2c] px-4 py-3 text-sm font-semibold text-white"
             >
               {t.cta}
@@ -312,6 +334,8 @@ export default function GoldenHealthMockup() {
       </header>
 
       <main>
+        {page === "home" && (
+          <>
         <section className="relative min-h-[90vh] overflow-hidden">
           <div className="absolute inset-0">
             {sliderImages.map((slide, index) => (
@@ -350,7 +374,7 @@ export default function GoldenHealthMockup() {
               </div>
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <a href="#contacto" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d3aa45] px-7 py-4 font-semibold text-[#14261c] shadow-xl shadow-[#d3aa45]/25 transition hover:-translate-y-0.5 hover:bg-[#c99c32]">
+                <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d3aa45] px-7 py-4 font-semibold text-[#14261c] shadow-xl shadow-[#d3aa45]/25 transition hover:-translate-y-0.5 hover:bg-[#c99c32]">
                   {t.primaryCta}
                 </a>
                 <a href="#metodo" className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/12 px-7 py-4 font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20">
@@ -463,7 +487,11 @@ export default function GoldenHealthMockup() {
           </div>
         </section>
 
-        <section id="historia" className="px-5 pb-24 lg:px-8">
+          </>
+        )}
+
+        {page === "historia" && (
+        <section id="historia" className="px-5 py-32 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 rounded-[2.7rem] bg-[#14261c] p-8 text-white lg:grid-cols-[0.85fr_1.15fr] lg:p-12">
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#d3aa45]">Historia</p>
@@ -497,7 +525,10 @@ export default function GoldenHealthMockup() {
             </div>
           </div>
         </section>
+        )}
 
+        {page === "home" && (
+          <>
         <section id="tienda" className="px-5 pb-24 lg:px-8">
           <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="bg-[#e7d39b] p-10 lg:p-14">
@@ -553,14 +584,17 @@ export default function GoldenHealthMockup() {
                     <p className="text-[#607064]">{duration}</p>
                     <p className="text-3xl font-semibold text-[#14261c]">{price}</p>
                   </div>
-                  <a href="#contacto" className="mt-6 inline-flex w-full justify-center rounded-full bg-[#1f3b2c] px-5 py-3 font-semibold text-white">Reservar ahora</a>
+                  <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="mt-6 inline-flex w-full justify-center rounded-full bg-[#1f3b2c] px-5 py-3 font-semibold text-white">Reservar ahora</a>
                 </div>
               ))}
             </div>
           </div>
         </section>
+          </>
+        )}
 
-        <section id="contacto" className="px-5 py-24 lg:px-8">
+        {page === "contacto" && (
+        <section id="contacto" className="px-5 py-32 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.contactEyebrow}</p>
@@ -605,9 +639,31 @@ export default function GoldenHealthMockup() {
             </div>
           </div>
         </section>
+        )}
       </main>
 
-      <a href="#contacto" className="fixed bottom-5 right-5 z-50 rounded-full bg-[#1f3b2c] px-5 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#1f3b2c]/30">{t.whatsapp}</a>
+      <footer className="bg-white px-5 py-12 text-[#607064] ring-1 ring-black/5 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="text-lg font-semibold tracking-[0.22em] text-[#9b7a2f]">GOLDEN HEALTH</p>
+            <p className="mt-4">Lago Zúrich 96 Ampliación Granada</p>
+            <p>Miguel Hidalgo CP 11529, Ciudad de México</p>
+            <p className="mt-5 break-all">silvia.delmoral@goldenhealth.com.mx</p>
+            <p>+55 55 5417 8009</p>
+          </div>
+          <div>
+            <h2 className="text-4xl font-semibold tracking-[-0.04em] text-[#14261c]">Aliados estratégicos</h2>
+            <div className="mt-6 flex flex-wrap items-center gap-5 text-lg font-semibold text-[#9b7a2f]">
+              <span>ENAGIC</span>
+              <span>inCruises</span>
+              <span>ZINZINO</span>
+              <span>ROYAL PRESTIGE</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="fixed bottom-5 right-5 z-50 rounded-full bg-[#1f3b2c] px-5 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#1f3b2c]/30">{t.whatsapp}</a>
     </div>
   );
 }
