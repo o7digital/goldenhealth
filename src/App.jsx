@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const copy = {
   es: {
-    nav: { method: "Método", therapies: "Terapias", shop: "Tienda", contact: "Contacto" },
+    nav: { method: "Inicio", therapies: "Programa Integral", shop: "Tienda", contact: "Contacto" },
     cta: "Agenda tu valoración",
     heroBadge: "Clínica de longevidad y bienestar integral en CDMX",
     heroTitle: "Salud celular para vivir mejor, no solo vivir más.",
@@ -18,9 +18,9 @@ const copy = {
       ["02", "Protocolo", "Diseñamos una ruta personalizada con terapias, nutrición, suplementación y seguimiento."],
       ["03", "Acompañamiento", "Medimos progreso, ajustamos el plan y construimos hábitos sostenibles a largo plazo."],
     ],
-    therapiesEyebrow: "Terapias y servicios",
+    therapiesEyebrow: "Programa Integral",
     therapiesTitle: "Salud de alto nivel, presentada con claridad y confianza.",
-    therapiesText: "La nueva arquitectura permite explicar cada servicio, mejorar conversión y preparar el sitio para SEO médico local en Ciudad de México.",
+    therapiesText: "",
     details: "Ver detalle →",
     services: [
       ["✦", "Medicina de longevidad", "Evaluación integral para entender energía, metabolismo, inflamación, hábitos y objetivos de salud."],
@@ -126,17 +126,433 @@ const sliderImages = [
   { src: "/images/golden-health/comunidad.jpg", alt: { es: "Comunidad Golden Health", en: "Golden Health community" } },
 ];
 
+const sourceSections = [
+  {
+    id: "programa",
+    title: "Programa Integral",
+    intro: "Longevidad, anti-envejecimiento y bienestar integral para vivir mas anos con energia optima.",
+    items: [
+      ["Medicina Regenerativa", "Tratamiento de renovacion celular de origen franco-suizo que busca regenerar y revitalizar organos, apoyar la salud hormonal y frenar la degeneracion celular."],
+      ["Accion regenerativa bio-celular", "Tratamientos biologicos de origen aleman orientados a mineralizar, oxigenar y nutrir organos y sistemas para reactivar el poder regulador del organismo."],
+      ["Escuela del arte", "Conferencias, seminarios web, podcast, cocina saludable y mindfulness para sostener el bienestar a largo plazo."],
+      ["Deportistas de alto rendimiento", "Disciplina, movimiento, oxigenacion y condicion fisica para lograr objetivos diarios y mejorar el funcionamiento cognitivo."],
+    ],
+  },
+  {
+    id: "biologicas",
+    title: "Terapias Biológicas",
+    intro: "La medicina biológica se enfoca en desarrollar el potencial humano apoyándose en la ciencia, la tecnología y nuevas tendencias para el cuidado de la salud. El programa acompaña a las personas para llevar vidas más saludables y activas.",
+    image: "/images/source/programa/terapias-biologicas.jpeg",
+    items: [
+      ["Acción regenerativa de la ciencia biocelular", "Tratamientos biológicos de origen alemán para mineralizar, oxigenar y nutrir órganos y sistemas."],
+      ["Energía, estrés y revitalización", "Restaura vitalidad ante desgaste físico, mental y emocional."],
+      ["Inmunológico", "Fortalece y estimula defensas contra agresiones del medio ambiente."],
+      ["Osteoarticular", "Apoyo para lesiones específicas, movilidad, tejidos, fuerza y flexibilidad."],
+      ["Cara", "Tratamiento para enfatizar belleza interior y exterior de rostro y cuello."],
+      ["Hormonal", "Apoyo para equilibrar sintomas hormonales en mujeres y hombres."],
+      ["Detox", "Protocolo para eliminar toxinas y promover un estilo de vida mas saludable."],
+    ],
+  },
+  {
+    id: "nutricion",
+    title: "Salud nutricional",
+    intro: "Nutrición personalizada basada en pruebas. El objetivo es evitar la fase de prueba y error, encontrar la mejor manera de mejorar la salud con datos objetivos y guiar la suplementación según necesidades específicas.",
+    image: "/images/source/programa/salud-nutricional.webp",
+    items: [
+      ["Nueva generación de la nutrición", "Pruebas de sangre seca como punto de partida natural para conocer el estado del cuerpo."],
+      ["Datos objetivos", "Resultados para orientar decisiones y evitar suposiciones en el proceso de salud."],
+      ["Suplementos adaptados", "Recomendaciones ajustadas a necesidades específicas para mantenerse en el camino adecuado."],
+      ["Zinzino BalanceTest", "Herramienta de seguimiento para comparar progreso y ajustar la ingesta."],
+    ],
+  },
+  {
+    id: "antroposofia",
+    title: "Antroposofía",
+    intro: "Andrés Muñoz Cárdenas es psicólogo de orientación antroposófica y fundador de la escuela Kamino Florido. Su enfoque aporta una concepción diferente e integral de la salud.",
+    image: "/images/source/programa/andres-munoz-cardenas.webp",
+    link: "https://www.kaminoflorido.com/",
+    items: [
+      ["Andrés Muñoz Cárdenas", "Fundador y CEO de la escuela Kamino Florido."],
+      ["Los 7 Pasos de la Libertad", "Contenido educativo sobre antroposofía, desarrollo humano y una visión más amplia de la salud."],
+    ],
+  },
+  {
+    id: "arte-buen-comer",
+    title: "Arte del Buen Comer y Buen Beber",
+    intro: "Comer es una necesidad, pero comer de forma inteligente es un arte. Este programa enseña hábitos de alimentación y estilo de vida para prevenir enfermedades degenerativas, aumentar energía y fortalecer el sistema inmunológico.",
+    image: "/images/source/programa/arte-buen-comer.jpeg",
+    items: [
+      ["Programa de hábitos saludables", "Acompañamiento para comer de forma sana, inteligente y equilibrada."],
+      ["Buen beber y bien vivir", "Educación práctica para sostener cambios reales en la vida diaria."],
+      ["Prevención y energía", "Enfoque en prevención, envejecimiento saludable y vitalidad."],
+      ["Sistema inmunológico", "Hábitos nutricionales orientados a apoyar defensas y bienestar integral."],
+    ],
+  },
+  {
+    id: "anti-aging",
+    title: "Anti-Aging",
+    intro: "El objetivo de estos tratamientos es frenar el proceso de degeneración celular y reactivar el potencial de salud de cada individuo para prevenir y revertir el envejecimiento prematuro.",
+    image: "/images/source/programa/anti-aging.jpeg",
+    items: [
+      ["Healthy Ageing", "Tratamientos anti-edad orientados a vitalidad, prevención y regeneración."],
+      ["Regeneración celular", "Protocolos para apoyar la salud celular y reducir señales de desgaste prematuro."],
+      ["Potencial de salud", "Enfoque integral para reactivar equilibrio, energía y bienestar funcional."],
+      ["Prevención", "Trabajo preventivo para conservar calidad de vida a largo plazo."],
+    ],
+  },
+  {
+    id: "hidratacion",
+    title: "Hidratación Funcional",
+    intro: "Introducción al agua Kangen: agua alcalina ionizada tratada mediante electrólisis para alterar su pH y crear una estructura molecular única, con un pH más alto y propiedades antioxidantes.",
+    image: "/images/source/programa/hidratacion-funcional.png",
+    items: [
+      ["Agua Kangen", "El agua pasa por una máquina de ionización que separa moléculas cargadas positiva y negativamente."],
+      ["pH alcalino", "Proceso orientado a obtener agua con pH más alto y propiedades antioxidantes."],
+      ["Socio autorizado Golden Health", "Golden Health presenta información y acceso a hidratación funcional."],
+      ["Bienestar diario", "Apoyo a hábitos de hidratación dentro del programa integral."],
+    ],
+  },
+  {
+    id: "ciencia-deporte",
+    title: "Ciencia del Deporte",
+    intro: "Programa para deportistas de alto rendimiento. Busca crear disciplina y estimular la capacidad de movimiento con intención, propósito, empoderamiento energético y excelente condición física para alcanzar objetivos día a día.",
+    image: "/images/source/programa/ciencia-deporte.jpeg",
+    items: [
+      ["Deportistas de alto rendimiento", "Trabajo orientado a disciplina, constancia y mejora física."],
+      ["Movimiento con propósito", "Estimula la capacidad de movimiento con intención y objetivos claros."],
+      ["Empoderamiento energético", "Enfoque para sostener energía, rendimiento y recuperación."],
+      ["Condición física", "Apoyo para alcanzar metas diarias y mejorar desempeño."],
+    ],
+  },
+  {
+    id: "cuerpo-mente-espiritu",
+    title: "Cuerpo, Mente y Espíritu",
+    intro: "Todo lo que necesitas para un estado óptimo de salud. Este programa se dedica a la motivación y generación de conductas que llevan a encontrar inspiración en la vida cotidiana por medio de experiencias con uno mismo y los demás.",
+    image: "/images/source/programa/cuerpo-mente-espiritu.jpeg",
+    items: [
+      ["Inspiración cotidiana", "Experiencias para ejercitar el espíritu y conectarse con el ser interior."],
+      ["Equilibrio integral", "No hay buena salud sin equilibrio entre cuerpo, mente y espíritu."],
+      ["Motivación", "Generación de conductas para sostener bienestar emocional y mental."],
+      ["Conexión interior", "Espacio para fortalecer presencia, propósito y calidad de vida."],
+    ],
+  },
+];
+
+const programPages = [
+  {
+    slug: "antroposofia",
+    title: "Antroposofía",
+    eyebrow: "Programa Integral",
+    image: "/images/source/programa/andres-munoz-cardenas.webp",
+    intro: "Andrés Muñoz Cárdenas es psicólogo de orientación antroposófica que nos enseña una concepción diferente de lo que es la salud.",
+    sections: [
+      {
+        title: "Andrés Muñoz Cárdenas",
+        text: "Fundador y CEO de la escuela Kamino Florido. Su trabajo acerca una visión antroposófica del desarrollo humano, la salud y la libertad interior.",
+      },
+      {
+        title: "Los 7 Pasos de la Libertad",
+        text: "Actividad continua L.U.S. y conferencias sobre crear la realidad que anhelamos a través de los 7 Pasos de la Libertad, psicoanálisis y antroposofía.",
+      },
+    ],
+    links: [["Kamino Florido", "https://www.kaminoflorido.com/"]],
+  },
+  {
+    slug: "arte-del-buen-comer-y-buen-beber",
+    title: "Arte del Buen Comer y Buen Beber",
+    eyebrow: "El arte del buen comer, buen beber y bien vivir",
+    image: "/images/source/programa/arte-buen-comer.jpeg",
+    intro: "Comer es una necesidad, pero comer de forma inteligente es un arte. Este programa instruye a los pacientes para llevar un estilo de vida más saludable.",
+    sections: [
+      {
+        title: "Conocé el programa",
+        text: "Nuestro programa del arte del buen comer y el buen beber es una forma sana, inteligente y equilibrada de comer, inspirada en recomendaciones de programas de alimentación para prevenir enfermedades degenerativas, prevenir el envejecimiento prematuro, aumentar la energía e incrementar el sistema inmunológico.",
+      },
+      {
+        title: "Clases grupales de cocina",
+        text: "Próximamente. Aprende de coaches de alimentación y expertos en el campo mediante clases en línea con recetas fáciles y saludables.",
+      },
+      {
+        title: "Clase privada de cocina",
+        text: "Próximamente. Clases privadas para aprender recetas fáciles y saludables que apoyen una vida más sana.",
+      },
+      {
+        title: "Menú Golden Health",
+        text: "Es fundamental aprender nuevos hábitos saludables para alcanzar el objetivo de vivir más y mejor. Descarga los mejores menús para la semana.",
+      },
+      {
+        title: "Menú bebidas",
+        text: "La nutrición es uno de los pilares fundamentales del programa. Este espacio comparte secretos de bebidas saludables.",
+      },
+    ],
+  },
+  {
+    slug: "menu-golden-health",
+    title: "Menú Golden Health",
+    eyebrow: "Ménus Golden Health",
+    image: "/images/source/programa/arte-buen-comer.jpeg",
+    intro: "Una sección dedicada a menús saludables para acompañar la semana y reforzar hábitos alimenticios dentro del Programa Integral.",
+    sections: [
+      {
+        title: "Menú Golden Health",
+        text: "Opciones de alimentación para aprender nuevos hábitos saludables y sostener el objetivo de vivir más y mejor.",
+      },
+      {
+        title: "Menú carnes",
+        text: "Contenido de menú para quienes buscan una guía práctica de alimentación semanal dentro del enfoque Golden Health.",
+      },
+    ],
+  },
+  {
+    slug: "anti-aging",
+    title: "Anti-Aging",
+    eyebrow: "Medicina Regenerativa",
+    image: "/images/source/programa/anti-aging.jpeg",
+    intro: "El objetivo de estos tratamientos es frenar el proceso de degeneración celular y reactivar el potencial de salud de cada individuo.",
+    sections: [
+      {
+        title: "Healthy Ageing",
+        text: "Nuestros tratamientos antiedad están orientados a retardar el envejecimiento prematuro, prevenir enfermedades crónico degenerativas y padecimientos asociados al paso de los años.",
+      },
+      {
+        title: "Diagnóstico Healthy Ageing",
+        text: "Al inicio del tratamiento se realiza una consulta médica con nuestra experta en salud, quien determina el tratamiento más adecuado para retardar el proceso de envejecimiento y mejorar la calidad de vida en cada caso.",
+      },
+      {
+        title: "Regeneración celular",
+        text: "Resumen histórico de lo más avanzado en regeneración celular, desde los trabajos pioneros de Paul Niehans hasta los programas modernos de revitalización.",
+      },
+    ],
+  },
+  {
+    slug: "terapias-biologicas",
+    title: "Terapias Biológicas",
+    eyebrow: "Medicina Biológica",
+    image: "/images/source/programa/terapias-biologicas.jpeg",
+    intro: "La medicina biológica se enfoca en desarrollar el potencial humano apoyándose en la ciencia, la tecnología y nuevas tendencias para el cuidado de la salud.",
+    sections: [
+      {
+        title: "Acción regenerativa de la ciencia biocelular",
+        text: "Biotecnología orientada al envejecimiento prematuro, tratamientos sin efectos adversos, innovación médica enfocada en capacidades humanas y valor para una larga vida con salud.",
+      },
+      {
+        title: "Procedimiento",
+        text: "Introducción por vía intramuscular, subcutánea o subdérmica de enzimas, vitaminas, minerales y activadores de energía que estimulan órganos, tejidos y sistemas en el corto, mediano y largo plazo.",
+      },
+      {
+        title: "Energía, estrés y revitalización",
+        text: "Tratamiento biológico para restaurar la vitalidad del cuerpo y restituir desgaste físico, mental y emocional.",
+      },
+      {
+        title: "Inmunológico",
+        text: "Tratamiento para reforzar el sistema inmunológico, fortalecer y estimular defensas contra agresiones del medio ambiente.",
+      },
+      {
+        title: "Osteoarticular",
+        text: "Tratamiento para lesiones específicas que mejora movilidad, regenera tejidos y aumenta fuerza y flexibilidad.",
+      },
+      {
+        title: "Cara, hormonal y detox",
+        text: "Protocolos para rostro y cuello, equilibrio hormonal de mujeres y hombres, y detox para eliminar toxinas y apoyar un estilo de vida más saludable.",
+      },
+    ],
+  },
+  {
+    slug: "hidratacion-funcional",
+    title: "Hidratación Funcional",
+    eyebrow: "Socio autorizado Golden Health",
+    image: "/images/source/programa/hidratacion-funcional.png",
+    intro: "El agua Kangen es un tipo de agua alcalina ionizada tratada mediante electrólisis para alterar su pH y crear una estructura molecular única.",
+    sections: [
+      {
+        title: "Introducción al agua Kangen",
+        text: "Este proceso pasa el agua a través de una máquina de ionización que separa moléculas cargadas positiva y negativamente, creando agua con pH más alto y propiedades antioxidantes.",
+      },
+      {
+        title: "Hidratación dentro del programa",
+        text: "Golden Health presenta la hidratación funcional como parte de hábitos diarios para acompañar bienestar, equilibrio y prevención.",
+      },
+    ],
+  },
+  {
+    slug: "ciencia-del-deporte",
+    title: "Ciencia del Deporte",
+    eyebrow: "Programa para deportistas de alto rendimiento",
+    image: "/images/source/programa/ciencia-deporte.jpeg",
+    intro: "Tienes que cultivar el vigor del cuerpo para preservar el espíritu. Este programa busca crear disciplina y estimular la capacidad de movimiento con intención y propósito.",
+    sections: [
+      {
+        title: "¿En qué consiste?",
+        text: "Busca alcanzar un estado de empoderamiento energético y una excelente condición física que permita cumplir objetivos día a día.",
+      },
+      {
+        title: "Diseñado para",
+        text: "Personas que deseen mejorar su estado o aspecto físico, aprender nuevos hábitos saludables y optimizar su desintoxicación natural.",
+      },
+    ],
+  },
+  {
+    slug: "equilibrio-mente-cuerpo-espiritu",
+    title: "Equilibrio Mente, Cuerpo, Espíritu",
+    eyebrow: "Cuerpo, Mente y Espíritu",
+    image: "/images/source/programa/cuerpo-mente-espiritu.jpeg",
+    intro: "Todo lo que necesitas para un estado óptimo de salud. Es imposible mantener una buena salud sin equilibrio entre cuerpo, mente y espíritu.",
+    sections: [
+      {
+        title: "¿Qué es este programa?",
+        text: "Se dedica a la motivación y generación de conductas que llevan a encontrar inspiración en la vida cotidiana mediante experiencias con uno mismo y los demás.",
+      },
+      {
+        title: "¿Cómo lograrlo?",
+        text: "El programa busca recuperar el bienestar general mediante una experiencia de aprendizaje y dar continuidad a ese aprendizaje en la vida cotidiana gracias a conocimientos y hábitos adquiridos en Golden Health.",
+      },
+      {
+        title: "Objetivos",
+        text: "Programas, conferencias, webinars y podcast enfocados en equilibrio emocional y mental para ejercitar el espíritu y conectarse con el ser interior.",
+      },
+    ],
+  },
+  {
+    slug: "salud-nutricional",
+    title: "Salud nutricional",
+    eyebrow: "Pioneros de la nutrición personalizada basada en pruebas",
+    image: "/images/source/programa/salud-nutricional.webp",
+    intro: "Zinzino desafía el orden establecido desde 2005 con nutrición personalizada basada en pruebas y un enfoque centrado en el cliente.",
+    sections: [
+      {
+        title: "Nueva generación de la nutrición",
+        text: "Las pruebas de sangre seca son un punto de partida natural para ofrecer datos objetivos, guiar decisiones y evitar la fase de prueba y error.",
+      },
+      {
+        title: "Suplementos adaptados",
+        text: "Se proporcionan suplementos adaptados a necesidades específicas y acompañamiento para mantenerse en el camino adecuado.",
+      },
+      {
+        title: "BalanceOil Kit with Test",
+        text: "Permite obtener una visión clara sobre la relación Omega 6:3 del cuerpo, ver resultados antes y después del BalanceTest, y ajustar el equilibrio con BalanceOil.",
+      },
+    ],
+    links: [["Comprar", "https://www.zinzino.com/"]],
+  },
+];
+
+const products = [
+  {
+    slug: "tratamientos-biologicos",
+    name: "Tratamientos Biologicos",
+    price: "$2,300.00",
+    image: "/images/source/products/tratamientos-biologicos.jpeg",
+    summary: "Paquete biologico de soporte para bienestar integral y equilibrio celular.",
+    details: ["10 sesiones", "2 tratamientos biologicos", "Acompanamiento para elegir protocolo segun objetivo"],
+  },
+  {
+    slug: "tratamiento-antioxidante",
+    name: "Tratamiento Antioxidante",
+    price: "$5,980.00",
+    image: "/images/source/products/antioxidante.jpeg",
+    summary: "Terapia antioxidante endocrina orientada a proteger, reparar y apoyar la vitalidad.",
+    details: ["Formula Citoplacell", "Soporte antioxidante", "Enfoque anti-aging y energia"],
+  },
+  {
+    slug: "tratamiento-anti-inflamatorio",
+    name: "Tratamiento Anti-inflamatorio",
+    price: "$4,200.00",
+    image: "/images/source/products/antiinflamatorio.jpeg",
+    summary: "Protocolo anti-inflamatorio para apoyar recuperacion, movilidad y equilibrio metabolico.",
+    details: ["Formula Bioenzym", "Apoyo anti-inflamatorio", "Orientado a bienestar osteoarticular y sistemico"],
+  },
+  {
+    slug: "tratamiento-sindrome-metabolico",
+    name: "Tratamiento Sindrome Metabolico",
+    price: "$7,250.00",
+    image: "/images/source/products/sindrome-metabolico.jpeg",
+    summary: "Terapia para acompanamiento metabolico y regulacion funcional.",
+    details: ["Formula Revercell", "Apoyo al metabolismo", "Seguimiento recomendado con consulta"],
+  },
+  {
+    slug: "tratamiento-detox",
+    name: "Tratamiento Detox",
+    price: "$4,200.00",
+    image: "/images/source/products/detox.jpeg",
+    summary: "Protocolo detox para apoyar eliminacion de toxinas y bienestar digestivo.",
+    details: ["Formula Celltox", "Quelacion oral", "Apoyo a habitos saludables"],
+  },
+  {
+    slug: "celulas-madre",
+    name: "Celulas Madre",
+    price: "$27,000.00",
+    image: "/images/source/products/celulas-madre.jpeg",
+    summary: "Activador de longevidad orientado a proteccion, reparacion y revitalizacion.",
+    details: ["Human Ultracell VI", "Ciclos de tratamiento", "Protocolo premium de longevidad"],
+  },
+  {
+    slug: "tratamiento-hormonal-hombre",
+    name: "Tratamiento Hormonal Hombre",
+    price: "$4,200.00",
+    image: "/images/source/products/hormonal-hombre.jpeg",
+    summary: "Soporte funcional para regulacion del ciclo hormonal masculino.",
+    details: ["Formula Androcell", "Apoyo hormonal hombre", "Evaluacion medica recomendada"],
+  },
+  {
+    slug: "tratamiento-hormonal-mujer",
+    name: "Tratamiento Hormonal para la mujer",
+    price: "$4,200.00",
+    image: "/images/source/products/hormonal-mujer.jpeg",
+    summary: "Soporte funcional para regulacion del ciclo hormonal femenino.",
+    details: ["Formula Biofemin", "Apoyo hormonal mujer", "Seguimiento personalizado"],
+  },
+];
+
+const consultations = [
+  ["Consulta Online", "Disponible online", "30 min", "$500", "/images/source/consultas/consulta-online.jpg", "consulta-online-1"],
+  ["Consulta Presencial", "En clinica", "1 h", "$1,500", "/images/source/consultas/consulta-presencial.jpeg", "consulta-presencial"],
+  ["Consultas en Madrid", "Disponible online", "1 h", "$1,500", "/images/source/consultas/consultas-madrid.jpg", "consultas-en-madrid"],
+];
+
+const newsItems = [
+  ["Comunidad Golden Health", "Videos, entrevistas y testimonios deben vivir como contenido editorial, no como bloque principal del home."],
+  ["Educacion en bienestar", "Capsulas sobre medicina preventiva, longevidad, nutricion funcional y habitos sostenibles."],
+  ["Eventos y aliados", "Espacio para conferencias, colaboraciones y novedades de la comunidad Golden Health."],
+];
+
 export default function GoldenHealthMockup() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [language, setLanguage] = useState("es");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const t = copy[language];
+  const [path, setPath] = useState(() => window.location.pathname);
+  const t = copy.es;
+  const page =
+    path === "/historia" ? "historia" :
+    path === "/programa-integral" ? "programa" :
+    path.startsWith("/programa-integral/") ? "programaDetalle" :
+    path === "/tienda" ? "tienda" :
+    path === "/consultas" ? "consultas" :
+    path === "/contacto" ? "contacto" :
+    path.startsWith("/booking-calendar/") ? "booking" :
+    path.startsWith("/producto/") ? "producto" :
+    "home";
+  const selectedProgram = programPages.find((program) => path === `/programa-integral/${program.slug}`);
+  const selectedProduct = products.find((product) => path === `/producto/${product.slug}`);
+  const selectedConsultation = consultations.find((consultation) => path === `/booking-calendar/${consultation[5]}`);
   const navLinks = [
-    ["#metodo", t.nav.method],
-    ["#terapias", t.nav.therapies],
-    ["#tienda", t.nav.shop],
-    ["#contacto", t.nav.contact],
+    ["/", "Inicio"],
+    ["/programa-integral", "Programa Integral"],
+    ["/historia", "Historia"],
+    ["/tienda", t.nav.shop],
+    ["/consultas", "Consultas"],
+    ["/#noticias", "Noticias"],
+    ["/contacto", t.nav.contact],
   ];
+  const navigate = (event, href) => {
+    if (href.startsWith("/#")) {
+      return;
+    }
+    event.preventDefault();
+    window.history.pushState({}, "", href);
+    setPath(window.location.pathname);
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "instant" });
+  };
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -144,6 +560,12 @@ export default function GoldenHealthMockup() {
     }, 4000);
 
     return () => window.clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const handlePopState = () => setPath(window.location.pathname);
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
   return (
@@ -163,7 +585,25 @@ export default function GoldenHealthMockup() {
 
           <nav className="hidden items-center gap-8 text-sm font-medium text-[#314136] md:flex">
             {navLinks.map(([href, label]) => (
-              <a key={href} href={href} className="hover:text-[#9b7a2f]">{label}</a>
+              href === "/programa-integral" ? (
+                <div key={href} className="group relative py-2">
+                  <a href={href} onClick={(event) => navigate(event, href)} className="hover:text-[#9b7a2f]">{label}</a>
+                  <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 border-t-4 border-[#d0d0d0] bg-white py-3 text-[#535353] opacity-0 shadow-xl transition group-hover:visible group-hover:opacity-100">
+                    {programPages.map((program) => (
+                      <a
+                        key={program.slug}
+                        href={`/programa-integral/${program.slug}`}
+                        onClick={(event) => navigate(event, `/programa-integral/${program.slug}`)}
+                        className="block px-6 py-2.5 text-lg font-normal hover:bg-[#f7f3ea] hover:text-[#9b7a2f]"
+                      >
+                        {program.title}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a key={href} href={href} onClick={(event) => navigate(event, href)} className="hover:text-[#9b7a2f]">{label}</a>
+              )
             ))}
           </nav>
 
@@ -186,7 +626,8 @@ export default function GoldenHealthMockup() {
               ))}
             </div>
             <a
-              href="#contacto"
+              href="/contacto"
+              onClick={(event) => navigate(event, "/contacto")}
               className="hidden rounded-full bg-[#1f3b2c] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1f3b2c]/20 transition hover:-translate-y-0.5 hover:bg-[#14261c] md:inline-flex"
             >
               {t.cta}
@@ -207,18 +648,48 @@ export default function GoldenHealthMockup() {
         <div className={`md:hidden ${mobileMenuOpen ? "block" : "hidden"}`}>
           <nav className="mx-5 mb-4 rounded-[1.5rem] border border-[#1f3b2c]/10 bg-white/95 p-3 text-[#1f3b2c] shadow-xl shadow-[#1f3b2c]/10">
             {navLinks.map(([href, label]) => (
-              <a
-                key={href}
-                href={href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-[#f4ead0]"
-              >
-                {label}
-              </a>
+              href === "/programa-integral" ? (
+                <div key={href}>
+                  <a
+                    href={href}
+                    onClick={(event) => {
+                      navigate(event, href);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="block rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-[#f4ead0]"
+                  >
+                    {label}
+                  </a>
+                  <div className="ml-3 border-l border-[#1f3b2c]/10 pl-3">
+                    {programPages.map((program) => (
+                      <a
+                        key={program.slug}
+                        href={`/programa-integral/${program.slug}`}
+                        onClick={(event) => navigate(event, `/programa-integral/${program.slug}`)}
+                        className="block rounded-xl px-4 py-2 text-sm text-[#607064] hover:bg-[#f4ead0]"
+                      >
+                        {program.title}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={(event) => {
+                    navigate(event, href);
+                    setMobileMenuOpen(false);
+                  }}
+                  className="block rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-[#f4ead0]"
+                >
+                  {label}
+                </a>
+              )
             ))}
             <a
-              href="#contacto"
-              onClick={() => setMobileMenuOpen(false)}
+              href="/contacto"
+              onClick={(event) => navigate(event, "/contacto")}
               className="mt-2 flex items-center justify-center rounded-full bg-[#1f3b2c] px-4 py-3 text-sm font-semibold text-white"
             >
               {t.cta}
@@ -228,6 +699,8 @@ export default function GoldenHealthMockup() {
       </header>
 
       <main>
+        {page === "home" && (
+          <>
         <section className="relative min-h-[90vh] overflow-hidden">
           <div className="absolute inset-0">
             {sliderImages.map((slide, index) => (
@@ -266,7 +739,7 @@ export default function GoldenHealthMockup() {
               </div>
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <a href="#contacto" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d3aa45] px-7 py-4 font-semibold text-[#14261c] shadow-xl shadow-[#d3aa45]/25 transition hover:-translate-y-0.5 hover:bg-[#c99c32]">
+                <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d3aa45] px-7 py-4 font-semibold text-[#14261c] shadow-xl shadow-[#d3aa45]/25 transition hover:-translate-y-0.5 hover:bg-[#c99c32]">
                   {t.primaryCta}
                 </a>
                 <a href="#metodo" className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/12 px-7 py-4 font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20">
@@ -312,63 +785,365 @@ export default function GoldenHealthMockup() {
 
         <section id="terapias" className="px-5 py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto max-w-4xl text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.therapiesEyebrow}</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.therapiesTitle}</h2>
-              <p className="mt-5 text-lg leading-8 text-[#607064]">{t.therapiesText}</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-6xl">{t.therapiesTitle}</h2>
             </div>
 
             <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {t.services.map(([icon, title, text]) => (
-                <div key={title} className="group rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1f3b2c]/10">
+                <a
+                  key={title}
+                  href="/programa-integral"
+                  onClick={(event) => navigate(event, "/programa-integral")}
+                  className="group rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1f3b2c]/10"
+                >
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4ead0] text-2xl text-[#9b7a2f] transition group-hover:bg-[#1f3b2c] group-hover:text-[#d3aa45]">{icon}</div>
                   <h3 className="mt-6 text-xl font-semibold text-[#14261c]">{title}</h3>
                   <p className="mt-3 leading-7 text-[#607064]">{text}</p>
                   <p className="mt-6 inline-flex text-sm font-semibold text-[#9b7a2f]">{t.details}</p>
-                </div>
+                </a>
               ))}
             </div>
           </div>
         </section>
 
         <section className="px-5 pb-24 lg:px-8">
-          <div className="mx-auto grid max-w-7xl items-center gap-10 rounded-[2.7rem] bg-[#ecdfbf] p-8 lg:grid-cols-[1fr_0.9fr] lg:p-12">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#8a6a24]">{t.patientEyebrow}</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.patientTitle}</h2>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-[#4f5c50]">{t.patientText}</p>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {t.patientCards.map(([title, text]) => (
-                <div key={title} className="rounded-3xl bg-white/65 p-6 shadow-sm ring-1 ring-black/5">
-                  <p className="font-semibold text-[#14261c]">{title}</p>
-                  <p className="mt-2 text-sm leading-6 text-[#667166]">{text}</p>
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-xl ring-1 ring-black/5 lg:p-12">
+            {sourceSections.filter((section) => section.id === "programa").map((section) => (
+              <article key={section.id}>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Programa Integral</p>
+                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{section.title}</h2>
+                <p className="mt-6 text-xl leading-8 text-[#607064]">{section.intro}</p>
+                <div className="mt-10 grid gap-5 md:grid-cols-2">
+                  {section.items.map(([title, text]) => (
+                    <div key={title} className="rounded-2xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
+                      <h3 className="text-xl font-semibold text-[#14261c]">{title}</h3>
+                      <p className="mt-3 leading-7 text-[#607064]">{text}</p>
+                    </div>
+                  ))}
                 </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="px-5 pb-24 lg:px-8">
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-[#e7d39b] p-8 shadow-sm ring-1 ring-black/5 lg:p-12">
+            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.patientEyebrow}</p>
+                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.patientTitle}</h2>
+                <p className="mt-5 text-lg leading-8 text-[#607064]">{t.patientText}</p>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                {t.patientCards.map(([title, text]) => (
+                  <article key={title} className="rounded-3xl bg-white/80 p-6 shadow-sm ring-1 ring-black/5">
+                    <p className="text-lg font-semibold text-[#14261c]">{title}</p>
+                    <p className="mt-3 text-sm leading-6 text-[#667166]">{text}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="noticias" className="px-5 pb-24 lg:px-8">
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-sm ring-1 ring-black/5 lg:p-12">
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Noticias</p>
+                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Comunidad Golden Health</h2>
+                <p className="mt-5 text-lg leading-8 text-[#607064]">Esta parte funciona mejor como blog social y editorial: contenido vivo, entrevistas, testimonios y novedades, sin quitar fuerza al mensaje principal del home.</p>
+              </div>
+              <div className="grid gap-4 md:grid-cols-3">
+                {newsItems.map(([title, text]) => (
+                  <article key={title} className="rounded-3xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
+                    <p className="text-lg font-semibold text-[#14261c]">{title}</p>
+                    <p className="mt-3 text-sm leading-6 text-[#667166]">{text}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+          </>
+        )}
+
+        {page === "programa" && (
+        <section id="programa-integral" className="px-5 py-32 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.therapiesEyebrow}</p>
+              <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Longevidad y Anti-envejecimiento</h1>
+              <p className="mt-5 text-lg leading-8 text-[#607064]">Es imposible detener el envejecimiento, pero en Golden Health contamos con tratamientos y programas para retrasar sus efectos, mejorar la calidad de vida y prevenir el envejecimiento prematuro.</p>
+            </div>
+
+            <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {programPages.map((program) => (
+                <a
+                  key={program.slug}
+                  href={`/programa-integral/${program.slug}`}
+                  onClick={(event) => navigate(event, `/programa-integral/${program.slug}`)}
+                  className="group overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1f3b2c]/10"
+                >
+                  <img src={program.image} alt={program.title} className="aspect-[4/3] w-full object-cover" />
+                  <div className="p-7">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9b7a2f]">{program.eyebrow}</p>
+                    <h2 className="mt-3 text-xl font-semibold text-[#14261c]">{program.title}</h2>
+                    <p className="mt-3 line-clamp-4 leading-7 text-[#607064]">{program.intro}</p>
+                    <p className="mt-6 inline-flex text-sm font-semibold text-[#9b7a2f]">Ver detalle →</p>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="tienda" className="px-5 pb-24 lg:px-8">
-          <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5 lg:grid-cols-[0.9fr_1.1fr]">
+        )}
+
+        {page === "programaDetalle" && selectedProgram && (
+        <section className="px-5 py-32 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-8 text-sm text-[#607064]">
+              <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="font-semibold text-[#9b7a2f]">Programa Integral</a>
+              <span> / {selectedProgram.title}</span>
+            </div>
+            <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
+              <div className="grid gap-0 lg:grid-cols-[0.92fr_1.08fr]">
+                <div className="bg-[#f3ead3]">
+                  <img src={selectedProgram.image} alt={selectedProgram.title} className="h-full min-h-[360px] w-full object-cover" />
+                </div>
+                <div className="p-8 lg:p-12">
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{selectedProgram.eyebrow}</p>
+                  <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-6xl">{selectedProgram.title}</h1>
+                  <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.intro}</p>
+                  {selectedProgram.links && (
+                    <div className="mt-8 flex flex-wrap gap-3">
+                      {selectedProgram.links.map(([label, href]) => (
+                        <a key={href} href={href} target="_blank" rel="noreferrer" className="inline-flex rounded-none bg-[#3f3f3f] px-7 py-3 font-serif text-lg text-white transition hover:bg-[#242424]">
+                          {label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className="grid gap-5 p-8 md:grid-cols-2 lg:p-12">
+                {selectedProgram.sections.map((section) => (
+                  <section key={section.title} className="rounded-2xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
+                    <h2 className="text-2xl font-semibold text-[#14261c]">{section.title}</h2>
+                    <p className="mt-3 leading-8 text-[#607064]">{section.text}</p>
+                  </section>
+                ))}
+              </div>
+              <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
+                <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                  Volver a Programa Integral
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+        )}
+
+        {page === "historia" && (
+        <section id="historia" className="px-5 py-32 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-10 rounded-[2.7rem] bg-[#14261c] p-8 text-white lg:grid-cols-[0.85fr_1.15fr] lg:p-12">
+            <div className="space-y-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#d3aa45]">Historia</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">Dra. Silvia del Moral</h2>
+              <p className="mt-3 text-xl text-white/80">Fundadora y medico responsable</p>
+              <img
+                src="/images/source/history/dra-silvia.jpeg"
+                alt="Dra. Silvia del Moral, fundadora de Golden Health"
+                className="aspect-[4/5] w-full max-w-sm rounded-[2rem] object-cover shadow-2xl shadow-black/25"
+              />
+            </div>
+            <div className="space-y-5 leading-8 text-white/74">
+              <p>Golden Health nace de la vision de la Dra. Silvia del Moral: integrar medicina preventiva, medicina regenerativa y bienestar funcional en una experiencia clara, humana y medible.</p>
+              <p>Con mas de 35 anos de trayectoria en ciencias de la vida y cuidados de la salud, la Dra. Silvia ha desarrollado un enfoque que combina evaluacion medica, terapias biologicas, nutricion y acompanamiento para personas que buscan energia, prevencion y longevidad saludable.</p>
+              <p>Su formacion incluye medicina, pediatria por el Instituto Nacional de Pediatria y estudios en el Goetheanum en Dornach, Suiza, centro mundial del movimiento antroposofico.</p>
+              <p>La propuesta de Golden Health no se basa en promesas rapidas: parte de entender el estado actual del paciente, disenar una ruta personalizada y dar seguimiento para construir habitos sostenibles.</p>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div className="rounded-2xl bg-white/10 p-4">
+                  <img src="/images/source/history/certificado.jpeg" alt="Certificado Dra. Silvia del Moral" className="aspect-[4/3] w-full rounded-xl object-cover" />
+                  <p className="mt-3 text-sm font-semibold text-[#d3aa45]">Formacion continua</p>
+                </div>
+                <div className="rounded-2xl bg-white/10 p-4">
+                  <img src="/images/source/history/bid-group.jpeg" alt="International Star for Quality 2017" className="mx-auto h-24 w-24 rounded-full object-cover" />
+                  <p className="mt-3 text-sm font-semibold text-[#d3aa45]">International Star for Quality 2017</p>
+                </div>
+                <div className="rounded-2xl bg-white/10 p-4">
+                  <img src="/images/source/history/bizz-awards.png" alt="Excelencia empresarial 2019" className="mx-auto h-24 w-24 object-contain" />
+                  <p className="mt-3 text-sm font-semibold text-[#d3aa45]">Excelencia empresarial 2019</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {page === "tienda" && (
+        <section id="tienda" className="px-5 py-32 lg:px-8">
+          <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
+            <div className="grid lg:grid-cols-[0.65fr_1.35fr]">
             <div className="bg-[#e7d39b] p-10 lg:p-14">
               <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#14261c] text-2xl text-[#d3aa45]">🛍</div>
               <h2 className="mt-8 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.shopTitle}</h2>
-              <p className="mt-5 text-lg leading-8 text-[#3f493f]">{t.shopText}</p>
-              <button className="mt-8 rounded-full bg-[#14261c] px-6 py-4 font-semibold text-white shadow-lg shadow-[#14261c]/20">{t.shopCta}</button>
+              <p className="mt-5 text-lg leading-8 text-[#3f493f]">Tratamientos biologicos y protocolos funcionales con fichas completas, imagen real, precio y solicitud directa.</p>
+              <a href="#productos" className="mt-8 inline-flex rounded-full bg-[#14261c] px-6 py-4 font-semibold text-white shadow-lg shadow-[#14261c]/20">Ver productos →</a>
             </div>
-            <div className="grid gap-4 p-8 md:grid-cols-2 lg:p-12">
-              {t.products.map((product) => (
-                <div key={product} className="rounded-3xl border border-[#efe6cd] bg-[#fbf8ef] p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-lg">
-                  <p className="text-lg font-semibold text-[#14261c]">{product}</p>
-                  <p className="mt-2 text-sm leading-6 text-[#6a756d]">{t.productText}</p>
+            <div id="productos" className="grid gap-5 p-8 md:grid-cols-2 lg:p-12">
+              {products.map((product) => (
+                <a
+                  key={product.slug}
+                  href={`/producto/${product.slug}`}
+                  onClick={(event) => navigate(event, `/producto/${product.slug}`)}
+                  className="group overflow-hidden rounded-3xl border border-[#efe6cd] bg-[#fbf8ef] transition hover:-translate-y-1 hover:bg-white hover:shadow-xl hover:shadow-[#1f3b2c]/10"
+                >
+                  <img src={product.image} alt={product.name} className="aspect-[4/3] w-full bg-white object-contain p-4" />
+                  <div className="p-6">
+                    <p className="text-lg font-semibold text-[#14261c]">{product.name}</p>
+                    <p className="mt-2 text-sm leading-6 text-[#6a756d]">{product.summary}</p>
+                    <div className="mt-5 flex items-center justify-between gap-4">
+                      <p className="text-xl font-semibold text-[#9b7a2f]">{product.price}</p>
+                      <span className="rounded-full bg-[#14261c] px-4 py-2 text-sm font-semibold text-white">Ver ficha</span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {page === "producto" && selectedProduct && (
+        <section className="px-5 py-32 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-8 text-sm text-[#607064]">
+              <a href="/tienda" onClick={(event) => navigate(event, "/tienda")} className="font-semibold text-[#9b7a2f]">Tienda</a>
+              <span> / {selectedProduct.name}</span>
+            </div>
+            <div className="grid gap-10 rounded-[2.7rem] bg-white p-8 shadow-xl ring-1 ring-black/5 lg:grid-cols-[0.95fr_1.05fr] lg:p-12">
+              <div className="rounded-[2rem] bg-[#fbf8ef] p-6">
+                <img src={selectedProduct.image} alt={selectedProduct.name} className="aspect-square w-full object-contain" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Ficha producto</p>
+                <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-6xl">{selectedProduct.name}</h1>
+                <p className="mt-5 text-3xl font-semibold text-[#9b7a2f]">{selectedProduct.price}</p>
+                <p className="mt-6 text-lg leading-8 text-[#607064]">{selectedProduct.summary}</p>
+                <div className="mt-8 rounded-3xl bg-[#14261c] p-6 text-white">
+                  <p className="font-semibold text-[#d3aa45]">Incluye</p>
+                  <ul className="mt-4 space-y-3 text-white/80">
+                    {selectedProduct.details.map((detail) => (
+                      <li key={detail} className="flex gap-3">
+                        <span className="text-[#d3aa45]">•</span>
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-8">
+                  <p className="text-sm font-semibold text-[#607064]">Cantidad *</p>
+                  <div className="mt-3 inline-flex h-14 items-center overflow-hidden border border-[#14261c]/25 bg-white">
+                    <button type="button" className="h-full w-14 text-2xl text-[#9b9b9b]">−</button>
+                    <span className="flex h-full w-14 items-center justify-center border-x border-[#14261c]/15 text-[#14261c]">1</span>
+                    <button type="button" className="h-full w-14 text-2xl text-[#14261c]">+</button>
+                  </div>
+                </div>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <button type="button" className="inline-flex justify-center rounded-none bg-[#3f3f3f] px-10 py-4 font-serif text-xl text-white transition hover:bg-[#242424] sm:min-w-80">Agregar al carrito</button>
+                  <a href="/tienda" onClick={(event) => navigate(event, "/tienda")} className="inline-flex justify-center rounded-none border border-[#14261c]/20 px-7 py-4 font-semibold text-[#14261c]">Volver a tienda</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {page === "consultas" && (
+        <section id="consultas" className="px-5 py-32 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Consultas Medicas</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Nuestros servicios</h2>
+            </div>
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {consultations.map(([name, meta, duration, price, image, slug]) => (
+                <div key={name} className="overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-black/5">
+                  <img src={image} alt={name} className="aspect-[4/2.7] w-full object-cover" />
+                  <div className="p-7">
+                    <p className="text-xl font-semibold text-[#14261c]">{name}</p>
+                    <p className="mt-2 text-sm text-[#9b7a2f]">{meta}</p>
+                    <div className="mt-6 flex items-end justify-between gap-4 border-t border-[#e5dfd1] pt-6">
+                      <p className="text-[#607064]">{duration}</p>
+                      <p className="text-3xl font-semibold text-[#14261c]">{price}</p>
+                    </div>
+                    <a href={`/booking-calendar/${slug}`} onClick={(event) => navigate(event, `/booking-calendar/${slug}`)} className="mt-6 inline-flex w-full justify-center rounded-full bg-[#1f3b2c] px-5 py-3 font-semibold text-white">Reservar ahora</a>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
+        )}
 
-        <section id="contacto" className="px-5 py-24 lg:px-8">
+        {page === "booking" && selectedConsultation && (
+        <section className="px-5 py-32 lg:px-8">
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-xl ring-1 ring-black/5 lg:p-12">
+            <a href="/consultas" onClick={(event) => navigate(event, "/consultas")} className="inline-flex items-center gap-2 text-lg text-[#607064]">‹ Volver</a>
+            <div className="mt-16">
+              <h1 className="font-serif text-5xl text-[#3f3f3f]">Programa tu servicio</h1>
+              <p className="mt-6 text-xl leading-8 text-[#607064]">Revisa nuestra disponibilidad y reserva la fecha y hora que más te convengan</p>
+            </div>
+            <div className="mt-20 grid gap-12 lg:grid-cols-[1fr_0.55fr]">
+              <div>
+                <div className="flex flex-wrap items-end justify-between gap-4 border-b border-[#d6d2ca] pb-4">
+                  <h2 className="font-serif text-3xl text-[#3f3f3f]">Selecciona fecha y hora</h2>
+                  <p className="text-[#aaa39b]">hora estándar central (GMT-6)</p>
+                </div>
+                <div className="mt-8 flex items-center justify-center gap-14 text-2xl text-[#777]">
+                  <span>‹</span>
+                  <span>May - Jun 2026</span>
+                  <span>›</span>
+                </div>
+                <div className="mt-10 grid grid-cols-7 text-center text-[#c8c3bd]">
+                  {["dom", "lun", "mar", "mié", "jue", "vie", "sáb"].map((day, index) => (
+                    <div key={day} className="space-y-3">
+                      <p>{day}</p>
+                      <p className="text-2xl">{index === 0 ? "31" : index}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-28 text-center text-2xl text-[#8a8580]">No hay disponibilidad</p>
+                <div className="mt-12 flex justify-center">
+                  <button type="button" className="bg-[#9e9e9e] px-24 py-5 font-serif text-2xl text-white">Próxima sesión disponible</button>
+                </div>
+              </div>
+              <aside>
+                <h2 className="border-b border-[#d6d2ca] pb-4 font-serif text-3xl text-[#3f3f3f]">Detalles del servicio</h2>
+                <div className="mt-8 space-y-5 text-xl text-[#607064]">
+                  <p>{selectedConsultation[0]}</p>
+                  <p>{selectedConsultation[2]}</p>
+                  <p>{selectedConsultation[3]}</p>
+                  <details className="border-t border-[#e2ddd4] pt-5">
+                    <summary className="cursor-pointer">Más detalles</summary>
+                    <p className="mt-4 text-base leading-7">Servicio de Golden Health. El motor real de reservas se integrará después.</p>
+                  </details>
+                </div>
+                <button type="button" className="mt-10 w-full bg-[#c7c7c7] px-8 py-5 font-serif text-2xl text-white">Siguiente</button>
+              </aside>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {page === "contacto" && (
+        <section id="contacto" className="px-5 py-32 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.contactEyebrow}</p>
@@ -413,9 +1188,42 @@ export default function GoldenHealthMockup() {
             </div>
           </div>
         </section>
+        )}
       </main>
 
-      <a href="#contacto" className="fixed bottom-5 right-5 z-50 rounded-full bg-[#1f3b2c] px-5 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#1f3b2c]/30">{t.whatsapp}</a>
+      <footer className="bg-[#f3f3f3] px-5 py-14 text-[#779087] lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.75fr_1.25fr]">
+          <div className="text-center md:text-left">
+            <img src="/images/source/footer/logo.png" alt="Golden Health by Silvia del Moral" className="mx-auto h-auto w-52 md:mx-0" />
+            <div className="mt-7 space-y-1 text-lg leading-7">
+              <p>Lago Zúrich 96 Ampliación Granada</p>
+              <p>Miguel Hidalgo CP 11529, Ciudad de México</p>
+            </div>
+            <div className="mt-8 space-y-1 text-lg leading-7">
+              <p className="break-all">silvia.delmoral@goldenhealth.com.mx</p>
+              <p>+55 55 5417 8009</p>
+            </div>
+            <div className="mt-7 flex justify-center gap-3 md:justify-start">
+              {["◎", "f", "in", "▶"].map((icon) => (
+                <span key={icon} className="flex h-12 w-12 items-center justify-center rounded-full bg-[#a8a8a8] text-lg font-semibold text-white">
+                  {icon}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="text-center">
+            <h2 className="font-serif text-5xl font-semibold tracking-normal text-black">Aliados estratégicos</h2>
+            <div className="mt-10 grid grid-cols-2 items-center justify-items-center gap-8 md:grid-cols-4">
+              <img src="/images/source/footer/enagic.png" alt="Enagic" className="max-h-24 w-auto object-contain" />
+              <img src="/images/source/footer/incruises.png" alt="inCruises" className="max-h-16 w-auto object-contain" />
+              <img src="/images/source/footer/zinzino.png" alt="Zinzino" className="max-h-16 w-auto object-contain" />
+              <img src="/images/source/footer/royal-prestige.jpeg" alt="Royal Prestige" className="max-h-24 w-auto object-contain" />
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="fixed bottom-5 right-5 z-50 rounded-full bg-[#1f3b2c] px-5 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#1f3b2c]/30">{t.whatsapp}</a>
     </div>
   );
 }
