@@ -571,10 +571,37 @@ const consultations = [
   ["Consultas en Madrid", "Disponible online", "1 h", "$1,500", "/images/source/consultas/consultas-madrid.jpg", "consultas-en-madrid"],
 ];
 
-const newsItems = [
-  ["Comunidad Golden Health", "Videos, entrevistas y testimonios deben vivir como contenido editorial, no como bloque principal del home."],
-  ["Educacion en bienestar", "Capsulas sobre medicina preventiva, longevidad, nutricion funcional y habitos sostenibles."],
-  ["Eventos y aliados", "Espacio para conferencias, colaboraciones y novedades de la comunidad Golden Health."],
+const communityVideos = [
+  {
+    title: "ENTREVISTA CON PERLA",
+    src: "https://video.wixstatic.com/video/e47656_5f84c412e45a48b9b1c9b41c2dadd514/1080p/mp4/file.mp4",
+    poster: "https://static.wixstatic.com/media/e47656_5f84c412e45a48b9b1c9b41c2dadd514f000.jpg/v1/fill/w_540,h_960,al_c,q_85,enc_auto/e47656_5f84c412e45a48b9b1c9b41c2dadd514f000.jpg",
+  },
+  {
+    title: "JADE1",
+    src: "https://video.wixstatic.com/video/e47656_a8fb3c4559c14d5eb52053875f16ba62/1080p/mp4/file.mp4",
+    poster: "https://static.wixstatic.com/media/e47656_a8fb3c4559c14d5eb52053875f16ba62f000.jpg/v1/fill/w_540,h_960,al_c,q_85,enc_auto/e47656_a8fb3c4559c14d5eb52053875f16ba62f000.jpg",
+  },
+  {
+    title: "capsula 2",
+    src: "https://video.wixstatic.com/video/e47656_cade056312b7450abb6eb2052e9db5de/1080p/mp4/file.mp4",
+    poster: "https://static.wixstatic.com/media/e47656_cade056312b7450abb6eb2052e9db5def000.jpg/v1/fill/w_540,h_960,al_c,q_85,enc_auto/e47656_cade056312b7450abb6eb2052e9db5def000.jpg",
+  },
+  {
+    title: "ENTREVISTA PIOLIN",
+    src: "https://video.wixstatic.com/video/e47656_f4bbacab0c124c7983e930e63e317dfd/1080p/mp4/file.mp4",
+    poster: "https://static.wixstatic.com/media/e47656_f4bbacab0c124c7983e930e63e317dfdf000.jpg/v1/fill/w_540,h_960,al_c,q_85,enc_auto/e47656_f4bbacab0c124c7983e930e63e317dfdf000.jpg",
+  },
+  {
+    title: "Jade 2",
+    src: "https://video.wixstatic.com/video/e47656_a7d21d8136dd4800bacb893966166f10/1080p/mp4/file.mp4",
+    poster: "https://static.wixstatic.com/media/e47656_a7d21d8136dd4800bacb893966166f10f000.jpg/v1/fill/w_540,h_960,al_c,q_85,enc_auto/e47656_a7d21d8136dd4800bacb893966166f10f000.jpg",
+  },
+  {
+    title: "Capsula 1 RP",
+    src: "https://video.wixstatic.com/video/e47656_2f0aba4cbf844ef9a4c2fced67fe02fe/1080p/mp4/file.mp4",
+    poster: "https://static.wixstatic.com/media/e47656_2f0aba4cbf844ef9a4c2fced67fe02fef000.jpg/v1/fill/w_540,h_960,al_c,q_85,enc_auto/e47656_2f0aba4cbf844ef9a4c2fced67fe02fef000.jpg",
+  },
 ];
 
 export default function GoldenHealthMockup() {
@@ -912,17 +939,26 @@ export default function GoldenHealthMockup() {
 
         <section id="noticias" className="px-5 pb-24 lg:px-8">
           <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-sm ring-1 ring-black/5 lg:p-12">
-            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Noticias</p>
                 <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Comunidad Golden Health</h2>
-                <p className="mt-5 text-lg leading-8 text-[#607064]">Esta parte funciona mejor como blog social y editorial: contenido vivo, entrevistas, testimonios y novedades, sin quitar fuerza al mensaje principal del home.</p>
+                <p className="mt-5 text-lg leading-8 text-[#607064]">Videos, entrevistas, capsulas y testimonios de la comunidad Golden Health.</p>
               </div>
-              <div className="grid gap-4 md:grid-cols-3">
-                {newsItems.map(([title, text]) => (
-                  <article key={title} className="rounded-3xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
-                    <p className="text-lg font-semibold text-[#14261c]">{title}</p>
-                    <p className="mt-3 text-sm leading-6 text-[#667166]">{text}</p>
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {communityVideos.map((video) => (
+                  <article key={video.title} className="overflow-hidden rounded-3xl bg-[#fbf8ef] shadow-sm ring-1 ring-[#efe6cd]">
+                    <video
+                      className="aspect-[9/16] w-full bg-[#14261c] object-cover"
+                      controls
+                      playsInline
+                      preload="metadata"
+                      poster={video.poster}
+                      src={video.src}
+                    />
+                    <div className="p-5">
+                      <p className="text-base font-semibold text-[#14261c]">{video.title}</p>
+                    </div>
                   </article>
                 ))}
               </div>
