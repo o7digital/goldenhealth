@@ -443,8 +443,30 @@ const programPages = [
     slug: "salud-nutricional",
     title: "Salud nutricional",
     eyebrow: "Pioneros de la nutrición personalizada basada en pruebas",
-    image: "/images/source/programa/salud-nutricional.webp",
-    intro: "Zinzino desafía el orden establecido desde 2005 con nutrición personalizada basada en pruebas y un enfoque centrado en el cliente.",
+    image: "/images/source/programa/balance-oil-and-test-situational.webp",
+    secondaryImage: "/images/source/programa/zinzino-balance-oil.png",
+    intro: "Desafiando el orden establecido desde 2005",
+    brandTitle: "ZINZINO",
+    brandText: [
+      "Zinzino nació de un deseo de pensar diferente. La pareja emprendedora Hilde y Ørjan Sæle querían volver a sus raíces, a su gran pasión por compartir grandes experiencias de producto. Lo convirtieron en su misión para recuperar el enfoque centrado en el cliente en la venta directa. Un atrevido paso que también llevó su negocio a la vanguardia de la nutrición personalizada basada en pruebas.",
+      "Hoy en día, Zinzino ha pasado de ser una pequeña empresa emergente escandinava a ser incluida en Nasdaq First North como una de las empresas de venta directa de más rápido crecimiento en el rango de la salud y el bienestar, que sigue desafiando el orden establecido. Nuestros clientes son lo primero.",
+    ],
+    nutritionTitle: "Le presentamos la nueva generación de la nutrición",
+    nutritionText: [
+      "Queremos evitarle la fase de prueba y error y que encuentre la mejor manera de mejorar su salud. Por eso, nuestras pruebas de sangre seca son un punto de partida natural. Le ofrecemos datos objetivos y le guiamos.",
+      "Le proporcionamos los suplementos adaptados a sus necesidades específicas y le ayudamos a mantenerse en el camino adecuado.",
+      "Comience su viaje hacia una vida en equilibrio con una prueba de mancha de sangre seca científica y confidencial. Averigüe el estado de su cuerpo y qué suplementos podría necesitar. Haga la prueba de nuevo cada 4 meses para seguir su progreso y ajustar su ingesta si fuese necesario.",
+    ],
+    buyUrl: "https://www.zinzino.com/shop/2016732291/MX/es-ES/products/shop/home-health-tests/",
+    balanceTitle: "BalanceOil Kit with Test",
+    balanceText: "Obtenga una visión clara sobre la relación Omega 6:3 de su cuerpo y vea los resultados individuales antes y después del BalanceTest. Luego, use Zinzino BalanceOil, una mezcla de primera calidad que contiene aceite natural de pescado, con alto contenido de Omega 3 (EPA + DHA), polifenoles de oliva y vitamina D3 para proteger las células de la oxidación y ajustar el equilibrio Omega 6:3 del cuerpo, promoviendo el funcionamiento normal del cerebro, el corazón y el sistema inmune.",
+    deliveryItems: [
+      "Primera entrega",
+      "2 BalanceOil+, 300 ml",
+      "2 BalanceOil, 100 ml",
+      "2 BalanceTest*",
+      "* Puedes encontrar un BalanceTest en tu primera entrega; el segundo BalanceTest se entregará al cabo de 120 días para que puedas hacerlo en el momento correcto para ver los resultados del “antes” y del “después”.",
+    ],
     sections: [
       {
         title: "Nueva generación de la nutrición",
@@ -459,7 +481,7 @@ const programPages = [
         text: "Permite obtener una visión clara sobre la relación Omega 6:3 del cuerpo, ver resultados antes y después del BalanceTest, y ajustar el equilibrio con BalanceOil.",
       },
     ],
-    links: [["Comprar", "https://www.zinzino.com/"]],
+    links: [["COMPRAR", "https://www.zinzino.com/shop/2016732291/MX/es-ES/products/shop/home-health-tests/"]],
   },
 ];
 
@@ -1128,6 +1150,59 @@ export default function GoldenHealthMockup() {
                     <h3 className="mt-10 text-3xl font-semibold tracking-[-0.03em] text-[#14261c]">¿Cuales son los objetivos?</h3>
                   </div>
                   <img src={selectedProgram.secondaryImage} alt="9db7e64eee11ec1b341fffb2e7c00a79.jpeg" className="h-full min-h-[480px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                </div>
+
+                <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
+                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    Volver a Programa Integral
+                  </a>
+                </div>
+              </article>
+            ) : selectedProgram.slug === "salud-nutricional" ? (
+              <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
+                <div className="grid gap-10 p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-12">
+                  <div className="flex flex-col justify-center">
+                    <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{selectedProgram.eyebrow}</p>
+                    <h1 className="mt-4 text-5xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-7xl">{selectedProgram.brandTitle}</h1>
+                    <h2 className="mt-8 text-3xl font-semibold tracking-[-0.03em] text-[#14261c]">{selectedProgram.intro}</h2>
+                    <div className="mt-6 space-y-5 text-lg leading-8 text-[#607064]">
+                      {selectedProgram.brandText.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                    <a href={selectedProgram.buyUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex w-fit rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424]">
+                      COMPRAR
+                    </a>
+                  </div>
+                  <img src={selectedProgram.image} alt="balance-oil-and-test-situational.webp" className="h-full min-h-[460px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                </div>
+
+                <div className="border-t border-[#efe6cd] bg-[#fbf8ef] p-8 text-center lg:p-12">
+                  <h2 className="mx-auto max-w-4xl text-4xl font-semibold tracking-[-0.03em] text-[#14261c] md:text-5xl">{selectedProgram.nutritionTitle}</h2>
+                  <div className="mx-auto mt-8 max-w-4xl space-y-5 text-lg leading-8 text-[#607064]">
+                    {selectedProgram.nutritionText.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid gap-10 border-t border-[#efe6cd] p-8 lg:grid-cols-[1fr_0.9fr] lg:p-12">
+                  <div className="flex flex-col justify-center">
+                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{selectedProgram.balanceTitle}</h2>
+                    <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.balanceText}</p>
+                    <ul className="mt-8 space-y-4 text-lg leading-8 text-[#607064]">
+                      {selectedProgram.deliveryItems.map((item) => (
+                        <li key={item} className="flex gap-4">
+                          <span className="text-[#9b7a2f]">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <a href={selectedProgram.buyUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex w-fit rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424]">
+                      COMPRAR
+                    </a>
+                  </div>
+                  <img src={selectedProgram.secondaryImage} alt="Zinzino.png" className="h-full min-h-[460px] w-full rounded-[1.5rem] object-contain shadow-lg ring-1 ring-black/5" />
                 </div>
 
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
