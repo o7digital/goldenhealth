@@ -642,22 +642,33 @@ export default function GoldenHealthMockup() {
         )}
       </main>
 
-      <footer className="bg-white px-5 py-12 text-[#607064] ring-1 ring-black/5 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[0.8fr_1.2fr]">
-          <div>
-            <p className="text-lg font-semibold tracking-[0.22em] text-[#9b7a2f]">GOLDEN HEALTH</p>
-            <p className="mt-4">Lago Zúrich 96 Ampliación Granada</p>
-            <p>Miguel Hidalgo CP 11529, Ciudad de México</p>
-            <p className="mt-5 break-all">silvia.delmoral@goldenhealth.com.mx</p>
-            <p>+55 55 5417 8009</p>
+      <footer className="bg-[#f3f3f3] px-5 py-14 text-[#779087] lg:px-8">
+        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.75fr_1.25fr]">
+          <div className="text-center md:text-left">
+            <img src="/images/source/footer/logo.png" alt="Golden Health by Silvia del Moral" className="mx-auto h-auto w-52 md:mx-0" />
+            <div className="mt-7 space-y-1 text-lg leading-7">
+              <p>Lago Zúrich 96 Ampliación Granada</p>
+              <p>Miguel Hidalgo CP 11529, Ciudad de México</p>
+            </div>
+            <div className="mt-8 space-y-1 text-lg leading-7">
+              <p className="break-all">silvia.delmoral@goldenhealth.com.mx</p>
+              <p>+55 55 5417 8009</p>
+            </div>
+            <div className="mt-7 flex justify-center gap-3 md:justify-start">
+              {["◎", "f", "in", "▶"].map((icon) => (
+                <span key={icon} className="flex h-12 w-12 items-center justify-center rounded-full bg-[#a8a8a8] text-lg font-semibold text-white">
+                  {icon}
+                </span>
+              ))}
+            </div>
           </div>
-          <div>
-            <h2 className="text-4xl font-semibold tracking-[-0.04em] text-[#14261c]">Aliados estratégicos</h2>
-            <div className="mt-6 flex flex-wrap items-center gap-5 text-lg font-semibold text-[#9b7a2f]">
-              <span>ENAGIC</span>
-              <span>inCruises</span>
-              <span>ZINZINO</span>
-              <span>ROYAL PRESTIGE</span>
+          <div className="text-center">
+            <h2 className="font-serif text-5xl font-semibold tracking-normal text-black">Aliados estratégicos</h2>
+            <div className="mt-10 grid grid-cols-2 items-center justify-items-center gap-8 md:grid-cols-4">
+              <img src="/images/source/footer/enagic.png" alt="Enagic" className="max-h-24 w-auto object-contain" />
+              <img src="/images/source/footer/incruises.png" alt="inCruises" className="max-h-16 w-auto object-contain" />
+              <img src="/images/source/footer/zinzino.png" alt="Zinzino" className="max-h-16 w-auto object-contain" />
+              <img src="/images/source/footer/royal-prestige.jpeg" alt="Royal Prestige" className="max-h-24 w-auto object-contain" />
             </div>
           </div>
         </div>
