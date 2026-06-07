@@ -275,27 +275,33 @@ const programPages = [
     title: "Arte del Buen Comer y Buen Beber",
     eyebrow: "El arte del buen comer, buen beber y bien vivir",
     image: "/images/source/programa/arte-buen-comer.jpeg",
-    intro: "Comer es una necesidad, pero comer de forma inteligente es un arte. Este programa instruye a los pacientes para llevar un estilo de vida más saludable.",
+    intro: "COMER ES UNA NECESIDAD, PERO COMER DE FORMA INTELIGENTE ES UN ARTE",
+    programHeading: "CONOCÉ EL PROGRAMA",
+    questionHeading: "¿Qué es?",
+    menusHref: "/programa-integral/menu-golden-health",
+    finalText: "Nuestro programa del arte del buen comer y el buen beber es una forma sana, inteligente y equilibrada de comer inspiradamente en las recomendaciones de los mejores programas de alimentación en el cual instruimos a nuestros pacientes a llevar un estilo de vida mas saludable que se ve reflejado en la prevención de enfermedades, especialmente las degenerativas, prevenir el envejecimiento prematuro, aumentar la energía e incrementar el sistema inmunológico.",
+    gallery: [
+      ["/images/source/programa/ensalada-golden-health.jpeg", "ENSALADA GOLDEN HEALTHMX.jpeg"],
+      ["/images/source/programa/menu-vegetariano-golden-health.jpeg", "MENU VEGETARIANO GOLDENHEALTHMX.jpeg"],
+    ],
     sections: [
       {
-        title: "Conocé el programa",
-        text: "Nuestro programa del arte del buen comer y el buen beber es una forma sana, inteligente y equilibrada de comer, inspirada en recomendaciones de programas de alimentación para prevenir enfermedades degenerativas, prevenir el envejecimiento prematuro, aumentar la energía e incrementar el sistema inmunológico.",
+        title: "CLASES GRUPALES DE COCINA",
+        kicker: "PROXIMAMENTE",
+        text: "Aprende de los mejores coach de alimentación y expertos en el campo. ofrecemos clases en línea en donde aprenderás las mejores recetas fáciles y saludables para llevar una vida mas sana",
       },
       {
-        title: "Clases grupales de cocina",
-        text: "Próximamente. Aprende de coaches de alimentación y expertos en el campo mediante clases en línea con recetas fáciles y saludables.",
+        title: "CLASE PRIVADA DE COCINA",
+        kicker: "PROXIMAMENTE",
+        text: "Aprende de los mejores coach de alimentación y expertos en el campo. ofrecemos clases privadas en donde aprenderás las mejores recetas fáciles y saludables para llevar una vida mas sana.",
       },
       {
-        title: "Clase privada de cocina",
-        text: "Próximamente. Clases privadas para aprender recetas fáciles y saludables que apoyen una vida más sana.",
+        title: "MENU GOLDEN HEALTH",
+        text: "Es fundamental que aprendamos nuevos hábitos saludables que nos ayuden a alcanzar el objetivo de vivir más y mejor. Descarga los mejores ménus para la semana.",
       },
       {
-        title: "Menú Golden Health",
-        text: "Es fundamental aprender nuevos hábitos saludables para alcanzar el objetivo de vivir más y mejor. Descarga los mejores menús para la semana.",
-      },
-      {
-        title: "Menú bebidas",
-        text: "La nutrición es uno de los pilares fundamentales del programa. Este espacio comparte secretos de bebidas saludables.",
+        title: "MENÚ BEBIDAS",
+        text: "La nutrición es uno de los pilares fundamentales de nuestro programa, hemos diseñado un espacio para compartir los secretos de bebidas saludables",
       },
     ],
   },
@@ -962,6 +968,54 @@ export default function GoldenHealthMockup() {
                   </div>
                   <img src={selectedProgram.videoImage} alt="ANDRES MUÑOZ ANTROPOSOFIA" className="w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
+                <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
+                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    Volver a Programa Integral
+                  </a>
+                </div>
+              </article>
+            ) : selectedProgram.slug === "arte-del-buen-comer-y-buen-beber" ? (
+              <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
+                <div className="p-8 text-center lg:p-12">
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Programa Integral</p>
+                  <h1 className="mt-4 text-4xl font-semibold uppercase tracking-[-0.03em] text-[#14261c] md:text-6xl">EL ARTE DEL BUEN COMER Y BUEN BEBER</h1>
+                  <p className="mx-auto mt-6 max-w-4xl text-xl font-semibold uppercase leading-8 text-[#607064]">{selectedProgram.intro}</p>
+                  <img src={selectedProgram.image} alt="ARTE DEL COMER GOLDEN HEALTH MX.jpeg" className="mx-auto mt-10 aspect-square w-full max-w-2xl rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                </div>
+
+                <div className="border-t border-[#efe6cd] bg-[#fbf8ef] px-8 py-12 text-center lg:px-12">
+                  <h2 className="text-4xl font-semibold uppercase tracking-[-0.03em] text-[#14261c]">{selectedProgram.programHeading}</h2>
+                  <p className="mt-4 text-3xl font-semibold text-[#14261c]">{selectedProgram.questionHeading}</p>
+                  <a
+                    href={selectedProgram.menusHref}
+                    onClick={(event) => navigate(event, selectedProgram.menusHref)}
+                    className="mt-8 inline-flex text-4xl font-semibold text-[#9b7a2f] underline underline-offset-8"
+                  >
+                    MENUS
+                  </a>
+                </div>
+
+                <div className="grid gap-5 p-8 md:grid-cols-2 lg:grid-cols-4 lg:p-12">
+                  {selectedProgram.sections.map((section) => (
+                    <section key={section.title} className="rounded-2xl bg-[#fbf8ef] p-6 text-center ring-1 ring-[#efe6cd]">
+                      <h3 className="text-xl font-semibold uppercase text-[#14261c]">{section.title}</h3>
+                      {section.kicker && <p className="mt-1 text-sm font-semibold uppercase text-[#9b7a2f]">{section.kicker}</p>}
+                      <p className="mt-4 text-sm leading-7 text-[#607064]">{section.text}</p>
+                    </section>
+                  ))}
+                </div>
+
+                <div className="grid gap-10 border-t border-[#efe6cd] p-8 lg:grid-cols-[1fr_0.9fr] lg:p-12">
+                  <div className="flex flex-col justify-center">
+                    <p className="text-3xl font-semibold leading-tight tracking-[-0.03em] text-[#14261c] md:text-4xl">{selectedProgram.finalText}</p>
+                  </div>
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    {selectedProgram.gallery.map(([src, alt]) => (
+                      <img key={src} src={src} alt={alt} className="h-full min-h-80 w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                    ))}
+                  </div>
+                </div>
+
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
                   <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
                     Volver a Programa Integral
