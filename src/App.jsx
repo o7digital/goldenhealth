@@ -135,7 +135,6 @@ const sourceSections = [
       ["Medicina Regenerativa", "Tratamiento de renovacion celular de origen franco-suizo que busca regenerar y revitalizar organos, apoyar la salud hormonal y frenar la degeneracion celular."],
       ["Accion regenerativa bio-celular", "Tratamientos biologicos de origen aleman orientados a mineralizar, oxigenar y nutrir organos y sistemas para reactivar el poder regulador del organismo."],
       ["Escuela del arte", "Conferencias, seminarios web, podcast, cocina saludable y mindfulness para sostener el bienestar a largo plazo."],
-      ["Cuerpo, mente y espiritu", "Programas enfocados en equilibrio emocional y mental mediante experiencias de aprendizaje y conexion interior."],
       ["Deportistas de alto rendimiento", "Disciplina, movimiento, oxigenacion y condicion fisica para lograr objetivos diarios y mejorar el funcionamiento cognitivo."],
     ],
   },
@@ -221,6 +220,18 @@ const sourceSections = [
       ["Movimiento con propósito", "Estimula la capacidad de movimiento con intención y objetivos claros."],
       ["Empoderamiento energético", "Enfoque para sostener energía, rendimiento y recuperación."],
       ["Condición física", "Apoyo para alcanzar metas diarias y mejorar desempeño."],
+    ],
+  },
+  {
+    id: "cuerpo-mente-espiritu",
+    title: "Cuerpo, Mente y Espíritu",
+    intro: "Todo lo que necesitas para un estado óptimo de salud. Este programa se dedica a la motivación y generación de conductas que llevan a encontrar inspiración en la vida cotidiana por medio de experiencias con uno mismo y los demás.",
+    image: "/images/source/programa/cuerpo-mente-espiritu.jpeg",
+    items: [
+      ["Inspiración cotidiana", "Experiencias para ejercitar el espíritu y conectarse con el ser interior."],
+      ["Equilibrio integral", "No hay buena salud sin equilibrio entre cuerpo, mente y espíritu."],
+      ["Motivación", "Generación de conductas para sostener bienestar emocional y mental."],
+      ["Conexión interior", "Espacio para fortalecer presencia, propósito y calidad de vida."],
     ],
   },
 ];
