@@ -126,6 +126,81 @@ const sliderImages = [
   { src: "/images/golden-health/comunidad.jpg", alt: { es: "Comunidad Golden Health", en: "Golden Health community" } },
 ];
 
+const sourceSections = [
+  {
+    id: "programa",
+    title: "Programa Integral",
+    intro: "Longevidad, anti-envejecimiento y bienestar integral para vivir mas anos con energia optima.",
+    items: [
+      ["Medicina Regenerativa", "Tratamiento de renovacion celular de origen franco-suizo que busca regenerar y revitalizar organos, apoyar la salud hormonal y frenar la degeneracion celular."],
+      ["Accion regenerativa bio-celular", "Tratamientos biologicos de origen aleman orientados a mineralizar, oxigenar y nutrir organos y sistemas para reactivar el poder regulador del organismo."],
+      ["Arte del buen comer y buen beber", "Programa para aprender habitos saludables, prevenir enfermedades degenerativas, aumentar energia e incrementar el sistema inmunologico."],
+      ["Escuela del arte", "Conferencias, seminarios web, podcast, cocina saludable y mindfulness para sostener el bienestar a largo plazo."],
+      ["Cuerpo, mente y espiritu", "Programas enfocados en equilibrio emocional y mental mediante experiencias de aprendizaje y conexion interior."],
+      ["Deportistas de alto rendimiento", "Disciplina, movimiento, oxigenacion y condicion fisica para lograr objetivos diarios y mejorar el funcionamiento cognitivo."],
+    ],
+  },
+  {
+    id: "biologicas",
+    title: "Terapias Biologicas",
+    intro: "Medicina biologica enfocada en desarrollar el potencial humano con ciencia, tecnologia, coaching de salud y protocolos regenerativos.",
+    items: [
+      ["Energia, estres y revitalizacion", "Restaura vitalidad ante desgaste fisico, mental y emocional."],
+      ["Inmunologico", "Fortalece y estimula defensas contra agresiones del medio ambiente."],
+      ["Osteoarticular", "Apoyo para lesiones especificas, movilidad, tejidos, fuerza y flexibilidad."],
+      ["Cara", "Tratamiento para enfatizar belleza interior y exterior de rostro y cuello."],
+      ["Hormonal", "Apoyo para equilibrar sintomas hormonales en mujeres y hombres."],
+      ["Detox", "Protocolo para eliminar toxinas y promover un estilo de vida mas saludable."],
+    ],
+  },
+  {
+    id: "nutricion",
+    title: "Salud nutricional y Zinzino",
+    intro: "Nutricion personalizada basada en pruebas para orientar suplementos y medir progreso con datos objetivos.",
+    items: [
+      ["Nueva generacion de nutricion", "Pruebas de sangre seca como punto de partida para conocer el estado del cuerpo y guiar decisiones."],
+      ["BalanceOil Kit with Test", "Omega 3, polifenoles de oliva y vitamina D3 para apoyar equilibrio Omega 6:3, cerebro, corazon e sistema inmune."],
+      ["Seguimiento", "Nueva prueba cada 4 meses para comparar resultados y ajustar la ingesta."],
+    ],
+  },
+  {
+    id: "antroposofia",
+    title: "Antroposofia",
+    intro: "Contenido con Andres Munoz Cardenas, psicologo de orientacion antroposofica, sobre una concepcion integral de la salud.",
+    items: [
+      ["Los 7 Pasos de la Libertad", "Conferencias y contenidos sobre crear realidad, psicoanalisis y antroposofia."],
+      ["Kamino Florido", "Aliado educativo enfocado en desarrollo humano y bienestar integral."],
+    ],
+  },
+  {
+    id: "hidratacion",
+    title: "Hidratacion Funcional",
+    intro: "Introduccion al agua Kangen: agua alcalina ionizada tratada por electrolisis para modificar pH y crear propiedades antioxidantes.",
+    items: [
+      ["Socio autorizado", "Golden Health presenta informacion y acceso a hidratacion funcional."],
+      ["Bienestar diario", "Apoyo a habitos de hidratacion dentro del programa integral."],
+    ],
+  },
+];
+
+const products = [
+  ["Tratamientos Biologicos", "$2,300.00"],
+  ["Tratamiento Antioxidante", "$5,980.00"],
+  ["Tratamiento Anti-inflamatorio", "$4,200.00"],
+  ["Tratamiento Sindrome Metabolico", "$7,250.00"],
+  ["Tratamiento Detox", "$4,200.00"],
+  ["Celulas Madre", "$27,000.00"],
+  ["Tratamiento Hormonal Hombre", "$4,200.00"],
+  ["Tratamiento Hormonal para la mujer", "$4,200.00"],
+  ["Organoterapia", "$4,800.00"],
+];
+
+const consultations = [
+  ["Consulta Online", "Disponible online", "30 min", "$500"],
+  ["Consulta Presencial", "En clinica", "1 h", "$1,500"],
+  ["Consultas en Madrid", "Disponible online", "1 h", "$1,500"],
+];
+
 export default function GoldenHealthMockup() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [language, setLanguage] = useState("es");
@@ -133,7 +208,9 @@ export default function GoldenHealthMockup() {
   const t = copy[language];
   const navLinks = [
     ["#metodo", t.nav.method],
+    ["#programa", "Programa"],
     ["#terapias", t.nav.therapies],
+    ["#historia", "Historia"],
     ["#tienda", t.nav.shop],
     ["#contacto", t.nav.contact],
   ];
@@ -331,6 +408,36 @@ export default function GoldenHealthMockup() {
           </div>
         </section>
 
+        <section id="programa" className="px-5 pb-24 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Contenido del sitio original</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Programas Golden Health</h2>
+              <p className="mt-5 text-lg leading-8 text-[#607064]">Secciones principales del sitio goldenhealthmx.com consolidadas para mantener completa la informacion comercial.</p>
+            </div>
+            <div className="mt-12 space-y-6">
+              {sourceSections.map((section) => (
+                <article key={section.id} id={section.id} className="rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5">
+                  <div className="grid gap-8 lg:grid-cols-[0.45fr_1fr]">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-[#14261c]">{section.title}</h3>
+                      <p className="mt-3 leading-7 text-[#607064]">{section.intro}</p>
+                    </div>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      {section.items.map(([title, text]) => (
+                        <div key={title} className="rounded-2xl bg-[#fbf8ef] p-5 ring-1 ring-[#efe6cd]">
+                          <p className="font-semibold text-[#14261c]">{title}</p>
+                          <p className="mt-2 text-sm leading-6 text-[#667166]">{text}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="px-5 pb-24 lg:px-8">
           <div className="mx-auto grid max-w-7xl items-center gap-10 rounded-[2.7rem] bg-[#ecdfbf] p-8 lg:grid-cols-[1fr_0.9fr] lg:p-12">
             <div>
@@ -349,6 +456,25 @@ export default function GoldenHealthMockup() {
           </div>
         </section>
 
+        <section id="historia" className="px-5 pb-24 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-8 rounded-[2.7rem] bg-[#14261c] p-8 text-white lg:grid-cols-[0.8fr_1.2fr] lg:p-12">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#d3aa45]">Historia</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">Dra. Silvia del Moral</h2>
+              <p className="mt-3 text-xl text-white/80">Fundadora y medico responsable</p>
+            </div>
+            <div className="space-y-5 leading-8 text-white/74">
+              <p>Profesional de la salud en Mexico reconocida por su enfoque innovador en medicina preventiva y regenerativa.</p>
+              <p>Con mas de 35 anos de experiencia en ciencias de la vida y cuidados de la salud, ha consolidado su liderazgo en el sector.</p>
+              <p>Su formacion incluye medicina, pediatria por el Instituto Nacional de Pediatria y estudios en el Goetheanum en Dornach, Suiza, centro mundial del movimiento antroposofico.</p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl bg-white/10 p-5"><p className="font-semibold text-[#d3aa45]">International Star for Quality</p><p>2017</p></div>
+                <div className="rounded-2xl bg-white/10 p-5"><p className="font-semibold text-[#d3aa45]">Excelencia empresarial</p><p>2019</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="tienda" className="px-5 pb-24 lg:px-8">
           <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="bg-[#e7d39b] p-10 lg:p-14">
@@ -358,10 +484,33 @@ export default function GoldenHealthMockup() {
               <button className="mt-8 rounded-full bg-[#14261c] px-6 py-4 font-semibold text-white shadow-lg shadow-[#14261c]/20">{t.shopCta}</button>
             </div>
             <div className="grid gap-4 p-8 md:grid-cols-2 lg:p-12">
-              {t.products.map((product) => (
+              {products.map(([product, price]) => (
                 <div key={product} className="rounded-3xl border border-[#efe6cd] bg-[#fbf8ef] p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-lg">
                   <p className="text-lg font-semibold text-[#14261c]">{product}</p>
                   <p className="mt-2 text-sm leading-6 text-[#6a756d]">{t.productText}</p>
+                  <p className="mt-4 text-xl font-semibold text-[#9b7a2f]">{price}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="consultas" className="px-5 pb-24 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Consultas Medicas</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Nuestros servicios</h2>
+            </div>
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {consultations.map(([name, meta, duration, price]) => (
+                <div key={name} className="rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5">
+                  <p className="text-xl font-semibold text-[#14261c]">{name}</p>
+                  <p className="mt-2 text-sm text-[#9b7a2f]">{meta}</p>
+                  <div className="mt-6 flex items-end justify-between gap-4">
+                    <p className="text-[#607064]">{duration}</p>
+                    <p className="text-3xl font-semibold text-[#14261c]">{price}</p>
+                  </div>
+                  <a href="#contacto" className="mt-6 inline-flex w-full justify-center rounded-full bg-[#1f3b2c] px-5 py-3 font-semibold text-white">Reservar ahora</a>
                 </div>
               ))}
             </div>
