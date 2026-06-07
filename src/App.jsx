@@ -134,7 +134,6 @@ const sourceSections = [
     items: [
       ["Medicina Regenerativa", "Tratamiento de renovacion celular de origen franco-suizo que busca regenerar y revitalizar organos, apoyar la salud hormonal y frenar la degeneracion celular."],
       ["Accion regenerativa bio-celular", "Tratamientos biologicos de origen aleman orientados a mineralizar, oxigenar y nutrir organos y sistemas para reactivar el poder regulador del organismo."],
-      ["Arte del buen comer y buen beber", "Programa para aprender habitos saludables, prevenir enfermedades degenerativas, aumentar energia e incrementar el sistema inmunologico."],
       ["Escuela del arte", "Conferencias, seminarios web, podcast, cocina saludable y mindfulness para sostener el bienestar a largo plazo."],
       ["Cuerpo, mente y espiritu", "Programas enfocados en equilibrio emocional y mental mediante experiencias de aprendizaje y conexion interior."],
       ["Deportistas de alto rendimiento", "Disciplina, movimiento, oxigenacion y condicion fisica para lograr objetivos diarios y mejorar el funcionamiento cognitivo."],
@@ -172,6 +171,18 @@ const sourceSections = [
     items: [
       ["Andrés Muñoz Cárdenas", "Fundador y CEO de la escuela Kamino Florido."],
       ["Los 7 Pasos de la Libertad", "Contenido educativo sobre antroposofía, desarrollo humano y una visión más amplia de la salud."],
+    ],
+  },
+  {
+    id: "arte-buen-comer",
+    title: "Arte del Buen Comer y Buen Beber",
+    intro: "Comer es una necesidad, pero comer de forma inteligente es un arte. Este programa enseña hábitos de alimentación y estilo de vida para prevenir enfermedades degenerativas, aumentar energía y fortalecer el sistema inmunológico.",
+    image: "/images/source/programa/arte-buen-comer.jpeg",
+    items: [
+      ["Programa de hábitos saludables", "Acompañamiento para comer de forma sana, inteligente y equilibrada."],
+      ["Buen beber y bien vivir", "Educación práctica para sostener cambios reales en la vida diaria."],
+      ["Prevención y energía", "Enfoque en prevención, envejecimiento saludable y vitalidad."],
+      ["Sistema inmunológico", "Hábitos nutricionales orientados a apoyar defensas y bienestar integral."],
     ],
   },
   {
