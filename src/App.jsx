@@ -415,20 +415,27 @@ const programPages = [
     slug: "equilibrio-mente-cuerpo-espiritu",
     title: "Equilibrio Mente, Cuerpo, Espíritu",
     eyebrow: "Cuerpo, Mente y Espíritu",
-    image: "/images/source/programa/cuerpo-mente-espiritu.jpeg",
-    intro: "Todo lo que necesitas para un estado óptimo de salud. Es imposible mantener una buena salud sin equilibrio entre cuerpo, mente y espíritu.",
+    image: "/images/source/programa/cuerpo-mente-programa.jpeg",
+    secondaryImage: "/images/source/programa/cuerpo-mente-lograrlo.jpeg",
+    intro: "Todo lo que necesitas para un estado óptimo de salud",
+    objectivesIntro: "Este programa tiene 2 objetivos principales:",
+    objectives: [
+      "1.-Recuperar el bienestar general gracias a una experiencia de aprendizaje.",
+      "2.- Dar continuidad al proceso de aprendizaje en la vida cotidiana, gracias a lo conocimientos y a los hábitos de vida adquiridos en Golden Health.",
+    ],
     sections: [
       {
         title: "¿Qué es este programa?",
-        text: "Se dedica a la motivación y generación de conductas que llevan a encontrar inspiración en la vida cotidiana mediante experiencias con uno mismo y los demás.",
+        text: "Este programa se dedica a la motivación y generación de conductas que nos llevan a encontrar inspiración en la vida cotidiana por medio de experiencias con uno mismo y los demás. Esta experiencia es una excelente oportunidad para ejercitar su espíritu y conectarse con su ser interior.",
+        extra: "Es imposible mantener una buena salud sin un equilibrio entre cuerpo, mente y espíritu. Es por ello que ofrecemos programas, conferencias, webinars y podcast enfocados en el equilibrio emocional y mental.",
       },
       {
-        title: "¿Cómo lograrlo?",
-        text: "El programa busca recuperar el bienestar general mediante una experiencia de aprendizaje y dar continuidad a ese aprendizaje en la vida cotidiana gracias a conocimientos y hábitos adquiridos en Golden Health.",
+        title: "¿Como lograrlo?",
+        text: "Este programa tiene 2 objetivos principales:",
       },
       {
-        title: "Objetivos",
-        text: "Programas, conferencias, webinars y podcast enfocados en equilibrio emocional y mental para ejercitar el espíritu y conectarse con el ser interior.",
+        title: "¿Cuales son los objetivos?",
+        text: "Recuperar el bienestar general y dar continuidad al proceso de aprendizaje en la vida cotidiana.",
       },
     ],
   },
@@ -1084,6 +1091,43 @@ export default function GoldenHealthMockup() {
                     </ul>
                   </div>
                   <img src={selectedProgram.secondaryImage} alt="240fbbcc54f5c9451ae6da4ddde9263e.jpeg" className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                </div>
+
+                <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
+                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    Volver a Programa Integral
+                  </a>
+                </div>
+              </article>
+            ) : selectedProgram.slug === "equilibrio-mente-cuerpo-espiritu" ? (
+              <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
+                <div className="p-8 text-center lg:p-12">
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Programa Integral</p>
+                  <h1 className="mt-4 text-5xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-7xl">Cuerpo, Mente y Espíritu</h1>
+                  <p className="mt-6 text-xl leading-8 text-[#607064]">{selectedProgram.intro}</p>
+                </div>
+
+                <div className="grid gap-10 px-8 pb-12 lg:grid-cols-[0.85fr_1.15fr] lg:px-12">
+                  <img src={selectedProgram.image} alt="5846111ef0cee33ce4b8986bfce78786.jpeg" className="h-full min-h-[480px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <div className="flex flex-col justify-center">
+                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">¿Qué es este programa?</h2>
+                    <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.sections[0].text}</p>
+                    <p className="mt-5 text-xl leading-9 text-[#607064]">{selectedProgram.sections[0].extra}</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-10 border-t border-[#efe6cd] bg-[#fbf8ef] p-8 lg:grid-cols-[1fr_0.85fr] lg:p-12">
+                  <div className="flex flex-col justify-center">
+                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">¿Como lograrlo?</h2>
+                    <p className="mt-6 text-xl leading-8 text-[#607064]">{selectedProgram.objectivesIntro}</p>
+                    <div className="mt-8 space-y-5 text-xl leading-8 text-[#607064]">
+                      {selectedProgram.objectives.map((item) => (
+                        <p key={item}>{item}</p>
+                      ))}
+                    </div>
+                    <h3 className="mt-10 text-3xl font-semibold tracking-[-0.03em] text-[#14261c]">¿Cuales son los objetivos?</h3>
+                  </div>
+                  <img src={selectedProgram.secondaryImage} alt="9db7e64eee11ec1b341fffb2e7c00a79.jpeg" className="h-full min-h-[480px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
 
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
