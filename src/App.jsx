@@ -120,10 +120,10 @@ const copy = {
 };
 
 const sliderImages = [
-  { src: "/images/golden-health/consulta-medica.jpg", alt: { es: "Consulta médica Golden Health", en: "Golden Health medical consultation" } },
-  { src: "/images/golden-health/terapia-iv.jpg", alt: { es: "Terapia intravenosa Golden Health", en: "Golden Health IV therapy" } },
-  { src: "/images/golden-health/nutricion.jpg", alt: { es: "Nutrición funcional Golden Health", en: "Golden Health functional nutrition" } },
-  { src: "/images/golden-health/comunidad.jpg", alt: { es: "Comunidad Golden Health", en: "Golden Health community" } },
+  { src: "/images/golden-health/consulta-medica.webp", alt: { es: "Consulta médica Golden Health", en: "Golden Health medical consultation" } },
+  { src: "/images/golden-health/terapia-iv.webp", alt: { es: "Terapia intravenosa Golden Health", en: "Golden Health IV therapy" } },
+  { src: "/images/golden-health/nutricion.webp", alt: { es: "Nutrición funcional Golden Health", en: "Golden Health functional nutrition" } },
+  { src: "/images/golden-health/comunidad.webp", alt: { es: "Comunidad Golden Health", en: "Golden Health community" } },
 ];
 
 const sourceSections = [
@@ -142,7 +142,7 @@ const sourceSections = [
     id: "biologicas",
     title: "Terapias Biológicas",
     intro: "La medicina biológica se enfoca en desarrollar el potencial humano apoyándose en la ciencia, la tecnología y nuevas tendencias para el cuidado de la salud. El programa acompaña a las personas para llevar vidas más saludables y activas.",
-    image: "/images/source/programa/terapias-biologicas.jpeg",
+    image: "/images/source/programa/terapias-biologicas.webp",
     items: [
       ["Acción regenerativa de la ciencia biocelular", "Tratamientos biológicos de origen alemán para mineralizar, oxigenar y nutrir órganos y sistemas."],
       ["Energía, estrés y revitalización", "Restaura vitalidad ante desgaste físico, mental y emocional."],
@@ -180,7 +180,7 @@ const sourceSections = [
     id: "arte-buen-comer",
     title: "Arte del Buen Comer y Buen Beber",
     intro: "Comer es una necesidad, pero comer de forma inteligente es un arte. Este programa enseña hábitos de alimentación y estilo de vida para prevenir enfermedades degenerativas, aumentar energía y fortalecer el sistema inmunológico.",
-    image: "/images/source/programa/arte-buen-comer.jpeg",
+    image: "/images/source/programa/arte-buen-comer.webp",
     items: [
       ["Programa de hábitos saludables", "Acompañamiento para comer de forma sana, inteligente y equilibrada."],
       ["Buen beber y bien vivir", "Educación práctica para sostener cambios reales en la vida diaria."],
@@ -192,7 +192,7 @@ const sourceSections = [
     id: "anti-aging",
     title: "Anti-Aging",
     intro: "El objetivo de estos tratamientos es frenar el proceso de degeneración celular y reactivar el potencial de salud de cada individuo para prevenir y revertir el envejecimiento prematuro.",
-    image: "/images/source/programa/anti-aging.jpeg",
+    image: "/images/source/programa/anti-aging.webp",
     items: [
       ["Healthy Ageing", "Tratamientos anti-edad orientados a vitalidad, prevención y regeneración."],
       ["Regeneración celular", "Protocolos para apoyar la salud celular y reducir señales de desgaste prematuro."],
@@ -204,7 +204,7 @@ const sourceSections = [
     id: "hidratacion",
     title: "Hidratación Funcional",
     intro: "Introducción al agua Kangen: agua alcalina ionizada tratada mediante electrólisis para alterar su pH y crear una estructura molecular única, con un pH más alto y propiedades antioxidantes.",
-    image: "/images/source/programa/hidratacion-funcional.png",
+    image: "/images/source/programa/hidratacion-funcional.webp",
     items: [
       ["Agua Kangen", "El agua pasa por una máquina de ionización que separa moléculas cargadas positiva y negativamente."],
       ["pH alcalino", "Proceso orientado a obtener agua con pH más alto y propiedades antioxidantes."],
@@ -216,7 +216,7 @@ const sourceSections = [
     id: "ciencia-deporte",
     title: "Ciencia del Deporte",
     intro: "Programa para deportistas de alto rendimiento. Busca crear disciplina y estimular la capacidad de movimiento con intención, propósito, empoderamiento energético y excelente condición física para alcanzar objetivos día a día.",
-    image: "/images/source/programa/ciencia-deporte.jpeg",
+    image: "/images/source/programa/ciencia-deporte.webp",
     items: [
       ["Deportistas de alto rendimiento", "Trabajo orientado a disciplina, constancia y mejora física."],
       ["Movimiento con propósito", "Estimula la capacidad de movimiento con intención y objetivos claros."],
@@ -228,7 +228,7 @@ const sourceSections = [
     id: "cuerpo-mente-espiritu",
     title: "Cuerpo, Mente y Espíritu",
     intro: "Todo lo que necesitas para un estado óptimo de salud. Este programa se dedica a la motivación y generación de conductas que llevan a encontrar inspiración en la vida cotidiana por medio de experiencias con uno mismo y los demás.",
-    image: "/images/source/programa/cuerpo-mente-espiritu.jpeg",
+    image: "/images/source/programa/cuerpo-mente-espiritu.webp",
     items: [
       ["Inspiración cotidiana", "Experiencias para ejercitar el espíritu y conectarse con el ser interior."],
       ["Equilibrio integral", "No hay buena salud sin equilibrio entre cuerpo, mente y espíritu."],
@@ -252,7 +252,7 @@ const programPages = [
     videoTitle: "Los 7 Pasos de la Libertad - Crear realidad en tiempos de I.A. (inteligencia artificial)",
     videoUrl: "https://www.youtube.com/watch?v=Z-I3Vdl8VP0",
     videoText: "Actividad continua L.U.S. - 1era Conferencia del ciclo de 12 conferencias respecto de Crear la Realidad que Anhelamos a través de los 7 Pasos de la Libertad. Psicoanálisis y Antroposofía.",
-    videoImage: "/images/source/programa/andres-munoz-antroposofia.png",
+    videoImage: "/images/source/programa/andres-munoz-antroposofia.webp",
     socialLinks: [
       ["Facebook", "http://www.facebook.com/WixEspanol", "f"],
       ["Twitter", "http://twitter.com/MundoWix", "x"],
@@ -274,15 +274,15 @@ const programPages = [
     slug: "arte-del-buen-comer-y-buen-beber",
     title: "Arte del Buen Comer y Buen Beber",
     eyebrow: "El arte del buen comer, buen beber y bien vivir",
-    image: "/images/source/programa/arte-buen-comer.jpeg",
+    image: "/images/source/programa/arte-buen-comer.webp",
     intro: "COMER ES UNA NECESIDAD, PERO COMER DE FORMA INTELIGENTE ES UN ARTE",
     programHeading: "CONOCÉ EL PROGRAMA",
     questionHeading: "¿Qué es?",
     menusHref: "/programa-integral/menu-golden-health",
     finalText: "Nuestro programa del arte del buen comer y el buen beber es una forma sana, inteligente y equilibrada de comer inspiradamente en las recomendaciones de los mejores programas de alimentación en el cual instruimos a nuestros pacientes a llevar un estilo de vida mas saludable que se ve reflejado en la prevención de enfermedades, especialmente las degenerativas, prevenir el envejecimiento prematuro, aumentar la energía e incrementar el sistema inmunológico.",
     gallery: [
-      ["/images/source/programa/ensalada-golden-health.jpeg", "ENSALADA GOLDEN HEALTHMX.jpeg"],
-      ["/images/source/programa/menu-vegetariano-golden-health.jpeg", "MENU VEGETARIANO GOLDENHEALTHMX.jpeg"],
+      ["/images/source/programa/ensalada-golden-health.webp", "ENSALADA GOLDEN HEALTHMX.jpeg"],
+      ["/images/source/programa/menu-vegetariano-golden-health.webp", "MENU VEGETARIANO GOLDENHEALTHMX.jpeg"],
     ],
     sections: [
       {
@@ -309,7 +309,7 @@ const programPages = [
     slug: "menu-golden-health",
     title: "Menú Golden Health",
     eyebrow: "Ménus Golden Health",
-    image: "/images/source/programa/alimentos-golden-health.jpeg",
+    image: "/images/source/programa/alimentos-golden-health.webp",
     intro: "MÉNUS GOLDEN HEALTH",
     downloads: [
       ["MENÚ GOLDEN HEALTH", "https://www.goldenhealthmx.com/_files/ugd/e47656_a5b631e3351a47448a73a2d560f98691.pdf"],
@@ -320,9 +320,9 @@ const programPages = [
     slug: "anti-aging",
     title: "Medicina Regenerativa",
     eyebrow: "Medicina Regenerativa",
-    image: "/images/source/programa/anti-aging-captura.png",
-    secondaryImage: "/images/source/programa/anti-aging-celulas-1.jpeg",
-    tertiaryImage: "/images/source/programa/anti-aging-celulas-2.jpeg",
+    image: "/images/source/programa/anti-aging-captura.webp",
+    secondaryImage: "/images/source/programa/anti-aging-celulas-1.webp",
+    tertiaryImage: "/images/source/programa/anti-aging-celulas-2.webp",
     intro: "El objetivo de estos tratamientos es frenar el proceso de degeneración celular y reactivar el potencial de salud de cada individuo.",
     introExtra: "Con estos tratamientos prevenimos y revertimos el envejecimiento prematuro.",
     diagnosticTitle: "Diagnóstico Healthy Ageing",
@@ -354,7 +354,7 @@ const programPages = [
     slug: "terapias-biologicas",
     title: "Terapias Biológicas",
     eyebrow: "Medicina Biológica",
-    image: "/images/source/programa/terapias-biologicas.jpeg",
+    image: "/images/source/programa/terapias-biologicas.webp",
     intro: "La medicina biológica se enfoca en desarrollar el potencial humano apoyándose en la ciencia, la tecnología y nuevas tendencias para el cuidado de la salud.",
     sections: [
       {
@@ -387,7 +387,7 @@ const programPages = [
     slug: "hidratacion-funcional",
     title: "Hidratación Funcional",
     eyebrow: "Socio autorizado Golden Health",
-    image: "/images/source/programa/hidratacion-funcional.png",
+    image: "/images/source/programa/hidratacion-funcional.webp",
     intro: "El agua Kangen es un tipo de agua alcalina ionizada tratada mediante electrólisis para alterar su pH y crear una estructura molecular única.",
     sections: [
       {
@@ -404,8 +404,8 @@ const programPages = [
     slug: "ciencia-del-deporte",
     title: "Ciencia del Deporte",
     eyebrow: "Programa para deportistas de alto rendimiento",
-    image: "/images/source/programa/deporte-golden-health.jpeg",
-    secondaryImage: "/images/source/programa/deporte-alto-rendimiento.jpeg",
+    image: "/images/source/programa/deporte-golden-health.webp",
+    secondaryImage: "/images/source/programa/deporte-alto-rendimiento.webp",
     intro: "“Tienes que cultivar el vigor del cuerpo para preservar el espíritu \"",
     quoteAuthor: "Luc de Clapiers",
     description: "Este programa busca crear disciplina y estimular la capacidad de movimiento que tenemos con una intensión y un propósito de alcanzar un estado de empoderamiento energético y una excelente condición física que nos permita alcanzar objetivos que tenemos día a día.",
@@ -428,8 +428,8 @@ const programPages = [
     slug: "equilibrio-mente-cuerpo-espiritu",
     title: "Equilibrio Mente, Cuerpo, Espíritu",
     eyebrow: "Cuerpo, Mente y Espíritu",
-    image: "/images/source/programa/cuerpo-mente-programa.jpeg",
-    secondaryImage: "/images/source/programa/cuerpo-mente-lograrlo.jpeg",
+    image: "/images/source/programa/cuerpo-mente-programa.webp",
+    secondaryImage: "/images/source/programa/cuerpo-mente-lograrlo.webp",
     intro: "Todo lo que necesitas para un estado óptimo de salud",
     objectivesIntro: "Este programa tiene 2 objetivos principales:",
     objectives: [
@@ -457,7 +457,7 @@ const programPages = [
     title: "Salud nutricional",
     eyebrow: "Pioneros de la nutrición personalizada basada en pruebas",
     image: "/images/source/programa/balance-oil-and-test-situational.webp",
-    secondaryImage: "/images/source/programa/zinzino-balance-oil.png",
+    secondaryImage: "/images/source/programa/zinzino-balance-oil.webp",
     intro: "Desafiando el orden establecido desde 2005",
     brandTitle: "ZINZINO",
     brandText: [
@@ -503,7 +503,7 @@ const products = [
     slug: "tratamientos-biologicos",
     name: "Tratamientos Biologicos",
     price: "$2,300.00",
-    image: "/images/source/products/tratamientos-biologicos.jpeg",
+    image: "/images/source/products/tratamientos-biologicos.webp",
     summary: "Paquete biologico de soporte para bienestar integral y equilibrio celular.",
     details: ["10 sesiones", "2 tratamientos biologicos", "Acompanamiento para elegir protocolo segun objetivo"],
   },
@@ -511,7 +511,7 @@ const products = [
     slug: "tratamiento-antioxidante",
     name: "Tratamiento Antioxidante",
     price: "$5,980.00",
-    image: "/images/source/products/antioxidante.jpeg",
+    image: "/images/source/products/antioxidante.webp",
     summary: "Terapia antioxidante endocrina orientada a proteger, reparar y apoyar la vitalidad.",
     details: ["Formula Citoplacell", "Soporte antioxidante", "Enfoque anti-aging y energia"],
   },
@@ -519,7 +519,7 @@ const products = [
     slug: "tratamiento-anti-inflamatorio",
     name: "Tratamiento Anti-inflamatorio",
     price: "$4,200.00",
-    image: "/images/source/products/antiinflamatorio.jpeg",
+    image: "/images/source/products/antiinflamatorio.webp",
     summary: "Protocolo anti-inflamatorio para apoyar recuperacion, movilidad y equilibrio metabolico.",
     details: ["Formula Bioenzym", "Apoyo anti-inflamatorio", "Orientado a bienestar osteoarticular y sistemico"],
   },
@@ -527,7 +527,7 @@ const products = [
     slug: "tratamiento-sindrome-metabolico",
     name: "Tratamiento Sindrome Metabolico",
     price: "$7,250.00",
-    image: "/images/source/products/sindrome-metabolico.jpeg",
+    image: "/images/source/products/sindrome-metabolico.webp",
     summary: "Terapia para acompanamiento metabolico y regulacion funcional.",
     details: ["Formula Revercell", "Apoyo al metabolismo", "Seguimiento recomendado con consulta"],
   },
@@ -535,7 +535,7 @@ const products = [
     slug: "tratamiento-detox",
     name: "Tratamiento Detox",
     price: "$4,200.00",
-    image: "/images/source/products/detox.jpeg",
+    image: "/images/source/products/detox.webp",
     summary: "Protocolo detox para apoyar eliminacion de toxinas y bienestar digestivo.",
     details: ["Formula Celltox", "Quelacion oral", "Apoyo a habitos saludables"],
   },
@@ -543,7 +543,7 @@ const products = [
     slug: "celulas-madre",
     name: "Celulas Madre",
     price: "$27,000.00",
-    image: "/images/source/products/celulas-madre.jpeg",
+    image: "/images/source/products/celulas-madre.webp",
     summary: "Activador de longevidad orientado a proteccion, reparacion y revitalizacion.",
     details: ["Human Ultracell VI", "Ciclos de tratamiento", "Protocolo premium de longevidad"],
   },
@@ -551,7 +551,7 @@ const products = [
     slug: "tratamiento-hormonal-hombre",
     name: "Tratamiento Hormonal Hombre",
     price: "$4,200.00",
-    image: "/images/source/products/hormonal-hombre.jpeg",
+    image: "/images/source/products/hormonal-hombre.webp",
     summary: "Soporte funcional para regulacion del ciclo hormonal masculino.",
     details: ["Formula Androcell", "Apoyo hormonal hombre", "Evaluacion medica recomendada"],
   },
@@ -559,16 +559,16 @@ const products = [
     slug: "tratamiento-hormonal-mujer",
     name: "Tratamiento Hormonal para la mujer",
     price: "$4,200.00",
-    image: "/images/source/products/hormonal-mujer.jpeg",
+    image: "/images/source/products/hormonal-mujer.webp",
     summary: "Soporte funcional para regulacion del ciclo hormonal femenino.",
     details: ["Formula Biofemin", "Apoyo hormonal mujer", "Seguimiento personalizado"],
   },
 ];
 
 const consultations = [
-  ["Consulta Online", "Disponible online", "30 min", "$500", "/images/source/consultas/consulta-online.jpg", "consulta-online-1"],
-  ["Consulta Presencial", "En clinica", "1 h", "$1,500", "/images/source/consultas/consulta-presencial.jpeg", "consulta-presencial"],
-  ["Consultas en Madrid", "Disponible online", "1 h", "$1,500", "/images/source/consultas/consultas-madrid.jpg", "consultas-en-madrid"],
+  ["Consulta Online", "Disponible online", "30 min", "$500", "/images/source/consultas/consulta-online.webp", "consulta-online-1"],
+  ["Consulta Presencial", "En clinica", "1 h", "$1,500", "/images/source/consultas/consulta-presencial.webp", "consulta-presencial"],
+  ["Consultas en Madrid", "Disponible online", "1 h", "$1,500", "/images/source/consultas/consultas-madrid.webp", "consultas-en-madrid"],
 ];
 
 const communityVideos = [
@@ -1366,7 +1366,7 @@ export default function GoldenHealthMockup() {
               <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">Dra. Silvia del Moral</h2>
               <p className="mt-3 text-xl text-white/80">Fundadora y medico responsable</p>
               <img
-                src="/images/source/history/dra-silvia.jpeg"
+                src="/images/source/history/dra-silvia.webp"
                 alt="Dra. Silvia del Moral, fundadora de Golden Health"
                 className="aspect-[4/5] w-full max-w-sm rounded-[2rem] object-cover shadow-2xl shadow-black/25"
               />
@@ -1378,15 +1378,15 @@ export default function GoldenHealthMockup() {
               <p>La propuesta de Golden Health no se basa en promesas rapidas: parte de entender el estado actual del paciente, disenar una ruta personalizada y dar seguimiento para construir habitos sostenibles.</p>
               <div className="grid gap-4 md:grid-cols-3">
                 <div className="rounded-2xl bg-white/10 p-4">
-                  <img src="/images/source/history/certificado.jpeg" alt="Certificado Dra. Silvia del Moral" className="aspect-[4/3] w-full rounded-xl object-cover" />
+                  <img src="/images/source/history/certificado.webp" alt="Certificado Dra. Silvia del Moral" className="aspect-[4/3] w-full rounded-xl object-cover" />
                   <p className="mt-3 text-sm font-semibold text-[#d3aa45]">Formacion continua</p>
                 </div>
                 <div className="rounded-2xl bg-white/10 p-4">
-                  <img src="/images/source/history/bid-group.jpeg" alt="International Star for Quality 2017" className="mx-auto h-24 w-24 rounded-full object-cover" />
+                  <img src="/images/source/history/bid-group.webp" alt="International Star for Quality 2017" className="mx-auto h-24 w-24 rounded-full object-cover" />
                   <p className="mt-3 text-sm font-semibold text-[#d3aa45]">International Star for Quality 2017</p>
                 </div>
                 <div className="rounded-2xl bg-white/10 p-4">
-                  <img src="/images/source/history/bizz-awards.png" alt="Excelencia empresarial 2019" className="mx-auto h-24 w-24 object-contain" />
+                  <img src="/images/source/history/bizz-awards.webp" alt="Excelencia empresarial 2019" className="mx-auto h-24 w-24 object-contain" />
                   <p className="mt-3 text-sm font-semibold text-[#d3aa45]">Excelencia empresarial 2019</p>
                 </div>
               </div>
@@ -1642,7 +1642,7 @@ export default function GoldenHealthMockup() {
               <img src="/images/source/footer/enagic.png" alt="Enagic" className="max-h-24 w-auto object-contain" />
               <img src="/images/source/footer/incruises.png" alt="inCruises" className="max-h-16 w-auto object-contain" />
               <div aria-label="ZINZINO" className="text-3xl font-black uppercase tracking-normal text-black">ZINZINO</div>
-              <img src="/images/source/footer/royal-prestige.jpeg" alt="Royal Prestige" className="max-h-24 w-auto object-contain" />
+              <img src="/images/source/footer/royal-prestige.webp" alt="Royal Prestige" className="max-h-24 w-auto object-contain" />
             </div>
           </div>
         </div>
