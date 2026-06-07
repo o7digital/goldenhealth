@@ -211,6 +211,18 @@ const sourceSections = [
       ["Bienestar diario", "Apoyo a hábitos de hidratación dentro del programa integral."],
     ],
   },
+  {
+    id: "ciencia-deporte",
+    title: "Ciencia del Deporte",
+    intro: "Programa para deportistas de alto rendimiento. Busca crear disciplina y estimular la capacidad de movimiento con intención, propósito, empoderamiento energético y excelente condición física para alcanzar objetivos día a día.",
+    image: "/images/source/programa/ciencia-deporte.jpeg",
+    items: [
+      ["Deportistas de alto rendimiento", "Trabajo orientado a disciplina, constancia y mejora física."],
+      ["Movimiento con propósito", "Estimula la capacidad de movimiento con intención y objetivos claros."],
+      ["Empoderamiento energético", "Enfoque para sostener energía, rendimiento y recuperación."],
+      ["Condición física", "Apoyo para alcanzar metas diarias y mejorar desempeño."],
+    ],
+  },
 ];
 
 const products = [
