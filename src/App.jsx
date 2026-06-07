@@ -309,17 +309,11 @@ const programPages = [
     slug: "menu-golden-health",
     title: "Menú Golden Health",
     eyebrow: "Ménus Golden Health",
-    image: "/images/source/programa/arte-buen-comer.jpeg",
-    intro: "Una sección dedicada a menús saludables para acompañar la semana y reforzar hábitos alimenticios dentro del Programa Integral.",
-    sections: [
-      {
-        title: "Menú Golden Health",
-        text: "Opciones de alimentación para aprender nuevos hábitos saludables y sostener el objetivo de vivir más y mejor.",
-      },
-      {
-        title: "Menú carnes",
-        text: "Contenido de menú para quienes buscan una guía práctica de alimentación semanal dentro del enfoque Golden Health.",
-      },
+    image: "/images/source/programa/alimentos-golden-health.jpeg",
+    intro: "MÉNUS GOLDEN HEALTH",
+    downloads: [
+      ["MENÚ GOLDEN HEALTH", "https://www.goldenhealthmx.com/_files/ugd/e47656_a5b631e3351a47448a73a2d560f98691.pdf"],
+      ["MENÚ CARNES", "https://www.goldenhealthmx.com/_files/ugd/e47656_4d8ac404c4bd40c389267c6e92a9ccb2.pdf"],
     ],
   },
   {
@@ -1016,6 +1010,35 @@ export default function GoldenHealthMockup() {
                   </div>
                 </div>
 
+                <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
+                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    Volver a Programa Integral
+                  </a>
+                </div>
+              </article>
+            ) : selectedProgram.slug === "menu-golden-health" ? (
+              <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
+                <div className="grid gap-10 p-8 lg:grid-cols-[1fr_0.8fr] lg:p-12">
+                  <div className="flex flex-col justify-center">
+                    <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Programa Integral</p>
+                    <h1 className="mt-4 text-5xl font-semibold uppercase tracking-[-0.04em] text-[#14261c] md:text-7xl">{selectedProgram.intro}</h1>
+                    <div className="mt-10 flex flex-col gap-4 sm:max-w-md">
+                      {selectedProgram.downloads.map(([label, href]) => (
+                        <a
+                          key={href}
+                          href={href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center justify-between rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424]"
+                        >
+                          <span>{label}</span>
+                          <span aria-hidden="true">›</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                  <img src={selectedProgram.image} alt="ALIMENTOS GOLDENHEALTHMX.jpeg" className="mx-auto aspect-[2/3] max-h-[760px] w-full max-w-md rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                </div>
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
                   <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
                     Volver a Programa Integral
