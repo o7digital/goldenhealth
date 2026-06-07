@@ -201,6 +201,12 @@ const consultations = [
   ["Consultas en Madrid", "Disponible online", "1 h", "$1,500"],
 ];
 
+const newsItems = [
+  ["Comunidad Golden Health", "Videos, entrevistas y testimonios deben vivir como contenido editorial, no como bloque principal del home."],
+  ["Educacion en bienestar", "Capsulas sobre medicina preventiva, longevidad, nutricion funcional y habitos sostenibles."],
+  ["Eventos y aliados", "Espacio para conferencias, colaboraciones y novedades de la comunidad Golden Health."],
+];
+
 export default function GoldenHealthMockup() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [language, setLanguage] = useState("es");
@@ -212,6 +218,7 @@ export default function GoldenHealthMockup() {
     ["#terapias", t.nav.therapies],
     ["#historia", "Historia"],
     ["#tienda", t.nav.shop],
+    ["#noticias", "Noticias"],
     ["#contacto", t.nav.contact],
   ];
 
@@ -457,19 +464,35 @@ export default function GoldenHealthMockup() {
         </section>
 
         <section id="historia" className="px-5 pb-24 lg:px-8">
-          <div className="mx-auto grid max-w-7xl gap-8 rounded-[2.7rem] bg-[#14261c] p-8 text-white lg:grid-cols-[0.8fr_1.2fr] lg:p-12">
-            <div>
+          <div className="mx-auto grid max-w-7xl gap-10 rounded-[2.7rem] bg-[#14261c] p-8 text-white lg:grid-cols-[0.85fr_1.15fr] lg:p-12">
+            <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#d3aa45]">Historia</p>
               <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">Dra. Silvia del Moral</h2>
               <p className="mt-3 text-xl text-white/80">Fundadora y medico responsable</p>
+              <img
+                src="/images/source/history/dra-silvia.jpeg"
+                alt="Dra. Silvia del Moral, fundadora de Golden Health"
+                className="aspect-[4/5] w-full max-w-sm rounded-[2rem] object-cover shadow-2xl shadow-black/25"
+              />
             </div>
             <div className="space-y-5 leading-8 text-white/74">
-              <p>Profesional de la salud en Mexico reconocida por su enfoque innovador en medicina preventiva y regenerativa.</p>
-              <p>Con mas de 35 anos de experiencia en ciencias de la vida y cuidados de la salud, ha consolidado su liderazgo en el sector.</p>
+              <p>Golden Health nace de la vision de la Dra. Silvia del Moral: integrar medicina preventiva, medicina regenerativa y bienestar funcional en una experiencia clara, humana y medible.</p>
+              <p>Con mas de 35 anos de trayectoria en ciencias de la vida y cuidados de la salud, la Dra. Silvia ha desarrollado un enfoque que combina evaluacion medica, terapias biologicas, nutricion y acompanamiento para personas que buscan energia, prevencion y longevidad saludable.</p>
               <p>Su formacion incluye medicina, pediatria por el Instituto Nacional de Pediatria y estudios en el Goetheanum en Dornach, Suiza, centro mundial del movimiento antroposofico.</p>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl bg-white/10 p-5"><p className="font-semibold text-[#d3aa45]">International Star for Quality</p><p>2017</p></div>
-                <div className="rounded-2xl bg-white/10 p-5"><p className="font-semibold text-[#d3aa45]">Excelencia empresarial</p><p>2019</p></div>
+              <p>La propuesta de Golden Health no se basa en promesas rapidas: parte de entender el estado actual del paciente, disenar una ruta personalizada y dar seguimiento para construir habitos sostenibles.</p>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div className="rounded-2xl bg-white/10 p-4">
+                  <img src="/images/source/history/certificado.jpeg" alt="Certificado Dra. Silvia del Moral" className="aspect-[4/3] w-full rounded-xl object-cover" />
+                  <p className="mt-3 text-sm font-semibold text-[#d3aa45]">Formacion continua</p>
+                </div>
+                <div className="rounded-2xl bg-white/10 p-4">
+                  <img src="/images/source/history/bid-group.jpeg" alt="International Star for Quality 2017" className="mx-auto h-24 w-24 rounded-full object-cover" />
+                  <p className="mt-3 text-sm font-semibold text-[#d3aa45]">International Star for Quality 2017</p>
+                </div>
+                <div className="rounded-2xl bg-white/10 p-4">
+                  <img src="/images/source/history/bizz-awards.png" alt="Excelencia empresarial 2019" className="mx-auto h-24 w-24 object-contain" />
+                  <p className="mt-3 text-sm font-semibold text-[#d3aa45]">Excelencia empresarial 2019</p>
+                </div>
               </div>
             </div>
           </div>
@@ -491,6 +514,26 @@ export default function GoldenHealthMockup() {
                   <p className="mt-4 text-xl font-semibold text-[#9b7a2f]">{price}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="noticias" className="px-5 pb-24 lg:px-8">
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-sm ring-1 ring-black/5 lg:p-12">
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Noticias</p>
+                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Comunidad Golden Health</h2>
+                <p className="mt-5 text-lg leading-8 text-[#607064]">Esta parte funciona mejor como blog social y editorial: contenido vivo, entrevistas, testimonios y novedades, sin quitar fuerza al mensaje principal del home.</p>
+              </div>
+              <div className="grid gap-4 md:grid-cols-3">
+                {newsItems.map(([title, text]) => (
+                  <article key={title} className="rounded-3xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
+                    <p className="text-lg font-semibold text-[#14261c]">{title}</p>
+                    <p className="mt-3 text-sm leading-6 text-[#667166]">{text}</p>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
