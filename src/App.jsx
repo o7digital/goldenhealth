@@ -126,6 +126,8 @@ const sliderImages = [
   { src: "/images/golden-health/comunidad.webp", alt: { es: "Comunidad Golden Health", en: "Golden Health community" } },
 ];
 
+copy.en = copy.es;
+
 const sourceSections = [
   {
     id: "programa",
@@ -616,7 +618,7 @@ export default function GoldenHealthMockup() {
   const [language, setLanguage] = useState("es");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [path, setPath] = useState(() => window.location.pathname);
-  const t = copy.es;
+  const t = copy[language];
   const page =
     path === "/historia" ? "historia" :
     path === "/programa-integral" ? "programa" :
@@ -804,7 +806,7 @@ export default function GoldenHealthMockup() {
               <img
                 key={slide.src}
                 src={slide.src}
-                alt={slide.alt[language]}
+                alt={slide.alt.es}
                 className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
                   activeSlide === index ? "opacity-100" : "opacity-0"
                 }`}
