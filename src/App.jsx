@@ -20,7 +20,7 @@ const copy = {
     ],
     therapiesEyebrow: "Terapias y servicios",
     therapiesTitle: "Salud de alto nivel, presentada con claridad y confianza.",
-    therapiesText: "La nueva arquitectura permite explicar cada servicio, mejorar conversión y preparar el sitio para SEO médico local en Ciudad de México.",
+    therapiesText: "",
     details: "Ver detalle →",
     services: [
       ["✦", "Medicina de longevidad", "Evaluación integral para entender energía, metabolismo, inflamación, hábitos y objetivos de salud."],
