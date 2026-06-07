@@ -155,12 +155,14 @@ const sourceSections = [
   },
   {
     id: "nutricion",
-    title: "Salud nutricional y Zinzino",
-    intro: "Nutricion personalizada basada en pruebas para orientar suplementos y medir progreso con datos objetivos.",
+    title: "Salud nutricional",
+    intro: "Nutrición personalizada basada en pruebas. El objetivo es evitar la fase de prueba y error, encontrar la mejor manera de mejorar la salud con datos objetivos y guiar la suplementación según necesidades específicas.",
+    image: "/images/source/programa/salud-nutricional.webp",
     items: [
-      ["Nueva generacion de nutricion", "Pruebas de sangre seca como punto de partida para conocer el estado del cuerpo y guiar decisiones."],
-      ["BalanceOil Kit with Test", "Omega 3, polifenoles de oliva y vitamina D3 para apoyar equilibrio Omega 6:3, cerebro, corazon e sistema inmune."],
-      ["Seguimiento", "Nueva prueba cada 4 meses para comparar resultados y ajustar la ingesta."],
+      ["Nueva generación de la nutrición", "Pruebas de sangre seca como punto de partida natural para conocer el estado del cuerpo."],
+      ["Datos objetivos", "Resultados para orientar decisiones y evitar suposiciones en el proceso de salud."],
+      ["Suplementos adaptados", "Recomendaciones ajustadas a necesidades específicas para mantenerse en el camino adecuado."],
+      ["Zinzino BalanceTest", "Herramienta de seguimiento para comparar progreso y ajustar la ingesta."],
     ],
   },
   {
