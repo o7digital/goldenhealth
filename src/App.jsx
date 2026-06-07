@@ -391,12 +391,19 @@ const programPages = [
     slug: "ciencia-del-deporte",
     title: "Ciencia del Deporte",
     eyebrow: "Programa para deportistas de alto rendimiento",
-    image: "/images/source/programa/ciencia-deporte.jpeg",
-    intro: "Tienes que cultivar el vigor del cuerpo para preservar el espíritu. Este programa busca crear disciplina y estimular la capacidad de movimiento con intención y propósito.",
+    image: "/images/source/programa/deporte-golden-health.jpeg",
+    secondaryImage: "/images/source/programa/deporte-alto-rendimiento.jpeg",
+    intro: "“Tienes que cultivar el vigor del cuerpo para preservar el espíritu \"",
+    quoteAuthor: "Luc de Clapiers",
+    description: "Este programa busca crear disciplina y estimular la capacidad de movimiento que tenemos con una intensión y un propósito de alcanzar un estado de empoderamiento energético y una excelente condición física que nos permita alcanzar objetivos que tenemos día a día.",
+    designedFor: [
+      "Personas que deseen mejorar su estado o aspecto físico.",
+      "Aprende nuevos hábitos saludables para optimizar la desintoxicación natural.",
+    ],
     sections: [
       {
         title: "¿En qué consiste?",
-        text: "Busca alcanzar un estado de empoderamiento energético y una excelente condición física que permita cumplir objetivos día a día.",
+        text: "Este programa busca crear disciplina y estimular la capacidad de movimiento que tenemos con una intensión y un propósito de alcanzar un estado de empoderamiento energético y una excelente condición física que nos permita alcanzar objetivos que tenemos día a día.",
       },
       {
         title: "Diseñado para",
@@ -1039,6 +1046,46 @@ export default function GoldenHealthMockup() {
                   </div>
                   <img src={selectedProgram.image} alt="ALIMENTOS GOLDENHEALTHMX.jpeg" className="mx-auto aspect-[2/3] max-h-[760px] w-full max-w-md rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
+                <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
+                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    Volver a Programa Integral
+                  </a>
+                </div>
+              </article>
+            ) : selectedProgram.slug === "ciencia-del-deporte" ? (
+              <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
+                <div className="p-8 text-center lg:p-12">
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Programa Integral</p>
+                  <h1 className="mx-auto mt-4 max-w-5xl text-4xl font-semibold uppercase tracking-[-0.03em] text-[#14261c] md:text-6xl">PROGRAMA PARA DEPORTISTAS DE ALTO RENDIMIENTO</h1>
+                  <blockquote className="mx-auto mt-8 max-w-3xl text-xl leading-8 text-[#607064]">
+                    <p>{selectedProgram.intro}</p>
+                    <footer className="mt-2 font-semibold text-[#9b7a2f]">{selectedProgram.quoteAuthor}</footer>
+                  </blockquote>
+                </div>
+
+                <div className="grid gap-10 px-8 pb-12 lg:grid-cols-[0.85fr_1.15fr] lg:px-12">
+                  <img src={selectedProgram.image} alt="DEPORTEGOLDENHEALTHMX.jpeg" className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <div className="flex flex-col justify-center">
+                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">¿En que consiste?</h2>
+                    <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.description}</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-10 border-t border-[#efe6cd] bg-[#fbf8ef] p-8 lg:grid-cols-[1fr_0.9fr] lg:p-12">
+                  <div className="flex flex-col justify-center">
+                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">Diseñado para:</h2>
+                    <ul className="mt-8 space-y-5 text-xl leading-8 text-[#607064]">
+                      {selectedProgram.designedFor.map((item) => (
+                        <li key={item} className="flex gap-4">
+                          <span className="text-[#9b7a2f]">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <img src={selectedProgram.secondaryImage} alt="240fbbcc54f5c9451ae6da4ddde9263e.jpeg" className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                </div>
+
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
                   <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
                     Volver a Programa Integral
