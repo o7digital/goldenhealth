@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const copy = {
   es: {
-    nav: { method: "Inicio", therapies: "Programa Integral", shop: "Tienda", contact: "Contacto" },
+    nav: { home: "Inicio", program: "Programa Integral", history: "Historia", shop: "Tienda", consultations: "Consultas", news: "Noticias", contact: "Contacto" },
     cta: "Agenda tu valoración",
     heroBadge: "Clínica de longevidad y bienestar integral en CDMX",
     heroTitle: "Salud celular para vivir mejor, no solo vivir más.",
@@ -58,9 +58,78 @@ const copy = {
     submit: "Enviar solicitud",
     whatsapp: "WhatsApp / Agenda",
     slideLabel: "Mostrar slide",
+    programHomeTitle: "Longevidad y Anti-envejecimiento",
+    programHomeText: "Es imposible detener el envejecimiento, pero en Golden Health contamos con tratamientos y programas para retrasar sus efectos, mejorar la calidad de vida y prevenir el envejecimiento prematuro.",
+    newsEyebrow: "Noticias",
+    newsTitle: "Comunidad Golden Health",
+    newsText: "Videos, entrevistas, cápsulas y testimonios de la comunidad Golden Health.",
+    shopIntro: "Tratamientos biológicos y protocolos funcionales con fichas completas, imagen real, precio y solicitud directa.",
+    shopProducts: "Ver productos →",
+    productSheet: "Ficha producto",
+    viewSheet: "Ver ficha",
+    includes: "Incluye",
+    quantity: "Cantidad *",
+    addToCart: "Agregar al carrito",
+    backToShop: "Volver a tienda",
+    medicalConsultations: "Consultas Médicas",
+    ourServices: "Nuestros servicios",
+    bookNow: "Reservar ahora",
+    back: "‹ Volver",
+    scheduleService: "Programa tu servicio",
+    scheduleText: "Revisa nuestra disponibilidad y reserva la fecha y hora que más te convengan",
+    selectDateTime: "Selecciona fecha y hora",
+    timezone: "hora estándar central (GMT-6)",
+    weekdays: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
+    noAvailability: "No hay disponibilidad",
+    nextSession: "Próxima sesión disponible",
+    serviceDetails: "Detalles del servicio",
+    moreDetails: "Más detalles",
+    servicePlaceholder: "Servicio de Golden Health. El motor real de reservas se integrará después.",
+    next: "Siguiente",
+    programBack: "Volver a Programa Integral",
+    firstVideo: "Ver primer video",
+    watchVideo: "VER VIDEO",
+    whatItIncludes: "¿En qué consiste?",
+    bookButton: "Reserva ahora",
+    designedFor: "Diseñado para:",
+    whatIsProgram: "¿Qué es este programa?",
+    howTo: "¿Cómo lograrlo?",
+    objectives: "¿Cuáles son los objetivos?",
+    buy: "COMPRAR",
+    strategicPartners: "Aliados estratégicos",
+    pageTitles: {
+      home: "Golden Health MX",
+      programa: "Programa Integral | Golden Health MX",
+      programaDetalle: "Programa Integral | Golden Health MX",
+      historia: "Historia | Golden Health MX",
+      tienda: "Tienda | Golden Health MX",
+      producto: "Producto | Golden Health MX",
+      consultas: "Consultas | Golden Health MX",
+      booking: "Reservar consulta | Golden Health MX",
+      noticias: "Noticias | Golden Health MX",
+      contacto: "Contacto | Golden Health MX",
+    },
+    programSummary: {
+      items: [
+        ["Medicina Regenerativa", "Tratamiento de renovación celular de origen franco-suizo para regenerar y revitalizar órganos, apoyar la salud hormonal y frenar la degeneración celular."],
+        ["Acción regenerativa bio-celular", "Tratamientos biológicos de origen alemán orientados a mineralizar, oxigenar y nutrir órganos y sistemas."],
+        ["Escuela del arte", "Conferencias, seminarios web, podcast, cocina saludable y mindfulness para sostener el bienestar a largo plazo."],
+        ["Deportistas de alto rendimiento", "Disciplina, movimiento, oxigenación y condición física para mejorar el funcionamiento físico y cognitivo."],
+      ],
+    },
+    historyEyebrow: "Historia",
+    historySubtitle: "Fundadora y médico responsable",
+    historyParagraphs: [
+      "Golden Health nace de la visión de la Dra. Silvia del Moral: integrar medicina preventiva, medicina regenerativa y bienestar funcional en una experiencia clara, humana y medible.",
+      "Con más de 35 años de trayectoria en ciencias de la vida y cuidados de la salud, la Dra. Silvia ha desarrollado un enfoque que combina evaluación médica, terapias biológicas, nutrición y acompañamiento.",
+      "Su formación incluye medicina, pediatría por el Instituto Nacional de Pediatría y estudios en el Goetheanum en Dornach, Suiza.",
+      "La propuesta de Golden Health parte de entender el estado actual del paciente, diseñar una ruta personalizada y dar seguimiento para construir hábitos sostenibles.",
+    ],
+    continuingEducation: "Formación continua",
+    businessExcellence: "Excelencia empresarial 2019",
   },
   en: {
-    nav: { method: "Method", therapies: "Therapies", shop: "Shop", contact: "Contact" },
+    nav: { home: "Home", program: "Integral Program", history: "Story", shop: "Shop", consultations: "Consultations", news: "News", contact: "Contact" },
     cta: "Book your assessment",
     heroBadge: "Longevity and integrated wellness clinic in CDMX",
     heroTitle: "Cellular health to live better, not just longer.",
@@ -116,7 +185,165 @@ const copy = {
     submit: "Send request",
     whatsapp: "WhatsApp / Booking",
     slideLabel: "Show slide",
+    programHomeTitle: "Longevity and Anti-Aging",
+    programHomeText: "Aging cannot be stopped, but Golden Health offers treatments and programs designed to slow its effects, improve quality of life, and help prevent premature aging.",
+    newsEyebrow: "News",
+    newsTitle: "Golden Health Community",
+    newsText: "Videos, interviews, short capsules, and testimonials from the Golden Health community.",
+    shopIntro: "Biological treatments and functional protocols with complete sheets, real product images, pricing, and direct requests.",
+    shopProducts: "View products →",
+    productSheet: "Product sheet",
+    viewSheet: "View sheet",
+    includes: "Includes",
+    quantity: "Quantity *",
+    addToCart: "Add to cart",
+    backToShop: "Back to shop",
+    medicalConsultations: "Medical Consultations",
+    ourServices: "Our services",
+    bookNow: "Book now",
+    back: "‹ Back",
+    scheduleService: "Schedule your service",
+    scheduleText: "Check our availability and reserve the date and time that work best for you",
+    selectDateTime: "Select date and time",
+    timezone: "Central standard time (GMT-6)",
+    weekdays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    noAvailability: "No availability",
+    nextSession: "Next available session",
+    serviceDetails: "Service details",
+    moreDetails: "More details",
+    servicePlaceholder: "Golden Health service. The real booking engine will be integrated later.",
+    next: "Next",
+    programBack: "Back to Integral Program",
+    firstVideo: "Watch first video",
+    watchVideo: "WATCH VIDEO",
+    whatItIncludes: "What does it include?",
+    bookButton: "Book now",
+    designedFor: "Designed for:",
+    whatIsProgram: "What is this program?",
+    howTo: "How do we achieve it?",
+    objectives: "What are the objectives?",
+    buy: "BUY",
+    strategicPartners: "Strategic partners",
+    pageTitles: {
+      home: "Golden Health MX",
+      programa: "Integral Program | Golden Health MX",
+      programaDetalle: "Integral Program | Golden Health MX",
+      historia: "Story | Golden Health MX",
+      tienda: "Shop | Golden Health MX",
+      producto: "Product | Golden Health MX",
+      consultas: "Consultations | Golden Health MX",
+      booking: "Book a consultation | Golden Health MX",
+      noticias: "News | Golden Health MX",
+      contacto: "Contact | Golden Health MX",
+    },
+    programSummary: {
+      items: [
+        ["Regenerative Medicine", "Cell-renewal treatment of Franco-Swiss origin designed to regenerate and revitalize organs, support hormonal health, and slow cellular degeneration."],
+        ["Bio-cellular regenerative action", "German-origin biological treatments focused on mineralizing, oxygenating, and nourishing organs and systems."],
+        ["The art school", "Conferences, webinars, podcasts, healthy cooking, and mindfulness to sustain long-term wellbeing."],
+        ["High-performance athletes", "Discipline, movement, oxygenation, and physical conditioning to improve physical and cognitive performance."],
+      ],
+    },
+    historyEyebrow: "Story",
+    historySubtitle: "Founder and medical director",
+    historyParagraphs: [
+      "Golden Health was born from Dr. Silvia del Moral's vision: integrating preventive medicine, regenerative medicine, and functional wellbeing into a clear, human, and measurable experience.",
+      "With more than 35 years in life sciences and health care, Dr. Silvia has developed an approach that combines medical evaluation, biological therapies, nutrition, and follow-up.",
+      "Her training includes medicine, pediatrics at the National Institute of Pediatrics, and studies at the Goetheanum in Dornach, Switzerland.",
+      "Golden Health starts by understanding each patient's current state, designing a personalized path, and following up to build sustainable habits.",
+    ],
+    continuingEducation: "Continuing education",
+    businessExcellence: "Business excellence 2019",
   },
+};
+
+const programEnglish = {
+  antroposofia: {
+    title: "Anthroposophy",
+    eyebrow: "Integral Program",
+    intro: "Andres Munoz Cardenas is an anthroposophical psychologist who teaches a different, more integrated understanding of health.",
+    profileTitle: "Andres Munoz Cardenas",
+    profileSubtitle: "Founder and CEO of Kamino Florido",
+    videoText: "Ongoing L.U.S. activity: the first of 12 conferences on creating the reality we long for through the 7 Steps of Freedom. Psychoanalysis and Anthroposophy.",
+  },
+  "arte-del-buen-comer-y-buen-beber": {
+    title: "The Art of Eating and Drinking Well",
+    eyebrow: "The art of eating well, drinking well, and living well",
+    intro: "EATING IS A NEED, BUT EATING INTELLIGENTLY IS AN ART",
+    programHeading: "DISCOVER THE PROGRAM",
+    questionHeading: "What is it?",
+    finalText: "Our art of eating and drinking well program is a healthy, intelligent, and balanced way of eating, inspired by leading nutrition programs. We guide patients toward a healthier lifestyle reflected in disease prevention, especially degenerative conditions, premature aging prevention, increased energy, and immune-system support.",
+  },
+  "menu-golden-health": {
+    title: "Golden Health Menu",
+    eyebrow: "Golden Health Menus",
+    intro: "GOLDEN HEALTH MENUS",
+  },
+  "anti-aging": {
+    title: "Regenerative Medicine",
+    eyebrow: "Regenerative Medicine",
+    intro: "These treatments aim to slow cellular degeneration and reactivate each person's health potential.",
+    introExtra: "With these treatments, we help prevent and reverse premature aging.",
+    diagnosticTitle: "Healthy Ageing Diagnosis",
+    diagnosticText: "At the beginning of treatment, a medical consultation is held with our health expert, who determines the most appropriate treatment to slow aging and improve quality of life in each case.",
+    regenerationTitle: "Advanced Cellular Regeneration Treatment",
+  },
+  "terapias-biologicas": {
+    title: "Biological Therapies",
+    eyebrow: "Biological Medicine",
+    intro: "Biological medicine focuses on developing human potential through science, technology, and new health-care trends.",
+  },
+  "hidratacion-funcional": {
+    title: "Functional Hydration",
+    eyebrow: "Golden Health Authorized Partner",
+    intro: "Kangen water is alkaline ionized water treated through electrolysis to alter its pH and create a unique molecular structure.",
+  },
+  "ciencia-del-deporte": {
+    title: "Sports Science",
+    eyebrow: "Program for high-performance athletes",
+    intro: "\"You must cultivate the vigor of the body to preserve the spirit.\"",
+    description: "This program builds discipline and stimulates purposeful movement to reach a state of energetic empowerment and excellent physical condition for daily goals.",
+    designedFor: ["People who want to improve their physical condition or appearance.", "Learn new healthy habits to optimize natural detoxification."],
+  },
+  "equilibrio-mente-cuerpo-espiritu": {
+    title: "Mind, Body, and Spirit Balance",
+    eyebrow: "Body, Mind, and Spirit",
+    intro: "Everything you need for an optimal state of health",
+    objectivesIntro: "This program has two main objectives:",
+    objectives: ["1. Recover general wellbeing through a learning experience.", "2. Continue the learning process in daily life through the knowledge and lifestyle habits acquired at Golden Health."],
+  },
+  "salud-nutricional": {
+    title: "Nutritional Health",
+    eyebrow: "Pioneers in test-based personalized nutrition",
+    intro: "Challenging the status quo since 2005",
+    nutritionTitle: "Introducing the new generation of nutrition",
+    balanceText: "Get a clear view of your body's Omega 6:3 ratio and see your individual results before and after the BalanceTest.",
+    deliveryItems: ["First delivery", "2 BalanceOil+, 300 ml", "2 BalanceOil, 100 ml", "2 BalanceTests*", "*One BalanceTest is included in your first delivery; the second is delivered after 120 days so you can compare before and after results."],
+  },
+};
+
+const productEnglish = {
+  "tratamientos-biologicos": ["Biological Treatments", "Biological support package for integral wellbeing and cellular balance.", ["10 sessions", "2 biological treatments", "Guidance to choose the protocol according to your goal"]],
+  "tratamiento-antioxidante": ["Antioxidant Treatment", "Endocrine antioxidant therapy designed to protect, repair, and support vitality.", ["Citoplacell formula", "Antioxidant support", "Anti-aging and energy focus"]],
+  "tratamiento-anti-inflamatorio": ["Anti-inflammatory Treatment", "Anti-inflammatory protocol to support recovery, mobility, and metabolic balance.", ["Bioenzym formula", "Anti-inflammatory support", "Focused on osteoarticular and systemic wellbeing"]],
+  "tratamiento-sindrome-metabolico": ["Metabolic Syndrome Treatment", "Therapy for metabolic support and functional regulation.", ["Revercell formula", "Metabolism support", "Medical consultation recommended"]],
+  "tratamiento-detox": ["Detox Treatment", "Detox protocol to support toxin elimination and digestive wellbeing.", ["Celltox formula", "Oral chelation", "Healthy habit support"]],
+  "celulas-madre": ["Stem Cells", "Longevity activator focused on protection, repair, and revitalization.", ["Human Ultracell VI", "Treatment cycles", "Premium longevity protocol"]],
+  "tratamiento-hormonal-hombre": ["Men's Hormonal Treatment", "Functional support for male hormonal-cycle regulation.", ["Androcell formula", "Male hormonal support", "Medical evaluation recommended"]],
+  "tratamiento-hormonal-mujer": ["Women's Hormonal Treatment", "Functional support for female hormonal-cycle regulation.", ["Biofemin formula", "Female hormonal support", "Personalized follow-up"]],
+};
+
+const consultationEnglish = {
+  "consulta-online-1": ["Online Consultation", "Available online", "30 min"],
+  "consulta-presencial": ["In-person Consultation", "At the clinic", "1 hr"],
+  "consultas-en-madrid": ["Madrid Consultations", "Available online", "1 hr"],
+};
+
+const withLocale = (item, translations, language) => {
+  if (language !== "en") return item;
+  const translated = translations[item.slug];
+  if (!translated) return item;
+  return { ...item, ...translated };
 };
 
 const sliderImages = [
@@ -614,31 +841,48 @@ const socialLinks = [
 
 export default function GoldenHealthMockup() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [language, setLanguage] = useState("es");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [path, setPath] = useState(() => window.location.pathname);
+  const language = path === "/en" || path.startsWith("/en/") ? "en" : "es";
+  const routePath = language === "en" ? path.replace(/^\/en(?=\/|$)/, "") || "/" : path;
   const t = copy[language];
   const page =
-    path === "/historia" ? "historia" :
-    path === "/programa-integral" ? "programa" :
-    path.startsWith("/programa-integral/") ? "programaDetalle" :
-    path === "/tienda" ? "tienda" :
-    path === "/consultas" ? "consultas" :
-    path === "/noticias" ? "noticias" :
-    path === "/contacto" ? "contacto" :
-    path.startsWith("/booking-calendar/") ? "booking" :
-    path.startsWith("/producto/") ? "producto" :
+    routePath === "/historia" ? "historia" :
+    routePath === "/programa-integral" ? "programa" :
+    routePath.startsWith("/programa-integral/") ? "programaDetalle" :
+    routePath === "/tienda" ? "tienda" :
+    routePath === "/consultas" ? "consultas" :
+    routePath === "/noticias" ? "noticias" :
+    routePath === "/contacto" ? "contacto" :
+    routePath.startsWith("/booking-calendar/") ? "booking" :
+    routePath.startsWith("/producto/") ? "producto" :
     "home";
-  const selectedProgram = programPages.find((program) => path === `/programa-integral/${program.slug}`);
-  const selectedProduct = products.find((product) => path === `/producto/${product.slug}`);
-  const selectedConsultation = consultations.find((consultation) => path === `/booking-calendar/${consultation[5]}`);
+  const localizedPrograms = programPages.map((program) => withLocale(program, programEnglish, language));
+  const localizedProducts = products.map((product) => {
+    if (language !== "en" || !productEnglish[product.slug]) return product;
+    const [name, summary, details] = productEnglish[product.slug];
+    return { ...product, name, summary, details };
+  });
+  const localizedConsultations = consultations.map((consultation) => {
+    if (language !== "en" || !consultationEnglish[consultation[5]]) return consultation;
+    const [name, meta, duration] = consultationEnglish[consultation[5]];
+    return [name, meta, duration, consultation[3], consultation[4], consultation[5]];
+  });
+  const selectedProgram = localizedPrograms.find((program) => routePath === `/programa-integral/${program.slug}`);
+  const selectedProduct = localizedProducts.find((product) => routePath === `/producto/${product.slug}`);
+  const selectedConsultation = localizedConsultations.find((consultation) => routePath === `/booking-calendar/${consultation[5]}`);
+  const localizedHref = useCallback((href, locale = language) => {
+    if (href.startsWith("/#")) return href;
+    if (!href.startsWith("/")) return href;
+    return locale === "en" ? `/en${href === "/" ? "" : href}` : href;
+  }, [language]);
   const navLinks = [
-    ["/", "Inicio"],
-    ["/programa-integral", "Programa Integral"],
-    ["/historia", "Historia"],
+    ["/", t.nav.home],
+    ["/programa-integral", t.nav.program],
+    ["/historia", t.nav.history],
     ["/tienda", t.nav.shop],
-    ["/consultas", "Consultas"],
-    ["/noticias", "Noticias"],
+    ["/consultas", t.nav.consultations],
+    ["/noticias", t.nav.news],
     ["/contacto", t.nav.contact],
   ];
   const navigate = (event, href) => {
@@ -646,10 +890,15 @@ export default function GoldenHealthMockup() {
       return;
     }
     event.preventDefault();
-    window.history.pushState({}, "", href);
+    window.history.pushState({}, "", localizedHref(href));
     setPath(window.location.pathname);
     setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: "instant" });
+  };
+  const switchLanguage = (locale) => {
+    window.history.pushState({}, "", localizedHref(routePath, locale));
+    setPath(window.location.pathname);
+    setMobileMenuOpen(false);
   };
 
   useEffect(() => {
@@ -665,6 +914,45 @@ export default function GoldenHealthMockup() {
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
+  useEffect(() => {
+    const origin = window.location.origin;
+    const canonicalPath = localizedHref(routePath);
+    const alternateEs = routePath;
+    const alternateEn = localizedHref(routePath, "en");
+    const pageTitle = t.pageTitles[page] || "Golden Health MX";
+    const description = page === "programa" ? t.programHomeText : page === "contacto" ? t.contactText : t.heroText;
+
+    document.title = pageTitle;
+
+    const setMeta = (name, content) => {
+      let meta = document.querySelector(`meta[name="${name}"]`);
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.setAttribute("name", name);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute("content", content);
+    };
+    const setLink = (selector, attrs) => {
+      let link = document.querySelector(selector);
+      if (!link) {
+        link = document.createElement("link");
+        document.head.appendChild(link);
+      }
+      Object.entries(attrs).forEach(([key, value]) => link.setAttribute(key, value));
+    };
+
+    setMeta("description", description);
+    setLink('link[rel="canonical"]', { rel: "canonical", href: `${origin}${canonicalPath}` });
+    setLink('link[rel="alternate"][hreflang="es-MX"]', { rel: "alternate", hreflang: "es-MX", href: `${origin}${alternateEs}` });
+    setLink('link[rel="alternate"][hreflang="en"]', { rel: "alternate", hreflang: "en", href: `${origin}${alternateEn}` });
+    setLink('link[rel="alternate"][hreflang="x-default"]', { rel: "alternate", hreflang: "x-default", href: `${origin}${alternateEs}` });
+  }, [language, localizedHref, page, routePath, t]);
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f7f3ea] text-[#17231c] selection:bg-[#d3aa45]/30">
@@ -685,12 +973,12 @@ export default function GoldenHealthMockup() {
             {navLinks.map(([href, label]) => (
               href === "/programa-integral" ? (
                 <div key={href} className="group relative py-2">
-                  <a href={href} onClick={(event) => navigate(event, href)} className="hover:text-[#9b7a2f]">{label}</a>
+                  <a href={localizedHref(href)} onClick={(event) => navigate(event, href)} className="hover:text-[#9b7a2f]">{label}</a>
                   <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 border-t-4 border-[#d0d0d0] bg-white py-3 text-[#535353] opacity-0 shadow-xl transition group-hover:visible group-hover:opacity-100">
-                    {programPages.map((program) => (
+                    {localizedPrograms.map((program) => (
                       <a
                         key={program.slug}
-                        href={`/programa-integral/${program.slug}`}
+                        href={localizedHref(`/programa-integral/${program.slug}`)}
                         onClick={(event) => navigate(event, `/programa-integral/${program.slug}`)}
                         className="block px-6 py-2.5 text-lg font-normal hover:bg-[#f7f3ea] hover:text-[#9b7a2f]"
                       >
@@ -700,7 +988,7 @@ export default function GoldenHealthMockup() {
                   </div>
                 </div>
               ) : (
-                <a key={href} href={href} onClick={(event) => navigate(event, href)} className="hover:text-[#9b7a2f]">{label}</a>
+                <a key={href} href={localizedHref(href)} onClick={(event) => navigate(event, href)} className="hover:text-[#9b7a2f]">{label}</a>
               )
             ))}
           </nav>
@@ -708,23 +996,23 @@ export default function GoldenHealthMockup() {
           <div className="flex items-center gap-3">
             <div className="flex rounded-full border border-[#1f3b2c]/15 bg-white/70 p-1 text-xs font-semibold text-[#1f3b2c] shadow-sm">
               {(["es", "en"]).map((locale) => (
-                <button
+                <a
                   key={locale}
-                  type="button"
-                  onClick={() => {
-                    setLanguage(locale);
-                    setMobileMenuOpen(false);
+                  href={localizedHref(routePath, locale)}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    switchLanguage(locale);
                   }}
                   className={`rounded-full px-3 py-2 transition ${
                     language === locale ? "bg-[#1f3b2c] text-white" : "hover:bg-[#f4ead0]"
                   }`}
                 >
                   {locale.toUpperCase()}
-                </button>
+                </a>
               ))}
             </div>
             <a
-              href="/contacto"
+              href={localizedHref("/contacto")}
               onClick={(event) => navigate(event, "/contacto")}
               className="hidden rounded-full bg-[#1f3b2c] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1f3b2c]/20 transition hover:-translate-y-0.5 hover:bg-[#14261c] md:inline-flex"
             >
@@ -749,20 +1037,20 @@ export default function GoldenHealthMockup() {
               href === "/programa-integral" ? (
                 <div key={href}>
                   <a
-                    href={href}
+	                    href={localizedHref(href)}
                     onClick={(event) => {
                       navigate(event, href);
                       setMobileMenuOpen(false);
                     }}
                     className="block rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-[#f4ead0]"
                   >
-                    {label}
+	                    {label}
                   </a>
                   <div className="ml-3 border-l border-[#1f3b2c]/10 pl-3">
-                    {programPages.map((program) => (
+                    {localizedPrograms.map((program) => (
                       <a
                         key={program.slug}
-                        href={`/programa-integral/${program.slug}`}
+                        href={localizedHref(`/programa-integral/${program.slug}`)}
                         onClick={(event) => navigate(event, `/programa-integral/${program.slug}`)}
                         className="block rounded-xl px-4 py-2 text-sm text-[#607064] hover:bg-[#f4ead0]"
                       >
@@ -774,7 +1062,7 @@ export default function GoldenHealthMockup() {
               ) : (
                 <a
                   key={href}
-                  href={href}
+	                  href={localizedHref(href)}
                   onClick={(event) => {
                     navigate(event, href);
                     setMobileMenuOpen(false);
@@ -786,7 +1074,7 @@ export default function GoldenHealthMockup() {
               )
             ))}
             <a
-              href="/contacto"
+	              href={localizedHref("/contacto")}
               onClick={(event) => navigate(event, "/contacto")}
               className="mt-2 flex items-center justify-center rounded-full bg-[#1f3b2c] px-4 py-3 text-sm font-semibold text-white"
             >
@@ -837,7 +1125,7 @@ export default function GoldenHealthMockup() {
               </div>
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d3aa45] px-7 py-4 font-semibold text-[#14261c] shadow-xl shadow-[#d3aa45]/25 transition hover:-translate-y-0.5 hover:bg-[#c99c32]">
+                <a href={localizedHref("/contacto")} onClick={(event) => navigate(event, "/contacto")} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d3aa45] px-7 py-4 font-semibold text-[#14261c] shadow-xl shadow-[#d3aa45]/25 transition hover:-translate-y-0.5 hover:bg-[#c99c32]">
                   {t.primaryCta}
                 </a>
                 <a href="#metodo" className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/12 px-7 py-4 font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20">
@@ -892,7 +1180,7 @@ export default function GoldenHealthMockup() {
               {t.services.map(([icon, title, text]) => (
                 <a
                   key={title}
-                  href="/programa-integral"
+                  href={localizedHref("/programa-integral")}
                   onClick={(event) => navigate(event, "/programa-integral")}
                   className="group rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1f3b2c]/10"
                 >
@@ -908,14 +1196,14 @@ export default function GoldenHealthMockup() {
 
         <section className="px-5 pb-24 lg:px-8">
           <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-xl ring-1 ring-black/5 lg:p-12">
-            {sourceSections.filter((section) => section.id === "programa").map((section) => (
-              <article key={section.id}>
-                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Programa Integral</p>
-                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{section.title}</h2>
-                <p className="mt-6 text-xl leading-8 text-[#607064]">{section.intro}</p>
+	            {sourceSections.filter((section) => section.id === "programa").map((section) => (
+	              <article key={section.id}>
+	                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.therapiesEyebrow}</p>
+	                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.programHomeTitle}</h2>
+	                <p className="mt-6 text-xl leading-8 text-[#607064]">{t.programHomeText}</p>
                 <div className="mt-10 grid gap-5 md:grid-cols-2">
-                  {section.items.map(([title, text]) => (
-                    <div key={title} className="rounded-2xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
+	                  {t.programSummary.items.map(([title, text]) => (
+	                    <div key={title} className="rounded-2xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
                       <h3 className="text-xl font-semibold text-[#14261c]">{title}</h3>
                       <p className="mt-3 leading-7 text-[#607064]">{text}</p>
                     </div>
@@ -954,9 +1242,9 @@ export default function GoldenHealthMockup() {
           <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-sm ring-1 ring-black/5 lg:p-12">
             <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Noticias</p>
-                <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Comunidad Golden Health</h1>
-                <p className="mt-5 text-lg leading-8 text-[#607064]">Videos, entrevistas, capsulas y testimonios de la comunidad Golden Health.</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.newsEyebrow}</p>
+                <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.newsTitle}</h1>
+                <p className="mt-5 text-lg leading-8 text-[#607064]">{t.newsText}</p>
               </div>
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {communityVideos.map((video) => (
@@ -985,15 +1273,15 @@ export default function GoldenHealthMockup() {
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.therapiesEyebrow}</p>
-              <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Longevidad y Anti-envejecimiento</h1>
-              <p className="mt-5 text-lg leading-8 text-[#607064]">Es imposible detener el envejecimiento, pero en Golden Health contamos con tratamientos y programas para retrasar sus efectos, mejorar la calidad de vida y prevenir el envejecimiento prematuro.</p>
+              <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.programHomeTitle}</h1>
+              <p className="mt-5 text-lg leading-8 text-[#607064]">{t.programHomeText}</p>
             </div>
 
             <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {programPages.map((program) => (
+              {localizedPrograms.map((program) => (
                 <a
                   key={program.slug}
-                  href={`/programa-integral/${program.slug}`}
+                  href={localizedHref(`/programa-integral/${program.slug}`)}
                   onClick={(event) => navigate(event, `/programa-integral/${program.slug}`)}
                   className="group overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1f3b2c]/10"
                 >
@@ -1002,7 +1290,7 @@ export default function GoldenHealthMockup() {
                     <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9b7a2f]">{program.eyebrow}</p>
                     <h2 className="mt-3 text-xl font-semibold text-[#14261c]">{program.title}</h2>
                     <p className="mt-3 line-clamp-4 leading-7 text-[#607064]">{program.intro}</p>
-                    <p className="mt-6 inline-flex text-sm font-semibold text-[#9b7a2f]">Ver detalle →</p>
+	                    <p className="mt-6 inline-flex text-sm font-semibold text-[#9b7a2f]">{t.details}</p>
                   </div>
                 </a>
               ))}
@@ -1016,7 +1304,7 @@ export default function GoldenHealthMockup() {
         <section className="px-5 py-32 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="mb-8 text-sm text-[#607064]">
-              <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="font-semibold text-[#9b7a2f]">Programa Integral</a>
+              <a href={localizedHref("/programa-integral")} onClick={(event) => navigate(event, "/programa-integral")} className="font-semibold text-[#9b7a2f]">{t.nav.program}</a>
               <span> / {selectedProgram.title}</span>
             </div>
             {selectedProgram.slug === "antroposofia" ? (
@@ -1059,15 +1347,15 @@ export default function GoldenHealthMockup() {
                   <img src={selectedProgram.videoImage} alt="ANDRES MUÑOZ ANTROPOSOFIA" className="w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
-                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
-                    Volver a Programa Integral
+                  <a href={localizedHref("/programa-integral")} onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    {t.programBack}
                   </a>
                 </div>
               </article>
             ) : selectedProgram.slug === "arte-del-buen-comer-y-buen-beber" ? (
               <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
                 <div className="p-8 text-center lg:p-12">
-                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Programa Integral</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.nav.program}</p>
                   <h1 className="mt-4 text-4xl font-semibold uppercase tracking-[-0.03em] text-[#14261c] md:text-6xl">EL ARTE DEL BUEN COMER Y BUEN BEBER</h1>
                   <p className="mx-auto mt-6 max-w-4xl text-xl font-semibold uppercase leading-8 text-[#607064]">{selectedProgram.intro}</p>
                   <img src={selectedProgram.image} alt="ARTE DEL COMER GOLDEN HEALTH MX.jpeg" className="mx-auto mt-10 aspect-square w-full max-w-2xl rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
@@ -1107,8 +1395,8 @@ export default function GoldenHealthMockup() {
                 </div>
 
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
-                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
-                    Volver a Programa Integral
+                  <a href={localizedHref("/programa-integral")} onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    {t.programBack}
                   </a>
                 </div>
               </article>
@@ -1116,7 +1404,7 @@ export default function GoldenHealthMockup() {
               <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
                 <div className="grid gap-10 p-8 lg:grid-cols-[1fr_0.8fr] lg:p-12">
                   <div className="flex flex-col justify-center">
-                    <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Programa Integral</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.nav.program}</p>
                     <h1 className="mt-4 text-5xl font-semibold uppercase tracking-[-0.04em] text-[#14261c] md:text-7xl">{selectedProgram.intro}</h1>
                     <div className="mt-10 flex flex-col gap-4 sm:max-w-md">
                       {selectedProgram.downloads.map(([label, href]) => (
@@ -1136,17 +1424,17 @@ export default function GoldenHealthMockup() {
                   <img src={selectedProgram.image} alt="ALIMENTOS GOLDENHEALTHMX.jpeg" className="mx-auto aspect-[2/3] max-h-[760px] w-full max-w-md rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
-                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
-                    Volver a Programa Integral
+                  <a href={localizedHref("/programa-integral")} onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    {t.programBack}
                   </a>
                 </div>
               </article>
             ) : selectedProgram.slug === "anti-aging" ? (
               <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
                 <div className="p-8 text-center lg:p-12">
-                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Programa Integral</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.nav.program}</p>
                   <h1 className="mt-4 text-5xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-7xl">{selectedProgram.title}</h1>
-                  <h2 className="mt-8 text-3xl font-semibold tracking-[-0.03em] text-[#14261c]">¿En qué consiste?</h2>
+                  <h2 className="mt-8 text-3xl font-semibold tracking-[-0.03em] text-[#14261c]">{t.whatItIncludes}</h2>
                   <p className="mx-auto mt-5 max-w-4xl text-xl leading-9 text-[#607064]">{selectedProgram.intro}</p>
                   <p className="mx-auto mt-4 max-w-4xl text-xl leading-9 text-[#607064]">{selectedProgram.introExtra}</p>
                 </div>
@@ -1184,15 +1472,15 @@ export default function GoldenHealthMockup() {
                 </div>
 
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
-                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
-                    Volver a Programa Integral
+                  <a href={localizedHref("/programa-integral")} onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    {t.programBack}
                   </a>
                 </div>
               </article>
             ) : selectedProgram.slug === "ciencia-del-deporte" ? (
               <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
                 <div className="p-8 text-center lg:p-12">
-                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Programa Integral</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.nav.program}</p>
                   <h1 className="mx-auto mt-4 max-w-5xl text-4xl font-semibold uppercase tracking-[-0.03em] text-[#14261c] md:text-6xl">PROGRAMA PARA DEPORTISTAS DE ALTO RENDIMIENTO</h1>
                   <blockquote className="mx-auto mt-8 max-w-3xl text-xl leading-8 text-[#607064]">
                     <p>{selectedProgram.intro}</p>
@@ -1203,14 +1491,14 @@ export default function GoldenHealthMockup() {
                 <div className="grid gap-10 px-8 pb-12 lg:grid-cols-[0.85fr_1.15fr] lg:px-12">
                   <img src={selectedProgram.image} alt="DEPORTEGOLDENHEALTHMX.jpeg" className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                   <div className="flex flex-col justify-center">
-                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">¿En que consiste?</h2>
+                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{t.whatItIncludes}</h2>
                     <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.description}</p>
                   </div>
                 </div>
 
                 <div className="grid gap-10 border-t border-[#efe6cd] bg-[#fbf8ef] p-8 lg:grid-cols-[1fr_0.9fr] lg:p-12">
                   <div className="flex flex-col justify-center">
-                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">Diseñado para:</h2>
+                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{t.designedFor}</h2>
                     <ul className="mt-8 space-y-5 text-xl leading-8 text-[#607064]">
                       {selectedProgram.designedFor.map((item) => (
                         <li key={item} className="flex gap-4">
@@ -1224,15 +1512,15 @@ export default function GoldenHealthMockup() {
                 </div>
 
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
-                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
-                    Volver a Programa Integral
+                  <a href={localizedHref("/programa-integral")} onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    {t.programBack}
                   </a>
                 </div>
               </article>
             ) : selectedProgram.slug === "equilibrio-mente-cuerpo-espiritu" ? (
               <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
                 <div className="p-8 text-center lg:p-12">
-                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Programa Integral</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.nav.program}</p>
                   <h1 className="mt-4 text-5xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-7xl">Cuerpo, Mente y Espíritu</h1>
                   <p className="mt-6 text-xl leading-8 text-[#607064]">{selectedProgram.intro}</p>
                 </div>
@@ -1240,7 +1528,7 @@ export default function GoldenHealthMockup() {
                 <div className="grid gap-10 px-8 pb-12 lg:grid-cols-[0.85fr_1.15fr] lg:px-12">
                   <img src={selectedProgram.image} alt="5846111ef0cee33ce4b8986bfce78786.jpeg" className="h-full min-h-[480px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                   <div className="flex flex-col justify-center">
-                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">¿Qué es este programa?</h2>
+                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{t.whatIsProgram}</h2>
                     <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.sections[0].text}</p>
                     <p className="mt-5 text-xl leading-9 text-[#607064]">{selectedProgram.sections[0].extra}</p>
                   </div>
@@ -1248,21 +1536,21 @@ export default function GoldenHealthMockup() {
 
                 <div className="grid gap-10 border-t border-[#efe6cd] bg-[#fbf8ef] p-8 lg:grid-cols-[1fr_0.85fr] lg:p-12">
                   <div className="flex flex-col justify-center">
-                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">¿Como lograrlo?</h2>
+                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{t.howTo}</h2>
                     <p className="mt-6 text-xl leading-8 text-[#607064]">{selectedProgram.objectivesIntro}</p>
                     <div className="mt-8 space-y-5 text-xl leading-8 text-[#607064]">
                       {selectedProgram.objectives.map((item) => (
                         <p key={item}>{item}</p>
                       ))}
                     </div>
-                    <h3 className="mt-10 text-3xl font-semibold tracking-[-0.03em] text-[#14261c]">¿Cuales son los objetivos?</h3>
+                    <h3 className="mt-10 text-3xl font-semibold tracking-[-0.03em] text-[#14261c]">{t.objectives}</h3>
                   </div>
                   <img src={selectedProgram.secondaryImage} alt="9db7e64eee11ec1b341fffb2e7c00a79.jpeg" className="h-full min-h-[480px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
 
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
-                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
-                    Volver a Programa Integral
+                  <a href={localizedHref("/programa-integral")} onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    {t.programBack}
                   </a>
                 </div>
               </article>
@@ -1314,8 +1602,8 @@ export default function GoldenHealthMockup() {
                 </div>
 
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
-                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
-                    Volver a Programa Integral
+                  <a href={localizedHref("/programa-integral")} onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    {t.programBack}
                   </a>
                 </div>
               </article>
@@ -1349,8 +1637,8 @@ export default function GoldenHealthMockup() {
                   ))}
                 </div>
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
-                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
-                    Volver a Programa Integral
+                  <a href={localizedHref("/programa-integral")} onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    {t.programBack}
                   </a>
                 </div>
               </article>
@@ -1363,9 +1651,9 @@ export default function GoldenHealthMockup() {
         <section id="historia" className="px-5 py-32 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-10 rounded-[2.7rem] bg-[#14261c] p-8 text-white lg:grid-cols-[0.85fr_1.15fr] lg:p-12">
             <div className="space-y-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#d3aa45]">Historia</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#d3aa45]">{t.historyEyebrow}</p>
               <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">Dra. Silvia del Moral</h2>
-              <p className="mt-3 text-xl text-white/80">Fundadora y medico responsable</p>
+              <p className="mt-3 text-xl text-white/80">{t.historySubtitle}</p>
               <img
                 src="/images/source/history/dra-silvia.webp"
                 alt="Dra. Silvia del Moral, fundadora de Golden Health"
@@ -1373,14 +1661,13 @@ export default function GoldenHealthMockup() {
               />
             </div>
             <div className="space-y-5 leading-8 text-white/74">
-              <p>Golden Health nace de la vision de la Dra. Silvia del Moral: integrar medicina preventiva, medicina regenerativa y bienestar funcional en una experiencia clara, humana y medible.</p>
-              <p>Con mas de 35 anos de trayectoria en ciencias de la vida y cuidados de la salud, la Dra. Silvia ha desarrollado un enfoque que combina evaluacion medica, terapias biologicas, nutricion y acompanamiento para personas que buscan energia, prevencion y longevidad saludable.</p>
-              <p>Su formacion incluye medicina, pediatria por el Instituto Nacional de Pediatria y estudios en el Goetheanum en Dornach, Suiza, centro mundial del movimiento antroposofico.</p>
-              <p>La propuesta de Golden Health no se basa en promesas rapidas: parte de entender el estado actual del paciente, disenar una ruta personalizada y dar seguimiento para construir habitos sostenibles.</p>
+              {t.historyParagraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
               <div className="grid gap-4 md:grid-cols-3">
                 <div className="rounded-2xl bg-white/10 p-4">
                   <img src="/images/source/history/certificado.webp" alt="Certificado Dra. Silvia del Moral" className="aspect-[4/3] w-full rounded-xl object-cover" />
-                  <p className="mt-3 text-sm font-semibold text-[#d3aa45]">Formacion continua</p>
+                  <p className="mt-3 text-sm font-semibold text-[#d3aa45]">{t.continuingEducation}</p>
                 </div>
                 <div className="rounded-2xl bg-white/10 p-4">
                   <img src="/images/source/history/bid-group.webp" alt="International Star for Quality 2017" className="mx-auto h-24 w-24 rounded-full object-cover" />
@@ -1388,7 +1675,7 @@ export default function GoldenHealthMockup() {
                 </div>
                 <div className="rounded-2xl bg-white/10 p-4">
                   <img src="/images/source/history/bizz-awards.webp" alt="Excelencia empresarial 2019" className="mx-auto h-24 w-24 object-contain" />
-                  <p className="mt-3 text-sm font-semibold text-[#d3aa45]">Excelencia empresarial 2019</p>
+                  <p className="mt-3 text-sm font-semibold text-[#d3aa45]">{t.businessExcellence}</p>
                 </div>
               </div>
             </div>
@@ -1403,14 +1690,14 @@ export default function GoldenHealthMockup() {
             <div className="bg-[#e7d39b] p-10 lg:p-14">
               <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#14261c] text-2xl text-[#d3aa45]">🛍</div>
               <h2 className="mt-8 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.shopTitle}</h2>
-              <p className="mt-5 text-lg leading-8 text-[#3f493f]">Tratamientos biologicos y protocolos funcionales con fichas completas, imagen real, precio y solicitud directa.</p>
-              <a href="#productos" className="mt-8 inline-flex rounded-full bg-[#14261c] px-6 py-4 font-semibold text-white shadow-lg shadow-[#14261c]/20">Ver productos →</a>
+	              <p className="mt-5 text-lg leading-8 text-[#3f493f]">{t.shopIntro}</p>
+	              <a href="#productos" className="mt-8 inline-flex rounded-full bg-[#14261c] px-6 py-4 font-semibold text-white shadow-lg shadow-[#14261c]/20">{t.shopProducts}</a>
             </div>
             <div id="productos" className="grid gap-5 p-8 md:grid-cols-2 lg:p-12">
-              {products.map((product) => (
+	              {localizedProducts.map((product) => (
                 <a
                   key={product.slug}
-                  href={`/producto/${product.slug}`}
+	                  href={localizedHref(`/producto/${product.slug}`)}
                   onClick={(event) => navigate(event, `/producto/${product.slug}`)}
                   className="group overflow-hidden rounded-3xl border border-[#efe6cd] bg-[#fbf8ef] transition hover:-translate-y-1 hover:bg-white hover:shadow-xl hover:shadow-[#1f3b2c]/10"
                 >
@@ -1420,7 +1707,7 @@ export default function GoldenHealthMockup() {
                     <p className="mt-2 text-sm leading-6 text-[#6a756d]">{product.summary}</p>
                     <div className="mt-5 flex items-center justify-between gap-4">
                       <p className="text-xl font-semibold text-[#9b7a2f]">{product.price}</p>
-                      <span className="rounded-full bg-[#14261c] px-4 py-2 text-sm font-semibold text-white">Ver ficha</span>
+	                      <span className="rounded-full bg-[#14261c] px-4 py-2 text-sm font-semibold text-white">{t.viewSheet}</span>
                     </div>
                   </div>
                 </a>
@@ -1435,7 +1722,7 @@ export default function GoldenHealthMockup() {
         <section className="px-5 py-32 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="mb-8 text-sm text-[#607064]">
-              <a href="/tienda" onClick={(event) => navigate(event, "/tienda")} className="font-semibold text-[#9b7a2f]">Tienda</a>
+              <a href={localizedHref("/tienda")} onClick={(event) => navigate(event, "/tienda")} className="font-semibold text-[#9b7a2f]">{t.nav.shop}</a>
               <span> / {selectedProduct.name}</span>
             </div>
             <div className="grid gap-10 rounded-[2.7rem] bg-white p-8 shadow-xl ring-1 ring-black/5 lg:grid-cols-[0.95fr_1.05fr] lg:p-12">
@@ -1443,12 +1730,12 @@ export default function GoldenHealthMockup() {
                 <img src={selectedProduct.image} alt={selectedProduct.name} className="aspect-square w-full object-contain" />
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Ficha producto</p>
+	                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.productSheet}</p>
                 <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-6xl">{selectedProduct.name}</h1>
                 <p className="mt-5 text-3xl font-semibold text-[#9b7a2f]">{selectedProduct.price}</p>
                 <p className="mt-6 text-lg leading-8 text-[#607064]">{selectedProduct.summary}</p>
                 <div className="mt-8 rounded-3xl bg-[#14261c] p-6 text-white">
-                  <p className="font-semibold text-[#d3aa45]">Incluye</p>
+	                  <p className="font-semibold text-[#d3aa45]">{t.includes}</p>
                   <ul className="mt-4 space-y-3 text-white/80">
                     {selectedProduct.details.map((detail) => (
                       <li key={detail} className="flex gap-3">
@@ -1459,7 +1746,7 @@ export default function GoldenHealthMockup() {
                   </ul>
                 </div>
                 <div className="mt-8">
-                  <p className="text-sm font-semibold text-[#607064]">Cantidad *</p>
+	                  <p className="text-sm font-semibold text-[#607064]">{t.quantity}</p>
                   <div className="mt-3 inline-flex h-14 items-center overflow-hidden border border-[#14261c]/25 bg-white">
                     <button type="button" className="h-full w-14 text-2xl text-[#9b9b9b]">−</button>
                     <span className="flex h-full w-14 items-center justify-center border-x border-[#14261c]/15 text-[#14261c]">1</span>
@@ -1467,8 +1754,8 @@ export default function GoldenHealthMockup() {
                   </div>
                 </div>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <button type="button" className="inline-flex justify-center rounded-none bg-[#3f3f3f] px-10 py-4 font-serif text-xl text-white transition hover:bg-[#242424] sm:min-w-80">Agregar al carrito</button>
-                  <a href="/tienda" onClick={(event) => navigate(event, "/tienda")} className="inline-flex justify-center rounded-none border border-[#14261c]/20 px-7 py-4 font-semibold text-[#14261c]">Volver a tienda</a>
+	                  <button type="button" className="inline-flex justify-center rounded-none bg-[#3f3f3f] px-10 py-4 font-serif text-xl text-white transition hover:bg-[#242424] sm:min-w-80">{t.addToCart}</button>
+	                  <a href={localizedHref("/tienda")} onClick={(event) => navigate(event, "/tienda")} className="inline-flex justify-center rounded-none border border-[#14261c]/20 px-7 py-4 font-semibold text-[#14261c]">{t.backToShop}</a>
                 </div>
               </div>
             </div>
@@ -1480,11 +1767,11 @@ export default function GoldenHealthMockup() {
         <section id="consultas" className="px-5 py-32 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Consultas Medicas</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Nuestros servicios</h2>
+	              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.medicalConsultations}</p>
+	              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.ourServices}</h2>
             </div>
             <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {consultations.map(([name, meta, duration, price, image, slug]) => (
+	              {localizedConsultations.map(([name, meta, duration, price, image, slug]) => (
                 <div key={name} className="overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-black/5">
                   <img src={image} alt={name} className="aspect-[4/2.7] w-full object-cover" />
                   <div className="p-7">
@@ -1494,7 +1781,7 @@ export default function GoldenHealthMockup() {
                       <p className="text-[#607064]">{duration}</p>
                       <p className="text-3xl font-semibold text-[#14261c]">{price}</p>
                     </div>
-                    <a href={`/booking-calendar/${slug}`} onClick={(event) => navigate(event, `/booking-calendar/${slug}`)} className="mt-6 inline-flex w-full justify-center rounded-full bg-[#1f3b2c] px-5 py-3 font-semibold text-white">Reservar ahora</a>
+	                    <a href={localizedHref(`/booking-calendar/${slug}`)} onClick={(event) => navigate(event, `/booking-calendar/${slug}`)} className="mt-6 inline-flex w-full justify-center rounded-full bg-[#1f3b2c] px-5 py-3 font-semibold text-white">{t.bookNow}</a>
                   </div>
                 </div>
               ))}
@@ -1506,16 +1793,16 @@ export default function GoldenHealthMockup() {
         {page === "booking" && selectedConsultation && (
         <section className="px-5 py-32 lg:px-8">
           <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-xl ring-1 ring-black/5 lg:p-12">
-            <a href="/consultas" onClick={(event) => navigate(event, "/consultas")} className="inline-flex items-center gap-2 text-lg text-[#607064]">‹ Volver</a>
+            <a href={localizedHref("/consultas")} onClick={(event) => navigate(event, "/consultas")} className="inline-flex items-center gap-2 text-lg text-[#607064]">{t.back}</a>
             <div className="mt-16">
-              <h1 className="font-serif text-5xl text-[#3f3f3f]">Programa tu servicio</h1>
-              <p className="mt-6 text-xl leading-8 text-[#607064]">Revisa nuestra disponibilidad y reserva la fecha y hora que más te convengan</p>
+	              <h1 className="font-serif text-5xl text-[#3f3f3f]">{t.scheduleService}</h1>
+	              <p className="mt-6 text-xl leading-8 text-[#607064]">{t.scheduleText}</p>
             </div>
             <div className="mt-20 grid gap-12 lg:grid-cols-[1fr_0.55fr]">
               <div>
                 <div className="flex flex-wrap items-end justify-between gap-4 border-b border-[#d6d2ca] pb-4">
-                  <h2 className="font-serif text-3xl text-[#3f3f3f]">Selecciona fecha y hora</h2>
-                  <p className="text-[#aaa39b]">hora estándar central (GMT-6)</p>
+	                  <h2 className="font-serif text-3xl text-[#3f3f3f]">{t.selectDateTime}</h2>
+	                  <p className="text-[#aaa39b]">{t.timezone}</p>
                 </div>
                 <div className="mt-8 flex items-center justify-center gap-14 text-2xl text-[#777]">
                   <span>‹</span>
@@ -1523,30 +1810,30 @@ export default function GoldenHealthMockup() {
                   <span>›</span>
                 </div>
                 <div className="mt-10 grid grid-cols-7 text-center text-[#c8c3bd]">
-                  {["dom", "lun", "mar", "mié", "jue", "vie", "sáb"].map((day, index) => (
+	                  {t.weekdays.map((day, index) => (
                     <div key={day} className="space-y-3">
                       <p>{day}</p>
                       <p className="text-2xl">{index === 0 ? "31" : index}</p>
                     </div>
                   ))}
                 </div>
-                <p className="mt-28 text-center text-2xl text-[#8a8580]">No hay disponibilidad</p>
+	                <p className="mt-28 text-center text-2xl text-[#8a8580]">{t.noAvailability}</p>
                 <div className="mt-12 flex justify-center">
-                  <button type="button" className="bg-[#9e9e9e] px-24 py-5 font-serif text-2xl text-white">Próxima sesión disponible</button>
+	                  <button type="button" className="bg-[#9e9e9e] px-24 py-5 font-serif text-2xl text-white">{t.nextSession}</button>
                 </div>
               </div>
               <aside>
-                <h2 className="border-b border-[#d6d2ca] pb-4 font-serif text-3xl text-[#3f3f3f]">Detalles del servicio</h2>
+	                <h2 className="border-b border-[#d6d2ca] pb-4 font-serif text-3xl text-[#3f3f3f]">{t.serviceDetails}</h2>
                 <div className="mt-8 space-y-5 text-xl text-[#607064]">
                   <p>{selectedConsultation[0]}</p>
                   <p>{selectedConsultation[2]}</p>
                   <p>{selectedConsultation[3]}</p>
                   <details className="border-t border-[#e2ddd4] pt-5">
-                    <summary className="cursor-pointer">Más detalles</summary>
-                    <p className="mt-4 text-base leading-7">Servicio de Golden Health. El motor real de reservas se integrará después.</p>
+	                    <summary className="cursor-pointer">{t.moreDetails}</summary>
+	                    <p className="mt-4 text-base leading-7">{t.servicePlaceholder}</p>
                   </details>
                 </div>
-                <button type="button" className="mt-10 w-full bg-[#c7c7c7] px-8 py-5 font-serif text-2xl text-white">Siguiente</button>
+	                <button type="button" className="mt-10 w-full bg-[#c7c7c7] px-8 py-5 font-serif text-2xl text-white">{t.next}</button>
               </aside>
             </div>
           </div>
@@ -1638,7 +1925,7 @@ export default function GoldenHealthMockup() {
             </div>
           </div>
           <div className="text-center">
-            <h2 className="font-serif text-5xl font-semibold tracking-normal text-black">Aliados estratégicos</h2>
+            <h2 className="font-serif text-5xl font-semibold tracking-normal text-black">{t.strategicPartners}</h2>
             <div className="mt-10 grid grid-cols-2 items-center justify-items-center gap-8 md:grid-cols-4">
               <img src="/images/source/footer/enagic.png" alt="Enagic" className="max-h-24 w-auto object-contain" />
               <img src="/images/source/footer/incruises.png" alt="inCruises" className="max-h-16 w-auto object-contain" />
@@ -1649,7 +1936,7 @@ export default function GoldenHealthMockup() {
         </div>
       </footer>
 
-      <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="fixed bottom-5 right-5 z-50 rounded-full bg-[#1f3b2c] px-5 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#1f3b2c]/30">{t.whatsapp}</a>
+      <a href={localizedHref("/contacto")} onClick={(event) => navigate(event, "/contacto")} className="fixed bottom-5 right-5 z-50 rounded-full bg-[#1f3b2c] px-5 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#1f3b2c]/30">{t.whatsapp}</a>
     </div>
   );
 }
