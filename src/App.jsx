@@ -1566,14 +1566,18 @@ export default function GoldenHealthMockup() {
                 <div className="flex items-start gap-4">
                   <span className="mt-1 shrink-0 text-[#d3aa45]">✉</span>
                   <div className="min-w-0">
-                    <p className="font-semibold break-all">silvia.delmoral@goldenhealth.com.mx</p>
+                    <a href="mailto:silvia.delmoral@goldenhealth.com.mx" className="select-text break-all font-semibold underline-offset-4 hover:underline">
+                      silvia.delmoral@goldenhealth.com.mx
+                    </a>
                     <p className="text-white/70 break-words">{t.emailMeta}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <span className="mt-1 shrink-0 text-[#d3aa45]">☎</span>
                   <div className="min-w-0">
-                    <p className="font-semibold break-words">+55 55 5417 8009</p>
+                    <a href="tel:+525554178009" className="select-text break-words font-semibold underline-offset-4 hover:underline">
+                      +55 55 5417 8009
+                    </a>
                     <p className="text-white/70 break-words">{t.phoneMeta}</p>
                   </div>
                 </div>
@@ -1600,8 +1604,12 @@ export default function GoldenHealthMockup() {
               <p>Miguel Hidalgo CP 11529, Ciudad de México</p>
             </div>
             <div className="mt-8 space-y-1 text-lg leading-7">
-              <p className="break-all">silvia.delmoral@goldenhealth.com.mx</p>
-              <p>+55 55 5417 8009</p>
+              <a href="mailto:silvia.delmoral@goldenhealth.com.mx" className="block select-text break-all underline-offset-4 hover:underline">
+                silvia.delmoral@goldenhealth.com.mx
+              </a>
+              <a href="tel:+525554178009" className="block select-text underline-offset-4 hover:underline">
+                +55 55 5417 8009
+              </a>
             </div>
             <div className="mt-7 flex justify-center gap-3 md:justify-start">
               {["◎", "f", "in", "▶"].map((icon) => (
@@ -1616,7 +1624,7 @@ export default function GoldenHealthMockup() {
             <div className="mt-10 grid grid-cols-2 items-center justify-items-center gap-8 md:grid-cols-4">
               <img src="/images/source/footer/enagic.png" alt="Enagic" className="max-h-24 w-auto object-contain" />
               <img src="/images/source/footer/incruises.png" alt="inCruises" className="max-h-16 w-auto object-contain" />
-              <img src="/images/source/footer/zinzino.png" alt="Zinzino" className="max-h-16 w-auto object-contain" />
+              <div aria-label="ZINZINO" className="text-3xl font-black uppercase tracking-normal text-black">ZINZINO</div>
               <img src="/images/source/footer/royal-prestige.jpeg" alt="Royal Prestige" className="max-h-24 w-auto object-contain" />
             </div>
           </div>
