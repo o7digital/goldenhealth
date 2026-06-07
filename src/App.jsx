@@ -280,7 +280,6 @@ export default function GoldenHealthMockup() {
   const selectedConsultation = consultations.find((consultation) => path === `/booking-calendar/${consultation[5]}`);
   const navLinks = [
     ["/", "Inicio"],
-    ["/#programa", "Programa"],
     ["/#terapias", t.nav.therapies],
     ["/historia", "Historia"],
     ["/tienda", t.nav.shop],
@@ -499,36 +498,6 @@ export default function GoldenHealthMockup() {
                   <p className="mt-3 leading-7 text-[#607064]">{text}</p>
                   <p className="mt-6 inline-flex text-sm font-semibold text-[#9b7a2f]">{t.details}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="programa" className="px-5 pb-24 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Contenido del sitio original</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Programas Golden Health</h2>
-              <p className="mt-5 text-lg leading-8 text-[#607064]">Secciones principales del sitio goldenhealthmx.com consolidadas para mantener completa la informacion comercial.</p>
-            </div>
-            <div className="mt-12 space-y-6">
-              {sourceSections.map((section) => (
-                <article key={section.id} id={section.id} className="rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5">
-                  <div className="grid gap-8 lg:grid-cols-[0.45fr_1fr]">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-[#14261c]">{section.title}</h3>
-                      <p className="mt-3 leading-7 text-[#607064]">{section.intro}</p>
-                    </div>
-                    <div className="grid gap-4 md:grid-cols-2">
-                      {section.items.map(([title, text]) => (
-                        <div key={title} className="rounded-2xl bg-[#fbf8ef] p-5 ring-1 ring-[#efe6cd]">
-                          <p className="font-semibold text-[#14261c]">{title}</p>
-                          <p className="mt-2 text-sm leading-6 text-[#667166]">{text}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </article>
               ))}
             </div>
           </div>
