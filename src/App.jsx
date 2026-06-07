@@ -165,11 +165,13 @@ const sourceSections = [
   },
   {
     id: "antroposofia",
-    title: "Antroposofia",
-    intro: "Contenido con Andres Munoz Cardenas, psicologo de orientacion antroposofica, sobre una concepcion integral de la salud.",
+    title: "Antroposofía",
+    intro: "Andrés Muñoz Cárdenas es psicólogo de orientación antroposófica y fundador de la escuela Kamino Florido. Su enfoque aporta una concepción diferente e integral de la salud.",
+    image: "/images/source/programa/andres-munoz-cardenas.webp",
+    link: "https://www.kaminoflorido.com/",
     items: [
-      ["Los 7 Pasos de la Libertad", "Conferencias y contenidos sobre crear realidad, psicoanalisis y antroposofia."],
-      ["Kamino Florido", "Aliado educativo enfocado en desarrollo humano y bienestar integral."],
+      ["Andrés Muñoz Cárdenas", "Fundador y CEO de la escuela Kamino Florido."],
+      ["Los 7 Pasos de la Libertad", "Contenido educativo sobre antroposofía, desarrollo humano y una visión más amplia de la salud."],
     ],
   },
   {
@@ -498,6 +500,36 @@ export default function GoldenHealthMockup() {
                   <p className="mt-3 leading-7 text-[#607064]">{text}</p>
                   <p className="mt-6 inline-flex text-sm font-semibold text-[#9b7a2f]">{t.details}</p>
                 </div>
+              ))}
+            </div>
+
+            <div className="mt-16 space-y-5">
+              {sourceSections.map((section) => (
+                <article key={section.id} id={section.id} className="rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5 lg:p-9">
+                  <div className={`grid gap-8 ${section.image ? "lg:grid-cols-[0.65fr_1.35fr]" : ""}`}>
+                    {section.image && (
+                      <img src={section.image} alt={section.items[0][0]} className="aspect-[4/5] w-full rounded-[1.5rem] object-cover" />
+                    )}
+                    <div>
+                      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9b7a2f]">Programa Integral</p>
+                      <h3 className="mt-3 text-3xl font-semibold text-[#14261c]">{section.title}</h3>
+                      <p className="mt-4 max-w-3xl text-lg leading-8 text-[#607064]">{section.intro}</p>
+                      <div className="mt-7 grid gap-4 md:grid-cols-2">
+                        {section.items.map(([title, text]) => (
+                          <div key={title} className="rounded-2xl bg-[#fbf8ef] p-5 ring-1 ring-[#efe6cd]">
+                            <p className="font-semibold text-[#14261c]">{title}</p>
+                            <p className="mt-2 text-sm leading-6 text-[#607064]">{text}</p>
+                          </div>
+                        ))}
+                      </div>
+                      {section.link && (
+                        <a href={section.link} className="mt-6 inline-flex rounded-none bg-[#3f3f3f] px-6 py-3 font-serif text-lg text-white" target="_blank" rel="noreferrer">
+                          Ver primero video
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
