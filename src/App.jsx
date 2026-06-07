@@ -652,9 +652,17 @@ export default function GoldenHealthMockup() {
                     ))}
                   </ul>
                 </div>
+                <div className="mt-8">
+                  <p className="text-sm font-semibold text-[#607064]">Cantidad *</p>
+                  <div className="mt-3 inline-flex h-14 items-center overflow-hidden border border-[#14261c]/25 bg-white">
+                    <button type="button" className="h-full w-14 text-2xl text-[#9b9b9b]">−</button>
+                    <span className="flex h-full w-14 items-center justify-center border-x border-[#14261c]/15 text-[#14261c]">1</span>
+                    <button type="button" className="h-full w-14 text-2xl text-[#14261c]">+</button>
+                  </div>
+                </div>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="inline-flex justify-center rounded-full bg-[#d3aa45] px-7 py-4 font-semibold text-[#14261c]">Solicitar por WhatsApp</a>
-                  <a href="/tienda" onClick={(event) => navigate(event, "/tienda")} className="inline-flex justify-center rounded-full border border-[#14261c]/20 px-7 py-4 font-semibold text-[#14261c]">Volver a tienda</a>
+                  <button type="button" className="inline-flex justify-center rounded-none bg-[#3f3f3f] px-10 py-4 font-serif text-xl text-white transition hover:bg-[#242424] sm:min-w-80">Agregar al carrito</button>
+                  <a href="/tienda" onClick={(event) => navigate(event, "/tienda")} className="inline-flex justify-center rounded-none border border-[#14261c]/20 px-7 py-4 font-semibold text-[#14261c]">Volver a tienda</a>
                 </div>
               </div>
             </div>
