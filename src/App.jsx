@@ -604,6 +604,13 @@ const communityVideos = [
   },
 ];
 
+const socialLinks = [
+  ["Instagram", "https://www.instagram.com/goldenhealthmx/?hl=es", "◎"],
+  ["Facebook", "https://es-la.facebook.com/goldenhealthmx/", "f"],
+  ["LinkedIn", "https://mx.linkedin.com/in/silviadelmoral", "in"],
+  ["YouTube", "https://www.youtube.com/user/GoldenHealthSalud", "▶"],
+];
+
 export default function GoldenHealthMockup() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [language, setLanguage] = useState("es");
@@ -1612,10 +1619,17 @@ export default function GoldenHealthMockup() {
               </a>
             </div>
             <div className="mt-7 flex justify-center gap-3 md:justify-start">
-              {["◎", "f", "in", "▶"].map((icon) => (
-                <span key={icon} className="flex h-12 w-12 items-center justify-center rounded-full bg-[#a8a8a8] text-lg font-semibold text-white">
+              {socialLinks.map(([label, href, icon]) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-[#a8a8a8] text-lg font-semibold text-white transition hover:bg-[#14261c] focus:outline-none focus:ring-2 focus:ring-[#9b7a2f] focus:ring-offset-2"
+                >
                   {icon}
-                </span>
+                </a>
               ))}
             </div>
           </div>
