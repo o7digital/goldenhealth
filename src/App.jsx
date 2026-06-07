@@ -238,6 +238,204 @@ const sourceSections = [
   },
 ];
 
+const programPages = [
+  {
+    slug: "antroposofia",
+    title: "Antroposofía",
+    eyebrow: "Programa Integral",
+    image: "/images/source/programa/andres-munoz-cardenas.webp",
+    intro: "Andrés Muñoz Cárdenas es psicólogo de orientación antroposófica que nos enseña una concepción diferente de lo que es la salud.",
+    sections: [
+      {
+        title: "Andrés Muñoz Cárdenas",
+        text: "Fundador y CEO de la escuela Kamino Florido. Su trabajo acerca una visión antroposófica del desarrollo humano, la salud y la libertad interior.",
+      },
+      {
+        title: "Los 7 Pasos de la Libertad",
+        text: "Actividad continua L.U.S. y conferencias sobre crear la realidad que anhelamos a través de los 7 Pasos de la Libertad, psicoanálisis y antroposofía.",
+      },
+    ],
+    links: [["Kamino Florido", "https://www.kaminoflorido.com/"]],
+  },
+  {
+    slug: "arte-del-buen-comer-y-buen-beber",
+    title: "Arte del Buen Comer y Buen Beber",
+    eyebrow: "El arte del buen comer, buen beber y bien vivir",
+    image: "/images/source/programa/arte-buen-comer.jpeg",
+    intro: "Comer es una necesidad, pero comer de forma inteligente es un arte. Este programa instruye a los pacientes para llevar un estilo de vida más saludable.",
+    sections: [
+      {
+        title: "Conocé el programa",
+        text: "Nuestro programa del arte del buen comer y el buen beber es una forma sana, inteligente y equilibrada de comer, inspirada en recomendaciones de programas de alimentación para prevenir enfermedades degenerativas, prevenir el envejecimiento prematuro, aumentar la energía e incrementar el sistema inmunológico.",
+      },
+      {
+        title: "Clases grupales de cocina",
+        text: "Próximamente. Aprende de coaches de alimentación y expertos en el campo mediante clases en línea con recetas fáciles y saludables.",
+      },
+      {
+        title: "Clase privada de cocina",
+        text: "Próximamente. Clases privadas para aprender recetas fáciles y saludables que apoyen una vida más sana.",
+      },
+      {
+        title: "Menú Golden Health",
+        text: "Es fundamental aprender nuevos hábitos saludables para alcanzar el objetivo de vivir más y mejor. Descarga los mejores menús para la semana.",
+      },
+      {
+        title: "Menú bebidas",
+        text: "La nutrición es uno de los pilares fundamentales del programa. Este espacio comparte secretos de bebidas saludables.",
+      },
+    ],
+  },
+  {
+    slug: "menu-golden-health",
+    title: "Menú Golden Health",
+    eyebrow: "Ménus Golden Health",
+    image: "/images/source/programa/arte-buen-comer.jpeg",
+    intro: "Una sección dedicada a menús saludables para acompañar la semana y reforzar hábitos alimenticios dentro del Programa Integral.",
+    sections: [
+      {
+        title: "Menú Golden Health",
+        text: "Opciones de alimentación para aprender nuevos hábitos saludables y sostener el objetivo de vivir más y mejor.",
+      },
+      {
+        title: "Menú carnes",
+        text: "Contenido de menú para quienes buscan una guía práctica de alimentación semanal dentro del enfoque Golden Health.",
+      },
+    ],
+  },
+  {
+    slug: "anti-aging",
+    title: "Anti-Aging",
+    eyebrow: "Medicina Regenerativa",
+    image: "/images/source/programa/anti-aging.jpeg",
+    intro: "El objetivo de estos tratamientos es frenar el proceso de degeneración celular y reactivar el potencial de salud de cada individuo.",
+    sections: [
+      {
+        title: "Healthy Ageing",
+        text: "Nuestros tratamientos antiedad están orientados a retardar el envejecimiento prematuro, prevenir enfermedades crónico degenerativas y padecimientos asociados al paso de los años.",
+      },
+      {
+        title: "Diagnóstico Healthy Ageing",
+        text: "Al inicio del tratamiento se realiza una consulta médica con nuestra experta en salud, quien determina el tratamiento más adecuado para retardar el proceso de envejecimiento y mejorar la calidad de vida en cada caso.",
+      },
+      {
+        title: "Regeneración celular",
+        text: "Resumen histórico de lo más avanzado en regeneración celular, desde los trabajos pioneros de Paul Niehans hasta los programas modernos de revitalización.",
+      },
+    ],
+  },
+  {
+    slug: "terapias-biologicas",
+    title: "Terapias Biológicas",
+    eyebrow: "Medicina Biológica",
+    image: "/images/source/programa/terapias-biologicas.jpeg",
+    intro: "La medicina biológica se enfoca en desarrollar el potencial humano apoyándose en la ciencia, la tecnología y nuevas tendencias para el cuidado de la salud.",
+    sections: [
+      {
+        title: "Acción regenerativa de la ciencia biocelular",
+        text: "Biotecnología orientada al envejecimiento prematuro, tratamientos sin efectos adversos, innovación médica enfocada en capacidades humanas y valor para una larga vida con salud.",
+      },
+      {
+        title: "Procedimiento",
+        text: "Introducción por vía intramuscular, subcutánea o subdérmica de enzimas, vitaminas, minerales y activadores de energía que estimulan órganos, tejidos y sistemas en el corto, mediano y largo plazo.",
+      },
+      {
+        title: "Energía, estrés y revitalización",
+        text: "Tratamiento biológico para restaurar la vitalidad del cuerpo y restituir desgaste físico, mental y emocional.",
+      },
+      {
+        title: "Inmunológico",
+        text: "Tratamiento para reforzar el sistema inmunológico, fortalecer y estimular defensas contra agresiones del medio ambiente.",
+      },
+      {
+        title: "Osteoarticular",
+        text: "Tratamiento para lesiones específicas que mejora movilidad, regenera tejidos y aumenta fuerza y flexibilidad.",
+      },
+      {
+        title: "Cara, hormonal y detox",
+        text: "Protocolos para rostro y cuello, equilibrio hormonal de mujeres y hombres, y detox para eliminar toxinas y apoyar un estilo de vida más saludable.",
+      },
+    ],
+  },
+  {
+    slug: "hidratacion-funcional",
+    title: "Hidratación Funcional",
+    eyebrow: "Socio autorizado Golden Health",
+    image: "/images/source/programa/hidratacion-funcional.png",
+    intro: "El agua Kangen es un tipo de agua alcalina ionizada tratada mediante electrólisis para alterar su pH y crear una estructura molecular única.",
+    sections: [
+      {
+        title: "Introducción al agua Kangen",
+        text: "Este proceso pasa el agua a través de una máquina de ionización que separa moléculas cargadas positiva y negativamente, creando agua con pH más alto y propiedades antioxidantes.",
+      },
+      {
+        title: "Hidratación dentro del programa",
+        text: "Golden Health presenta la hidratación funcional como parte de hábitos diarios para acompañar bienestar, equilibrio y prevención.",
+      },
+    ],
+  },
+  {
+    slug: "ciencia-del-deporte",
+    title: "Ciencia del Deporte",
+    eyebrow: "Programa para deportistas de alto rendimiento",
+    image: "/images/source/programa/ciencia-deporte.jpeg",
+    intro: "Tienes que cultivar el vigor del cuerpo para preservar el espíritu. Este programa busca crear disciplina y estimular la capacidad de movimiento con intención y propósito.",
+    sections: [
+      {
+        title: "¿En qué consiste?",
+        text: "Busca alcanzar un estado de empoderamiento energético y una excelente condición física que permita cumplir objetivos día a día.",
+      },
+      {
+        title: "Diseñado para",
+        text: "Personas que deseen mejorar su estado o aspecto físico, aprender nuevos hábitos saludables y optimizar su desintoxicación natural.",
+      },
+    ],
+  },
+  {
+    slug: "equilibrio-mente-cuerpo-espiritu",
+    title: "Equilibrio Mente, Cuerpo, Espíritu",
+    eyebrow: "Cuerpo, Mente y Espíritu",
+    image: "/images/source/programa/cuerpo-mente-espiritu.jpeg",
+    intro: "Todo lo que necesitas para un estado óptimo de salud. Es imposible mantener una buena salud sin equilibrio entre cuerpo, mente y espíritu.",
+    sections: [
+      {
+        title: "¿Qué es este programa?",
+        text: "Se dedica a la motivación y generación de conductas que llevan a encontrar inspiración en la vida cotidiana mediante experiencias con uno mismo y los demás.",
+      },
+      {
+        title: "¿Cómo lograrlo?",
+        text: "El programa busca recuperar el bienestar general mediante una experiencia de aprendizaje y dar continuidad a ese aprendizaje en la vida cotidiana gracias a conocimientos y hábitos adquiridos en Golden Health.",
+      },
+      {
+        title: "Objetivos",
+        text: "Programas, conferencias, webinars y podcast enfocados en equilibrio emocional y mental para ejercitar el espíritu y conectarse con el ser interior.",
+      },
+    ],
+  },
+  {
+    slug: "salud-nutricional",
+    title: "Salud nutricional",
+    eyebrow: "Pioneros de la nutrición personalizada basada en pruebas",
+    image: "/images/source/programa/salud-nutricional.webp",
+    intro: "Zinzino desafía el orden establecido desde 2005 con nutrición personalizada basada en pruebas y un enfoque centrado en el cliente.",
+    sections: [
+      {
+        title: "Nueva generación de la nutrición",
+        text: "Las pruebas de sangre seca son un punto de partida natural para ofrecer datos objetivos, guiar decisiones y evitar la fase de prueba y error.",
+      },
+      {
+        title: "Suplementos adaptados",
+        text: "Se proporcionan suplementos adaptados a necesidades específicas y acompañamiento para mantenerse en el camino adecuado.",
+      },
+      {
+        title: "BalanceOil Kit with Test",
+        text: "Permite obtener una visión clara sobre la relación Omega 6:3 del cuerpo, ver resultados antes y después del BalanceTest, y ajustar el equilibrio con BalanceOil.",
+      },
+    ],
+    links: [["Comprar", "https://www.zinzino.com/"]],
+  },
+];
+
 const products = [
   {
     slug: "tratamientos-biologicos",
@@ -325,17 +523,20 @@ export default function GoldenHealthMockup() {
   const t = copy.es;
   const page =
     path === "/historia" ? "historia" :
+    path === "/programa-integral" ? "programa" :
+    path.startsWith("/programa-integral/") ? "programaDetalle" :
     path === "/tienda" ? "tienda" :
     path === "/consultas" ? "consultas" :
     path === "/contacto" ? "contacto" :
     path.startsWith("/booking-calendar/") ? "booking" :
     path.startsWith("/producto/") ? "producto" :
     "home";
+  const selectedProgram = programPages.find((program) => path === `/programa-integral/${program.slug}`);
   const selectedProduct = products.find((product) => path === `/producto/${product.slug}`);
   const selectedConsultation = consultations.find((consultation) => path === `/booking-calendar/${consultation[5]}`);
   const navLinks = [
     ["/", "Inicio"],
-    ["/#terapias", "Programa Integral"],
+    ["/programa-integral", "Programa Integral"],
     ["/historia", "Historia"],
     ["/tienda", t.nav.shop],
     ["/consultas", "Consultas"],
@@ -384,7 +585,25 @@ export default function GoldenHealthMockup() {
 
           <nav className="hidden items-center gap-8 text-sm font-medium text-[#314136] md:flex">
             {navLinks.map(([href, label]) => (
-              <a key={href} href={href} onClick={(event) => navigate(event, href)} className="hover:text-[#9b7a2f]">{label}</a>
+              href === "/programa-integral" ? (
+                <div key={href} className="group relative py-2">
+                  <a href={href} onClick={(event) => navigate(event, href)} className="hover:text-[#9b7a2f]">{label}</a>
+                  <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 border-t-4 border-[#d0d0d0] bg-white py-3 text-[#535353] opacity-0 shadow-xl transition group-hover:visible group-hover:opacity-100">
+                    {programPages.map((program) => (
+                      <a
+                        key={program.slug}
+                        href={`/programa-integral/${program.slug}`}
+                        onClick={(event) => navigate(event, `/programa-integral/${program.slug}`)}
+                        className="block px-6 py-2.5 text-lg font-normal hover:bg-[#f7f3ea] hover:text-[#9b7a2f]"
+                      >
+                        {program.title}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a key={href} href={href} onClick={(event) => navigate(event, href)} className="hover:text-[#9b7a2f]">{label}</a>
+              )
             ))}
           </nav>
 
@@ -429,17 +648,44 @@ export default function GoldenHealthMockup() {
         <div className={`md:hidden ${mobileMenuOpen ? "block" : "hidden"}`}>
           <nav className="mx-5 mb-4 rounded-[1.5rem] border border-[#1f3b2c]/10 bg-white/95 p-3 text-[#1f3b2c] shadow-xl shadow-[#1f3b2c]/10">
             {navLinks.map(([href, label]) => (
-              <a
-                key={href}
-                href={href}
-                onClick={(event) => {
-                  navigate(event, href);
-                  setMobileMenuOpen(false);
-                }}
-                className="block rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-[#f4ead0]"
-              >
-                {label}
-              </a>
+              href === "/programa-integral" ? (
+                <div key={href}>
+                  <a
+                    href={href}
+                    onClick={(event) => {
+                      navigate(event, href);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="block rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-[#f4ead0]"
+                  >
+                    {label}
+                  </a>
+                  <div className="ml-3 border-l border-[#1f3b2c]/10 pl-3">
+                    {programPages.map((program) => (
+                      <a
+                        key={program.slug}
+                        href={`/programa-integral/${program.slug}`}
+                        onClick={(event) => navigate(event, `/programa-integral/${program.slug}`)}
+                        className="block rounded-xl px-4 py-2 text-sm text-[#607064] hover:bg-[#f4ead0]"
+                      >
+                        {program.title}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={(event) => {
+                    navigate(event, href);
+                    setMobileMenuOpen(false);
+                  }}
+                  className="block rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-[#f4ead0]"
+                >
+                  {label}
+                </a>
+              )
             ))}
             <a
               href="/contacto"
@@ -496,8 +742,8 @@ export default function GoldenHealthMockup() {
                 <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d3aa45] px-7 py-4 font-semibold text-[#14261c] shadow-xl shadow-[#d3aa45]/25 transition hover:-translate-y-0.5 hover:bg-[#c99c32]">
                   {t.primaryCta}
                 </a>
-                <a href="#metodo" className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/12 px-7 py-4 font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20">
-                  {t.secondaryCta}
+                <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/12 px-7 py-4 font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20">
+                  Programa Integral
                 </a>
               </div>
 
@@ -516,97 +762,129 @@ export default function GoldenHealthMockup() {
           </div>
         </section>
 
-        <section id="metodo" className="px-5 pb-24 lg:px-8">
-          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-[#14261c] p-8 text-white shadow-2xl shadow-[#14261c]/15 lg:p-12">
-            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#d3aa45]">{t.methodEyebrow}</p>
-                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">{t.methodTitle}</h2>
-                <p className="mt-5 leading-8 text-white/70">{t.methodText}</p>
-              </div>
-              <div className="grid gap-4 md:grid-cols-3">
-                {t.method.map(([num, title, text]) => (
-                  <div key={title} className="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
-                    <span className="text-sm font-semibold text-[#d3aa45]">{num}</span>
-                    <p className="mt-4 text-xl font-semibold">{title}</p>
-                    <p className="mt-3 text-sm leading-6 text-white/68">{text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section id="terapias" className="px-5 py-24 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto max-w-4xl text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.therapiesEyebrow}</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.therapiesTitle}</h2>
-              <p className="mt-5 text-lg leading-8 text-[#607064]">{t.therapiesText}</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-6xl">{t.therapiesTitle}</h2>
             </div>
 
             <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {t.services.map(([icon, title, text]) => (
-                <div key={title} className="group rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1f3b2c]/10">
+                <a
+                  key={title}
+                  href="/programa-integral"
+                  onClick={(event) => navigate(event, "/programa-integral")}
+                  className="group rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1f3b2c]/10"
+                >
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4ead0] text-2xl text-[#9b7a2f] transition group-hover:bg-[#1f3b2c] group-hover:text-[#d3aa45]">{icon}</div>
                   <h3 className="mt-6 text-xl font-semibold text-[#14261c]">{title}</h3>
                   <p className="mt-3 leading-7 text-[#607064]">{text}</p>
                   <p className="mt-6 inline-flex text-sm font-semibold text-[#9b7a2f]">{t.details}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-16 space-y-5">
-              {sourceSections.map((section) => (
-                <article key={section.id} id={section.id} className="rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5 lg:p-9">
-                  <div className={`grid gap-8 ${section.image ? "lg:grid-cols-[0.65fr_1.35fr]" : ""}`}>
-                    {section.image && (
-                      <img src={section.image} alt={section.items[0][0]} className="aspect-[4/5] w-full rounded-[1.5rem] object-cover" />
-                    )}
-                    <div>
-                      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9b7a2f]">Programa Integral</p>
-                      <h3 className="mt-3 text-3xl font-semibold text-[#14261c]">{section.title}</h3>
-                      <p className="mt-4 max-w-3xl text-lg leading-8 text-[#607064]">{section.intro}</p>
-                      <div className="mt-7 grid gap-4 md:grid-cols-2">
-                        {section.items.map(([title, text]) => (
-                          <div key={title} className="rounded-2xl bg-[#fbf8ef] p-5 ring-1 ring-[#efe6cd]">
-                            <p className="font-semibold text-[#14261c]">{title}</p>
-                            <p className="mt-2 text-sm leading-6 text-[#607064]">{text}</p>
-                          </div>
-                        ))}
-                      </div>
-                      {section.link && (
-                        <a href={section.link} className="mt-6 inline-flex rounded-none bg-[#3f3f3f] px-6 py-3 font-serif text-lg text-white" target="_blank" rel="noreferrer">
-                          Ver primero video
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </article>
+                </a>
               ))}
             </div>
           </div>
         </section>
 
         <section className="px-5 pb-24 lg:px-8">
-          <div className="mx-auto grid max-w-7xl items-center gap-10 rounded-[2.7rem] bg-[#ecdfbf] p-8 lg:grid-cols-[1fr_0.9fr] lg:p-12">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#8a6a24]">{t.patientEyebrow}</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.patientTitle}</h2>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-[#4f5c50]">{t.patientText}</p>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {t.patientCards.map(([title, text]) => (
-                <div key={title} className="rounded-3xl bg-white/65 p-6 shadow-sm ring-1 ring-black/5">
-                  <p className="font-semibold text-[#14261c]">{title}</p>
-                  <p className="mt-2 text-sm leading-6 text-[#667166]">{text}</p>
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-xl ring-1 ring-black/5 lg:p-12">
+            {sourceSections.filter((section) => section.id === "programa").map((section) => (
+              <article key={section.id}>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Programa Integral</p>
+                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{section.title}</h2>
+                <p className="mt-6 text-xl leading-8 text-[#607064]">{section.intro}</p>
+                <div className="mt-10 grid gap-5 md:grid-cols-2">
+                  {section.items.map(([title, text]) => (
+                    <div key={title} className="rounded-2xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
+                      <h3 className="text-xl font-semibold text-[#14261c]">{title}</h3>
+                      <p className="mt-3 leading-7 text-[#607064]">{text}</p>
+                    </div>
+                  ))}
                 </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+          </>
+        )}
+
+        {page === "programa" && (
+        <section id="programa-integral" className="px-5 py-32 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.therapiesEyebrow}</p>
+              <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Longevidad y Anti-envejecimiento</h1>
+              <p className="mt-5 text-lg leading-8 text-[#607064]">Es imposible detener el envejecimiento, pero en Golden Health contamos con tratamientos y programas para retrasar sus efectos, mejorar la calidad de vida y prevenir el envejecimiento prematuro.</p>
+            </div>
+
+            <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {programPages.map((program) => (
+                <a
+                  key={program.slug}
+                  href={`/programa-integral/${program.slug}`}
+                  onClick={(event) => navigate(event, `/programa-integral/${program.slug}`)}
+                  className="group overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1f3b2c]/10"
+                >
+                  <img src={program.image} alt={program.title} className="aspect-[4/3] w-full object-cover" />
+                  <div className="p-7">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9b7a2f]">{program.eyebrow}</p>
+                    <h2 className="mt-3 text-xl font-semibold text-[#14261c]">{program.title}</h2>
+                    <p className="mt-3 line-clamp-4 leading-7 text-[#607064]">{program.intro}</p>
+                    <p className="mt-6 inline-flex text-sm font-semibold text-[#9b7a2f]">Ver detalle →</p>
+                  </div>
+                </a>
               ))}
             </div>
           </div>
         </section>
 
-          </>
+        )}
+
+        {page === "programaDetalle" && selectedProgram && (
+        <section className="px-5 py-32 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-8 text-sm text-[#607064]">
+              <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="font-semibold text-[#9b7a2f]">Programa Integral</a>
+              <span> / {selectedProgram.title}</span>
+            </div>
+            <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
+              <div className="grid gap-0 lg:grid-cols-[0.92fr_1.08fr]">
+                <div className="bg-[#f3ead3]">
+                  <img src={selectedProgram.image} alt={selectedProgram.title} className="h-full min-h-[360px] w-full object-cover" />
+                </div>
+                <div className="p-8 lg:p-12">
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{selectedProgram.eyebrow}</p>
+                  <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-6xl">{selectedProgram.title}</h1>
+                  <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.intro}</p>
+                  {selectedProgram.links && (
+                    <div className="mt-8 flex flex-wrap gap-3">
+                      {selectedProgram.links.map(([label, href]) => (
+                        <a key={href} href={href} target="_blank" rel="noreferrer" className="inline-flex rounded-none bg-[#3f3f3f] px-7 py-3 font-serif text-lg text-white transition hover:bg-[#242424]">
+                          {label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className="grid gap-5 p-8 md:grid-cols-2 lg:p-12">
+                {selectedProgram.sections.map((section) => (
+                  <section key={section.title} className="rounded-2xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
+                    <h2 className="text-2xl font-semibold text-[#14261c]">{section.title}</h2>
+                    <p className="mt-3 leading-8 text-[#607064]">{section.text}</p>
+                  </section>
+                ))}
+              </div>
+              <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
+                <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                  Volver a Programa Integral
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
         )}
 
         {page === "historia" && (
@@ -724,31 +1002,6 @@ export default function GoldenHealthMockup() {
             </div>
           </div>
         </section>
-        )}
-
-        {page === "home" && (
-          <>
-
-        <section id="noticias" className="px-5 pb-24 lg:px-8">
-          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-sm ring-1 ring-black/5 lg:p-12">
-            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Noticias</p>
-                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Comunidad Golden Health</h2>
-                <p className="mt-5 text-lg leading-8 text-[#607064]">Esta parte funciona mejor como blog social y editorial: contenido vivo, entrevistas, testimonios y novedades, sin quitar fuerza al mensaje principal del home.</p>
-              </div>
-              <div className="grid gap-4 md:grid-cols-3">
-                {newsItems.map(([title, text]) => (
-                  <article key={title} className="rounded-3xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
-                    <p className="text-lg font-semibold text-[#14261c]">{title}</p>
-                    <p className="mt-3 text-sm leading-6 text-[#667166]">{text}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-          </>
         )}
 
         {page === "consultas" && (
