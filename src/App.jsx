@@ -196,9 +196,9 @@ const products = [
 ];
 
 const consultations = [
-  ["Consulta Online", "Disponible online", "30 min", "$500"],
-  ["Consulta Presencial", "En clinica", "1 h", "$1,500"],
-  ["Consultas en Madrid", "Disponible online", "1 h", "$1,500"],
+  ["Consulta Online", "Disponible online", "30 min", "$500", "/images/source/consultas/consulta-online.jpg"],
+  ["Consulta Presencial", "En clinica", "1 h", "$1,500", "/images/source/consultas/consulta-presencial.jpeg"],
+  ["Consultas en Madrid", "Disponible online", "1 h", "$1,500", "/images/source/consultas/consultas-madrid.jpg"],
 ];
 
 const newsItems = [
@@ -588,15 +588,18 @@ export default function GoldenHealthMockup() {
               <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Nuestros servicios</h2>
             </div>
             <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {consultations.map(([name, meta, duration, price]) => (
-                <div key={name} className="rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5">
-                  <p className="text-xl font-semibold text-[#14261c]">{name}</p>
-                  <p className="mt-2 text-sm text-[#9b7a2f]">{meta}</p>
-                  <div className="mt-6 flex items-end justify-between gap-4">
-                    <p className="text-[#607064]">{duration}</p>
-                    <p className="text-3xl font-semibold text-[#14261c]">{price}</p>
+              {consultations.map(([name, meta, duration, price, image]) => (
+                <div key={name} className="overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-black/5">
+                  <img src={image} alt={name} className="aspect-[4/2.7] w-full object-cover" />
+                  <div className="p-7">
+                    <p className="text-xl font-semibold text-[#14261c]">{name}</p>
+                    <p className="mt-2 text-sm text-[#9b7a2f]">{meta}</p>
+                    <div className="mt-6 flex items-end justify-between gap-4 border-t border-[#e5dfd1] pt-6">
+                      <p className="text-[#607064]">{duration}</p>
+                      <p className="text-3xl font-semibold text-[#14261c]">{price}</p>
+                    </div>
+                    <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="mt-6 inline-flex w-full justify-center rounded-full bg-[#1f3b2c] px-5 py-3 font-semibold text-white">Reservar ahora</a>
                   </div>
-                  <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="mt-6 inline-flex w-full justify-center rounded-full bg-[#1f3b2c] px-5 py-3 font-semibold text-white">Reservar ahora</a>
                 </div>
               ))}
             </div>
