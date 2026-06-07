@@ -186,6 +186,18 @@ const sourceSections = [
     ],
   },
   {
+    id: "anti-aging",
+    title: "Anti-Aging",
+    intro: "El objetivo de estos tratamientos es frenar el proceso de degeneración celular y reactivar el potencial de salud de cada individuo para prevenir y revertir el envejecimiento prematuro.",
+    image: "/images/source/programa/anti-aging.jpeg",
+    items: [
+      ["Healthy Ageing", "Tratamientos anti-edad orientados a vitalidad, prevención y regeneración."],
+      ["Regeneración celular", "Protocolos para apoyar la salud celular y reducir señales de desgaste prematuro."],
+      ["Potencial de salud", "Enfoque integral para reactivar equilibrio, energía y bienestar funcional."],
+      ["Prevención", "Trabajo preventivo para conservar calidad de vida a largo plazo."],
+    ],
+  },
+  {
     id: "hidratacion",
     title: "Hidratacion Funcional",
     intro: "Introduccion al agua Kangen: agua alcalina ionizada tratada por electrolisis para modificar pH y crear propiedades antioxidantes.",
