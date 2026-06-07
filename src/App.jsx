@@ -318,10 +318,23 @@ const programPages = [
   },
   {
     slug: "anti-aging",
-    title: "Anti-Aging",
+    title: "Medicina Regenerativa",
     eyebrow: "Medicina Regenerativa",
-    image: "/images/source/programa/anti-aging.jpeg",
+    image: "/images/source/programa/anti-aging-captura.png",
+    secondaryImage: "/images/source/programa/anti-aging-celulas-1.jpeg",
+    tertiaryImage: "/images/source/programa/anti-aging-celulas-2.jpeg",
     intro: "El objetivo de estos tratamientos es frenar el proceso de degeneración celular y reactivar el potencial de salud de cada individuo.",
+    introExtra: "Con estos tratamientos prevenimos y revertimos el envejecimiento prematuro.",
+    diagnosticTitle: "Diagnóstico Healthy Ageing",
+    diagnosticText: "Al inicio del tratamiento se realiza una consulta médica con nuestra experta en salud, quien determinará que tratamiento es el más adecuado para retardar el proceso de envejecimiento y mejorar la calidad de vida en cada caso.",
+    reserveUrl: "https://www.goldenhealthmx.com/book-online",
+    regenerationTitle: "Lo mas avanzado en tratamiento de Regeneración Celular",
+    regenerationText: [
+      "Resumen histórico de lo mas avanzado en tratamiento de regeneración celular para pacientes sanos y enfermos con la experiencia en Medicina Regenerativa y Anti envejecimiento.",
+      "La aventura comienza en la década de 1930. El profesor Paul Niehans, pionero de la longevidad, que lideró en este momento muchas investigaciones sobre la capacidad de adaptación de las células, se destaca como líder de esta práctica, más conocida hoy como celuloterapia.",
+      "¡Descubra la entrevista exclusiva del Prof. Dr. Ernst Theodor Rietschel, Jefe del equipo científico de Clinique La Prairie y adéntrese en el fantástico viaje del legendario Programa de Revitalización!",
+    ],
+    expertName: "Prof. Dr. Ernst Theodor Rietschel",
     sections: [
       {
         title: "Healthy Ageing",
@@ -329,7 +342,7 @@ const programPages = [
       },
       {
         title: "Diagnóstico Healthy Ageing",
-        text: "Al inicio del tratamiento se realiza una consulta médica con nuestra experta en salud, quien determina el tratamiento más adecuado para retardar el proceso de envejecimiento y mejorar la calidad de vida en cada caso.",
+        text: "Al inicio del tratamiento se realiza una consulta médica con nuestra experta en salud, quien determinará que tratamiento es el más adecuado para retardar el proceso de envejecimiento y mejorar la calidad de vida en cada caso.",
       },
       {
         title: "Regeneración celular",
@@ -1075,6 +1088,54 @@ export default function GoldenHealthMockup() {
                   </div>
                   <img src={selectedProgram.image} alt="ALIMENTOS GOLDENHEALTHMX.jpeg" className="mx-auto aspect-[2/3] max-h-[760px] w-full max-w-md rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
+                <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
+                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    Volver a Programa Integral
+                  </a>
+                </div>
+              </article>
+            ) : selectedProgram.slug === "anti-aging" ? (
+              <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
+                <div className="p-8 text-center lg:p-12">
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Programa Integral</p>
+                  <h1 className="mt-4 text-5xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-7xl">{selectedProgram.title}</h1>
+                  <h2 className="mt-8 text-3xl font-semibold tracking-[-0.03em] text-[#14261c]">¿En qué consiste?</h2>
+                  <p className="mx-auto mt-5 max-w-4xl text-xl leading-9 text-[#607064]">{selectedProgram.intro}</p>
+                  <p className="mx-auto mt-4 max-w-4xl text-xl leading-9 text-[#607064]">{selectedProgram.introExtra}</p>
+                </div>
+
+                <div className="grid gap-10 px-8 pb-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-12">
+                  <img src={selectedProgram.image} alt="Captura de Pantalla 2023-01-10 a la(s) 17.57.30.png" className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <div className="flex flex-col justify-center">
+                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">Healthy Ageing</h2>
+                    <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.sections[0].text}</p>
+                  </div>
+                </div>
+
+                <div className="grid gap-10 border-t border-[#efe6cd] bg-[#fbf8ef] p-8 lg:grid-cols-[1fr_0.95fr] lg:p-12">
+                  <div className="flex flex-col justify-center">
+                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{selectedProgram.diagnosticTitle}</h2>
+                    <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.diagnosticText}</p>
+                    <a href={selectedProgram.reserveUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex w-fit rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424]">
+                      Reserva ahora
+                    </a>
+                  </div>
+                  <img src={selectedProgram.secondaryImage} alt="ANTIAGINGCELULASMADREGOLDENHEALTHMX.jpeg" className="h-full min-h-[460px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                </div>
+
+                <div className="grid gap-10 border-t border-[#efe6cd] p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-12">
+                  <img src={selectedProgram.tertiaryImage} alt="ANTIAGINGCELULASMADREGOLDENHEALTHMX.jpeg" className="h-full min-h-[460px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <div className="flex flex-col justify-center">
+                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{selectedProgram.regenerationTitle}</h2>
+                    <div className="mt-6 space-y-5 text-xl leading-9 text-[#607064]">
+                      {selectedProgram.regenerationText.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                    <p className="mt-8 text-lg font-semibold text-[#9b7a2f]">{selectedProgram.expertName}</p>
+                  </div>
+                </div>
+
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
                   <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
                     Volver a Programa Integral
