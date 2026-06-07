@@ -126,7 +126,6 @@ const sliderImages = [
   { src: "/images/golden-health/comunidad.webp", alt: { es: "Comunidad Golden Health", en: "Golden Health community" } },
 ];
 
-copy.en = copy.es;
 
 const sourceSections = [
   {
@@ -806,7 +805,7 @@ export default function GoldenHealthMockup() {
               <img
                 key={slide.src}
                 src={slide.src}
-                alt={slide.alt.es}
+                alt={slide.alt[language]}
                 className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
                   activeSlide === index ? "opacity-100" : "opacity-0"
                 }`}
