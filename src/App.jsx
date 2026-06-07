@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const copy = {
   es: {
-    nav: { method: "Método", therapies: "Terapias", shop: "Tienda", contact: "Contacto" },
+    nav: { method: "Inicio", therapies: "Programa Integral", shop: "Tienda", contact: "Contacto" },
     cta: "Agenda tu valoración",
     heroBadge: "Clínica de longevidad y bienestar integral en CDMX",
     heroTitle: "Salud celular para vivir mejor, no solo vivir más.",
@@ -18,7 +18,7 @@ const copy = {
       ["02", "Protocolo", "Diseñamos una ruta personalizada con terapias, nutrición, suplementación y seguimiento."],
       ["03", "Acompañamiento", "Medimos progreso, ajustamos el plan y construimos hábitos sostenibles a largo plazo."],
     ],
-    therapiesEyebrow: "Terapias y servicios",
+    therapiesEyebrow: "Programa Integral",
     therapiesTitle: "Salud de alto nivel, presentada con claridad y confianza.",
     therapiesText: "",
     details: "Ver detalle →",
