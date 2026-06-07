@@ -4,6 +4,8 @@
   "outputDirectory": "dist",
   "rewrites": [
     { "source": "/historia", "destination": "/" },
+    { "source": "/tienda", "destination": "/" },
+    { "source": "/consultas", "destination": "/" },
     { "source": "/contacto", "destination": "/" }
   ]
 }

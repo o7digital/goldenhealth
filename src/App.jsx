@@ -213,13 +213,19 @@ export default function GoldenHealthMockup() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [path, setPath] = useState(() => window.location.pathname);
   const t = copy[language];
-  const page = path === "/historia" ? "historia" : path === "/contacto" ? "contacto" : "home";
+  const page =
+    path === "/historia" ? "historia" :
+    path === "/tienda" ? "tienda" :
+    path === "/consultas" ? "consultas" :
+    path === "/contacto" ? "contacto" :
+    "home";
   const navLinks = [
     ["/#metodo", t.nav.method],
     ["/#programa", "Programa"],
     ["/#terapias", t.nav.therapies],
     ["/historia", "Historia"],
-    ["/#tienda", t.nav.shop],
+    ["/tienda", t.nav.shop],
+    ["/consultas", "Consultas"],
     ["/#noticias", "Noticias"],
     ["/contacto", t.nav.contact],
   ];
@@ -527,9 +533,8 @@ export default function GoldenHealthMockup() {
         </section>
         )}
 
-        {page === "home" && (
-          <>
-        <section id="tienda" className="px-5 pb-24 lg:px-8">
+        {page === "tienda" && (
+        <section id="tienda" className="px-5 py-32 lg:px-8">
           <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="bg-[#e7d39b] p-10 lg:p-14">
               <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#14261c] text-2xl text-[#d3aa45]">🛍</div>
@@ -548,6 +553,10 @@ export default function GoldenHealthMockup() {
             </div>
           </div>
         </section>
+        )}
+
+        {page === "home" && (
+          <>
 
         <section id="noticias" className="px-5 pb-24 lg:px-8">
           <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-sm ring-1 ring-black/5 lg:p-12">
@@ -568,8 +577,11 @@ export default function GoldenHealthMockup() {
             </div>
           </div>
         </section>
+          </>
+        )}
 
-        <section id="consultas" className="px-5 pb-24 lg:px-8">
+        {page === "consultas" && (
+        <section id="consultas" className="px-5 py-32 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Consultas Medicas</p>
@@ -590,7 +602,6 @@ export default function GoldenHealthMockup() {
             </div>
           </div>
         </section>
-          </>
         )}
 
         {page === "contacto" && (
