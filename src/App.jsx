@@ -267,7 +267,7 @@ export default function GoldenHealthMockup() {
   const [language, setLanguage] = useState("es");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [path, setPath] = useState(() => window.location.pathname);
-  const t = copy[language];
+  const t = copy.es;
   const page =
     path === "/historia" ? "historia" :
     path === "/tienda" ? "tienda" :
