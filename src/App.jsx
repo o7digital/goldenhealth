@@ -244,18 +244,31 @@ const programPages = [
     title: "Antroposofía",
     eyebrow: "Programa Integral",
     image: "/images/source/programa/andres-munoz-cardenas.webp",
-    intro: "Andrés Muñoz Cárdenas es psicólogo de orientación antroposófica que nos enseña una concepción diferente de lo que es la salud.",
+    intro: "Andrés Muñoz Cárdenas es psicólogo de orientación antroposófica que nos enseña una concepción diferente a la que conocíamos de lo que es la salud.",
+    profileTitle: "Andrés Muñoz Cardenas",
+    profileSubtitle: "Fundador de CEO de la escuela Kamino Florido",
+    website: "https://www.kaminoflorido.com/",
+    firstVideoUrl: "https://www.youtube.com/watch?v=f8nc4C0ZjIg&t=415s",
+    videoTitle: "Los 7 Pasos de la Libertad - Crear realidad en tiempos de I.A. (inteligencia artificial)",
+    videoUrl: "https://www.youtube.com/watch?v=Z-I3Vdl8VP0",
+    videoText: "Actividad continua L.U.S. - 1era Conferencia del ciclo de 12 conferencias respecto de Crear la Realidad que Anhelamos a través de los 7 Pasos de la Libertad. Psicoanálisis y Antroposofía.",
+    videoImage: "/images/source/programa/andres-munoz-antroposofia.png",
+    socialLinks: [
+      ["Facebook", "http://www.facebook.com/WixEspanol", "f"],
+      ["Twitter", "http://twitter.com/MundoWix", "x"],
+      ["LinkedIn", "https://www.linkedin.com/company/wix-com", "in"],
+    ],
     sections: [
       {
         title: "Andrés Muñoz Cárdenas",
-        text: "Fundador y CEO de la escuela Kamino Florido. Su trabajo acerca una visión antroposófica del desarrollo humano, la salud y la libertad interior.",
+        text: "Fundador de CEO de la escuela Kamino Florido. Andrés Muñoz Cárdenas es psicólogo de orientación antroposófica que nos enseña una concepción diferente a la que conocíamos de lo que es la salud.",
       },
       {
-        title: "Los 7 Pasos de la Libertad",
-        text: "Actividad continua L.U.S. y conferencias sobre crear la realidad que anhelamos a través de los 7 Pasos de la Libertad, psicoanálisis y antroposofía.",
+        title: "Los 7 Pasos de la Libertad - Crear realidad en tiempos de I.A.",
+        text: "Actividad continua L.U.S. - 1era Conferencia del ciclo de 12 conferencias respecto de Crear la Realidad que Anhelamos a través de los 7 Pasos de la Libertad. Psicoanálisis y Antroposofía.",
       },
     ],
-    links: [["Kamino Florido", "https://www.kaminoflorido.com/"]],
+    links: [["https://www.kaminoflorido.com/", "https://www.kaminoflorido.com/"]],
   },
   {
     slug: "arte-del-buen-comer-y-buen-beber",
@@ -910,40 +923,87 @@ export default function GoldenHealthMockup() {
               <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="font-semibold text-[#9b7a2f]">Programa Integral</a>
               <span> / {selectedProgram.title}</span>
             </div>
-            <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
-              <div className="grid gap-0 lg:grid-cols-[0.92fr_1.08fr]">
-                <div className="bg-[#f3ead3]">
-                  <img src={selectedProgram.image} alt={selectedProgram.title} className="h-full min-h-[360px] w-full object-cover" />
-                </div>
-                <div className="p-8 lg:p-12">
+            {selectedProgram.slug === "antroposofia" ? (
+              <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
+                <div className="p-8 text-center lg:p-12">
                   <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{selectedProgram.eyebrow}</p>
-                  <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-6xl">{selectedProgram.title}</h1>
-                  <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.intro}</p>
-                  {selectedProgram.links && (
-                    <div className="mt-8 flex flex-wrap gap-3">
-                      {selectedProgram.links.map(([label, href]) => (
-                        <a key={href} href={href} target="_blank" rel="noreferrer" className="inline-flex rounded-none bg-[#3f3f3f] px-7 py-3 font-serif text-lg text-white transition hover:bg-[#242424]">
-                          {label}
+                  <h1 className="mt-4 text-5xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-7xl">{selectedProgram.title}</h1>
+                </div>
+                <div className="grid gap-10 px-8 pb-10 lg:grid-cols-[0.85fr_1.15fr] lg:px-12">
+                  <div className="flex justify-center">
+                    <img src={selectedProgram.image} alt="Andres muñoz cardenas" className="aspect-square w-full max-w-md rounded-full object-cover shadow-xl ring-1 ring-black/5" />
+                  </div>
+                  <div className="flex flex-col justify-center">
+                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{selectedProgram.profileTitle}</h2>
+                    <p className="mt-4 text-xl font-semibold text-[#9b7a2f]">{selectedProgram.profileSubtitle}</p>
+                    <p className="mt-6 max-w-3xl text-xl leading-9 text-[#607064]">{selectedProgram.intro}</p>
+                    <a href={selectedProgram.website} target="_blank" rel="noreferrer" className="mt-6 inline-flex w-fit text-lg font-semibold text-[#9b7a2f] underline underline-offset-4">
+                      {selectedProgram.website}
+                    </a>
+                    <div className="mt-6 flex gap-3">
+                      {selectedProgram.socialLinks.map(([label, href, icon]) => (
+                        <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="flex h-11 w-11 items-center justify-center rounded-full bg-[#a8a8a8] text-sm font-semibold text-white transition hover:bg-[#1f3b2c]">
+                          {icon}
                         </a>
                       ))}
                     </div>
-                  )}
+                    <a href={selectedProgram.firstVideoUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex w-fit rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424]">
+                      Ver primero video
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div className="grid gap-5 p-8 md:grid-cols-2 lg:p-12">
-                {selectedProgram.sections.map((section) => (
-                  <section key={section.title} className="rounded-2xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
-                    <h2 className="text-2xl font-semibold text-[#14261c]">{section.title}</h2>
-                    <p className="mt-3 leading-8 text-[#607064]">{section.text}</p>
-                  </section>
-                ))}
-              </div>
-              <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
-                <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
-                  Volver a Programa Integral
-                </a>
-              </div>
-            </article>
+                <div className="grid gap-10 border-t border-[#efe6cd] bg-[#fbf8ef] p-8 lg:grid-cols-[1fr_0.8fr] lg:p-12">
+                  <div className="flex flex-col justify-center text-center lg:text-left">
+                    <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[#14261c] md:text-4xl">{selectedProgram.videoTitle}</h2>
+                    <p className="mt-6 text-lg leading-8 text-[#607064]">{selectedProgram.videoText}</p>
+                    <a href={selectedProgram.videoUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex w-fit self-center rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424] lg:self-start">
+                      VER VIDEO
+                    </a>
+                  </div>
+                  <img src={selectedProgram.videoImage} alt="ANDRES MUÑOZ ANTROPOSOFIA" className="w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                </div>
+                <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
+                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    Volver a Programa Integral
+                  </a>
+                </div>
+              </article>
+            ) : (
+              <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
+                <div className="grid gap-0 lg:grid-cols-[0.92fr_1.08fr]">
+                  <div className="bg-[#f3ead3]">
+                    <img src={selectedProgram.image} alt={selectedProgram.title} className="h-full min-h-[360px] w-full object-cover" />
+                  </div>
+                  <div className="p-8 lg:p-12">
+                    <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{selectedProgram.eyebrow}</p>
+                    <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-6xl">{selectedProgram.title}</h1>
+                    <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.intro}</p>
+                    {selectedProgram.links && (
+                      <div className="mt-8 flex flex-wrap gap-3">
+                        {selectedProgram.links.map(([label, href]) => (
+                          <a key={href} href={href} target="_blank" rel="noreferrer" className="inline-flex rounded-none bg-[#3f3f3f] px-7 py-3 font-serif text-lg text-white transition hover:bg-[#242424]">
+                            {label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div className="grid gap-5 p-8 md:grid-cols-2 lg:p-12">
+                  {selectedProgram.sections.map((section) => (
+                    <section key={section.title} className="rounded-2xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
+                      <h2 className="text-2xl font-semibold text-[#14261c]">{section.title}</h2>
+                      <p className="mt-3 leading-8 text-[#607064]">{section.text}</p>
+                    </section>
+                  ))}
+                </div>
+                <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
+                  <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
+                    Volver a Programa Integral
+                  </a>
+                </div>
+              </article>
+            )}
           </div>
         </section>
         )}
