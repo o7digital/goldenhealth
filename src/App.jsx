@@ -742,8 +742,8 @@ export default function GoldenHealthMockup() {
                 <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d3aa45] px-7 py-4 font-semibold text-[#14261c] shadow-xl shadow-[#d3aa45]/25 transition hover:-translate-y-0.5 hover:bg-[#c99c32]">
                   {t.primaryCta}
                 </a>
-                <a href="/programa-integral" onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/12 px-7 py-4 font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20">
-                  Programa Integral
+                <a href="#metodo" className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/12 px-7 py-4 font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20">
+                  {t.secondaryCta}
                 </a>
               </div>
 
@@ -756,6 +756,27 @@ export default function GoldenHealthMockup() {
                     onClick={() => setActiveSlide(index)}
                     className={`h-2 rounded-full transition-all ${activeSlide === index ? "w-12 bg-[#d3aa45]" : "w-6 bg-white/35"}`}
                   />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="metodo" className="px-5 pb-24 lg:px-8">
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-[#14261c] p-8 text-white shadow-2xl shadow-[#14261c]/15 lg:p-12">
+            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#d3aa45]">{t.methodEyebrow}</p>
+                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">{t.methodTitle}</h2>
+                <p className="mt-5 leading-8 text-white/70">{t.methodText}</p>
+              </div>
+              <div className="grid gap-4 md:grid-cols-3">
+                {t.method.map(([num, title, text]) => (
+                  <div key={title} className="rounded-3xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
+                    <span className="text-sm font-semibold text-[#d3aa45]">{num}</span>
+                    <p className="mt-4 text-xl font-semibold">{title}</p>
+                    <p className="mt-3 text-sm leading-6 text-white/68">{text}</p>
+                  </div>
                 ))}
               </div>
             </div>
@@ -804,6 +825,46 @@ export default function GoldenHealthMockup() {
                 </div>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="px-5 pb-24 lg:px-8">
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-[#e7d39b] p-8 shadow-sm ring-1 ring-black/5 lg:p-12">
+            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.patientEyebrow}</p>
+                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.patientTitle}</h2>
+                <p className="mt-5 text-lg leading-8 text-[#607064]">{t.patientText}</p>
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                {t.patientCards.map(([title, text]) => (
+                  <article key={title} className="rounded-3xl bg-white/80 p-6 shadow-sm ring-1 ring-black/5">
+                    <p className="text-lg font-semibold text-[#14261c]">{title}</p>
+                    <p className="mt-3 text-sm leading-6 text-[#667166]">{text}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="noticias" className="px-5 pb-24 lg:px-8">
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-sm ring-1 ring-black/5 lg:p-12">
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Noticias</p>
+                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Comunidad Golden Health</h2>
+                <p className="mt-5 text-lg leading-8 text-[#607064]">Esta parte funciona mejor como blog social y editorial: contenido vivo, entrevistas, testimonios y novedades, sin quitar fuerza al mensaje principal del home.</p>
+              </div>
+              <div className="grid gap-4 md:grid-cols-3">
+                {newsItems.map(([title, text]) => (
+                  <article key={title} className="rounded-3xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
+                    <p className="text-lg font-semibold text-[#14261c]">{title}</p>
+                    <p className="mt-3 text-sm leading-6 text-[#667166]">{text}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
