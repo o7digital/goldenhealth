@@ -795,7 +795,7 @@ const products = [
 
 const consultations = [
   ["Consulta Online", "Disponible online", "30 min", "$500", "/images/source/consultas/consulta-online.webp", "consulta-online-1"],
-  ["Consulta Presencial", "En clinica", "1 h", "$1,500", "/images/source/consultas/consulta-presencial.webp", "consulta-presencial"],
+  ["Consulta Presencial", "En clinica", "1 h", "$1,500", "/images/golden-health/consulta-medica.webp", "consulta-presencial"],
   ["Consultas en Madrid", "Disponible online", "1 h", "$1,500", "/images/source/consultas/consultas-madrid.webp", "consultas-en-madrid"],
 ];
 
