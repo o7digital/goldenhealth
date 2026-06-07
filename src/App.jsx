@@ -184,15 +184,70 @@ const sourceSections = [
 ];
 
 const products = [
-  ["Tratamientos Biologicos", "$2,300.00"],
-  ["Tratamiento Antioxidante", "$5,980.00"],
-  ["Tratamiento Anti-inflamatorio", "$4,200.00"],
-  ["Tratamiento Sindrome Metabolico", "$7,250.00"],
-  ["Tratamiento Detox", "$4,200.00"],
-  ["Celulas Madre", "$27,000.00"],
-  ["Tratamiento Hormonal Hombre", "$4,200.00"],
-  ["Tratamiento Hormonal para la mujer", "$4,200.00"],
-  ["Organoterapia", "$4,800.00"],
+  {
+    slug: "tratamientos-biologicos",
+    name: "Tratamientos Biologicos",
+    price: "$2,300.00",
+    image: "/images/source/products/tratamientos-biologicos.jpeg",
+    summary: "Paquete biologico de soporte para bienestar integral y equilibrio celular.",
+    details: ["10 sesiones", "2 tratamientos biologicos", "Acompanamiento para elegir protocolo segun objetivo"],
+  },
+  {
+    slug: "tratamiento-antioxidante",
+    name: "Tratamiento Antioxidante",
+    price: "$5,980.00",
+    image: "/images/source/products/antioxidante.jpeg",
+    summary: "Terapia antioxidante endocrina orientada a proteger, reparar y apoyar la vitalidad.",
+    details: ["Formula Citoplacell", "Soporte antioxidante", "Enfoque anti-aging y energia"],
+  },
+  {
+    slug: "tratamiento-anti-inflamatorio",
+    name: "Tratamiento Anti-inflamatorio",
+    price: "$4,200.00",
+    image: "/images/source/products/antiinflamatorio.jpeg",
+    summary: "Protocolo anti-inflamatorio para apoyar recuperacion, movilidad y equilibrio metabolico.",
+    details: ["Formula Bioenzym", "Apoyo anti-inflamatorio", "Orientado a bienestar osteoarticular y sistemico"],
+  },
+  {
+    slug: "tratamiento-sindrome-metabolico",
+    name: "Tratamiento Sindrome Metabolico",
+    price: "$7,250.00",
+    image: "/images/source/products/sindrome-metabolico.jpeg",
+    summary: "Terapia para acompanamiento metabolico y regulacion funcional.",
+    details: ["Formula Revercell", "Apoyo al metabolismo", "Seguimiento recomendado con consulta"],
+  },
+  {
+    slug: "tratamiento-detox",
+    name: "Tratamiento Detox",
+    price: "$4,200.00",
+    image: "/images/source/products/detox.jpeg",
+    summary: "Protocolo detox para apoyar eliminacion de toxinas y bienestar digestivo.",
+    details: ["Formula Celltox", "Quelacion oral", "Apoyo a habitos saludables"],
+  },
+  {
+    slug: "celulas-madre",
+    name: "Celulas Madre",
+    price: "$27,000.00",
+    image: "/images/source/products/celulas-madre.jpeg",
+    summary: "Activador de longevidad orientado a proteccion, reparacion y revitalizacion.",
+    details: ["Human Ultracell VI", "Ciclos de tratamiento", "Protocolo premium de longevidad"],
+  },
+  {
+    slug: "tratamiento-hormonal-hombre",
+    name: "Tratamiento Hormonal Hombre",
+    price: "$4,200.00",
+    image: "/images/source/products/hormonal-hombre.jpeg",
+    summary: "Soporte funcional para regulacion del ciclo hormonal masculino.",
+    details: ["Formula Androcell", "Apoyo hormonal hombre", "Evaluacion medica recomendada"],
+  },
+  {
+    slug: "tratamiento-hormonal-mujer",
+    name: "Tratamiento Hormonal para la mujer",
+    price: "$4,200.00",
+    image: "/images/source/products/hormonal-mujer.jpeg",
+    summary: "Soporte funcional para regulacion del ciclo hormonal femenino.",
+    details: ["Formula Biofemin", "Apoyo hormonal mujer", "Seguimiento personalizado"],
+  },
 ];
 
 const consultations = [
@@ -218,7 +273,9 @@ export default function GoldenHealthMockup() {
     path === "/tienda" ? "tienda" :
     path === "/consultas" ? "consultas" :
     path === "/contacto" ? "contacto" :
+    path.startsWith("/producto/") ? "producto" :
     "home";
+  const selectedProduct = products.find((product) => path === `/producto/${product.slug}`);
   const navLinks = [
     ["/#metodo", t.nav.method],
     ["/#programa", "Programa"],
@@ -535,21 +592,71 @@ export default function GoldenHealthMockup() {
 
         {page === "tienda" && (
         <section id="tienda" className="px-5 py-32 lg:px-8">
-          <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="mx-auto max-w-7xl overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
+            <div className="grid lg:grid-cols-[0.65fr_1.35fr]">
             <div className="bg-[#e7d39b] p-10 lg:p-14">
               <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#14261c] text-2xl text-[#d3aa45]">🛍</div>
               <h2 className="mt-8 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.shopTitle}</h2>
-              <p className="mt-5 text-lg leading-8 text-[#3f493f]">{t.shopText}</p>
-              <button className="mt-8 rounded-full bg-[#14261c] px-6 py-4 font-semibold text-white shadow-lg shadow-[#14261c]/20">{t.shopCta}</button>
+              <p className="mt-5 text-lg leading-8 text-[#3f493f]">Tratamientos biologicos y protocolos funcionales con fichas completas, imagen real, precio y solicitud directa.</p>
+              <a href="#productos" className="mt-8 inline-flex rounded-full bg-[#14261c] px-6 py-4 font-semibold text-white shadow-lg shadow-[#14261c]/20">Ver productos →</a>
             </div>
-            <div className="grid gap-4 p-8 md:grid-cols-2 lg:p-12">
-              {products.map(([product, price]) => (
-                <div key={product} className="rounded-3xl border border-[#efe6cd] bg-[#fbf8ef] p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-lg">
-                  <p className="text-lg font-semibold text-[#14261c]">{product}</p>
-                  <p className="mt-2 text-sm leading-6 text-[#6a756d]">{t.productText}</p>
-                  <p className="mt-4 text-xl font-semibold text-[#9b7a2f]">{price}</p>
-                </div>
+            <div id="productos" className="grid gap-5 p-8 md:grid-cols-2 lg:p-12">
+              {products.map((product) => (
+                <a
+                  key={product.slug}
+                  href={`/producto/${product.slug}`}
+                  onClick={(event) => navigate(event, `/producto/${product.slug}`)}
+                  className="group overflow-hidden rounded-3xl border border-[#efe6cd] bg-[#fbf8ef] transition hover:-translate-y-1 hover:bg-white hover:shadow-xl hover:shadow-[#1f3b2c]/10"
+                >
+                  <img src={product.image} alt={product.name} className="aspect-[4/3] w-full bg-white object-contain p-4" />
+                  <div className="p-6">
+                    <p className="text-lg font-semibold text-[#14261c]">{product.name}</p>
+                    <p className="mt-2 text-sm leading-6 text-[#6a756d]">{product.summary}</p>
+                    <div className="mt-5 flex items-center justify-between gap-4">
+                      <p className="text-xl font-semibold text-[#9b7a2f]">{product.price}</p>
+                      <span className="rounded-full bg-[#14261c] px-4 py-2 text-sm font-semibold text-white">Ver ficha</span>
+                    </div>
+                  </div>
+                </a>
               ))}
+            </div>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {page === "producto" && selectedProduct && (
+        <section className="px-5 py-32 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-8 text-sm text-[#607064]">
+              <a href="/tienda" onClick={(event) => navigate(event, "/tienda")} className="font-semibold text-[#9b7a2f]">Tienda</a>
+              <span> / {selectedProduct.name}</span>
+            </div>
+            <div className="grid gap-10 rounded-[2.7rem] bg-white p-8 shadow-xl ring-1 ring-black/5 lg:grid-cols-[0.95fr_1.05fr] lg:p-12">
+              <div className="rounded-[2rem] bg-[#fbf8ef] p-6">
+                <img src={selectedProduct.image} alt={selectedProduct.name} className="aspect-square w-full object-contain" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">Ficha producto</p>
+                <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-6xl">{selectedProduct.name}</h1>
+                <p className="mt-5 text-3xl font-semibold text-[#9b7a2f]">{selectedProduct.price}</p>
+                <p className="mt-6 text-lg leading-8 text-[#607064]">{selectedProduct.summary}</p>
+                <div className="mt-8 rounded-3xl bg-[#14261c] p-6 text-white">
+                  <p className="font-semibold text-[#d3aa45]">Incluye</p>
+                  <ul className="mt-4 space-y-3 text-white/80">
+                    {selectedProduct.details.map((detail) => (
+                      <li key={detail} className="flex gap-3">
+                        <span className="text-[#d3aa45]">•</span>
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="inline-flex justify-center rounded-full bg-[#d3aa45] px-7 py-4 font-semibold text-[#14261c]">Solicitar por WhatsApp</a>
+                  <a href="/tienda" onClick={(event) => navigate(event, "/tienda")} className="inline-flex justify-center rounded-full border border-[#14261c]/20 px-7 py-4 font-semibold text-[#14261c]">Volver a tienda</a>
+                </div>
+              </div>
             </div>
           </div>
         </section>

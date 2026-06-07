@@ -5,6 +5,7 @@
   "rewrites": [
     { "source": "/historia", "destination": "/" },
     { "source": "/tienda", "destination": "/" },
+    { "source": "/producto/:path*", "destination": "/" },
     { "source": "/consultas", "destination": "/" },
     { "source": "/contacto", "destination": "/" }
   ]
