@@ -969,7 +969,7 @@ export default function GoldenHealthMockup() {
             </div>
           </div>
 
-          <nav className="hidden items-center gap-8 text-sm font-medium text-[#314136] md:flex">
+          <nav className="hidden items-center gap-8 text-sm font-medium text-[#314136] lg:flex">
             {navLinks.map(([href, label]) => (
               href === "/programa-integral" ? (
                 <div key={href} className="group relative py-2">
@@ -1014,7 +1014,7 @@ export default function GoldenHealthMockup() {
             <a
               href={localizedHref("/contacto")}
               onClick={(event) => navigate(event, "/contacto")}
-              className="hidden rounded-full bg-[#1f3b2c] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1f3b2c]/20 transition hover:-translate-y-0.5 hover:bg-[#14261c] md:inline-flex"
+              className="hidden rounded-full bg-[#1f3b2c] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#1f3b2c]/20 transition hover:-translate-y-0.5 hover:bg-[#14261c] lg:inline-flex"
             >
               {t.cta}
             </a>
@@ -1023,7 +1023,7 @@ export default function GoldenHealthMockup() {
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
               onClick={() => setMobileMenuOpen((open) => !open)}
-              className="inline-flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-[#1f3b2c]/15 bg-white/75 shadow-sm md:hidden"
+              className="inline-flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-[#1f3b2c]/15 bg-white/75 shadow-sm lg:hidden"
             >
               <span className={`h-0.5 w-5 rounded-full bg-[#1f3b2c] transition ${mobileMenuOpen ? "translate-y-2 rotate-45" : ""}`} />
               <span className={`h-0.5 w-5 rounded-full bg-[#1f3b2c] transition ${mobileMenuOpen ? "opacity-0" : ""}`} />
@@ -1031,7 +1031,7 @@ export default function GoldenHealthMockup() {
             </button>
           </div>
         </div>
-        <div className={`md:hidden ${mobileMenuOpen ? "block" : "hidden"}`}>
+        <div className={`lg:hidden ${mobileMenuOpen ? "block" : "hidden"}`}>
           <nav className="mx-5 mb-4 rounded-[1.5rem] border border-[#1f3b2c]/10 bg-white/95 p-3 text-[#1f3b2c] shadow-xl shadow-[#1f3b2c]/10">
             {navLinks.map(([href, label]) => (
               href === "/programa-integral" ? (
@@ -1819,7 +1819,7 @@ export default function GoldenHealthMockup() {
                 </div>
 	                <p className="mt-28 text-center text-2xl text-[#8a8580]">{t.noAvailability}</p>
                 <div className="mt-12 flex justify-center">
-	                  <button type="button" className="bg-[#9e9e9e] px-24 py-5 font-serif text-2xl text-white">{t.nextSession}</button>
+                  <button type="button" className="w-full bg-[#9e9e9e] px-6 py-5 font-serif text-xl text-white sm:w-auto sm:px-24 sm:text-2xl">{t.nextSession}</button>
                 </div>
               </div>
               <aside>
