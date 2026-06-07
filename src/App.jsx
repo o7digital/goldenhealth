@@ -279,7 +279,7 @@ export default function GoldenHealthMockup() {
   const selectedProduct = products.find((product) => path === `/producto/${product.slug}`);
   const selectedConsultation = consultations.find((consultation) => path === `/booking-calendar/${consultation[5]}`);
   const navLinks = [
-    ["/#metodo", t.nav.method],
+    ["/", "Inicio"],
     ["/#programa", "Programa"],
     ["/#terapias", t.nav.therapies],
     ["/historia", "Historia"],
