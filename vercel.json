@@ -7,6 +7,7 @@
     { "source": "/tienda", "destination": "/" },
     { "source": "/producto/:path*", "destination": "/" },
     { "source": "/consultas", "destination": "/" },
+    { "source": "/booking-calendar/:path*", "destination": "/" },
     { "source": "/contacto", "destination": "/" }
   ]
 }

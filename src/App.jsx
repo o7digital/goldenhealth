@@ -251,9 +251,9 @@ const products = [
 ];
 
 const consultations = [
-  ["Consulta Online", "Disponible online", "30 min", "$500", "/images/source/consultas/consulta-online.jpg"],
-  ["Consulta Presencial", "En clinica", "1 h", "$1,500", "/images/source/consultas/consulta-presencial.jpeg"],
-  ["Consultas en Madrid", "Disponible online", "1 h", "$1,500", "/images/source/consultas/consultas-madrid.jpg"],
+  ["Consulta Online", "Disponible online", "30 min", "$500", "/images/source/consultas/consulta-online.jpg", "consulta-online-1"],
+  ["Consulta Presencial", "En clinica", "1 h", "$1,500", "/images/source/consultas/consulta-presencial.jpeg", "consulta-presencial"],
+  ["Consultas en Madrid", "Disponible online", "1 h", "$1,500", "/images/source/consultas/consultas-madrid.jpg", "consultas-en-madrid"],
 ];
 
 const newsItems = [
@@ -273,9 +273,11 @@ export default function GoldenHealthMockup() {
     path === "/tienda" ? "tienda" :
     path === "/consultas" ? "consultas" :
     path === "/contacto" ? "contacto" :
+    path.startsWith("/booking-calendar/") ? "booking" :
     path.startsWith("/producto/") ? "producto" :
     "home";
   const selectedProduct = products.find((product) => path === `/producto/${product.slug}`);
+  const selectedConsultation = consultations.find((consultation) => path === `/booking-calendar/${consultation[5]}`);
   const navLinks = [
     ["/#metodo", t.nav.method],
     ["/#programa", "Programa"],
@@ -703,7 +705,7 @@ export default function GoldenHealthMockup() {
               <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">Nuestros servicios</h2>
             </div>
             <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {consultations.map(([name, meta, duration, price, image]) => (
+              {consultations.map(([name, meta, duration, price, image, slug]) => (
                 <div key={name} className="overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-black/5">
                   <img src={image} alt={name} className="aspect-[4/2.7] w-full object-cover" />
                   <div className="p-7">
@@ -713,10 +715,60 @@ export default function GoldenHealthMockup() {
                       <p className="text-[#607064]">{duration}</p>
                       <p className="text-3xl font-semibold text-[#14261c]">{price}</p>
                     </div>
-                    <a href="/contacto" onClick={(event) => navigate(event, "/contacto")} className="mt-6 inline-flex w-full justify-center rounded-full bg-[#1f3b2c] px-5 py-3 font-semibold text-white">Reservar ahora</a>
+                    <a href={`/booking-calendar/${slug}`} onClick={(event) => navigate(event, `/booking-calendar/${slug}`)} className="mt-6 inline-flex w-full justify-center rounded-full bg-[#1f3b2c] px-5 py-3 font-semibold text-white">Reservar ahora</a>
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+        )}
+
+        {page === "booking" && selectedConsultation && (
+        <section className="px-5 py-32 lg:px-8">
+          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-xl ring-1 ring-black/5 lg:p-12">
+            <a href="/consultas" onClick={(event) => navigate(event, "/consultas")} className="inline-flex items-center gap-2 text-lg text-[#607064]">‹ Volver</a>
+            <div className="mt-16">
+              <h1 className="font-serif text-5xl text-[#3f3f3f]">Programa tu servicio</h1>
+              <p className="mt-6 text-xl leading-8 text-[#607064]">Revisa nuestra disponibilidad y reserva la fecha y hora que más te convengan</p>
+            </div>
+            <div className="mt-20 grid gap-12 lg:grid-cols-[1fr_0.55fr]">
+              <div>
+                <div className="flex flex-wrap items-end justify-between gap-4 border-b border-[#d6d2ca] pb-4">
+                  <h2 className="font-serif text-3xl text-[#3f3f3f]">Selecciona fecha y hora</h2>
+                  <p className="text-[#aaa39b]">hora estándar central (GMT-6)</p>
+                </div>
+                <div className="mt-8 flex items-center justify-center gap-14 text-2xl text-[#777]">
+                  <span>‹</span>
+                  <span>May - Jun 2026</span>
+                  <span>›</span>
+                </div>
+                <div className="mt-10 grid grid-cols-7 text-center text-[#c8c3bd]">
+                  {["dom", "lun", "mar", "mié", "jue", "vie", "sáb"].map((day, index) => (
+                    <div key={day} className="space-y-3">
+                      <p>{day}</p>
+                      <p className="text-2xl">{index === 0 ? "31" : index}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-28 text-center text-2xl text-[#8a8580]">No hay disponibilidad</p>
+                <div className="mt-12 flex justify-center">
+                  <button type="button" className="bg-[#9e9e9e] px-24 py-5 font-serif text-2xl text-white">Próxima sesión disponible</button>
+                </div>
+              </div>
+              <aside>
+                <h2 className="border-b border-[#d6d2ca] pb-4 font-serif text-3xl text-[#3f3f3f]">Detalles del servicio</h2>
+                <div className="mt-8 space-y-5 text-xl text-[#607064]">
+                  <p>{selectedConsultation[0]}</p>
+                  <p>{selectedConsultation[2]}</p>
+                  <p>{selectedConsultation[3]}</p>
+                  <details className="border-t border-[#e2ddd4] pt-5">
+                    <summary className="cursor-pointer">Más detalles</summary>
+                    <p className="mt-4 text-base leading-7">Servicio de Golden Health. El motor real de reservas se integrará después.</p>
+                  </details>
+                </div>
+                <button type="button" className="mt-10 w-full bg-[#c7c7c7] px-8 py-5 font-serif text-2xl text-white">Siguiente</button>
+              </aside>
             </div>
           </div>
         </section>
