@@ -201,11 +201,14 @@ const sourceSections = [
   },
   {
     id: "hidratacion",
-    title: "Hidratacion Funcional",
-    intro: "Introduccion al agua Kangen: agua alcalina ionizada tratada por electrolisis para modificar pH y crear propiedades antioxidantes.",
+    title: "Hidratación Funcional",
+    intro: "Introducción al agua Kangen: agua alcalina ionizada tratada mediante electrólisis para alterar su pH y crear una estructura molecular única, con un pH más alto y propiedades antioxidantes.",
+    image: "/images/source/programa/hidratacion-funcional.png",
     items: [
-      ["Socio autorizado", "Golden Health presenta informacion y acceso a hidratacion funcional."],
-      ["Bienestar diario", "Apoyo a habitos de hidratacion dentro del programa integral."],
+      ["Agua Kangen", "El agua pasa por una máquina de ionización que separa moléculas cargadas positiva y negativamente."],
+      ["pH alcalino", "Proceso orientado a obtener agua con pH más alto y propiedades antioxidantes."],
+      ["Socio autorizado Golden Health", "Golden Health presenta información y acceso a hidratación funcional."],
+      ["Bienestar diario", "Apoyo a hábitos de hidratación dentro del programa integral."],
     ],
   },
 ];
