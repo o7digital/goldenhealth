@@ -839,10 +839,10 @@ const socialLinks = [
   ["YouTube", "https://www.youtube.com/user/GoldenHealthSalud", "▶"],
 ];
 
-export default function GoldenHealthMockup() {
+export default function GoldenHealthMockup({ initialPath = "/" }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [path, setPath] = useState(() => window.location.pathname);
+  const [path, setPath] = useState(initialPath);
   const language = path === "/en" || path.startsWith("/en/") ? "en" : "es";
   const routePath = language === "en" ? path.replace(/^\/en(?=\/|$)/, "") || "/" : path;
   const t = copy[language];

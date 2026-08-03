@@ -1,0 +1,78 @@
+---
+import "../index.css";
+import GoldenHealth from "../App.jsx";
+
+export function getStaticPaths() {
+  const baseRoutes = [
+    "",
+    "historia",
+    "programa-integral",
+    "tienda",
+    "consultas",
+    "noticias",
+    "contacto",
+  ];
+
+  const programSlugs = [
+    "antroposofia",
+    "arte-del-buen-comer-y-buen-beber",
+    "menu-golden-health",
+    "anti-aging",
+    "terapias-biologicas",
+    "hidratacion-funcional",
+    "ciencia-del-deporte",
+    "equilibrio-mente-cuerpo-espiritu",
+    "salud-nutricional",
+  ];
+
+  const productSlugs = [
+    "tratamientos-biologicos",
+    "tratamiento-antioxidante",
+    "tratamiento-anti-inflamatorio",
+    "tratamiento-sindrome-metabolico",
+    "tratamiento-detox",
+    "celulas-madre",
+    "tratamiento-hormonal-hombre",
+    "tratamiento-hormonal-mujer",
+  ];
+
+  const bookingSlugs = [
+    "consulta-presencial",
+    "consulta-online",
+    "consulta-madrid",
+  ];
+
+  const routes = [
+    ...baseRoutes,
+    ...programSlugs.map((slug) => `programa-integral/${slug}`),
+    ...productSlugs.map((slug) => `producto/${slug}`),
+    ...bookingSlugs.map((slug) => `booking-calendar/${slug}`),
+  ];
+
+  const localizedRoutes = [
+    ...routes,
+    ...routes.map((route) => (route ? `en/${route}` : "en")),
+  ];
+
+  return localizedRoutes.map((route) => ({
+    params: { slug: route || undefined },
+    props: { pathname: route ? `/${route}` : "/" },
+  }));
+}
+
+const { pathname } = Astro.props;
+const language = pathname === "/en" || pathname.startsWith("/en/") ? "en" : "es-MX";
+---
+
+<!doctype html>
+<html lang={language}>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golden Health MX</title>
+  </head>
+  <body>
+    <GoldenHealth initialPath={pathname} client:load />
+  </body>
+</html>
