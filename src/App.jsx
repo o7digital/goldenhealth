@@ -540,8 +540,8 @@ const programPages = [
     image: "/images/source/programa/alimentos-golden-health.webp",
     intro: "MÉNUS GOLDEN HEALTH",
     downloads: [
-      ["MENÚ GOLDEN HEALTH", "https://www.goldenhealthmx.com/_files/ugd/e47656_a5b631e3351a47448a73a2d560f98691.pdf"],
-      ["MENÚ CARNES", "https://www.goldenhealthmx.com/_files/ugd/e47656_4d8ac404c4bd40c389267c6e92a9ccb2.pdf"],
+      ["MENÚ GOLDEN HEALTH", "https://static.wixstatic.com/ugd/e47656_a5b631e3351a47448a73a2d560f98691.pdf"],
+      ["MENÚ CARNES", "https://static.wixstatic.com/ugd/e47656_4d8ac404c4bd40c389267c6e92a9ccb2.pdf"],
     ],
   },
   {
@@ -555,7 +555,7 @@ const programPages = [
     introExtra: "Con estos tratamientos prevenimos y revertimos el envejecimiento prematuro.",
     diagnosticTitle: "Diagnóstico Healthy Ageing",
     diagnosticText: "Al inicio del tratamiento se realiza una consulta médica con nuestra experta en salud, quien determinará que tratamiento es el más adecuado para retardar el proceso de envejecimiento y mejorar la calidad de vida en cada caso.",
-    reserveUrl: "https://www.goldenhealthmx.com/book-online",
+    reserveUrl: "/consultas",
     regenerationTitle: "Lo mas avanzado en tratamiento de Regeneración Celular",
     regenerationText: [
       "Resumen histórico de lo mas avanzado en tratamiento de regeneración celular para pacientes sanos y enfermos con la experiencia en Medicina Regenerativa y Anti envejecimiento.",
@@ -1280,7 +1280,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                 </div>
                 <div className="grid gap-10 px-8 pb-10 lg:grid-cols-[0.85fr_1.15fr] lg:px-12">
                   <div className="flex justify-center">
-                    <img src={selectedProgram.image} alt="Andres muñoz cardenas" className="aspect-square w-full max-w-md rounded-full object-cover shadow-xl ring-1 ring-black/5" />
+                    <img src={selectedProgram.image} alt={language === "en" ? "Andres Munoz Cardenas, anthroposophical psychologist" : "Andrés Muñoz Cárdenas, psicólogo de orientación antroposófica"} className="aspect-square w-full max-w-md rounded-full object-cover shadow-xl ring-1 ring-black/5" />
                   </div>
                   <div className="flex flex-col justify-center">
                     <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{selectedProgram.profileTitle}</h2>
@@ -1309,7 +1309,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                       VER VIDEO
                     </a>
                   </div>
-                  <img src={selectedProgram.videoImage} alt="ANDRES MUÑOZ ANTROPOSOFIA" className="w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <img src={selectedProgram.videoImage} alt={language === "en" ? "Anthroposophy talk by Andres Munoz Cardenas" : "Conferencia de antroposofía de Andrés Muñoz Cárdenas"} className="w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
                   <a href={localizedHref("/programa-integral")} onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
@@ -1323,7 +1323,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                   <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.nav.program}</p>
                   <h1 className="mt-4 text-4xl font-semibold uppercase tracking-[-0.03em] text-[#14261c] md:text-6xl">EL ARTE DEL BUEN COMER Y BUEN BEBER</h1>
                   <p className="mx-auto mt-6 max-w-4xl text-xl font-semibold uppercase leading-8 text-[#607064]">{selectedProgram.intro}</p>
-                  <img src={selectedProgram.image} alt="ARTE DEL COMER GOLDEN HEALTH MX.jpeg" className="mx-auto mt-10 aspect-square w-full max-w-2xl rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <img src={selectedProgram.image} alt={language === "en" ? "Healthy eating and drinking program at Golden Health" : "Programa de buen comer y buen beber de Golden Health"} className="mx-auto mt-10 aspect-square w-full max-w-2xl rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
 
                 <div className="border-t border-[#efe6cd] bg-[#fbf8ef] px-8 py-12 text-center lg:px-12">
@@ -1386,7 +1386,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                       ))}
                     </div>
                   </div>
-                  <img src={selectedProgram.image} alt="ALIMENTOS GOLDENHEALTHMX.jpeg" className="mx-auto aspect-[2/3] max-h-[760px] w-full max-w-md rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <img src={selectedProgram.image} alt={language === "en" ? "Healthy foods from the Golden Health menu" : "Alimentos saludables del menú Golden Health"} className="mx-auto aspect-[2/3] max-h-[760px] w-full max-w-md rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
                   <a href={localizedHref("/programa-integral")} onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
@@ -1405,7 +1405,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                 </div>
 
                 <div className="grid gap-10 px-8 pb-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-12">
-                  <img src={selectedProgram.image} alt="Captura de Pantalla 2023-01-10 a la(s) 17.57.30.png" className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <img src={selectedProgram.image} alt={language === "en" ? "Healthy Ageing regenerative medicine program" : "Programa Healthy Ageing de medicina regenerativa"} className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                   <div className="flex flex-col justify-center">
                     <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">Healthy Ageing</h2>
                     <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.sections[0].text}</p>
@@ -1416,15 +1416,15 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                   <div className="flex flex-col justify-center">
                     <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{selectedProgram.diagnosticTitle}</h2>
                     <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.diagnosticText}</p>
-                    <a href={selectedProgram.reserveUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex w-fit rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424]">
+                    <a href={localizedHref(selectedProgram.reserveUrl)} onClick={(event) => navigate(event, selectedProgram.reserveUrl)} className="mt-8 inline-flex w-fit rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424]">
                       Reserva ahora
                     </a>
                   </div>
-                  <img src={selectedProgram.secondaryImage} alt="ANTIAGINGCELULASMADREGOLDENHEALTHMX.jpeg" className="h-full min-h-[460px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <img src={selectedProgram.secondaryImage} alt={language === "en" ? "Medical assessment for regenerative and anti-aging treatment" : "Valoración médica para tratamiento regenerativo y anti-envejecimiento"} className="h-full min-h-[460px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
 
                 <div className="grid gap-10 border-t border-[#efe6cd] p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-12">
-                  <img src={selectedProgram.tertiaryImage} alt="ANTIAGINGCELULASMADREGOLDENHEALTHMX.jpeg" className="h-full min-h-[460px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <img src={selectedProgram.tertiaryImage} alt={language === "en" ? "Cellular regeneration and healthy longevity treatment" : "Tratamiento de regeneración celular y longevidad saludable"} className="h-full min-h-[460px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                   <div className="flex flex-col justify-center">
                     <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{selectedProgram.regenerationTitle}</h2>
                     <div className="mt-6 space-y-5 text-xl leading-9 text-[#607064]">
@@ -1454,7 +1454,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                 </div>
 
                 <div className="grid gap-10 px-8 pb-12 lg:grid-cols-[0.85fr_1.15fr] lg:px-12">
-                  <img src={selectedProgram.image} alt="DEPORTEGOLDENHEALTHMX.jpeg" className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <img src={selectedProgram.image} alt={language === "en" ? "Golden Health sports science program" : "Programa de ciencia del deporte de Golden Health"} className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                   <div className="flex flex-col justify-center">
                     <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{t.whatItIncludes}</h2>
                     <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.description}</p>
@@ -1473,7 +1473,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                       ))}
                     </ul>
                   </div>
-                  <img src={selectedProgram.secondaryImage} alt="240fbbcc54f5c9451ae6da4ddde9263e.jpeg" className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <img src={selectedProgram.secondaryImage} alt={language === "en" ? "High-performance athlete training and conditioning" : "Entrenamiento y acondicionamiento para deportistas de alto rendimiento"} className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
 
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
@@ -1491,7 +1491,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                 </div>
 
                 <div className="grid gap-10 px-8 pb-12 lg:grid-cols-[0.85fr_1.15fr] lg:px-12">
-                  <img src={selectedProgram.image} alt="5846111ef0cee33ce4b8986bfce78786.jpeg" className="h-full min-h-[480px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <img src={selectedProgram.image} alt={language === "en" ? "Body, mind, and spirit balance program" : "Programa de equilibrio entre cuerpo, mente y espíritu"} className="h-full min-h-[480px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                   <div className="flex flex-col justify-center">
                     <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{t.whatIsProgram}</h2>
                     <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.sections[0].text}</p>
@@ -1510,7 +1510,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                     </div>
                     <h3 className="mt-10 text-3xl font-semibold tracking-[-0.03em] text-[#14261c]">{t.objectives}</h3>
                   </div>
-                  <img src={selectedProgram.secondaryImage} alt="9db7e64eee11ec1b341fffb2e7c00a79.jpeg" className="h-full min-h-[480px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <img src={selectedProgram.secondaryImage} alt={language === "en" ? "Wellness practices for emotional and mental balance" : "Prácticas de bienestar para el equilibrio emocional y mental"} className="h-full min-h-[480px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
 
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
@@ -1535,7 +1535,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                       COMPRAR
                     </a>
                   </div>
-                  <img src={selectedProgram.image} alt="balance-oil-and-test-situational.webp" className="h-full min-h-[460px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
+                  <img src={selectedProgram.image} alt={language === "en" ? "Personalized nutrition assessment with BalanceTest" : "Evaluación de nutrición personalizada con BalanceTest"} className="h-full min-h-[460px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
 
                 <div className="border-t border-[#efe6cd] bg-[#fbf8ef] p-8 text-center lg:p-12">
@@ -1563,7 +1563,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                       COMPRAR
                     </a>
                   </div>
-                  <img src={selectedProgram.secondaryImage} alt="Zinzino.png" className="h-full min-h-[460px] w-full rounded-[1.5rem] object-contain shadow-lg ring-1 ring-black/5" />
+                  <img src={selectedProgram.secondaryImage} alt={language === "en" ? "Zinzino BalanceOil kit with nutrition test" : "Kit Zinzino BalanceOil con prueba nutricional"} className="h-full min-h-[460px] w-full rounded-[1.5rem] object-contain shadow-lg ring-1 ring-black/5" />
                 </div>
 
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">

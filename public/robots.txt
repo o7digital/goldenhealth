@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.goldenhealthmx.com/sitemap.xml
+Sitemap: https://www.goldenhealth.com.mx/sitemap.xml
