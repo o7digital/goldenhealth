@@ -97,6 +97,24 @@ const copy = {
     objectives: "¿Cuáles son los objetivos?",
     buy: "COMPRAR",
     strategicPartners: "Aliados estratégicos",
+    footerKeywords: [
+      "clínica de longevidad CDMX",
+      "medicina regenerativa Ciudad de México",
+      "anti aging CDMX",
+      "medicina preventiva México CDMX",
+      "salud celular CDMX",
+      "terapias biológicas Ciudad de México",
+      "nutrición funcional CDMX",
+      "consulta médica Miguel Hidalgo CDMX",
+      "bienestar integral Ciudad de México",
+      "tratamientos biológicos CDMX",
+      "células madre CDMX",
+      "tratamiento detox México CDMX",
+      "tratamiento hormonal CDMX",
+      "hidratación funcional Ciudad de México",
+      "ciencia del deporte CDMX",
+      "Golden Health México CDMX",
+    ],
     pageTitles: {
       home: "Golden Health MX",
       programa: "Programa Integral | Golden Health MX",
@@ -224,6 +242,24 @@ const copy = {
     objectives: "What are the objectives?",
     buy: "BUY",
     strategicPartners: "Strategic partners",
+    footerKeywords: [
+      "longevity clinic Mexico City",
+      "regenerative medicine Mexico City",
+      "anti-aging clinic CDMX",
+      "preventive medicine Mexico City",
+      "cellular health CDMX",
+      "biological therapies Mexico City",
+      "functional nutrition CDMX",
+      "medical consultation Miguel Hidalgo CDMX",
+      "integral wellness Mexico City",
+      "biological treatments CDMX",
+      "stem cell therapy Mexico City",
+      "detox treatment CDMX",
+      "hormonal treatment Mexico City",
+      "functional hydration CDMX",
+      "sports science Mexico City",
+      "Golden Health Mexico City CDMX",
+    ],
     pageTitles: {
       home: "Golden Health MX",
       programa: "Integral Program | Golden Health MX",
@@ -1900,6 +1936,9 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
               <img src="/images/source/footer/royal-prestige.webp" alt="Royal Prestige" className="max-h-24 w-auto object-contain" />
             </div>
           </div>
+        </div>
+        <div className="mx-auto mt-10 max-w-6xl border-t border-[#14261c]/10 pt-6 text-center text-xs leading-7 text-[#6f7f77]">
+          {t.footerKeywords.join(" · ")}
         </div>
       </footer>
 
