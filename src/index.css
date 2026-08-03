@@ -173,6 +173,7 @@ svg {
 .gh-olivia-lead p { margin: 0 0 10px; color: rgba(255,255,255,.78); font-size: 13px; }
 .gh-olivia-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .gh-olivia-grid input,
+.gh-olivia-grid textarea,
 .gh-olivia-compose input {
   min-width: 0;
   border: 1px solid rgba(20,38,28,.12);
@@ -181,6 +182,12 @@ svg {
   color: #14261c;
   padding: 12px 13px;
   outline: none;
+}
+
+.gh-olivia-need {
+  grid-column: 1 / -1;
+  min-height: 74px;
+  resize: vertical;
 }
 
 .gh-olivia-consent {

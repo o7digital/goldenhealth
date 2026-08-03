@@ -230,7 +230,7 @@ export default function OliviaChat() {
                 <input placeholder={t.lastName} value={lead.lastName} onChange={(e) => setLead({ ...lead, lastName: e.target.value })} autoComplete="family-name" />
                 <input placeholder={t.email} value={lead.email} onChange={(e) => setLead({ ...lead, email: e.target.value })} autoComplete="email" type="email" />
                 <input placeholder={t.phone} value={lead.phone} onChange={(e) => setLead({ ...lead, phone: e.target.value })} autoComplete="tel" />
-                <input className="gh-olivia-need" placeholder={t.need} value={lead.need} onChange={(e) => setLead({ ...lead, need: e.target.value })} autoComplete="off" />
+                <textarea className="gh-olivia-need" rows={2} placeholder={t.need} value={lead.need} onChange={(e) => setLead({ ...lead, need: e.target.value })} />
               </div>
               <label className="gh-olivia-consent">
                 <input type="checkbox" defaultChecked />
