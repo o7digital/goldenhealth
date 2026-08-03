@@ -15,6 +15,7 @@ const TEXT = {
     lastName: "Apellido",
     email: "Email",
     phone: "Teléfono",
+    need: "Necesidad",
     sendDetails: "Enviar datos",
     detailsSent: "Gracias. Tus datos fueron enviados. Ahora puedo ayudarte con tus preguntas sin volver a pedirlos.",
     error: "No pude enviar el mensaje. Intenta de nuevo o contacta directamente a Golden Health.",
@@ -32,6 +33,7 @@ const TEXT = {
     lastName: "Last name",
     email: "Email",
     phone: "Phone",
+    need: "Need",
     sendDetails: "Send details",
     detailsSent: "Thank you. Your details were sent. I can now help with your questions without asking for them again.",
     error: "I could not send the message. Please try again or contact Golden Health directly.",
@@ -49,6 +51,7 @@ const TEXT = {
     lastName: "Nom",
     email: "Email",
     phone: "Téléphone",
+    need: "Besoin",
     sendDetails: "Envoyer",
     detailsSent: "Merci. Vos coordonnées ont été envoyées. Je peux maintenant répondre sans les redemander.",
     error: "Je n’ai pas pu envoyer le message. Réessayez ou contactez Golden Health directement.",
@@ -78,7 +81,7 @@ export default function OliviaChat() {
   const [messages, setMessages] = useState([{ role: "assistant", content: t.intro }]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [lead, setLead] = useState({ firstName: "", lastName: "", email: "", phone: "" });
+  const [lead, setLead] = useState({ firstName: "", lastName: "", email: "", phone: "", need: "" });
   const [leadSent, setLeadSent] = useState(false);
   const visitorRef = useRef(null);
   const conversationRef = useRef(null);
@@ -127,6 +130,8 @@ export default function OliviaChat() {
           lastName: lead.lastName,
           email: lead.email,
           phone: lead.phone,
+          need: lead.need,
+          necesidad: lead.need,
           ...extra.metadata,
         },
       }),
@@ -148,14 +153,14 @@ export default function OliviaChat() {
 
   async function sendLead(event) {
     event.preventDefault();
-    if (!lead.firstName || !lead.email || !lead.phone) return;
+    if (!lead.firstName || !lead.email || !lead.phone || !lead.need) return;
     setLoading(true);
     try {
-      await saveVisitorMessage(`Lead Golden Health: ${lead.firstName} ${lead.lastName} · ${lead.email} · ${lead.phone}`, {
+      await saveVisitorMessage(`Lead Golden Health: ${lead.firstName} ${lead.lastName} · ${lead.email} · ${lead.phone} · ${t.need}: ${lead.need}`, {
         metadata: { type: "lead", leadStatus: "captured" },
       });
       setLeadSent(true);
-      setMessages((items) => [...items, { role: "user", content: `${lead.firstName} ${lead.lastName} · ${lead.email} · ${lead.phone}` }, { role: "assistant", content: t.detailsSent }]);
+      setMessages((items) => [...items, { role: "user", content: `${lead.firstName} ${lead.lastName} · ${lead.email} · ${lead.phone} · ${t.need}: ${lead.need}` }, { role: "assistant", content: t.detailsSent }]);
     } catch {
       setMessages((items) => [...items, { role: "assistant", content: t.error }]);
     } finally {
@@ -225,6 +230,7 @@ export default function OliviaChat() {
                 <input placeholder={t.lastName} value={lead.lastName} onChange={(e) => setLead({ ...lead, lastName: e.target.value })} autoComplete="family-name" />
                 <input placeholder={t.email} value={lead.email} onChange={(e) => setLead({ ...lead, email: e.target.value })} autoComplete="email" type="email" />
                 <input placeholder={t.phone} value={lead.phone} onChange={(e) => setLead({ ...lead, phone: e.target.value })} autoComplete="tel" />
+                <input className="gh-olivia-need" placeholder={t.need} value={lead.need} onChange={(e) => setLead({ ...lead, need: e.target.value })} autoComplete="off" />
               </div>
               <label className="gh-olivia-consent">
                 <input type="checkbox" defaultChecked />
