@@ -2,8 +2,226 @@
 import "../index.css";
 import GoldenHealth from "../App.jsx";
 
+const siteUrl = "https://www.goldenhealthmx.com";
+
+const baseRoutes = [
+  "",
+  "historia",
+  "programa-integral",
+  "tienda",
+  "consultas",
+  "noticias",
+  "contacto",
+];
+
+const programPages = {
+  "antroposofia": {
+    title: "Antroposofia | Programa Integral Golden Health MX",
+    name: "Antroposofia",
+    description: "Programa de salud antroposofica con Andres Munoz Cardenas dentro de Golden Health MX para bienestar integral, presencia y equilibrio.",
+    image: "/images/source/programa/andres-munoz-cardenas.webp",
+  },
+  "arte-del-buen-comer-y-buen-beber": {
+    title: "Arte del Buen Comer y Buen Beber | Golden Health MX",
+    name: "Arte del Buen Comer y Buen Beber",
+    description: "Programa de alimentacion saludable Golden Health para aprender habitos de nutricion, cocina consciente y bienestar preventivo.",
+    image: "/images/source/programa/arte-buen-comer.webp",
+  },
+  "menu-golden-health": {
+    title: "Menu Golden Health | Alimentacion Saludable",
+    name: "Menu Golden Health",
+    description: "Menus Golden Health para incorporar alimentos saludables, recetas practicas y habitos de nutricion funcional.",
+    image: "/images/source/programa/alimentos-golden-health.webp",
+  },
+  "anti-aging": {
+    title: "Medicina Regenerativa y Anti Aging en CDMX | Golden Health",
+    name: "Medicina Regenerativa",
+    description: "Tratamientos de medicina regenerativa y anti aging en CDMX para apoyar salud celular, vitalidad y prevencion del envejecimiento prematuro.",
+    image: "/images/source/programa/anti-aging-captura.webp",
+  },
+  "terapias-biologicas": {
+    title: "Terapias Biologicas en CDMX | Golden Health MX",
+    name: "Terapias Biologicas",
+    description: "Terapias biologicas orientadas a vitalidad, equilibrio celular, sistema inmune y bienestar integral en Golden Health CDMX.",
+    image: "/images/source/programa/terapias-biologicas.webp",
+  },
+  "hidratacion-funcional": {
+    title: "Hidratacion Funcional | Golden Health MX",
+    name: "Hidratacion Funcional",
+    description: "Hidratacion funcional con enfoque preventivo para acompanar energia, equilibrio y habitos saludables dentro del programa Golden Health.",
+    image: "/images/source/programa/hidratacion-funcional.webp",
+  },
+  "ciencia-del-deporte": {
+    title: "Ciencia del Deporte | Golden Health MX",
+    name: "Ciencia del Deporte",
+    description: "Programa para personas activas y deportistas que buscan condicion fisica, recuperacion, disciplina y bienestar funcional.",
+    image: "/images/source/programa/deporte-golden-health.webp",
+  },
+  "equilibrio-mente-cuerpo-espiritu": {
+    title: "Equilibrio Mente Cuerpo y Espiritu | Golden Health",
+    name: "Equilibrio Mente, Cuerpo, Espiritu",
+    description: "Programa integral para bienestar emocional, mental y fisico con experiencias de aprendizaje, habitos y acompanamiento.",
+    image: "/images/source/programa/cuerpo-mente-programa.webp",
+  },
+  "salud-nutricional": {
+    title: "Salud Nutricional Personalizada | Golden Health MX",
+    name: "Salud Nutricional",
+    description: "Nutricion personalizada y suplementos adaptados a necesidades especificas para apoyar equilibrio, vitalidad y bienestar.",
+    image: "/images/source/programa/balance-oil-and-test-situational.webp",
+  },
+};
+
+const products = {
+  "tratamientos-biologicos": {
+    title: "Tratamientos Biologicos | Tienda Golden Health MX",
+    name: "Tratamientos Biologicos",
+    description: "Paquete biologico de soporte para bienestar integral y equilibrio celular disponible en Golden Health MX.",
+    image: "/images/source/products/tratamientos-biologicos.webp",
+    price: "2300.00",
+  },
+  "tratamiento-antioxidante": {
+    title: "Tratamiento Antioxidante | Golden Health MX",
+    name: "Tratamiento Antioxidante",
+    description: "Terapia antioxidante endocrina orientada a proteger, reparar y apoyar energia, vitalidad y bienestar anti aging.",
+    image: "/images/source/products/antioxidante.webp",
+    price: "5980.00",
+  },
+  "tratamiento-anti-inflamatorio": {
+    title: "Tratamiento Anti Inflamatorio | Golden Health MX",
+    name: "Tratamiento Anti Inflamatorio",
+    description: "Protocolo anti inflamatorio para apoyar recuperacion, movilidad, equilibrio metabolico y bienestar osteoarticular.",
+    image: "/images/source/products/antiinflamatorio.webp",
+    price: "4200.00",
+  },
+  "tratamiento-sindrome-metabolico": {
+    title: "Tratamiento Sindrome Metabolico | Golden Health MX",
+    name: "Tratamiento Sindrome Metabolico",
+    description: "Terapia de acompanamiento metabolico y regulacion funcional con seguimiento recomendado en consulta.",
+    image: "/images/source/products/sindrome-metabolico.webp",
+    price: "7250.00",
+  },
+  "tratamiento-detox": {
+    title: "Tratamiento Detox | Golden Health MX",
+    name: "Tratamiento Detox",
+    description: "Protocolo detox para apoyar eliminacion de toxinas, bienestar digestivo y habitos saludables.",
+    image: "/images/source/products/detox.webp",
+    price: "4200.00",
+  },
+  "celulas-madre": {
+    title: "Celulas Madre | Golden Health MX",
+    name: "Celulas Madre",
+    description: "Activador de longevidad orientado a proteccion, reparacion y revitalizacion dentro de protocolos premium.",
+    image: "/images/source/products/celulas-madre.webp",
+    price: "27000.00",
+  },
+  "tratamiento-hormonal-hombre": {
+    title: "Tratamiento Hormonal Hombre | Golden Health MX",
+    name: "Tratamiento Hormonal Hombre",
+    description: "Soporte funcional para regulacion hormonal masculina con evaluacion medica recomendada.",
+    image: "/images/source/products/hormonal-hombre.webp",
+    price: "4200.00",
+  },
+  "tratamiento-hormonal-mujer": {
+    title: "Tratamiento Hormonal Mujer | Golden Health MX",
+    name: "Tratamiento Hormonal Mujer",
+    description: "Soporte funcional para regulacion hormonal femenina y seguimiento personalizado.",
+    image: "/images/source/products/hormonal-mujer.webp",
+    price: "4200.00",
+  },
+};
+
+const consultations = {
+  "consulta-online-1": {
+    title: "Consulta Medica Online | Golden Health MX",
+    name: "Consulta Online",
+    description: "Consulta medica online Golden Health para orientar objetivos de longevidad, nutricion funcional y bienestar integral.",
+    image: "/images/source/consultas/consulta-online.webp",
+  },
+  "consulta-presencial": {
+    title: "Consulta Medica Presencial en CDMX | Golden Health MX",
+    name: "Consulta Presencial",
+    description: "Consulta presencial en Golden Health CDMX para evaluar objetivos de salud, energia, longevidad y nutricion funcional.",
+    image: "/images/golden-health/consulta-medica.webp",
+  },
+  "consultas-en-madrid": {
+    title: "Consultas en Madrid | Golden Health MX",
+    name: "Consultas en Madrid",
+    description: "Consulta Golden Health disponible para pacientes en Madrid con enfoque de bienestar integral y medicina preventiva.",
+    image: "/images/source/consultas/consultas-madrid.webp",
+  },
+};
+
+const pageMeta = {
+  "/": {
+    title: "Golden Health MX | Clinica de Longevidad y Bienestar en CDMX",
+    description: "Golden Health integra medicina preventiva, terapias biologicas, nutricion funcional y protocolos anti aging para bienestar medible en CDMX.",
+    image: "/images/golden-health/consulta-medica.webp",
+  },
+  "/historia": {
+    title: "Dra. Silvia del Moral | Historia Golden Health MX",
+    description: "Conoce la historia de Golden Health y la trayectoria de la Dra. Silvia del Moral en medicina preventiva, regenerativa y bienestar funcional.",
+    image: "/images/source/history/dra-silvia.webp",
+  },
+  "/programa-integral": {
+    title: "Programa Integral de Longevidad | Golden Health MX",
+    description: "Programa integral Golden Health para longevidad, anti envejecimiento, nutricion funcional, terapias biologicas y equilibrio cuerpo mente.",
+    image: "/images/source/programa/anti-aging-captura.webp",
+  },
+  "/tienda": {
+    title: "Tienda Golden Health | Tratamientos y Protocolos Funcionales",
+    description: "Tratamientos biologicos y protocolos funcionales Golden Health con fichas completas, precios y solicitud directa.",
+    image: "/images/source/products/tratamientos-biologicos.webp",
+  },
+  "/consultas": {
+    title: "Consultas Medicas Golden Health | Online, CDMX y Madrid",
+    description: "Agenda consultas medicas Golden Health presenciales u online para longevidad, nutricion funcional, anti aging y bienestar integral.",
+    image: "/images/golden-health/consulta-medica.webp",
+  },
+  "/noticias": {
+    title: "Noticias y Comunidad | Golden Health MX",
+    description: "Videos, entrevistas, capsulas y testimonios de la comunidad Golden Health sobre salud, bienestar y longevidad.",
+    image: "/images/golden-health/comunidad.webp",
+  },
+  "/contacto": {
+    title: "Contacto Golden Health MX | Agenda tu Valoracion",
+    description: "Agenda tu valoracion Golden Health en Miguel Hidalgo, CDMX. Atencion para longevidad, energia, nutricion funcional y anti aging.",
+    image: "/images/source/footer/logo.png",
+  },
+};
+
+const enOverrides = {
+  "/": {
+    title: "Golden Health MX | Longevity and Wellness Clinic in Mexico City",
+    description: "Golden Health integrates preventive medicine, biological therapies, functional nutrition, and anti-aging protocols in Mexico City.",
+  },
+  "/historia": {
+    title: "Dr. Silvia del Moral | Golden Health MX Story",
+    description: "Learn about Golden Health and Dr. Silvia del Moral's work in preventive medicine, regenerative medicine, and functional wellness.",
+  },
+  "/programa-integral": {
+    title: "Integral Longevity Program | Golden Health MX",
+    description: "Golden Health integral program for longevity, anti-aging, functional nutrition, biological therapies, and body-mind balance.",
+  },
+  "/tienda": {
+    title: "Golden Health Shop | Treatments and Functional Protocols",
+    description: "Biological treatments and functional protocols from Golden Health with product sheets, pricing, and direct requests.",
+  },
+  "/consultas": {
+    title: "Golden Health Medical Consultations | Online, CDMX and Madrid",
+    description: "Book Golden Health medical consultations for longevity, functional nutrition, anti-aging, and integral wellbeing.",
+  },
+  "/noticias": {
+    title: "News and Community | Golden Health MX",
+    description: "Videos, interviews, short capsules, and testimonials from the Golden Health community.",
+  },
+  "/contacto": {
+    title: "Contact Golden Health MX | Book Your Assessment",
+    description: "Book your Golden Health assessment in Mexico City for longevity, energy, functional nutrition, anti-aging, and wellbeing.",
+  },
+};
+
 export function getStaticPaths() {
-  const baseRoutes = [
+  const staticRoutes = [
     "",
     "historia",
     "programa-integral",
@@ -11,42 +229,30 @@ export function getStaticPaths() {
     "consultas",
     "noticias",
     "contacto",
-  ];
-
-  const programSlugs = [
-    "antroposofia",
-    "arte-del-buen-comer-y-buen-beber",
-    "menu-golden-health",
-    "anti-aging",
-    "terapias-biologicas",
-    "hidratacion-funcional",
-    "ciencia-del-deporte",
-    "equilibrio-mente-cuerpo-espiritu",
-    "salud-nutricional",
-  ];
-
-  const productSlugs = [
-    "tratamientos-biologicos",
-    "tratamiento-antioxidante",
-    "tratamiento-anti-inflamatorio",
-    "tratamiento-sindrome-metabolico",
-    "tratamiento-detox",
-    "celulas-madre",
-    "tratamiento-hormonal-hombre",
-    "tratamiento-hormonal-mujer",
-  ];
-
-  const bookingSlugs = [
-    "consulta-presencial",
-    "consulta-online",
-    "consulta-madrid",
+    "programa-integral/antroposofia",
+    "programa-integral/arte-del-buen-comer-y-buen-beber",
+    "programa-integral/menu-golden-health",
+    "programa-integral/anti-aging",
+    "programa-integral/terapias-biologicas",
+    "programa-integral/hidratacion-funcional",
+    "programa-integral/ciencia-del-deporte",
+    "programa-integral/equilibrio-mente-cuerpo-espiritu",
+    "programa-integral/salud-nutricional",
+    "producto/tratamientos-biologicos",
+    "producto/tratamiento-antioxidante",
+    "producto/tratamiento-anti-inflamatorio",
+    "producto/tratamiento-sindrome-metabolico",
+    "producto/tratamiento-detox",
+    "producto/celulas-madre",
+    "producto/tratamiento-hormonal-hombre",
+    "producto/tratamiento-hormonal-mujer",
+    "booking-calendar/consulta-online-1",
+    "booking-calendar/consulta-presencial",
+    "booking-calendar/consultas-en-madrid",
   ];
 
   const routes = [
-    ...baseRoutes,
-    ...programSlugs.map((slug) => `programa-integral/${slug}`),
-    ...productSlugs.map((slug) => `producto/${slug}`),
-    ...bookingSlugs.map((slug) => `booking-calendar/${slug}`),
+    ...staticRoutes,
   ];
 
   const localizedRoutes = [
@@ -61,7 +267,95 @@ export function getStaticPaths() {
 }
 
 const { pathname } = Astro.props;
-const language = pathname === "/en" || pathname.startsWith("/en/") ? "en" : "es-MX";
+const isEnglish = pathname === "/en" || pathname.startsWith("/en/");
+const language = isEnglish ? "en" : "es-MX";
+const routePath = isEnglish ? pathname.replace(/^\/en(?=\/|$)/, "") || "/" : pathname;
+const segments = routePath.split("/").filter(Boolean);
+const slug = segments.at(-1);
+const programMeta = segments[0] === "programa-integral" && slug ? programPages[slug] : undefined;
+const productMeta = segments[0] === "producto" && slug ? products[slug] : undefined;
+const consultationMeta = segments[0] === "booking-calendar" && slug ? consultations[slug] : undefined;
+const baseMeta = pageMeta[routePath] || programMeta || productMeta || consultationMeta || pageMeta["/"];
+const localizedMeta = isEnglish && enOverrides[routePath] ? { ...baseMeta, ...enOverrides[routePath] } : baseMeta;
+const title = localizedMeta.title;
+const description = localizedMeta.description;
+const imageUrl = new URL(localizedMeta.image || pageMeta["/"].image, siteUrl).toString();
+const canonicalPath = isEnglish ? `/en${routePath === "/" ? "" : routePath}` : routePath;
+const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
+const alternateEs = new URL(routePath, siteUrl).toString();
+const alternateEn = new URL(`/en${routePath === "/" ? "" : routePath}`, siteUrl).toString();
+const robots = "index, follow, max-image-preview:large";
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "@id": `${siteUrl}/#clinic`,
+  name: "Golden Health MX",
+  url: siteUrl,
+  logo: `${siteUrl}/images/source/footer/logo.png`,
+  image: imageUrl,
+  telephone: "+525554178009",
+  email: "silvia.delmoral@goldenhealth.com.mx",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Lago Zurich 96, Ampliacion Granada",
+    addressLocality: "Miguel Hidalgo",
+    postalCode: "11529",
+    addressRegion: "Ciudad de Mexico",
+    addressCountry: "MX",
+  },
+  medicalSpecialty: ["Preventive Medicine", "Regenerative Medicine", "Nutrition"],
+  sameAs: [
+    "https://www.instagram.com/goldenhealthmx/",
+    "https://es-la.facebook.com/goldenhealthmx/",
+    "https://mx.linkedin.com/in/silviadelmoral",
+    "https://www.youtube.com/user/GoldenHealthSalud",
+  ],
+};
+const breadcrumbItems = [
+  { name: isEnglish ? "Home" : "Inicio", item: new URL(isEnglish ? "/en" : "/", siteUrl).toString() },
+  ...segments.map((segment, index) => {
+    const path = `/${segments.slice(0, index + 1).join("/")}`;
+    const itemPath = isEnglish ? `/en${path}` : path;
+    return {
+      name: segment.replaceAll("-", " ").replace(/\b\w/g, (letter) => letter.toUpperCase()),
+      item: new URL(itemPath, siteUrl).toString(),
+    };
+  }),
+];
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: breadcrumbItems.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.name,
+    item: item.item,
+  })),
+};
+const productJsonLd = productMeta ? {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: productMeta.name,
+  description: productMeta.description,
+  image: new URL(productMeta.image, siteUrl).toString(),
+  brand: { "@type": "Brand", name: "Golden Health MX" },
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "MXN",
+    price: productMeta.price,
+    availability: "https://schema.org/InStock",
+    url: canonicalUrl,
+  },
+} : undefined;
+const physicianJsonLd = routePath === "/historia" ? {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  name: "Dra. Silvia del Moral",
+  image: `${siteUrl}/images/source/history/dra-silvia.webp`,
+  worksFor: { "@id": `${siteUrl}/#clinic` },
+  medicalSpecialty: ["Preventive Medicine", "Regenerative Medicine"],
+} : undefined;
+const jsonLd = [organizationJsonLd, breadcrumbJsonLd, productJsonLd, physicianJsonLd].filter(Boolean);
 ---
 
 <!doctype html>
@@ -70,7 +364,25 @@ const language = pathname === "/en" || pathname.startsWith("/en/") ? "en" : "es-
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Golden Health MX</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es-MX" href={alternateEs} />
+    <link rel="alternate" hreflang="en" href={alternateEn} />
+    <link rel="alternate" hreflang="x-default" href={alternateEs} />
+    <meta property="og:type" content={productMeta ? "product" : "website"} />
+    <meta property="og:site_name" content="Golden Health MX" />
+    <meta property="og:locale" content={isEnglish ? "en_US" : "es_MX"} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    {jsonLd.map((entry) => <script type="application/ld+json" set:html={JSON.stringify(entry)} />)}
   </head>
   <body>
     <GoldenHealth initialPath={pathname} client:load />

@@ -919,41 +919,6 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
     document.documentElement.lang = language;
   }, [language]);
 
-  useEffect(() => {
-    const origin = window.location.origin;
-    const canonicalPath = localizedHref(routePath);
-    const alternateEs = routePath;
-    const alternateEn = localizedHref(routePath, "en");
-    const pageTitle = t.pageTitles[page] || "Golden Health MX";
-    const description = page === "programa" ? t.programHomeText : page === "contacto" ? t.contactText : t.heroText;
-
-    document.title = pageTitle;
-
-    const setMeta = (name, content) => {
-      let meta = document.querySelector(`meta[name="${name}"]`);
-      if (!meta) {
-        meta = document.createElement("meta");
-        meta.setAttribute("name", name);
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute("content", content);
-    };
-    const setLink = (selector, attrs) => {
-      let link = document.querySelector(selector);
-      if (!link) {
-        link = document.createElement("link");
-        document.head.appendChild(link);
-      }
-      Object.entries(attrs).forEach(([key, value]) => link.setAttribute(key, value));
-    };
-
-    setMeta("description", description);
-    setLink('link[rel="canonical"]', { rel: "canonical", href: `${origin}${canonicalPath}` });
-    setLink('link[rel="alternate"][hreflang="es-MX"]', { rel: "alternate", hreflang: "es-MX", href: `${origin}${alternateEs}` });
-    setLink('link[rel="alternate"][hreflang="en"]', { rel: "alternate", hreflang: "en", href: `${origin}${alternateEn}` });
-    setLink('link[rel="alternate"][hreflang="x-default"]', { rel: "alternate", hreflang: "x-default", href: `${origin}${alternateEs}` });
-  }, [language, localizedHref, page, routePath, t]);
-
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f7f3ea] text-[#17231c] selection:bg-[#d3aa45]/30">
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/30 bg-[#f7f3ea]/90 backdrop-blur-xl">
