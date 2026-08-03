@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import OliviaChat from "./OliviaChat.jsx";
 
 const copy = {
   es: {
@@ -1895,6 +1896,8 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
         </section>
         )}
       </main>
+
+      <OliviaChat />
 
       <footer className="bg-[#f3f3f3] px-5 py-14 text-[#779087] lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.75fr_1.25fr]">
