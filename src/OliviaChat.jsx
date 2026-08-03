@@ -80,8 +80,18 @@ export default function OliviaChat() {
   const [loading, setLoading] = useState(false);
   const [lead, setLead] = useState({ firstName: "", lastName: "", email: "", phone: "" });
   const [leadSent, setLeadSent] = useState(false);
+  const visitorRef = useRef(null);
   const conversationRef = useRef(null);
   const endRef = useRef(null);
+
+  useEffect(() => {
+    let id = localStorage.getItem("olivia_goldenhealth_visitor");
+    if (!id) {
+      id = `goldenhealth-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+      localStorage.setItem("olivia_goldenhealth_visitor", id);
+    }
+    visitorRef.current = id;
+  }, []);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -96,29 +106,44 @@ export default function OliviaChat() {
     source: "website-chat",
   });
 
-  async function ensureConversation(extra = {}) {
-    if (conversationRef.current) return conversationRef.current;
+  async function saveVisitorMessage(content, extra = {}) {
     const name = `${lead.firstName} ${lead.lastName}`.trim() || "Golden Health Visitor";
     const res = await fetch(`${API_BASE}/api/widget/conversations`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         clientCode: CLIENT_CODE,
+        visitorId: visitorRef.current || `goldenhealth-${Date.now()}`,
+        visitorName: name,
+        email: lead.email || undefined,
+        phone: lead.phone || undefined,
         source: "website-chat",
-        status: "open",
-        customer: {
+        language,
+        content,
+        metadata: {
+          ...pageContext(),
           name,
-          email: lead.email || undefined,
-          phone: lead.phone || undefined,
+          firstName: lead.firstName,
+          lastName: lead.lastName,
+          email: lead.email,
+          phone: lead.phone,
+          ...extra.metadata,
         },
-        message: extra.message || `Lead Golden Health: ${name}`,
-        metadata: { ...pageContext(), ...extra.metadata },
       }),
     });
     if (!res.ok) throw new Error("conversation_failed");
     const data = await res.json();
-    conversationRef.current = data?.conversation?.id || data?.id || null;
-    return conversationRef.current;
+    conversationRef.current = data?.conversation?.id || conversationRef.current;
+    return data;
+  }
+
+  async function saveAiMessage(content) {
+    if (!content) return;
+    await fetch(`${API_BASE}/api/widget/conversations`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ clientCode: CLIENT_CODE, visitorId: visitorRef.current, content, model: "olivia-ai" }),
+    }).catch(() => undefined);
   }
 
   async function sendLead(event) {
@@ -126,8 +151,7 @@ export default function OliviaChat() {
     if (!lead.firstName || !lead.email || !lead.phone) return;
     setLoading(true);
     try {
-      await ensureConversation({
-        message: `Lead Golden Health: ${lead.firstName} ${lead.lastName} · ${lead.email} · ${lead.phone}`,
+      await saveVisitorMessage(`Lead Golden Health: ${lead.firstName} ${lead.lastName} · ${lead.email} · ${lead.phone}`, {
         metadata: { type: "lead", leadStatus: "captured" },
       });
       setLeadSent(true);
@@ -147,7 +171,7 @@ export default function OliviaChat() {
     setMessages((items) => [...items, { role: "user", content: text }]);
     setLoading(true);
     try {
-      await ensureConversation({ message: text, metadata: { type: "question" } });
+      await saveVisitorMessage(text, { metadata: { type: "question" } });
       const res = await fetch(`${API_BASE}/api/olivia/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -161,7 +185,9 @@ export default function OliviaChat() {
       });
       if (!res.ok) throw new Error("chat_failed");
       const data = await res.json();
-      setMessages((items) => [...items, { role: "assistant", content: data.reply || t.error }]);
+      const reply = data.reply || t.error;
+      setMessages((items) => [...items, { role: "assistant", content: reply }]);
+      await saveAiMessage(reply);
     } catch {
       setMessages((items) => [...items, { role: "assistant", content: t.error }]);
     } finally {
