@@ -1903,7 +1903,6 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
         </div>
       </footer>
 
-      <a href={localizedHref("/contacto")} onClick={(event) => navigate(event, "/contacto")} className="fixed bottom-5 right-5 z-50 rounded-full bg-[#1f3b2c] px-5 py-4 text-sm font-semibold text-white shadow-2xl shadow-[#1f3b2c]/30">{t.whatsapp}</a>
     </div>
   );
 }
