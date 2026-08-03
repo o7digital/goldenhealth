@@ -1846,12 +1846,14 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                 </div>
               </div>
 
-              <div className="mt-9 grid gap-3 sm:grid-cols-2">
-                <input className="rounded-2xl border border-white/10 bg-white/10 px-4 py-4 text-white placeholder:text-white/50 outline-none focus:border-[#d3aa45]/60" placeholder={t.namePlaceholder} />
-                <input className="rounded-2xl border border-white/10 bg-white/10 px-4 py-4 text-white placeholder:text-white/50 outline-none focus:border-[#d3aa45]/60" placeholder={t.phonePlaceholder} />
-                <textarea className="min-h-28 rounded-2xl border border-white/10 bg-white/10 px-4 py-4 text-white placeholder:text-white/50 outline-none focus:border-[#d3aa45]/60 sm:col-span-2" placeholder={t.messagePlaceholder} />
-                <button className="rounded-full bg-[#d3aa45] px-6 py-4 font-semibold text-[#14261c] transition hover:-translate-y-0.5 hover:bg-[#c99c32] sm:col-span-2">{t.submit}</button>
-              </div>
+              <form action="https://formspree.io/f/mnjeevzp" method="POST" className="mt-9 grid gap-3 sm:grid-cols-2">
+                <input type="hidden" name="_subject" value="Nueva solicitud Golden Health" />
+                <input type="hidden" name="language" value={language} />
+                <input name="name" required autoComplete="name" className="rounded-2xl border border-white/10 bg-white/10 px-4 py-4 text-white placeholder:text-white/50 outline-none focus:border-[#d3aa45]/60" placeholder={t.namePlaceholder} />
+                <input name="phone" required autoComplete="tel" className="rounded-2xl border border-white/10 bg-white/10 px-4 py-4 text-white placeholder:text-white/50 outline-none focus:border-[#d3aa45]/60" placeholder={t.phonePlaceholder} />
+                <textarea name="message" required className="min-h-28 rounded-2xl border border-white/10 bg-white/10 px-4 py-4 text-white placeholder:text-white/50 outline-none focus:border-[#d3aa45]/60 sm:col-span-2" placeholder={t.messagePlaceholder} />
+                <button type="submit" className="rounded-full bg-[#d3aa45] px-6 py-4 font-semibold text-[#14261c] transition hover:-translate-y-0.5 hover:bg-[#c99c32] sm:col-span-2">{t.submit}</button>
+              </form>
             </div>
           </div>
         </section>
