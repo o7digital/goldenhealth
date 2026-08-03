@@ -153,8 +153,8 @@ const consultations = {
 
 const pageMeta = {
   "/": {
-    title: "Golden Health MX | Clinica de Longevidad y Bienestar en CDMX",
-    description: "Golden Health integra medicina preventiva, terapias biologicas, nutricion funcional y protocolos anti aging para bienestar medible en CDMX.",
+    title: "Golden Health Mexico | Clinica de Longevidad en CDMX",
+    description: "Golden Health Mexico en CDMX: medicina preventiva, longevidad, terapias biologicas, nutricion funcional y protocolos anti aging con la Dra. Silvia del Moral.",
     image: "/images/golden-health/consulta-medica.webp",
   },
   "/historia": {
@@ -191,8 +191,8 @@ const pageMeta = {
 
 const enOverrides = {
   "/": {
-    title: "Golden Health MX | Longevity and Wellness Clinic in Mexico City",
-    description: "Golden Health integrates preventive medicine, biological therapies, functional nutrition, and anti-aging protocols in Mexico City.",
+    title: "Golden Health Mexico | Longevity Clinic in Mexico City",
+    description: "Golden Health Mexico in Mexico City: preventive medicine, longevity, biological therapies, functional nutrition, and anti-aging protocols by Dr. Silvia del Moral.",
   },
   "/historia": {
     title: "Dr. Silvia del Moral | Golden Health MX Story",
@@ -218,6 +218,45 @@ const enOverrides = {
     title: "Contact Golden Health MX | Book Your Assessment",
     description: "Book your Golden Health assessment in Mexico City for longevity, energy, functional nutrition, anti-aging, and wellbeing.",
   },
+};
+
+const seoKeywords = {
+  es: [
+    "clinica de longevidad CDMX",
+    "medicina regenerativa Ciudad de Mexico",
+    "anti aging CDMX",
+    "medicina preventiva Mexico CDMX",
+    "salud celular CDMX",
+    "terapias biologicas Ciudad de Mexico",
+    "nutricion funcional CDMX",
+    "consulta medica Miguel Hidalgo CDMX",
+    "bienestar integral Ciudad de Mexico",
+    "tratamientos biologicos CDMX",
+    "celulas madre CDMX",
+    "tratamiento detox Mexico CDMX",
+    "tratamiento hormonal CDMX",
+    "hidratacion funcional Ciudad de Mexico",
+    "ciencia del deporte CDMX",
+    "Golden Health Mexico CDMX",
+  ],
+  en: [
+    "longevity clinic Mexico City",
+    "regenerative medicine Mexico City",
+    "anti-aging clinic CDMX",
+    "preventive medicine Mexico City",
+    "cellular health CDMX",
+    "biological therapies Mexico City",
+    "functional nutrition CDMX",
+    "medical consultation Miguel Hidalgo CDMX",
+    "integral wellness Mexico City",
+    "biological treatments CDMX",
+    "stem cell therapy Mexico City",
+    "detox treatment CDMX",
+    "hormonal treatment Mexico City",
+    "functional hydration CDMX",
+    "sports science Mexico City",
+    "Golden Health Mexico City CDMX",
+  ],
 };
 
 export function getStaticPaths() {
@@ -279,6 +318,7 @@ const baseMeta = pageMeta[routePath] || programMeta || productMeta || consultati
 const localizedMeta = isEnglish && enOverrides[routePath] ? { ...baseMeta, ...enOverrides[routePath] } : baseMeta;
 const title = localizedMeta.title;
 const description = localizedMeta.description;
+const keywords = seoKeywords[isEnglish ? "en" : "es"].join(", ");
 const imageUrl = new URL(localizedMeta.image || pageMeta["/"].image, siteUrl).toString();
 const canonicalPath = isEnglish ? `/en${routePath === "/" ? "" : routePath}` : routePath;
 const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
@@ -290,6 +330,12 @@ const organizationJsonLd = {
   "@type": "MedicalClinic",
   "@id": `${siteUrl}/#clinic`,
   name: "Golden Health MX",
+  alternateName: [
+    "Golden Health Mexico",
+    "Golden Health Mexico CDMX",
+    "Golden Health by Silvia del Moral",
+    "Golden Health",
+  ],
   url: siteUrl,
   logo: `${siteUrl}/images/source/footer/logo.png`,
   image: imageUrl,
@@ -366,6 +412,7 @@ const jsonLd = [organizationJsonLd, breadcrumbJsonLd, productJsonLd, physicianJs
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <meta name="robots" content={robots} />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="es-MX" href={alternateEs} />
