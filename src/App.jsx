@@ -98,23 +98,16 @@ const copy = {
     objectives: "¿Cuáles son los objetivos?",
     buy: "COMPRAR",
     strategicPartners: "Aliados estratégicos",
-    footerKeywords: [
-      "clínica de longevidad CDMX",
-      "medicina regenerativa Ciudad de México",
-      "anti aging CDMX",
-      "medicina preventiva México CDMX",
-      "salud celular CDMX",
-      "terapias biológicas Ciudad de México",
-      "nutrición funcional CDMX",
-      "consulta médica Miguel Hidalgo CDMX",
-      "bienestar integral Ciudad de México",
-      "tratamientos biológicos CDMX",
-      "células madre CDMX",
-      "tratamiento detox México CDMX",
-      "tratamiento hormonal CDMX",
-      "hidratación funcional Ciudad de México",
-      "ciencia del deporte CDMX",
-      "Golden Health México CDMX",
+    localSeoTitle: "Atención médica integral en Miguel Hidalgo, CDMX",
+    localSeoText: "Golden Health atiende en Lago Zúrich 96, Ampliación Granada, Miguel Hidalgo. La consulta inicial permite orientar objetivos de longevidad, medicina preventiva, nutrición funcional, terapias biológicas y bienestar integral con una ruta personalizada.",
+    localSeoAreas: ["Clínica de longevidad en CDMX", "Medicina regenerativa en Miguel Hidalgo", "Nutrición funcional en Ciudad de México", "Consulta anti aging presencial u online"],
+    medicalTrustTitle: "Información médica y criterios de atención",
+    medicalTrustText: "El contenido de Golden Health es informativo y no sustituye una valoración médica. Los tratamientos, suplementos y protocolos se recomiendan de forma individual después de revisar objetivos, antecedentes y estado actual del paciente.",
+    medicalTrustItems: [
+      "Atención dirigida por la Dra. Silvia del Moral, fundadora y médico responsable.",
+      "Más de 35 años de trayectoria en ciencias de la vida y cuidados de la salud.",
+      "Formación en medicina, pediatría por el Instituto Nacional de Pediatría y estudios en el Goetheanum en Dornach, Suiza.",
+      "Contenido actualizado en agosto de 2026.",
     ],
     pageTitles: {
       home: "Golden Health MX",
@@ -243,23 +236,16 @@ const copy = {
     objectives: "What are the objectives?",
     buy: "BUY",
     strategicPartners: "Strategic partners",
-    footerKeywords: [
-      "longevity clinic Mexico City",
-      "regenerative medicine Mexico City",
-      "anti-aging clinic CDMX",
-      "preventive medicine Mexico City",
-      "cellular health CDMX",
-      "biological therapies Mexico City",
-      "functional nutrition CDMX",
-      "medical consultation Miguel Hidalgo CDMX",
-      "integral wellness Mexico City",
-      "biological treatments CDMX",
-      "stem cell therapy Mexico City",
-      "detox treatment CDMX",
-      "hormonal treatment Mexico City",
-      "functional hydration CDMX",
-      "sports science Mexico City",
-      "Golden Health Mexico City CDMX",
+    localSeoTitle: "Integral medical care in Miguel Hidalgo, Mexico City",
+    localSeoText: "Golden Health welcomes patients at Lago Zúrich 96, Ampliación Granada, Miguel Hidalgo. The initial consultation helps define goals around longevity, preventive medicine, functional nutrition, biological therapies, and integral wellbeing.",
+    localSeoAreas: ["Longevity clinic in Mexico City", "Regenerative medicine in Miguel Hidalgo", "Functional nutrition in Mexico City", "In-person or online anti-aging consultation"],
+    medicalTrustTitle: "Medical information and care criteria",
+    medicalTrustText: "Golden Health content is informational and does not replace a medical assessment. Treatments, supplements, and protocols are recommended individually after reviewing each patient's goals, history, and current condition.",
+    medicalTrustItems: [
+      "Care led by Dr. Silvia del Moral, founder and medical director.",
+      "More than 35 years of experience in life sciences and health care.",
+      "Training in medicine, pediatrics at the Instituto Nacional de Pediatría, and studies at the Goetheanum in Dornach, Switzerland.",
+      "Content updated in August 2026.",
     ],
     pageTitles: {
       home: "Golden Health MX",
@@ -766,11 +752,11 @@ const programPages = [
 const products = [
   {
     slug: "tratamientos-biologicos",
-    name: "Tratamientos Biologicos",
+    name: "Tratamientos Biológicos",
     price: "$2,300.00",
     image: "/images/source/products/tratamientos-biologicos.webp",
-    summary: "Paquete biologico de soporte para bienestar integral y equilibrio celular.",
-    details: ["10 sesiones", "2 tratamientos biologicos", "Acompanamiento para elegir protocolo segun objetivo"],
+    summary: "Paquete biológico de soporte para bienestar integral y equilibrio celular.",
+    details: ["10 sesiones", "2 tratamientos biológicos", "Acompañamiento para elegir protocolo según objetivo"],
   },
   {
     slug: "tratamiento-antioxidante",
@@ -778,38 +764,38 @@ const products = [
     price: "$5,980.00",
     image: "/images/source/products/antioxidante.webp",
     summary: "Terapia antioxidante endocrina orientada a proteger, reparar y apoyar la vitalidad.",
-    details: ["Formula Citoplacell", "Soporte antioxidante", "Enfoque anti-aging y energia"],
+    details: ["Fórmula Citoplacell", "Soporte antioxidante", "Enfoque anti-aging y energía"],
   },
   {
     slug: "tratamiento-anti-inflamatorio",
-    name: "Tratamiento Anti-inflamatorio",
+    name: "Tratamiento Antiinflamatorio",
     price: "$4,200.00",
     image: "/images/source/products/antiinflamatorio.webp",
-    summary: "Protocolo anti-inflamatorio para apoyar recuperacion, movilidad y equilibrio metabolico.",
-    details: ["Formula Bioenzym", "Apoyo anti-inflamatorio", "Orientado a bienestar osteoarticular y sistemico"],
+    summary: "Protocolo antiinflamatorio para apoyar recuperación, movilidad y equilibrio metabólico.",
+    details: ["Fórmula Bioenzym", "Apoyo antiinflamatorio", "Orientado a bienestar osteoarticular y sistémico"],
   },
   {
     slug: "tratamiento-sindrome-metabolico",
-    name: "Tratamiento Sindrome Metabolico",
+    name: "Tratamiento Síndrome Metabólico",
     price: "$7,250.00",
     image: "/images/source/products/sindrome-metabolico.webp",
-    summary: "Terapia para acompanamiento metabolico y regulacion funcional.",
-    details: ["Formula Revercell", "Apoyo al metabolismo", "Seguimiento recomendado con consulta"],
+    summary: "Terapia para acompañamiento metabólico y regulación funcional.",
+    details: ["Fórmula Revercell", "Apoyo al metabolismo", "Seguimiento recomendado con consulta"],
   },
   {
     slug: "tratamiento-detox",
     name: "Tratamiento Detox",
     price: "$4,200.00",
     image: "/images/source/products/detox.webp",
-    summary: "Protocolo detox para apoyar eliminacion de toxinas y bienestar digestivo.",
-    details: ["Formula Celltox", "Quelacion oral", "Apoyo a habitos saludables"],
+    summary: "Protocolo detox para apoyar eliminación de toxinas y bienestar digestivo.",
+    details: ["Fórmula Celltox", "Quelación oral", "Apoyo a hábitos saludables"],
   },
   {
     slug: "celulas-madre",
-    name: "Celulas Madre",
+    name: "Células Madre",
     price: "$27,000.00",
     image: "/images/source/products/celulas-madre.webp",
-    summary: "Activador de longevidad orientado a proteccion, reparacion y revitalizacion.",
+    summary: "Activador de longevidad orientado a protección, reparación y revitalización.",
     details: ["Human Ultracell VI", "Ciclos de tratamiento", "Protocolo premium de longevidad"],
   },
   {
@@ -817,16 +803,16 @@ const products = [
     name: "Tratamiento Hormonal Hombre",
     price: "$4,200.00",
     image: "/images/source/products/hormonal-hombre.webp",
-    summary: "Soporte funcional para regulacion del ciclo hormonal masculino.",
-    details: ["Formula Androcell", "Apoyo hormonal hombre", "Evaluacion medica recomendada"],
+    summary: "Soporte funcional para regulación del ciclo hormonal masculino.",
+    details: ["Fórmula Androcell", "Apoyo hormonal hombre", "Evaluación médica recomendada"],
   },
   {
     slug: "tratamiento-hormonal-mujer",
     name: "Tratamiento Hormonal para la mujer",
     price: "$4,200.00",
     image: "/images/source/products/hormonal-mujer.webp",
-    summary: "Soporte funcional para regulacion del ciclo hormonal femenino.",
-    details: ["Formula Biofemin", "Apoyo hormonal mujer", "Seguimiento personalizado"],
+    summary: "Soporte funcional para regulación del ciclo hormonal femenino.",
+    details: ["Fórmula Biofemin", "Apoyo hormonal mujer", "Seguimiento personalizado"],
   },
 ];
 
@@ -835,6 +821,39 @@ const consultations = [
   ["Consulta Presencial", "En clinica", "1 h", "$1,500", "/images/golden-health/consulta-medica.webp", "consulta-presencial"],
   ["Consultas en Madrid", "Disponible online", "1 h", "$1,500", "/images/source/consultas/consultas-madrid.webp", "consultas-en-madrid"],
 ];
+
+const englishPathByRoute = {
+  "/historia": "/story",
+  "/programa-integral": "/integral-longevity-program",
+  "/tienda": "/shop",
+  "/consultas": "/medical-consultations",
+  "/noticias": "/news",
+  "/contacto": "/contact",
+  "/programa-integral/antroposofia": "/integral-longevity-program/anthroposophy",
+  "/programa-integral/arte-del-buen-comer-y-buen-beber": "/integral-longevity-program/art-of-healthy-eating",
+  "/programa-integral/menu-golden-health": "/integral-longevity-program/golden-health-menu",
+  "/programa-integral/anti-aging": "/integral-longevity-program/regenerative-medicine",
+  "/programa-integral/terapias-biologicas": "/integral-longevity-program/biological-therapies",
+  "/programa-integral/hidratacion-funcional": "/integral-longevity-program/functional-hydration",
+  "/programa-integral/ciencia-del-deporte": "/integral-longevity-program/sports-science",
+  "/programa-integral/equilibrio-mente-cuerpo-espiritu": "/integral-longevity-program/mind-body-spirit-balance",
+  "/programa-integral/salud-nutricional": "/integral-longevity-program/nutritional-health",
+  "/producto/tratamientos-biologicos": "/product/biological-treatments",
+  "/producto/tratamiento-antioxidante": "/product/antioxidant-treatment",
+  "/producto/tratamiento-anti-inflamatorio": "/product/anti-inflammatory-treatment",
+  "/producto/tratamiento-sindrome-metabolico": "/product/metabolic-syndrome-treatment",
+  "/producto/tratamiento-detox": "/product/detox-treatment",
+  "/producto/celulas-madre": "/product/stem-cells",
+  "/producto/tratamiento-hormonal-hombre": "/product/men-hormonal-treatment",
+  "/producto/tratamiento-hormonal-mujer": "/product/women-hormonal-treatment",
+  "/booking-calendar/consulta-online-1": "/booking/online-consultation",
+  "/booking-calendar/consulta-presencial": "/booking/in-person-consultation",
+  "/booking-calendar/consultas-en-madrid": "/booking/madrid-consultation",
+};
+
+const routeByEnglishPath = Object.fromEntries(
+  Object.entries(englishPathByRoute).map(([route, englishPath]) => [englishPath, route]),
+);
 
 const communityVideos = [
   {
@@ -881,7 +900,8 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [path, setPath] = useState(initialPath);
   const language = path === "/en" || path.startsWith("/en/") ? "en" : "es";
-  const routePath = language === "en" ? path.replace(/^\/en(?=\/|$)/, "") || "/" : path;
+  const rawRoutePath = language === "en" ? path.replace(/^\/en(?=\/|$)/, "") || "/" : path;
+  const routePath = language === "en" ? routeByEnglishPath[rawRoutePath] || rawRoutePath : rawRoutePath;
   const t = copy[language];
   const page =
     routePath === "/historia" ? "historia" :
@@ -911,7 +931,11 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
   const localizedHref = useCallback((href, locale = language) => {
     if (href.startsWith("/#")) return href;
     if (!href.startsWith("/")) return href;
-    return locale === "en" ? `/en${href === "/" ? "" : href}` : href;
+    if (locale === "en") {
+      const englishPath = englishPathByRoute[href] || href;
+      return `/en${href === "/" ? "" : englishPath}`;
+    }
+    return href;
   }, [language]);
   const navLinks = [
     ["/", t.nav.home],
@@ -1940,8 +1964,25 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
             </div>
           </div>
         </div>
-        <div className="mx-auto mt-10 max-w-6xl border-t border-[#14261c]/10 pt-6 text-center text-xs leading-7 text-[#6f7f77]">
-          {t.footerKeywords.join(" · ")}
+        <div className="mx-auto mt-12 grid max-w-6xl gap-6 border-t border-[#14261c]/10 pt-8 md:grid-cols-2">
+          <section className="text-left">
+            <h2 className="text-xl font-semibold text-[#14261c]">{t.localSeoTitle}</h2>
+            <p className="mt-3 text-sm leading-7 text-[#607064]">{t.localSeoText}</p>
+            <ul className="mt-4 grid gap-2 text-sm text-[#607064] sm:grid-cols-2">
+              {t.localSeoAreas.map((area) => (
+                <li key={area} className="border-l-2 border-[#d3aa45] pl-3">{area}</li>
+              ))}
+            </ul>
+          </section>
+          <section className="text-left">
+            <h2 className="text-xl font-semibold text-[#14261c]">{t.medicalTrustTitle}</h2>
+            <p className="mt-3 text-sm leading-7 text-[#607064]">{t.medicalTrustText}</p>
+            <ul className="mt-4 space-y-2 text-sm leading-6 text-[#607064]">
+              {t.medicalTrustItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </section>
         </div>
       </footer>
 

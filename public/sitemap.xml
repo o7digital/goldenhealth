@@ -145,181 +145,145 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/booking-calendar/consulta-online-1</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.goldenhealth.com.mx/booking-calendar/consulta-presencial</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.goldenhealth.com.mx/booking-calendar/consultas-en-madrid</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.goldenhealth.com.mx/en</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/historia</loc>
+    <loc>https://www.goldenhealth.com.mx/en/story</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/programa-integral</loc>
+    <loc>https://www.goldenhealth.com.mx/en/integral-longevity-program</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/tienda</loc>
+    <loc>https://www.goldenhealth.com.mx/en/shop</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/consultas</loc>
+    <loc>https://www.goldenhealth.com.mx/en/medical-consultations</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/noticias</loc>
+    <loc>https://www.goldenhealth.com.mx/en/news</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/contacto</loc>
+    <loc>https://www.goldenhealth.com.mx/en/contact</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/programa-integral/antroposofia</loc>
+    <loc>https://www.goldenhealth.com.mx/en/integral-longevity-program/anthroposophy</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/programa-integral/arte-del-buen-comer-y-buen-beber</loc>
+    <loc>https://www.goldenhealth.com.mx/en/integral-longevity-program/art-of-healthy-eating</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/programa-integral/menu-golden-health</loc>
+    <loc>https://www.goldenhealth.com.mx/en/integral-longevity-program/golden-health-menu</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/programa-integral/anti-aging</loc>
+    <loc>https://www.goldenhealth.com.mx/en/integral-longevity-program/regenerative-medicine</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/programa-integral/terapias-biologicas</loc>
+    <loc>https://www.goldenhealth.com.mx/en/integral-longevity-program/biological-therapies</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/programa-integral/hidratacion-funcional</loc>
+    <loc>https://www.goldenhealth.com.mx/en/integral-longevity-program/functional-hydration</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/programa-integral/ciencia-del-deporte</loc>
+    <loc>https://www.goldenhealth.com.mx/en/integral-longevity-program/sports-science</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/programa-integral/equilibrio-mente-cuerpo-espiritu</loc>
+    <loc>https://www.goldenhealth.com.mx/en/integral-longevity-program/mind-body-spirit-balance</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/programa-integral/salud-nutricional</loc>
+    <loc>https://www.goldenhealth.com.mx/en/integral-longevity-program/nutritional-health</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/producto/tratamientos-biologicos</loc>
+    <loc>https://www.goldenhealth.com.mx/en/product/biological-treatments</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/producto/tratamiento-antioxidante</loc>
+    <loc>https://www.goldenhealth.com.mx/en/product/antioxidant-treatment</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/producto/tratamiento-anti-inflamatorio</loc>
+    <loc>https://www.goldenhealth.com.mx/en/product/anti-inflammatory-treatment</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/producto/tratamiento-sindrome-metabolico</loc>
+    <loc>https://www.goldenhealth.com.mx/en/product/metabolic-syndrome-treatment</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/producto/tratamiento-detox</loc>
+    <loc>https://www.goldenhealth.com.mx/en/product/detox-treatment</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/producto/celulas-madre</loc>
+    <loc>https://www.goldenhealth.com.mx/en/product/stem-cells</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/producto/tratamiento-hormonal-hombre</loc>
+    <loc>https://www.goldenhealth.com.mx/en/product/men-hormonal-treatment</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.goldenhealth.com.mx/en/producto/tratamiento-hormonal-mujer</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.goldenhealth.com.mx/en/booking-calendar/consulta-online-1</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.goldenhealth.com.mx/en/booking-calendar/consulta-presencial</loc>
-    <lastmod>2026-08-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.goldenhealth.com.mx/en/booking-calendar/consultas-en-madrid</loc>
+    <loc>https://www.goldenhealth.com.mx/en/product/women-hormonal-treatment</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
