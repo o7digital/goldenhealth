@@ -98,16 +98,23 @@ const copy = {
     objectives: "¿Cuáles son los objetivos?",
     buy: "COMPRAR",
     strategicPartners: "Aliados estratégicos",
-    localSeoTitle: "Atención médica integral en Miguel Hidalgo, CDMX",
-    localSeoText: "Golden Health atiende en Lago Zúrich 96, Ampliación Granada, Miguel Hidalgo. La consulta inicial permite orientar objetivos de longevidad, medicina preventiva, nutrición funcional, terapias biológicas y bienestar integral con una ruta personalizada.",
-    localSeoAreas: ["Clínica de longevidad en CDMX", "Medicina regenerativa en Miguel Hidalgo", "Nutrición funcional en Ciudad de México", "Consulta anti aging presencial u online"],
-    medicalTrustTitle: "Información médica y criterios de atención",
-    medicalTrustText: "El contenido de Golden Health es informativo y no sustituye una valoración médica. Los tratamientos, suplementos y protocolos se recomiendan de forma individual después de revisar objetivos, antecedentes y estado actual del paciente.",
-    medicalTrustItems: [
-      "Atención dirigida por la Dra. Silvia del Moral, fundadora y médico responsable.",
-      "Más de 35 años de trayectoria en ciencias de la vida y cuidados de la salud.",
-      "Formación en medicina, pediatría por el Instituto Nacional de Pediatría y estudios en el Goetheanum en Dornach, Suiza.",
-      "Contenido actualizado en agosto de 2026.",
+    footerKeywords: [
+      "clínica de longevidad CDMX",
+      "medicina regenerativa Ciudad de México",
+      "anti aging CDMX",
+      "medicina preventiva México CDMX",
+      "salud celular CDMX",
+      "terapias biológicas Ciudad de México",
+      "nutrición funcional CDMX",
+      "consulta médica Miguel Hidalgo CDMX",
+      "bienestar integral Ciudad de México",
+      "tratamientos biológicos CDMX",
+      "células madre CDMX",
+      "tratamiento detox México CDMX",
+      "tratamiento hormonal CDMX",
+      "hidratación funcional Ciudad de México",
+      "ciencia del deporte CDMX",
+      "Golden Health México CDMX",
     ],
     pageTitles: {
       home: "Golden Health MX",
@@ -236,16 +243,23 @@ const copy = {
     objectives: "What are the objectives?",
     buy: "BUY",
     strategicPartners: "Strategic partners",
-    localSeoTitle: "Integral medical care in Miguel Hidalgo, Mexico City",
-    localSeoText: "Golden Health welcomes patients at Lago Zúrich 96, Ampliación Granada, Miguel Hidalgo. The initial consultation helps define goals around longevity, preventive medicine, functional nutrition, biological therapies, and integral wellbeing.",
-    localSeoAreas: ["Longevity clinic in Mexico City", "Regenerative medicine in Miguel Hidalgo", "Functional nutrition in Mexico City", "In-person or online anti-aging consultation"],
-    medicalTrustTitle: "Medical information and care criteria",
-    medicalTrustText: "Golden Health content is informational and does not replace a medical assessment. Treatments, supplements, and protocols are recommended individually after reviewing each patient's goals, history, and current condition.",
-    medicalTrustItems: [
-      "Care led by Dr. Silvia del Moral, founder and medical director.",
-      "More than 35 years of experience in life sciences and health care.",
-      "Training in medicine, pediatrics at the Instituto Nacional de Pediatría, and studies at the Goetheanum in Dornach, Switzerland.",
-      "Content updated in August 2026.",
+    footerKeywords: [
+      "longevity clinic Mexico City",
+      "regenerative medicine Mexico City",
+      "anti-aging clinic CDMX",
+      "preventive medicine Mexico City",
+      "cellular health CDMX",
+      "biological therapies Mexico City",
+      "functional nutrition CDMX",
+      "medical consultation Miguel Hidalgo CDMX",
+      "integral wellness Mexico City",
+      "biological treatments CDMX",
+      "stem cell therapy Mexico City",
+      "detox treatment CDMX",
+      "hormonal treatment Mexico City",
+      "functional hydration CDMX",
+      "sports science Mexico City",
+      "Golden Health Mexico City CDMX",
     ],
     pageTitles: {
       home: "Golden Health MX",
@@ -1964,25 +1978,8 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
             </div>
           </div>
         </div>
-        <div className="mx-auto mt-12 grid max-w-6xl gap-6 border-t border-[#14261c]/10 pt-8 md:grid-cols-2">
-          <section className="text-left">
-            <h2 className="text-xl font-semibold text-[#14261c]">{t.localSeoTitle}</h2>
-            <p className="mt-3 text-sm leading-7 text-[#607064]">{t.localSeoText}</p>
-            <ul className="mt-4 grid gap-2 text-sm text-[#607064] sm:grid-cols-2">
-              {t.localSeoAreas.map((area) => (
-                <li key={area} className="border-l-2 border-[#d3aa45] pl-3">{area}</li>
-              ))}
-            </ul>
-          </section>
-          <section className="text-left">
-            <h2 className="text-xl font-semibold text-[#14261c]">{t.medicalTrustTitle}</h2>
-            <p className="mt-3 text-sm leading-7 text-[#607064]">{t.medicalTrustText}</p>
-            <ul className="mt-4 space-y-2 text-sm leading-6 text-[#607064]">
-              {t.medicalTrustItems.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </section>
+        <div className="mx-auto mt-10 max-w-6xl border-t border-[#14261c]/10 pt-6 text-center text-xs leading-7 text-[#6f7f77]">
+          {t.footerKeywords.join(" · ")}
         </div>
       </footer>
 
