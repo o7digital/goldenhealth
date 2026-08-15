@@ -82,7 +82,7 @@ export default function OliviaChat() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [lead, setLead] = useState({ firstName: "", lastName: "", email: "", phone: "", need: "" });
-  const [leadSent, setLeadSent] = useState(false);
+  const [leadSent, setLeadSent] = useState(true);
   const visitorRef = useRef(null);
   const conversationRef = useRef(null);
   const endRef = useRef(null);
