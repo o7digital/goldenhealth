@@ -1905,17 +1905,16 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
               <div aria-label="ZINZINO" className="text-3xl font-black uppercase tracking-normal text-black">ZINZINO</div>
               <img src="/images/source/footer/royal-prestige.webp" alt="Royal Prestige" className="max-h-24 w-auto object-contain" />
             </div>
-
-            <div className="mt-10 border-t border-black/10 pt-8">
-              <div className="flex flex-wrap items-center justify-center gap-2 text-[11px] font-medium text-[#14261c]/80">
-                {t.easyKeywords.map((keyword) => (
-                  <span key={keyword} className="rounded-full border border-[#14261c]/10 bg-white/60 px-2.5 py-1.5">
-                    {keyword}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
+        </div>
+        <div className="mx-auto mt-10 max-w-7xl border-t border-black/10 pt-5 text-center text-[8px] font-medium leading-5 text-[#14261c]/65 sm:text-[9px]">
+          {[t.easyKeywords.slice(0, 7), t.easyKeywords.slice(7, 14), t.easyKeywords.slice(14)].map((keywords, rowIndex) => (
+            <p key={rowIndex} className="flex flex-wrap justify-center gap-x-1.5 lg:flex-nowrap">
+              {keywords.map((keyword) => (
+                <span key={keyword} className="whitespace-nowrap">{keyword}</span>
+              ))}
+            </p>
+          ))}
         </div>
       </footer>
 
