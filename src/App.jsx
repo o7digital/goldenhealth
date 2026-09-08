@@ -7,7 +7,8 @@ const copy = {
     heroText: "Golden Health integra medicina preventiva, terapias biológicas, nutrición funcional y protocolos anti-aging para personas que buscan energía, equilibrio y bienestar medible.",
     primaryCta: "Agendar valoración →",
     secondaryCta: "Conocer el método",
-    keywords: ["Longevidad", "Anti-aging", "Salud celular", "Medicina preventiva", "Nutrición funcional", "CDMX"],
+    keywords: ["Longevidad CDMX", "Anti-aging CDMX", "Salud celular CDMX", "Medicina preventiva CDMX", "Nutrición funcional CDMX", "Clínica de longevidad CDMX"],
+    easyKeywords: ["Medicina preventiva CDMX", "Nutrición funcional CDMX", "Anti-aging CDMX", "Longevidad CDMX", "Terapias biológicas CDMX", "Consulta médica CDMX", "Bienestar integral CDMX"],
     methodEyebrow: "Método Golden Health",
     methodTitle: "Una experiencia médica, estética y funcional en una sola ruta.",
     methodText: "La valoración, el plan y el seguimiento se conectan para que cada persona comprenda qué se propone, por qué y cómo se revisará su evolución.",
@@ -134,7 +135,8 @@ const copy = {
     heroText: "Golden Health integrates preventive medicine, biological therapies, functional nutrition, and anti-aging protocols for people seeking measurable energy, balance, and wellbeing.",
     primaryCta: "Book an assessment →",
     secondaryCta: "Explore the method",
-    keywords: ["Longevity", "Anti-aging", "Cellular health", "Preventive medicine", "Functional nutrition", "CDMX"],
+    keywords: ["Longevity Mexico", "Anti-aging Mexico", "Cellular health Mexico", "Preventive medicine Mexico", "Functional nutrition Mexico", "Clinic longevity Mexico"],
+    easyKeywords: ["Preventive medicine Mexico", "Functional nutrition Mexico", "Anti-aging Mexico", "Longevity Mexico", "Biological therapies Mexico", "Medical consultation Mexico", "Wellness clinic Mexico"],
     methodEyebrow: "Golden Health Method",
     methodTitle: "A medical, aesthetic, and functional experience in one clear path.",
     methodText: "A structured approach designed to make every step clearer, more personal, and easier to follow.",
@@ -1902,6 +1904,17 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
               <img src="/images/source/footer/incruises.png" alt="inCruises" className="max-h-16 w-auto object-contain" />
               <div aria-label="ZINZINO" className="text-3xl font-black uppercase tracking-normal text-black">ZINZINO</div>
               <img src="/images/source/footer/royal-prestige.webp" alt="Royal Prestige" className="max-h-24 w-auto object-contain" />
+            </div>
+
+            <div className="mt-10 border-t border-black/10 pt-8">
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#14261c]/70">Palabras clave</p>
+              <div className="flex flex-wrap items-center justify-center gap-2 text-[11px] font-medium text-[#14261c]/80">
+                {t.easyKeywords.map((keyword) => (
+                  <span key={keyword} className="rounded-full border border-[#14261c]/10 bg-white/60 px-2.5 py-1.5">
+                    {keyword}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
