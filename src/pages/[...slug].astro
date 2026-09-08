@@ -585,7 +585,7 @@ const jsonLd = [websiteJsonLd, organizationJsonLd, webPageJsonLd, breadcrumbJson
     <GoldenHealth initialPath={pathname}>
       <SeoContent routePath={routePath} isEnglish={isEnglish} />
     </GoldenHealth>
-    <OliviaChat client:idle />
+    <OliviaChat client:idle={{ timeout: 1500 }} />
     <script>
       const menuToggle = document.querySelector("[data-gh-menu-toggle]");
       const mobileMenu = document.querySelector("[data-gh-mobile-menu]");

@@ -73,151 +73,232 @@ svg {
 }
 
 
-.gh-olivia {
+.gh-olivia-v2 {
+  --olivia-green: #14261c;
+  --olivia-green-soft: #203b2c;
+  --olivia-gold: #d3aa45;
+  --olivia-cream: #f7f3ea;
   position: fixed;
-  right: 22px;
-  bottom: 22px;
+  right: 24px;
+  bottom: 24px;
   z-index: 9999;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.gh-olivia-bubble {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border: 0;
-  border-radius: 999px;
-  background: #14261c;
-  color: #f4ead0;
-  padding: 10px 16px 10px 10px;
-  box-shadow: 0 18px 45px rgba(20, 38, 28, 0.28);
-  cursor: pointer;
-}
+.gh-olivia-v2 button,
+.gh-olivia-v2 input,
+.gh-olivia-v2 textarea { font: inherit; }
 
-.gh-olivia-bubble span {
-  display: grid;
-  height: 38px;
-  width: 38px;
-  place-items: center;
-  border-radius: 999px;
-  background: #d3aa45;
-  color: #14261c;
-  font-weight: 800;
-}
-
-.gh-olivia-bubble strong,
-.gh-olivia-bubble em {
-  display: block;
-  text-align: left;
-  font-style: normal;
-  line-height: 1.1;
-}
-
-.gh-olivia-bubble strong { font-size: 16px; }
-.gh-olivia-bubble em { color: rgba(244, 234, 208, 0.78); font-size: 12px; }
-
-.gh-olivia-panel {
+.gh-olivia-v2-panel {
   position: absolute;
   right: 0;
-  bottom: 70px;
-  width: min(420px, calc(100vw - 28px));
-  max-height: min(720px, calc(100vh - 110px));
+  bottom: 76px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
+  width: min(440px, calc(100vw - 32px));
+  height: min(680px, calc(100vh - 118px));
   overflow: hidden;
-  border: 1px solid rgba(211, 170, 69, 0.55);
-  border-radius: 28px;
-  background: #fbf8ef;
-  box-shadow: 0 24px 80px rgba(20, 38, 28, 0.26);
+  border: 1px solid rgba(20, 38, 28, 0.13);
+  border-radius: 30px;
+  background: #fffdf8;
+  box-shadow: 0 30px 90px rgba(14, 31, 21, 0.28), 0 8px 24px rgba(14, 31, 21, 0.12);
+  animation: gh-olivia-v2-in 180ms ease-out;
 }
 
-.gh-olivia-header {
+@keyframes gh-olivia-v2-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.gh-olivia-v2-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  background: linear-gradient(135deg, #14261c, #1f3b2c);
-  color: #f4ead0;
-  padding: 20px 22px;
+  gap: 14px;
+  padding: 18px 18px 17px;
+  background: linear-gradient(140deg, #102017 0%, #1f3b2c 72%, #294936 100%);
+  color: white;
 }
 
-.gh-olivia-header strong { display: block; font-family: Georgia, serif; font-size: 25px; }
-.gh-olivia-header span { display: block; margin-top: 3px; color: rgba(244, 234, 208, 0.78); font-size: 14px; }
-.gh-olivia-header button { border: 0; border-radius: 14px; background: rgba(255,255,255,.14); color: white; cursor: pointer; font-size: 26px; height: 42px; width: 42px; }
+.gh-olivia-v2-brand,
+.gh-olivia-v2-actions,
+.gh-olivia-v2-title { display: flex; align-items: center; }
+.gh-olivia-v2-brand { min-width: 0; gap: 12px; }
+.gh-olivia-v2-avatar {
+  display: grid;
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  background: linear-gradient(145deg, #edcc75, #bd8d2d);
+  color: var(--olivia-green);
+  font-size: 22px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+.gh-olivia-v2-title { gap: 7px; }
+.gh-olivia-v2-title strong { font-family: Georgia, serif; font-size: 24px; line-height: 1; }
+.gh-olivia-v2-title small {
+  border: 1px solid rgba(211, 170, 69, 0.55);
+  border-radius: 999px;
+  color: #f0cd78;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.gh-olivia-v2-brand > div > span { display: block; margin-top: 5px; overflow: hidden; color: rgba(255, 255, 255, 0.64); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.gh-olivia-v2-actions { flex: 0 0 auto; gap: 9px; }
+.gh-olivia-v2-status { display: flex; align-items: center; gap: 6px; color: rgba(255, 255, 255, 0.72); font-size: 11px; font-weight: 650; }
+.gh-olivia-v2-status i { width: 7px; height: 7px; border-radius: 50%; background: #6ee7a5; box-shadow: 0 0 0 4px rgba(110, 231, 165, 0.12); }
+.gh-olivia-v2-actions button {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+}
+.gh-olivia-v2-actions button:hover { background: rgba(255, 255, 255, 0.16); }
 
-.gh-olivia-messages {
+.gh-olivia-v2-body {
   display: flex;
+  min-height: 0;
   flex-direction: column;
-  gap: 12px;
-  max-height: 310px;
+  gap: 13px;
   overflow-y: auto;
   padding: 18px;
+  scrollbar-color: rgba(20, 38, 28, 0.25) transparent;
+  scrollbar-width: thin;
 }
 
-.gh-olivia-message {
-  max-width: 88%;
-  white-space: pre-wrap;
-  border-radius: 18px;
-  padding: 13px 15px;
-  font-size: 15px;
-  line-height: 1.45;
+.gh-olivia-v2-message { display: flex; max-width: 91%; align-items: flex-start; gap: 8px; font-size: 14px; line-height: 1.52; }
+.gh-olivia-v2-message > div { min-width: 0; border: 1px solid #ece5d5; border-radius: 7px 19px 19px 19px; background: white; padding: 12px 14px; color: #24352a; box-shadow: 0 2px 10px rgba(20, 38, 28, 0.06); }
+.gh-olivia-v2-message p { margin: 0; }
+.gh-olivia-v2-message p + p,
+.gh-olivia-v2-reply-line + p,
+.gh-olivia-v2-message p + .gh-olivia-v2-reply-line { margin-top: 7px; }
+.gh-olivia-v2-message.user { align-self: flex-end; }
+.gh-olivia-v2-message.user > div { border-radius: 19px 7px 19px 19px; background: var(--olivia-green); color: white; box-shadow: 0 8px 22px rgba(20, 38, 28, 0.14); }
+.gh-olivia-v2-message.welcome { max-width: 100%; }
+.gh-olivia-v2-message.welcome small { display: block; margin-top: 7px; color: #78847d; font-size: 11px; line-height: 1.4; }
+.gh-olivia-v2-message.error > div { border-color: #e7c8c4; background: #fff8f7; }
+.gh-olivia-v2-mini-avatar { display: grid; flex: 0 0 auto; width: 27px; height: 27px; place-items: center; border-radius: 9px; background: #ead39a; color: var(--olivia-green); font-size: 12px; font-weight: 900; }
+.gh-olivia-v2-reply-line { display: flex; align-items: flex-start; gap: 8px; }
+.gh-olivia-v2-reply-line i { flex: 0 0 auto; width: 5px; height: 5px; margin-top: 8px; border-radius: 50%; background: var(--olivia-gold); }
+
+.gh-olivia-v2-suggestions { display: grid; gap: 8px; padding-left: 35px; }
+.gh-olivia-v2-suggestions button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid #e6decc;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.76);
+  color: #33453a;
+  padding: 10px 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
 }
+.gh-olivia-v2-suggestions button:hover { transform: translateX(2px); border-color: var(--olivia-gold); background: white; }
+.gh-olivia-v2-suggestions button span { color: #a77b24; font-size: 17px; }
 
-.gh-olivia-message.assistant { align-self: flex-start; background: white; color: #14261c; border: 1px solid #efe6cd; }
-.gh-olivia-message.user { align-self: flex-end; background: #e9ddc1; color: #14261c; }
+.gh-olivia-v2-message.typing > div { display: flex; align-items: center; gap: 4px; padding-block: 15px; }
+.gh-olivia-v2-message.typing i { width: 6px; height: 6px; border-radius: 50%; background: #789084; animation: gh-olivia-dot 1s infinite ease-in-out; }
+.gh-olivia-v2-message.typing i:nth-child(2) { animation-delay: 120ms; }
+.gh-olivia-v2-message.typing i:nth-child(3) { animation-delay: 240ms; }
+@keyframes gh-olivia-dot { 0%, 60%, 100% { transform: translateY(0); opacity: 0.45; } 30% { transform: translateY(-3px); opacity: 1; } }
+.gh-olivia-v2-retry { margin-top: 9px; border: 0; border-radius: 999px; background: #ead39a; color: var(--olivia-green); padding: 7px 11px; cursor: pointer; font-size: 12px; font-weight: 800; }
 
-.gh-olivia-lead {
-  border-top: 1px solid #efe6cd;
-  background: #14261c;
-  padding: 16px;
-}
-
-.gh-olivia-lead p { margin: 0 0 10px; color: rgba(255,255,255,.78); font-size: 13px; }
-.gh-olivia-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.gh-olivia-grid input,
-.gh-olivia-grid textarea,
-.gh-olivia-compose input {
+.gh-olivia-v2-lead { border: 1px solid #dfd4bc; border-radius: 22px; background: #f7f1e4; padding: 15px; box-shadow: 0 8px 24px rgba(20, 38, 28, 0.07); }
+.gh-olivia-v2-lead-heading { display: flex; gap: 10px; align-items: flex-start; }
+.gh-olivia-v2-lead-heading > span { display: grid; flex: 0 0 auto; width: 30px; height: 30px; place-items: center; border-radius: 10px; background: var(--olivia-green); color: #efca70; font-weight: 800; }
+.gh-olivia-v2-lead-heading strong { color: var(--olivia-green); font-size: 14px; }
+.gh-olivia-v2-lead-heading p { margin: 3px 0 0; color: #66756c; font-size: 11px; line-height: 1.4; }
+.gh-olivia-v2-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 13px; }
+.gh-olivia-v2-grid label { display: grid; gap: 5px; min-width: 0; }
+.gh-olivia-v2-grid label.wide { grid-column: 1 / -1; }
+.gh-olivia-v2-grid label > span { color: #4f5e55; font-size: 10px; font-weight: 750; }
+.gh-olivia-v2-grid input,
+.gh-olivia-v2-grid textarea,
+.gh-olivia-v2-compose textarea {
   min-width: 0;
-  border: 1px solid rgba(20,38,28,.12);
-  border-radius: 14px;
+  width: 100%;
+  border: 1px solid #ddd4c1;
+  border-radius: 12px;
   background: white;
-  color: #14261c;
-  padding: 12px 13px;
+  color: var(--olivia-green);
   outline: none;
 }
+.gh-olivia-v2-grid input,
+.gh-olivia-v2-grid textarea { padding: 10px 11px; font-size: 13px; }
+.gh-olivia-v2-grid textarea { resize: vertical; }
+.gh-olivia-v2-grid input:focus,
+.gh-olivia-v2-grid textarea:focus,
+.gh-olivia-v2-compose textarea:focus { border-color: var(--olivia-gold); box-shadow: 0 0 0 3px rgba(211, 170, 69, 0.13); }
+.gh-olivia-v2-consent { display: flex; align-items: flex-start; gap: 8px; margin-top: 11px; color: #5e6c64; font-size: 10px; line-height: 1.4; }
+.gh-olivia-v2-consent input { margin-top: 2px; accent-color: var(--olivia-green); }
+.gh-olivia-v2-form-error { margin: 8px 0 0; color: #9e4138; font-size: 11px; }
+.gh-olivia-v2-lead-submit { display: flex; width: 100%; align-items: center; justify-content: center; gap: 9px; margin-top: 12px; border: 0; border-radius: 13px; background: var(--olivia-green); color: white; padding: 11px 14px; cursor: pointer; font-size: 12px; font-weight: 800; }
+.gh-olivia-v2-lead-submit span { color: #efca70; font-size: 16px; }
 
-.gh-olivia-need {
-  grid-column: 1 / -1;
-  min-height: 74px;
-  resize: vertical;
-}
+.gh-olivia-v2-compose { display: grid; grid-template-columns: minmax(0, 1fr) 48px; align-items: end; gap: 9px; border-top: 1px solid #ece5d6; background: white; padding: 12px 14px; }
+.gh-olivia-v2-compose textarea { max-height: 92px; resize: none; padding: 12px 13px; font-size: 14px; line-height: 1.4; }
+.gh-olivia-v2-compose button { display: grid; width: 48px; height: 48px; place-items: center; border: 0; border-radius: 15px; background: var(--olivia-green); color: white; cursor: pointer; box-shadow: 0 7px 18px rgba(20, 38, 28, 0.19); }
+.gh-olivia-v2-compose button svg { width: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.gh-olivia-v2 button:disabled { cursor: not-allowed; opacity: 0.45; }
+.gh-olivia-v2-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid #f0ebdf; background: white; padding: 9px 15px 11px; color: #98a099; font-size: 9px; }
+.gh-olivia-v2-footer a { color: #64736a; font-weight: 700; text-decoration: none; }
 
-.gh-olivia-consent {
+.gh-olivia-v2-launcher {
+  position: relative;
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin: 12px 0;
-  color: rgba(255,255,255,.78);
-  font-size: 12px;
-  line-height: 1.35;
-}
-.gh-olivia-consent a { color: #d3aa45; text-decoration: underline; }
-.gh-olivia-lead button,
-.gh-olivia-compose button {
-  border: 0;
-  border-radius: 14px;
-  background: #d3aa45;
-  color: #14261c;
+  min-height: 58px;
+  align-items: center;
+  gap: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 19px;
+  background: var(--olivia-green);
+  color: white;
+  padding: 7px 18px 7px 7px;
   cursor: pointer;
-  font-weight: 800;
+  box-shadow: 0 18px 46px rgba(20, 38, 28, 0.27);
+  transition: transform 170ms ease, box-shadow 170ms ease;
 }
-.gh-olivia-lead button { width: 100%; padding: 13px 16px; }
-.gh-olivia-compose { display: grid; grid-template-columns: 1fr 50px; gap: 10px; padding: 14px; border-top: 1px solid #efe6cd; background: white; }
-.gh-olivia-compose button { font-size: 30px; }
-.gh-olivia button:disabled { cursor: not-allowed; opacity: .58; }
+.gh-olivia-v2-launcher:hover { transform: translateY(-2px); box-shadow: 0 22px 52px rgba(20, 38, 28, 0.32); }
+.gh-olivia-v2-launcher.is-open { width: 58px; justify-content: center; border-radius: 18px; padding: 0; }
+.gh-olivia-v2-launcher-icon { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 14px; background: linear-gradient(145deg, #edcc75, #bd8d2d); color: var(--olivia-green); }
+.gh-olivia-v2-launcher-icon svg { width: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.gh-olivia-v2-launcher-copy { display: grid; gap: 2px; text-align: left; }
+.gh-olivia-v2-launcher-copy strong { font-size: 13px; line-height: 1.2; }
+.gh-olivia-v2-launcher-copy small { color: rgba(255, 255, 255, 0.6); font-size: 10px; font-weight: 500; }
+.gh-olivia-v2-launcher > i { position: absolute; top: 7px; right: 7px; width: 7px; height: 7px; border: 1px solid var(--olivia-green); border-radius: 50%; background: #72e6a8; }
+.gh-olivia-v2-launcher-close { font-size: 27px; font-weight: 300; line-height: 1; }
 
 @media (max-width: 560px) {
-  .gh-olivia { right: 10px; bottom: 10px; }
-  .gh-olivia-panel { position: fixed; inset: auto 8px 72px 8px; width: auto; max-height: calc(100vh - 92px); border-radius: 22px; }
-  .gh-olivia-messages { max-height: 34vh; }
-  .gh-olivia-grid { grid-template-columns: 1fr; }
-  .gh-olivia-bubble em { display: none; }
+  .gh-olivia-v2 { right: 10px; bottom: 10px; }
+  .gh-olivia-v2-panel { position: fixed; inset: 8px 8px 78px; width: auto; height: auto; border-radius: 24px; }
+  .gh-olivia-v2-header { padding: 14px; }
+  .gh-olivia-v2-status { display: none; }
+  .gh-olivia-v2-body { padding: 14px; }
+  .gh-olivia-v2-grid { grid-template-columns: 1fr; }
+  .gh-olivia-v2-grid label.wide { grid-column: auto; }
+  .gh-olivia-v2-footer span { display: none; }
+  .gh-olivia-v2-launcher-copy { display: none; }
+  .gh-olivia-v2-launcher { width: 58px; justify-content: center; border-radius: 18px; padding: 7px; }
+  .gh-olivia-v2-launcher > i { right: 5px; top: 5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gh-olivia-v2-panel,
+  .gh-olivia-v2-message.typing i { animation: none; }
 }
