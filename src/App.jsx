@@ -8,7 +8,7 @@ const copy = {
     primaryCta: "Agendar valoración →",
     secondaryCta: "Conocer el método",
     keywords: ["Longevidad CDMX", "Anti-aging CDMX", "Salud celular CDMX", "Medicina preventiva CDMX", "Nutrición funcional CDMX", "Clínica de longevidad CDMX"],
-    easyKeywords: ["Medicina preventiva CDMX", "Nutrición funcional CDMX", "Anti-aging CDMX", "Longevidad CDMX", "Terapias biológicas CDMX", "Consulta médica CDMX", "Bienestar integral CDMX"],
+    easyKeywords: ["Consulta de longevidad CDMX", "Valoración médica de longevidad CDMX", "Medicina preventiva Miguel Hidalgo CDMX", "Nutrición funcional personalizada CDMX", "Terapias biológicas Miguel Hidalgo CDMX", "Hidratación intravenosa CDMX", "Medicina regenerativa Miguel Hidalgo CDMX", "Consulta anti-aging CDMX", "Programa de longevidad CDMX", "Consulta de salud metabólica CDMX", "Consulta de equilibrio hormonal CDMX", "Suplementación personalizada CDMX", "Bienestar integral Miguel Hidalgo CDMX", "Consulta médica preventiva CDMX", "Acompañamiento para envejecimiento saludable CDMX", "Consulta de nutrición celular CDMX", "Protocolo de medicina regenerativa CDMX", "Consulta de vitalidad y energía CDMX", "Consulta de medicina personalizada CDMX", "Consulta de longevidad online Mexico"],
     methodEyebrow: "Método Golden Health",
     methodTitle: "Una experiencia médica, estética y funcional en una sola ruta.",
     methodText: "La valoración, el plan y el seguimiento se conectan para que cada persona comprenda qué se propone, por qué y cómo se revisará su evolución.",
@@ -135,8 +135,8 @@ const copy = {
     heroText: "Golden Health integrates preventive medicine, biological therapies, functional nutrition, and anti-aging protocols for people seeking measurable energy, balance, and wellbeing.",
     primaryCta: "Book an assessment →",
     secondaryCta: "Explore the method",
-    keywords: ["Longevity Mexico", "Anti-aging Mexico", "Cellular health Mexico", "Preventive medicine Mexico", "Functional nutrition Mexico", "Clinic longevity Mexico"],
-    easyKeywords: ["Preventive medicine Mexico", "Functional nutrition Mexico", "Anti-aging Mexico", "Longevity Mexico", "Biological therapies Mexico", "Medical consultation Mexico", "Wellness clinic Mexico"],
+    keywords: ["Longevity Mexico", "Anti-aging Mexico", "Cellular health Mexico", "Preventive medicine Mexico", "Functional nutrition Mexico", "Longevity clinic Mexico"],
+    easyKeywords: ["Longevity consultation Mexico", "Longevity health assessment Mexico", "Preventive medicine Miguel Hidalgo Mexico", "Personalized functional nutrition Mexico", "Biological therapies Miguel Hidalgo Mexico", "IV hydration Mexico", "Regenerative medicine Miguel Hidalgo Mexico", "Anti-aging consultation Mexico", "Longevity program Mexico", "Metabolic health consultation Mexico", "Hormonal balance consultation Mexico", "Personalized supplementation Mexico", "Integral wellness Miguel Hidalgo Mexico", "Preventive medical consultation Mexico", "Healthy aging guidance Mexico", "Cellular nutrition consultation Mexico", "Regenerative medicine protocol Mexico", "Vitality and energy consultation Mexico", "Personalized medicine consultation Mexico", "Online longevity consultation Mexico"],
     methodEyebrow: "Golden Health Method",
     methodTitle: "A medical, aesthetic, and functional experience in one clear path.",
     methodText: "A structured approach designed to make every step clearer, more personal, and easier to follow.",
@@ -1907,7 +1907,6 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
             </div>
 
             <div className="mt-10 border-t border-black/10 pt-8">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#14261c]/70">Palabras clave</p>
               <div className="flex flex-wrap items-center justify-center gap-2 text-[11px] font-medium text-[#14261c]/80">
                 {t.easyKeywords.map((keyword) => (
                   <span key={keyword} className="rounded-full border border-[#14261c]/10 bg-white/60 px-2.5 py-1.5">
