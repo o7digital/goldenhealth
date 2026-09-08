@@ -99,6 +99,8 @@ export default function OliviaChat() {
   const [leadSent, setLeadSent] = useState(false);
   const [leadError, setLeadError] = useState("");
   const [consent, setConsent] = useState(false);
+  const [panelPosition, setPanelPosition] = useState(null);
+  const [dragging, setDragging] = useState(false);
   const [lead, setLead] = useState({ firstName: "", lastName: "", email: "", phone: "", need: "" });
   const identityRef = useRef("");
   const visitorRef = useRef("");
@@ -106,6 +108,8 @@ export default function OliviaChat() {
   const endRef = useRef(null);
   const leadRef = useRef(null);
   const inputRef = useRef(null);
+  const panelRef = useRef(null);
+  const dragRef = useRef(null);
 
   useEffect(() => { visitorRef.current = getVisitorId(); }, []);
 
@@ -128,6 +132,53 @@ export default function OliviaChat() {
     window.addEventListener("keydown", closeOnEscape);
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, []);
+
+  useEffect(() => {
+    const keepPanelVisible = () => {
+      if (window.innerWidth <= 560) {
+        setPanelPosition(null);
+        return;
+      }
+      setPanelPosition((current) => {
+        if (!current || !panelRef.current) return current;
+        const rect = panelRef.current.getBoundingClientRect();
+        return {
+          left: Math.max(12, Math.min(current.left, window.innerWidth - rect.width - 12)),
+          top: Math.max(12, Math.min(current.top, window.innerHeight - rect.height - 12)),
+        };
+      });
+    };
+    window.addEventListener("resize", keepPanelVisible);
+    return () => window.removeEventListener("resize", keepPanelVisible);
+  }, []);
+
+  function startDragging(event) {
+    if (window.innerWidth <= 560 || event.button !== 0 || event.target.closest("button, a, input, textarea")) return;
+    const rect = panelRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    dragRef.current = { pointerId: event.pointerId, offsetX: event.clientX - rect.left, offsetY: event.clientY - rect.top };
+    setPanelPosition({ left: rect.left, top: rect.top });
+    setDragging(true);
+    event.currentTarget.setPointerCapture(event.pointerId);
+    event.preventDefault();
+  }
+
+  function movePanel(event) {
+    const drag = dragRef.current;
+    const panel = panelRef.current;
+    if (!drag || !panel || event.pointerId !== drag.pointerId) return;
+    setPanelPosition({
+      left: Math.max(12, Math.min(event.clientX - drag.offsetX, window.innerWidth - panel.offsetWidth - 12)),
+      top: Math.max(12, Math.min(event.clientY - drag.offsetY, window.innerHeight - panel.offsetHeight - 12)),
+    });
+  }
+
+  function stopDragging(event) {
+    if (!dragRef.current || event.pointerId !== dragRef.current.pointerId) return;
+    dragRef.current = null;
+    setDragging(false);
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+  }
 
   const pageContext = () => {
     const mainContent = (document.querySelector("main")?.textContent || "").replace(/\s+/g, " ").slice(0, 4000);
@@ -263,8 +314,20 @@ export default function OliviaChat() {
   return (
     <div className="gh-olivia-v2" data-client-code={CLIENT_CODE}>
       {open && (
-        <section className="gh-olivia-v2-panel" aria-label={`${t.title} ${t.version}`}>
-          <header className="gh-olivia-v2-header">
+        <section
+          ref={panelRef}
+          className={`gh-olivia-v2-panel${dragging ? " is-dragging" : ""}`}
+          style={panelPosition ? { position: "fixed", left: panelPosition.left, top: panelPosition.top, right: "auto", bottom: "auto" } : undefined}
+          aria-label={`${t.title} ${t.version}`}
+        >
+          <header
+            className="gh-olivia-v2-header"
+            onPointerDown={startDragging}
+            onPointerMove={movePanel}
+            onPointerUp={stopDragging}
+            onPointerCancel={stopDragging}
+            title={language === "en" ? "Drag to move Olivia" : "Arrastra para mover a Olivia"}
+          >
             <div className="gh-olivia-v2-brand">
               <span className="gh-olivia-v2-avatar" aria-hidden="true">✦</span>
               <div><div className="gh-olivia-v2-title"><strong>{t.title}</strong><small>{t.version}</small></div><span>{t.subtitle}</span></div>

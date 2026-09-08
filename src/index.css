@@ -98,11 +98,16 @@ svg {
   width: min(440px, calc(100vw - 32px));
   height: min(680px, calc(100vh - 118px));
   overflow: hidden;
-  border: 1px solid rgba(20, 38, 28, 0.13);
+  border: 1px solid rgba(211, 170, 69, 0.34);
   border-radius: 30px;
   background: #fffdf8;
-  box-shadow: 0 30px 90px rgba(14, 31, 21, 0.28), 0 8px 24px rgba(14, 31, 21, 0.12);
+  box-shadow: 0 48px 120px rgba(5, 16, 10, 0.48), 0 20px 48px rgba(5, 16, 10, 0.28), 0 3px 12px rgba(5, 16, 10, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.72) inset;
   animation: gh-olivia-v2-in 180ms ease-out;
+  transition: box-shadow 160ms ease;
+}
+
+.gh-olivia-v2-panel.is-dragging {
+  box-shadow: 0 58px 140px rgba(5, 16, 10, 0.54), 0 26px 58px rgba(5, 16, 10, 0.34), 0 0 0 2px rgba(211, 170, 69, 0.5);
 }
 
 @keyframes gh-olivia-v2-in {
@@ -118,7 +123,12 @@ svg {
   padding: 18px 18px 17px;
   background: linear-gradient(140deg, #102017 0%, #1f3b2c 72%, #294936 100%);
   color: white;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
 }
+
+.gh-olivia-v2-panel.is-dragging .gh-olivia-v2-header { cursor: grabbing; }
 
 .gh-olivia-v2-brand,
 .gh-olivia-v2-actions,
@@ -287,7 +297,7 @@ svg {
 @media (max-width: 560px) {
   .gh-olivia-v2 { right: 10px; bottom: 10px; }
   .gh-olivia-v2-panel { position: fixed; inset: 8px 8px 78px; width: auto; height: auto; border-radius: 24px; }
-  .gh-olivia-v2-header { padding: 14px; }
+  .gh-olivia-v2-header { padding: 14px; cursor: default; touch-action: auto; }
   .gh-olivia-v2-status { display: none; }
   .gh-olivia-v2-body { padding: 14px; }
   .gh-olivia-v2-grid { grid-template-columns: 1fr; }
