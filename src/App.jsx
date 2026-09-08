@@ -1,6 +1,3 @@
-import { useCallback, useEffect, useState } from "react";
-import OliviaChat from "./OliviaChat.jsx";
-
 const copy = {
   es: {
     nav: { home: "Inicio", program: "Programa Integral", history: "Historia", shop: "Tienda", consultations: "Consultas", news: "Noticias", contact: "Contacto" },
@@ -13,14 +10,14 @@ const copy = {
     keywords: ["Longevidad", "Anti-aging", "Salud celular", "Medicina preventiva", "Nutrición funcional", "CDMX"],
     methodEyebrow: "Método Golden Health",
     methodTitle: "Una experiencia médica, estética y funcional en una sola ruta.",
-    methodText: "Este bloque ayuda a que la cliente vea un sitio más ordenado, más premium y mucho más fácil de vender.",
+    methodText: "La valoración, el plan y el seguimiento se conectan para que cada persona comprenda qué se propone, por qué y cómo se revisará su evolución.",
     method: [
       ["01", "Diagnóstico", "Primero entendemos tu estado actual: energía, sueño, nutrición, estrés, hábitos y objetivos."],
       ["02", "Protocolo", "Diseñamos una ruta personalizada con terapias, nutrición, suplementación y seguimiento."],
       ["03", "Acompañamiento", "Medimos progreso, ajustamos el plan y construimos hábitos sostenibles a largo plazo."],
     ],
     therapiesEyebrow: "Programa Integral",
-    therapiesTitle: "Salud de alto nivel, presentada con claridad y confianza.",
+    therapiesTitle: "Áreas de atención que se integran según cada valoración.",
     therapiesText: "",
     details: "Ver detalle →",
     services: [
@@ -32,13 +29,13 @@ const copy = {
       ["◎", "Equilibrio cuerpo-mente", "Un enfoque integral que une medicina, hábitos, bienestar emocional y prevención inteligente."],
     ],
     patientEyebrow: "Experiencia del paciente",
-    patientTitle: "Más confianza desde el primer scroll.",
-    patientText: "El rediseño debe mostrar autoridad médica, cercanía y resultados posibles sin prometer milagros. Eso protege la marca y mejora la conversión.",
+    patientTitle: "Información clara para tomar decisiones con confianza.",
+    patientText: "Explicamos el proceso, los objetivos y los límites de cada opción. Ningún tratamiento sustituye una valoración individual ni promete resultados idénticos para todas las personas.",
     patientCards: [
       ["Consulta clara", "Explicación simple del proceso y próximos pasos."],
-      ["Contenido médico", "Artículos, videos y educación para generar confianza."],
-      ["Agenda visible", "Botón fijo a WhatsApp o formulario de valoración."],
-      ["SEO local", "Páginas optimizadas para terapias y búsquedas en CDMX."],
+      ["Contenido educativo", "Artículos y videos para preparar preguntas útiles antes de una consulta."],
+      ["Contacto accesible", "Formulario, teléfono y correo para solicitar orientación."],
+      ["Atención en CDMX", "Consulta presencial en Miguel Hidalgo y opciones de atención online."],
     ],
     shopTitle: "Tienda Golden Health",
     shopText: "Una sección de productos más limpia, con categorías claras, fichas premium y llamadas a compra o consulta.",
@@ -60,7 +57,7 @@ const copy = {
     whatsapp: "WhatsApp / Agenda",
     slideLabel: "Mostrar slide",
     programHomeTitle: "Longevidad y Anti-envejecimiento",
-    programHomeText: "Es imposible detener el envejecimiento, pero en Golden Health contamos con tratamientos y programas para retrasar sus efectos, mejorar la calidad de vida y prevenir el envejecimiento prematuro.",
+    programHomeText: "El envejecimiento es un proceso natural. En Golden Health reunimos valoración médica, hábitos, nutrición y terapias de soporte para acompañar la vitalidad y el bienestar a lo largo del tiempo.",
     newsEyebrow: "Noticias",
     newsTitle: "Comunidad Golden Health",
     newsText: "Videos, entrevistas, cápsulas y testimonios de la comunidad Golden Health.",
@@ -98,24 +95,6 @@ const copy = {
     objectives: "¿Cuáles son los objetivos?",
     buy: "COMPRAR",
     strategicPartners: "Aliados estratégicos",
-    footerKeywords: [
-      "clínica de longevidad CDMX",
-      "medicina regenerativa Ciudad de México",
-      "anti aging CDMX",
-      "medicina preventiva México CDMX",
-      "salud celular CDMX",
-      "terapias biológicas Ciudad de México",
-      "nutrición funcional CDMX",
-      "consulta médica Miguel Hidalgo CDMX",
-      "bienestar integral Ciudad de México",
-      "tratamientos biológicos CDMX",
-      "células madre CDMX",
-      "tratamiento detox México CDMX",
-      "tratamiento hormonal CDMX",
-      "hidratación funcional Ciudad de México",
-      "ciencia del deporte CDMX",
-      "Golden Health México CDMX",
-    ],
     pageTitles: {
       home: "Golden Health MX",
       programa: "Programa Integral | Golden Health MX",
@@ -130,8 +109,8 @@ const copy = {
     },
     programSummary: {
       items: [
-        ["Medicina Regenerativa", "Tratamiento de renovación celular de origen franco-suizo para regenerar y revitalizar órganos, apoyar la salud hormonal y frenar la degeneración celular."],
-        ["Acción regenerativa bio-celular", "Tratamientos biológicos de origen alemán orientados a mineralizar, oxigenar y nutrir órganos y sistemas."],
+        ["Medicina Regenerativa", "Valoración y opciones de soporte orientadas a la salud celular, la vitalidad y un envejecimiento saludable."],
+        ["Acción regenerativa bio-celular", "Terapias biológicas que se consideran dentro de una ruta individual y con seguimiento profesional."],
         ["Escuela del arte", "Conferencias, seminarios web, podcast, cocina saludable y mindfulness para sostener el bienestar a largo plazo."],
         ["Deportistas de alto rendimiento", "Disciplina, movimiento, oxigenación y condición física para mejorar el funcionamiento físico y cognitivo."],
       ],
@@ -165,8 +144,8 @@ const copy = {
       ["03", "Guidance", "We measure progress, adjust the plan, and build sustainable long-term habits."],
     ],
     therapiesEyebrow: "Therapies and services",
-    therapiesTitle: "High-level health care, presented with clarity and confidence.",
-    therapiesText: "Each service is explained with a clean structure designed for trust, conversion, and local medical SEO in Mexico City.",
+    therapiesTitle: "Areas of care combined according to each assessment.",
+    therapiesText: "Each service is explained with its purpose, process, and place within an individual care plan.",
     details: "View details →",
     services: [
       ["✦", "Longevity medicine", "Comprehensive assessment of energy, metabolism, inflammation, habits, and health goals."],
@@ -177,13 +156,13 @@ const copy = {
       ["◎", "Body-mind balance", "An integrated approach that connects medicine, habits, emotional wellbeing, and intelligent prevention."],
     ],
     patientEyebrow: "Patient experience",
-    patientTitle: "More trust from the first scroll.",
-    patientText: "The experience communicates medical authority, warmth, and realistic progress without overpromising. That protects the brand and improves conversion.",
+    patientTitle: "Clear information for confident decisions.",
+    patientText: "We explain the process, goals, and limits of each option. No treatment replaces an individual assessment or promises identical results for everyone.",
     patientCards: [
       ["Clear consultation", "Simple explanation of the process and next steps."],
-      ["Medical content", "Articles, videos, and education that build trust."],
-      ["Visible booking", "Fixed WhatsApp access or assessment form."],
-      ["Local SEO", "Pages optimized for therapies and searches in CDMX."],
+      ["Educational content", "Articles and videos that help you prepare useful questions before a consultation."],
+      ["Accessible contact", "Form, phone, and email options to request guidance."],
+      ["Care in Mexico City", "In-person consultations in Miguel Hidalgo and online options."],
     ],
     shopTitle: "Golden Health Shop",
     shopText: "A cleaner product section with clear categories, premium product cards, and calls to purchase or consult.",
@@ -243,24 +222,6 @@ const copy = {
     objectives: "What are the objectives?",
     buy: "BUY",
     strategicPartners: "Strategic partners",
-    footerKeywords: [
-      "longevity clinic Mexico City",
-      "regenerative medicine Mexico City",
-      "anti-aging clinic CDMX",
-      "preventive medicine Mexico City",
-      "cellular health CDMX",
-      "biological therapies Mexico City",
-      "functional nutrition CDMX",
-      "medical consultation Miguel Hidalgo CDMX",
-      "integral wellness Mexico City",
-      "biological treatments CDMX",
-      "stem cell therapy Mexico City",
-      "detox treatment CDMX",
-      "hormonal treatment Mexico City",
-      "functional hydration CDMX",
-      "sports science Mexico City",
-      "Golden Health Mexico City CDMX",
-    ],
     pageTitles: {
       home: "Golden Health MX",
       programa: "Integral Program | Golden Health MX",
@@ -275,8 +236,8 @@ const copy = {
     },
     programSummary: {
       items: [
-        ["Regenerative Medicine", "Cell-renewal treatment of Franco-Swiss origin designed to regenerate and revitalize organs, support hormonal health, and slow cellular degeneration."],
-        ["Bio-cellular regenerative action", "German-origin biological treatments focused on mineralizing, oxygenating, and nourishing organs and systems."],
+        ["Regenerative Medicine", "Assessment and supportive options focused on cellular health, vitality, and healthy aging."],
+        ["Bio-cellular regenerative action", "Biological therapies considered within an individual care path and with professional follow-up."],
         ["The art school", "Conferences, webinars, podcasts, healthy cooking, and mindfulness to sustain long-term wellbeing."],
         ["High-performance athletes", "Discipline, movement, oxygenation, and physical conditioning to improve physical and cognitive performance."],
       ],
@@ -320,9 +281,9 @@ const programEnglish = {
     title: "Regenerative Medicine",
     eyebrow: "Regenerative Medicine",
     intro: "These treatments aim to slow cellular degeneration and reactivate each person's health potential.",
-    introExtra: "With these treatments, we help prevent and reverse premature aging.",
+    introExtra: "The program supports healthy aging through individual assessment and follow-up.",
     diagnosticTitle: "Healthy Ageing Diagnosis",
-    diagnosticText: "At the beginning of treatment, a medical consultation is held with our health expert, who determines the most appropriate treatment to slow aging and improve quality of life in each case.",
+    diagnosticText: "At the beginning of the program, a medical consultation helps determine which options may support healthy aging and quality of life in each case.",
     regenerationTitle: "Advanced Cellular Regeneration Treatment",
   },
   "terapias-biologicas": {
@@ -364,7 +325,7 @@ const productEnglish = {
   "tratamiento-antioxidante": ["Antioxidant Treatment", "Endocrine antioxidant therapy designed to protect, repair, and support vitality.", ["Citoplacell formula", "Antioxidant support", "Anti-aging and energy focus"]],
   "tratamiento-anti-inflamatorio": ["Anti-inflammatory Treatment", "Anti-inflammatory protocol to support recovery, mobility, and metabolic balance.", ["Bioenzym formula", "Anti-inflammatory support", "Focused on osteoarticular and systemic wellbeing"]],
   "tratamiento-sindrome-metabolico": ["Metabolic Syndrome Treatment", "Therapy for metabolic support and functional regulation.", ["Revercell formula", "Metabolism support", "Medical consultation recommended"]],
-  "tratamiento-detox": ["Detox Treatment", "Detox protocol to support toxin elimination and digestive wellbeing.", ["Celltox formula", "Oral chelation", "Healthy habit support"]],
+  "tratamiento-detox": ["Detox Treatment", "Protocol designed to support digestive wellbeing and healthy habits.", ["Celltox formula", "Oral chelation", "Healthy habit support"]],
   "celulas-madre": ["Stem Cells", "Longevity activator focused on protection, repair, and revitalization.", ["Human Ultracell VI", "Treatment cycles", "Premium longevity protocol"]],
   "tratamiento-hormonal-hombre": ["Men's Hormonal Treatment", "Functional support for male hormonal-cycle regulation.", ["Androcell formula", "Male hormonal support", "Medical evaluation recommended"]],
   "tratamiento-hormonal-mujer": ["Women's Hormonal Treatment", "Functional support for female hormonal-cycle regulation.", ["Biofemin formula", "Female hormonal support", "Personalized follow-up"]],
@@ -397,8 +358,8 @@ const sourceSections = [
     title: "Programa Integral",
     intro: "Longevidad, anti-envejecimiento y bienestar integral para vivir mas anos con energia optima.",
     items: [
-      ["Medicina Regenerativa", "Tratamiento de renovacion celular de origen franco-suizo que busca regenerar y revitalizar organos, apoyar la salud hormonal y frenar la degeneracion celular."],
-      ["Accion regenerativa bio-celular", "Tratamientos biologicos de origen aleman orientados a mineralizar, oxigenar y nutrir organos y sistemas para reactivar el poder regulador del organismo."],
+      ["Medicina Regenerativa", "Valoracion y opciones de soporte orientadas a la salud celular, la vitalidad y un envejecimiento saludable."],
+      ["Accion regenerativa bio-celular", "Terapias biologicas consideradas dentro de una ruta individual y con seguimiento profesional."],
       ["Escuela del arte", "Conferencias, seminarios web, podcast, cocina saludable y mindfulness para sostener el bienestar a largo plazo."],
       ["Deportistas de alto rendimiento", "Disciplina, movimiento, oxigenacion y condicion fisica para lograr objetivos diarios y mejorar el funcionamiento cognitivo."],
     ],
@@ -415,7 +376,7 @@ const sourceSections = [
       ["Osteoarticular", "Apoyo para lesiones específicas, movilidad, tejidos, fuerza y flexibilidad."],
       ["Cara", "Tratamiento para enfatizar belleza interior y exterior de rostro y cuello."],
       ["Hormonal", "Apoyo para equilibrar sintomas hormonales en mujeres y hombres."],
-      ["Detox", "Protocolo para eliminar toxinas y promover un estilo de vida mas saludable."],
+      ["Detox", "Protocolo de apoyo al bienestar digestivo y a la construcción de hábitos saludables."],
     ],
   },
   {
@@ -444,7 +405,7 @@ const sourceSections = [
   {
     id: "arte-buen-comer",
     title: "Arte del Buen Comer y Buen Beber",
-    intro: "Comer es una necesidad, pero comer de forma inteligente es un arte. Este programa enseña hábitos de alimentación y estilo de vida para prevenir enfermedades degenerativas, aumentar energía y fortalecer el sistema inmunológico.",
+    intro: "Comer es una necesidad, pero comer de forma consciente también puede ser un aprendizaje. Este programa trabaja hábitos de alimentación y estilo de vida para apoyar energía, equilibrio y bienestar cotidiano.",
     image: "/images/source/programa/arte-buen-comer.webp",
     items: [
       ["Programa de hábitos saludables", "Acompañamiento para comer de forma sana, inteligente y equilibrada."],
@@ -456,7 +417,7 @@ const sourceSections = [
   {
     id: "anti-aging",
     title: "Anti-Aging",
-    intro: "El objetivo de estos tratamientos es frenar el proceso de degeneración celular y reactivar el potencial de salud de cada individuo para prevenir y revertir el envejecimiento prematuro.",
+    intro: "Este programa reúne valoración y opciones de soporte orientadas a la salud celular, la vitalidad y un envejecimiento saludable.",
     image: "/images/source/programa/anti-aging.webp",
     items: [
       ["Healthy Ageing", "Tratamientos anti-edad orientados a vitalidad, prevención y regeneración."],
@@ -588,8 +549,8 @@ const programPages = [
     image: "/images/source/programa/anti-aging-captura.webp",
     secondaryImage: "/images/source/programa/anti-aging-celulas-1.webp",
     tertiaryImage: "/images/source/programa/anti-aging-celulas-2.webp",
-    intro: "El objetivo de estos tratamientos es frenar el proceso de degeneración celular y reactivar el potencial de salud de cada individuo.",
-    introExtra: "Con estos tratamientos prevenimos y revertimos el envejecimiento prematuro.",
+    intro: "Este programa reúne valoración y opciones de soporte orientadas a la salud celular, la vitalidad y un envejecimiento saludable.",
+    introExtra: "La propuesta se adapta a cada persona y se revisa mediante seguimiento profesional.",
     diagnosticTitle: "Diagnóstico Healthy Ageing",
     diagnosticText: "Al inicio del tratamiento se realiza una consulta médica con nuestra experta en salud, quien determinará que tratamiento es el más adecuado para retardar el proceso de envejecimiento y mejorar la calidad de vida en cada caso.",
     reserveUrl: "/consultas",
@@ -603,7 +564,7 @@ const programPages = [
     sections: [
       {
         title: "Healthy Ageing",
-        text: "Nuestros tratamientos antiedad están orientados a retardar el envejecimiento prematuro, prevenir enfermedades crónico degenerativas y padecimientos asociados al paso de los años.",
+        text: "Las opciones de acompañamiento se orientan a sostener vitalidad, hábitos saludables y bienestar durante el proceso natural de envejecimiento.",
       },
       {
         title: "Diagnóstico Healthy Ageing",
@@ -644,7 +605,7 @@ const programPages = [
       },
       {
         title: "Cara, hormonal y detox",
-        text: "Protocolos para rostro y cuello, equilibrio hormonal de mujeres y hombres, y detox para eliminar toxinas y apoyar un estilo de vida más saludable.",
+        text: "Protocolos para rostro y cuello, acompañamiento del equilibrio hormonal y opciones de apoyo digestivo dentro de un estilo de vida saludable.",
       },
     ],
   },
@@ -801,7 +762,7 @@ const products = [
     name: "Tratamiento Detox",
     price: "$4,200.00",
     image: "/images/source/products/detox.webp",
-    summary: "Protocolo detox para apoyar eliminación de toxinas y bienestar digestivo.",
+    summary: "Protocolo orientado a apoyar el bienestar digestivo y hábitos saludables.",
     details: ["Fórmula Celltox", "Quelación oral", "Apoyo a hábitos saludables"],
   },
   {
@@ -909,10 +870,10 @@ const socialLinks = [
   ["YouTube", "https://www.youtube.com/user/GoldenHealthSalud", "▶"],
 ];
 
-export default function GoldenHealthMockup({ initialPath = "/" }) {
-  const [activeSlide, setActiveSlide] = useState(0);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [path, setPath] = useState(initialPath);
+export default function GoldenHealthMockup({ initialPath = "/", children }) {
+  const activeSlide = 0;
+  const mobileMenuOpen = false;
+  const path = initialPath;
   const language = path === "/en" || path.startsWith("/en/") ? "en" : "es";
   const rawRoutePath = language === "en" ? path.replace(/^\/en(?=\/|$)/, "") || "/" : path;
   const routePath = language === "en" ? routeByEnglishPath[rawRoutePath] || rawRoutePath : rawRoutePath;
@@ -942,7 +903,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
   const selectedProgram = localizedPrograms.find((program) => routePath === `/programa-integral/${program.slug}`);
   const selectedProduct = localizedProducts.find((product) => routePath === `/producto/${product.slug}`);
   const selectedConsultation = localizedConsultations.find((consultation) => routePath === `/booking-calendar/${consultation[5]}`);
-  const localizedHref = useCallback((href, locale = language) => {
+  const localizedHref = (href, locale = language) => {
     if (href.startsWith("/#")) return href;
     if (!href.startsWith("/")) return href;
     if (locale === "en") {
@@ -950,7 +911,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
       return `/en${href === "/" ? "" : englishPath}`;
     }
     return href;
-  }, [language]);
+  };
   const navLinks = [
     ["/", t.nav.home],
     ["/programa-integral", t.nav.program],
@@ -960,39 +921,8 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
     ["/noticias", t.nav.news],
     ["/contacto", t.nav.contact],
   ];
-  const navigate = (event, href) => {
-    if (href.startsWith("/#")) {
-      return;
-    }
-    event.preventDefault();
-    window.history.pushState({}, "", localizedHref(href));
-    setPath(window.location.pathname);
-    setMobileMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: "instant" });
-  };
-  const switchLanguage = (locale) => {
-    window.history.pushState({}, "", localizedHref(routePath, locale));
-    setPath(window.location.pathname);
-    setMobileMenuOpen(false);
-  };
-
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setActiveSlide((current) => (current + 1) % sliderImages.length);
-    }, 4000);
-
-    return () => window.clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const handlePopState = () => setPath(window.location.pathname);
-    window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.lang = language;
-  }, [language]);
+  const navigate = () => undefined;
+  const switchLanguage = () => undefined;
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f7f3ea] text-[#17231c] selection:bg-[#d3aa45]/30">
@@ -1039,10 +969,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                 <a
                   key={locale}
                   href={localizedHref(routePath, locale)}
-                  onClick={(event) => {
-                    event.preventDefault();
-                    switchLanguage(locale);
-                  }}
+                  onClick={switchLanguage}
                   className={`rounded-full px-3 py-2 transition ${
                     language === locale ? "bg-[#1f3b2c] text-white" : "hover:bg-[#f4ead0]"
                   }`}
@@ -1060,18 +987,19 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
             </a>
             <button
               type="button"
+              data-gh-menu-toggle
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
-              onClick={() => setMobileMenuOpen((open) => !open)}
+              aria-controls="gh-mobile-menu"
               className="inline-flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-[#1f3b2c]/15 bg-white/75 shadow-sm lg:hidden"
             >
-              <span className={`h-0.5 w-5 rounded-full bg-[#1f3b2c] transition ${mobileMenuOpen ? "translate-y-2 rotate-45" : ""}`} />
-              <span className={`h-0.5 w-5 rounded-full bg-[#1f3b2c] transition ${mobileMenuOpen ? "opacity-0" : ""}`} />
-              <span className={`h-0.5 w-5 rounded-full bg-[#1f3b2c] transition ${mobileMenuOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+              <span data-gh-menu-line="top" className={`h-0.5 w-5 rounded-full bg-[#1f3b2c] transition ${mobileMenuOpen ? "translate-y-2 rotate-45" : ""}`} />
+              <span data-gh-menu-line="middle" className={`h-0.5 w-5 rounded-full bg-[#1f3b2c] transition ${mobileMenuOpen ? "opacity-0" : ""}`} />
+              <span data-gh-menu-line="bottom" className={`h-0.5 w-5 rounded-full bg-[#1f3b2c] transition ${mobileMenuOpen ? "-translate-y-2 -rotate-45" : ""}`} />
             </button>
           </div>
         </div>
-        <div className={`lg:hidden ${mobileMenuOpen ? "block" : "hidden"}`}>
+        <div id="gh-mobile-menu" data-gh-mobile-menu className={`lg:hidden ${mobileMenuOpen ? "block" : "hidden"}`}>
           <nav className="mx-5 mb-4 rounded-[1.5rem] border border-[#1f3b2c]/10 bg-white/95 p-3 text-[#1f3b2c] shadow-xl shadow-[#1f3b2c]/10">
             {navLinks.map(([href, label]) => (
               href === "/programa-integral" ? (
@@ -1080,7 +1008,6 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
 	                    href={localizedHref(href)}
                     onClick={(event) => {
                       navigate(event, href);
-                      setMobileMenuOpen(false);
                     }}
                     className="block rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-[#f4ead0]"
                   >
@@ -1105,7 +1032,6 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
 	                  href={localizedHref(href)}
                   onClick={(event) => {
                     navigate(event, href);
-                    setMobileMenuOpen(false);
                   }}
                   className="block rounded-2xl px-4 py-3 text-sm font-semibold hover:bg-[#f4ead0]"
                 >
@@ -1127,11 +1053,12 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
       <main>
         {page === "home" && (
           <>
-        <section className="relative min-h-[90vh] overflow-hidden">
+        <section data-gh-slider className="relative min-h-[90vh] overflow-hidden">
           <div className="absolute inset-0">
             {sliderImages.map((slide, index) => (
               <img
                 key={slide.src}
+                data-gh-slide={index}
                 src={slide.src}
                 alt={slide.alt[language]}
                 className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
@@ -1178,8 +1105,8 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
                   <button
                     key={slide.src}
                     type="button"
+                    data-gh-slide-button={index}
                     aria-label={`${t.slideLabel} ${index + 1}`}
-                    onClick={() => setActiveSlide(index)}
                     className={`h-2 rounded-full transition-all ${activeSlide === index ? "w-12 bg-[#d3aa45]" : "w-6 bg-white/35"}`}
                   />
                 ))}
@@ -1692,7 +1619,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
           <div className="mx-auto grid max-w-7xl gap-10 rounded-[2.7rem] bg-[#14261c] p-8 text-white lg:grid-cols-[0.85fr_1.15fr] lg:p-12">
             <div className="space-y-5">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#d3aa45]">{t.historyEyebrow}</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">Dra. Silvia del Moral</h2>
+              <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">Dra. Silvia del Moral</h1>
               <p className="mt-3 text-xl text-white/80">{t.historySubtitle}</p>
               <img
                 src="/images/source/history/dra-silvia.webp"
@@ -1729,7 +1656,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
             <div className="grid lg:grid-cols-[0.65fr_1.35fr]">
             <div className="bg-[#e7d39b] p-10 lg:p-14">
               <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#14261c] text-2xl text-[#d3aa45]">🛍</div>
-              <h2 className="mt-8 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.shopTitle}</h2>
+              <h1 className="mt-8 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.shopTitle}</h1>
 	              <p className="mt-5 text-lg leading-8 text-[#3f493f]">{t.shopIntro}</p>
 	              <a href="#productos" className="mt-8 inline-flex rounded-full bg-[#14261c] px-6 py-4 font-semibold text-white shadow-lg shadow-[#14261c]/20">{t.shopProducts}</a>
             </div>
@@ -1808,7 +1735,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
 	              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.medicalConsultations}</p>
-	              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.ourServices}</h2>
+	              <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.ourServices}</h1>
             </div>
             <div className="mt-10 grid gap-5 md:grid-cols-3">
 	              {localizedConsultations.map(([name, meta, duration, price, image, slug]) => (
@@ -1885,7 +1812,7 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.contactEyebrow}</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.contactTitle}</h2>
+              <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.contactTitle}</h1>
               <p className="mt-5 text-lg leading-8 text-[#607064]">{t.contactText}</p>
               <div className="mt-8 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5">
                 <p className="font-semibold text-[#14261c]">{t.proposalTitle}</p>
@@ -1933,9 +1860,9 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
           </div>
         </section>
         )}
-      </main>
 
-      <OliviaChat />
+        {children}
+      </main>
 
       <footer className="bg-[#f3f3f3] px-5 py-14 text-[#779087] lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.75fr_1.25fr]">
@@ -1977,9 +1904,6 @@ export default function GoldenHealthMockup({ initialPath = "/" }) {
               <img src="/images/source/footer/royal-prestige.webp" alt="Royal Prestige" className="max-h-24 w-auto object-contain" />
             </div>
           </div>
-        </div>
-        <div className="mx-auto mt-10 max-w-6xl border-t border-[#14261c]/10 pt-6 text-center text-xs leading-7 text-[#6f7f77]">
-          {t.footerKeywords.join(" · ")}
         </div>
       </footer>
 

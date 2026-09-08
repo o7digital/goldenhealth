@@ -1,6 +1,9 @@
 ---
 import "../index.css";
 import GoldenHealth from "../App.jsx";
+import OliviaChat from "../OliviaChat.jsx";
+import SeoContent from "../components/SeoContent.astro";
+import { getSeoContent } from "../data/seo-content.js";
 
 const siteUrl = "https://www.goldenhealth.com.mx";
 
@@ -82,7 +85,7 @@ const products = {
   "tratamiento-antioxidante": {
     title: "Tratamiento Antioxidante | Golden Health MX",
     name: "Tratamiento Antioxidante",
-    description: "Terapia antioxidante endocrina orientada a proteger, reparar y apoyar energía, vitalidad y bienestar anti aging.",
+    description: "Protocolo antioxidante de soporte dentro de una ruta personalizada de vitalidad, bienestar y envejecimiento saludable.",
     image: "/images/source/products/antioxidante.webp",
     price: "5980.00",
   },
@@ -103,14 +106,14 @@ const products = {
   "tratamiento-detox": {
     title: "Tratamiento Detox | Golden Health MX",
     name: "Tratamiento Detox",
-    description: "Protocolo detox para apoyar eliminación de toxinas, bienestar digestivo y hábitos saludables.",
+    description: "Protocolo de apoyo al bienestar digestivo y a la construcción de hábitos saludables dentro de una ruta personalizada.",
     image: "/images/source/products/detox.webp",
     price: "4200.00",
   },
   "celulas-madre": {
     title: "Células Madre | Golden Health MX",
     name: "Células Madre",
-    description: "Activador de longevidad orientado a protección, reparación y revitalización dentro de protocolos premium.",
+    description: "Protocolo de longevidad orientado al acompañamiento de la vitalidad y el bienestar con valoración profesional.",
     image: "/images/source/products/celulas-madre.webp",
     price: "27000.00",
   },
@@ -227,7 +230,7 @@ const englishMetaByRoute = {
   },
   "/producto/tratamiento-antioxidante": {
     title: "Antioxidant Treatment | Golden Health MX",
-    description: "Endocrine antioxidant therapy designed to protect, repair, and support energy, vitality, and anti-aging wellbeing.",
+    description: "Antioxidant support protocol within a personalized path for vitality, wellbeing, and healthy aging.",
   },
   "/producto/tratamiento-anti-inflamatorio": {
     title: "Anti-Inflammatory Treatment | Golden Health MX",
@@ -239,11 +242,11 @@ const englishMetaByRoute = {
   },
   "/producto/tratamiento-detox": {
     title: "Detox Treatment | Golden Health MX",
-    description: "Detox protocol to support toxin elimination, digestive wellbeing, and healthy habits.",
+    description: "Protocol designed to support digestive wellbeing and healthy habits within a personalized care path.",
   },
   "/producto/celulas-madre": {
     title: "Stem Cells | Golden Health MX",
-    description: "Longevity activator focused on protection, repair, and revitalization within premium protocols.",
+    description: "Longevity protocol focused on supporting vitality and wellbeing with professional assessment.",
   },
   "/producto/tratamiento-hormonal-hombre": {
     title: "Men's Hormonal Treatment | Golden Health MX",
@@ -389,7 +392,7 @@ export function getStaticPaths() {
 
   const localizedRoutes = [
     ...routes,
-    ...routes.map((route) => (route ? `en/${route}` : "en")),
+    "en",
     ...routes
       .map((route) => englishPathByStaticRoute[route])
       .filter(Boolean)
@@ -426,6 +429,7 @@ const alternateEs = new URL(routePath, siteUrl).toString();
 const alternateEn = new URL(`/en${routePath === "/" ? "" : englishRoutePath}`, siteUrl).toString();
 const isBookingPage = segments[0] === "booking-calendar";
 const robots = isBookingPage ? "noindex, follow" : "index, follow, max-image-preview:large";
+const seoContent = getSeoContent(routePath, isEnglish);
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
@@ -506,7 +510,37 @@ const physicianJsonLd = routePath === "/historia" ? {
   alumniOf: ["Instituto Nacional de Pediatría", "Goetheanum, Dornach"],
   medicalSpecialty: ["Preventive Medicine", "Regenerative Medicine"],
 } : undefined;
-const jsonLd = [organizationJsonLd, breadcrumbJsonLd, productJsonLd, physicianJsonLd].filter(Boolean);
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  url: siteUrl,
+  name: "Golden Health MX",
+  inLanguage: ["es-MX", "en"],
+  publisher: { "@id": `${siteUrl}/#clinic` },
+};
+const webPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": routePath === "/historia" ? "ProfilePage" : productMeta ? "ItemPage" : "WebPage",
+  "@id": `${canonicalUrl}#webpage`,
+  url: canonicalUrl,
+  name: title,
+  description,
+  inLanguage: language,
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  about: { "@id": `${siteUrl}/#clinic` },
+  dateModified: "2026-09-07",
+};
+const faqJsonLd = seoContent?.faqs?.length ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: seoContent.faqs.map(([question, answer]) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: { "@type": "Answer", text: answer },
+  })),
+} : undefined;
+const jsonLd = [websiteJsonLd, organizationJsonLd, webPageJsonLd, breadcrumbJsonLd, productJsonLd, physicianJsonLd, faqJsonLd].filter(Boolean);
 ---
 
 <!doctype html>
@@ -517,14 +551,17 @@ const jsonLd = [organizationJsonLd, breadcrumbJsonLd, productJsonLd, physicianJs
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="Golden Health MX" />
     <meta name="robots" content={robots} />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="alternate" hreflang="es-MX" href={alternateEs} />
     <link rel="alternate" hreflang="en" href={alternateEn} />
     <link rel="alternate" hreflang="x-default" href={alternateEs} />
     <meta property="og:type" content={productMeta ? "product" : "website"} />
     <meta property="og:site_name" content="Golden Health MX" />
     <meta property="og:locale" content={isEnglish ? "en_US" : "es_MX"} />
+    <meta property="og:locale:alternate" content={isEnglish ? "es_MX" : "en_US"} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
@@ -545,6 +582,59 @@ const jsonLd = [organizationJsonLd, breadcrumbJsonLd, productJsonLd, physicianJs
     </script>
   </head>
   <body>
-    <GoldenHealth initialPath={pathname} client:load />
+    <GoldenHealth initialPath={pathname}>
+      <SeoContent routePath={routePath} isEnglish={isEnglish} />
+    </GoldenHealth>
+    <OliviaChat client:idle />
+    <script>
+      const menuToggle = document.querySelector("[data-gh-menu-toggle]");
+      const mobileMenu = document.querySelector("[data-gh-mobile-menu]");
+
+      const setMenuOpen = (open) => {
+        if (!(menuToggle instanceof HTMLButtonElement) || !(mobileMenu instanceof HTMLElement)) return;
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        mobileMenu.classList.toggle("hidden", !open);
+        mobileMenu.classList.toggle("block", open);
+        menuToggle.querySelector('[data-gh-menu-line="top"]')?.classList.toggle("translate-y-2", open);
+        menuToggle.querySelector('[data-gh-menu-line="top"]')?.classList.toggle("rotate-45", open);
+        menuToggle.querySelector('[data-gh-menu-line="middle"]')?.classList.toggle("opacity-0", open);
+        menuToggle.querySelector('[data-gh-menu-line="bottom"]')?.classList.toggle("-translate-y-2", open);
+        menuToggle.querySelector('[data-gh-menu-line="bottom"]')?.classList.toggle("-rotate-45", open);
+      };
+
+      menuToggle?.addEventListener("click", () => {
+        setMenuOpen(menuToggle.getAttribute("aria-expanded") !== "true");
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setMenuOpen(false);
+      });
+
+      document.querySelectorAll("[data-gh-slider]").forEach((slider) => {
+        const slides = Array.from(slider.querySelectorAll("[data-gh-slide]"));
+        const buttons = Array.from(slider.querySelectorAll("[data-gh-slide-button]"));
+        let activeIndex = 0;
+
+        const showSlide = (index) => {
+          activeIndex = index;
+          slides.forEach((slide, slideIndex) => {
+            slide.classList.toggle("opacity-100", slideIndex === activeIndex);
+            slide.classList.toggle("opacity-0", slideIndex !== activeIndex);
+          });
+          buttons.forEach((button, buttonIndex) => {
+            const active = buttonIndex === activeIndex;
+            button.classList.toggle("w-12", active);
+            button.classList.toggle("bg-[#d3aa45]", active);
+            button.classList.toggle("w-6", !active);
+            button.classList.toggle("bg-white/35", !active);
+          });
+        };
+
+        buttons.forEach((button, index) => button.addEventListener("click", () => showSlide(index)));
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && slides.length > 1) {
+          window.setInterval(() => showSlide((activeIndex + 1) % slides.length), 4000);
+        }
+      });
+    </script>
   </body>
 </html>

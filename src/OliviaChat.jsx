@@ -75,7 +75,7 @@ function initials(firstName, lastName) {
 }
 
 export default function OliviaChat() {
-  const language = useMemo(detectLanguage, []);
+  const language = useMemo(() => detectLanguage(), []);
   const t = TEXT[language] || TEXT.es;
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([{ role: "assistant", content: t.intro }]);

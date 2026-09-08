@@ -1,5 +1,34 @@
 {
   "framework": null,
   "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "redirects": [
+    { "source": "/sitemap.xml", "destination": "/sitemap-index.xml", "permanent": true },
+    { "source": "/en/historia", "destination": "/en/story", "permanent": true },
+    { "source": "/en/programa-integral", "destination": "/en/integral-longevity-program", "permanent": true },
+    { "source": "/en/tienda", "destination": "/en/shop", "permanent": true },
+    { "source": "/en/consultas", "destination": "/en/medical-consultations", "permanent": true },
+    { "source": "/en/noticias", "destination": "/en/news", "permanent": true },
+    { "source": "/en/contacto", "destination": "/en/contact", "permanent": true },
+    { "source": "/en/programa-integral/antroposofia", "destination": "/en/integral-longevity-program/anthroposophy", "permanent": true },
+    { "source": "/en/programa-integral/arte-del-buen-comer-y-buen-beber", "destination": "/en/integral-longevity-program/art-of-healthy-eating", "permanent": true },
+    { "source": "/en/programa-integral/menu-golden-health", "destination": "/en/integral-longevity-program/golden-health-menu", "permanent": true },
+    { "source": "/en/programa-integral/anti-aging", "destination": "/en/integral-longevity-program/regenerative-medicine", "permanent": true },
+    { "source": "/en/programa-integral/terapias-biologicas", "destination": "/en/integral-longevity-program/biological-therapies", "permanent": true },
+    { "source": "/en/programa-integral/hidratacion-funcional", "destination": "/en/integral-longevity-program/functional-hydration", "permanent": true },
+    { "source": "/en/programa-integral/ciencia-del-deporte", "destination": "/en/integral-longevity-program/sports-science", "permanent": true },
+    { "source": "/en/programa-integral/equilibrio-mente-cuerpo-espiritu", "destination": "/en/integral-longevity-program/mind-body-spirit-balance", "permanent": true },
+    { "source": "/en/programa-integral/salud-nutricional", "destination": "/en/integral-longevity-program/nutritional-health", "permanent": true },
+    { "source": "/en/producto/tratamientos-biologicos", "destination": "/en/product/biological-treatments", "permanent": true },
+    { "source": "/en/producto/tratamiento-antioxidante", "destination": "/en/product/antioxidant-treatment", "permanent": true },
+    { "source": "/en/producto/tratamiento-anti-inflamatorio", "destination": "/en/product/anti-inflammatory-treatment", "permanent": true },
+    { "source": "/en/producto/tratamiento-sindrome-metabolico", "destination": "/en/product/metabolic-syndrome-treatment", "permanent": true },
+    { "source": "/en/producto/tratamiento-detox", "destination": "/en/product/detox-treatment", "permanent": true },
+    { "source": "/en/producto/celulas-madre", "destination": "/en/product/stem-cells", "permanent": true },
+    { "source": "/en/producto/tratamiento-hormonal-hombre", "destination": "/en/product/men-hormonal-treatment", "permanent": true },
+    { "source": "/en/producto/tratamiento-hormonal-mujer", "destination": "/en/product/women-hormonal-treatment", "permanent": true },
+    { "source": "/en/booking-calendar/consulta-online-1", "destination": "/en/booking/online-consultation", "permanent": true },
+    { "source": "/en/booking-calendar/consulta-presencial", "destination": "/en/booking/in-person-consultation", "permanent": true },
+    { "source": "/en/booking-calendar/consultas-en-madrid", "destination": "/en/booking/madrid-consultation", "permanent": true }
+  ]
 }
