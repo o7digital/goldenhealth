@@ -390,118 +390,6 @@ const sliderImages = [
 ];
 
 
-const sourceSections = [
-  {
-    id: "programa",
-    title: "Programa Integral",
-    intro: "Longevidad, anti-envejecimiento y bienestar integral para vivir mas anos con energia optima.",
-    items: [
-      ["Medicina Regenerativa", "Valoracion y opciones de soporte orientadas a la salud celular, la vitalidad y un envejecimiento saludable."],
-      ["Accion regenerativa bio-celular", "Terapias biologicas consideradas dentro de una ruta individual y con seguimiento profesional."],
-      ["Escuela del arte", "Conferencias, seminarios web, podcast, cocina saludable y mindfulness para sostener el bienestar a largo plazo."],
-      ["Deportistas de alto rendimiento", "Disciplina, movimiento, oxigenacion y condicion fisica para lograr objetivos diarios y mejorar el funcionamiento cognitivo."],
-    ],
-  },
-  {
-    id: "biologicas",
-    title: "Terapias Biológicas",
-    intro: "La medicina biológica se enfoca en desarrollar el potencial humano apoyándose en la ciencia, la tecnología y nuevas tendencias para el cuidado de la salud. El programa acompaña a las personas para llevar vidas más saludables y activas.",
-    image: "/images/source/programa/terapias-biologicas.webp",
-    items: [
-      ["Acción regenerativa de la ciencia biocelular", "Tratamientos biológicos de origen alemán para mineralizar, oxigenar y nutrir órganos y sistemas."],
-      ["Energía, estrés y revitalización", "Restaura vitalidad ante desgaste físico, mental y emocional."],
-      ["Inmunológico", "Fortalece y estimula defensas contra agresiones del medio ambiente."],
-      ["Osteoarticular", "Apoyo para lesiones específicas, movilidad, tejidos, fuerza y flexibilidad."],
-      ["Cara", "Tratamiento para enfatizar belleza interior y exterior de rostro y cuello."],
-      ["Hormonal", "Apoyo para equilibrar sintomas hormonales en mujeres y hombres."],
-      ["Detox", "Protocolo de apoyo al bienestar digestivo y a la construcción de hábitos saludables."],
-    ],
-  },
-  {
-    id: "nutricion",
-    title: "Salud nutricional",
-    intro: "Nutrición personalizada basada en pruebas. El objetivo es evitar la fase de prueba y error, encontrar la mejor manera de mejorar la salud con datos objetivos y guiar la suplementación según necesidades específicas.",
-    image: "/images/source/programa/salud-nutricional.webp",
-    items: [
-      ["Nueva generación de la nutrición", "Pruebas de sangre seca como punto de partida natural para conocer el estado del cuerpo."],
-      ["Datos objetivos", "Resultados para orientar decisiones y evitar suposiciones en el proceso de salud."],
-      ["Suplementos adaptados", "Recomendaciones ajustadas a necesidades específicas para mantenerse en el camino adecuado."],
-      ["Zinzino BalanceTest", "Herramienta de seguimiento para comparar progreso y ajustar la ingesta."],
-    ],
-  },
-  {
-    id: "antroposofia",
-    title: "Antroposofía",
-    intro: "Andrés Muñoz Cárdenas es psicólogo de orientación antroposófica y fundador de la escuela Kamino Florido. Su enfoque aporta una concepción diferente e integral de la salud.",
-    image: "/images/source/programa/andres-munoz-cardenas.webp",
-    link: "https://www.kaminoflorido.com/",
-    items: [
-      ["Andrés Muñoz Cárdenas", "Fundador y CEO de la escuela Kamino Florido."],
-      ["Los 7 Pasos de la Libertad", "Contenido educativo sobre antroposofía, desarrollo humano y una visión más amplia de la salud."],
-    ],
-  },
-  {
-    id: "arte-buen-comer",
-    title: "Arte del Buen Comer y Buen Beber",
-    intro: "Comer es una necesidad, pero comer de forma consciente también puede ser un aprendizaje. Este programa trabaja hábitos de alimentación y estilo de vida para apoyar energía, equilibrio y bienestar cotidiano.",
-    image: "/images/source/programa/arte-buen-comer.webp",
-    items: [
-      ["Programa de hábitos saludables", "Acompañamiento para comer de forma sana, inteligente y equilibrada."],
-      ["Buen beber y bien vivir", "Educación práctica para sostener cambios reales en la vida diaria."],
-      ["Prevención y energía", "Enfoque en prevención, envejecimiento saludable y vitalidad."],
-      ["Sistema inmunológico", "Hábitos nutricionales orientados a apoyar defensas y bienestar integral."],
-    ],
-  },
-  {
-    id: "anti-aging",
-    title: "Anti-Aging",
-    intro: "Este programa reúne valoración y opciones de soporte orientadas a la salud celular, la vitalidad y un envejecimiento saludable.",
-    image: "/images/source/programa/anti-aging.webp",
-    items: [
-      ["Healthy Ageing", "Tratamientos anti-edad orientados a vitalidad, prevención y regeneración."],
-      ["Regeneración celular", "Protocolos para apoyar la salud celular y reducir señales de desgaste prematuro."],
-      ["Potencial de salud", "Enfoque integral para reactivar equilibrio, energía y bienestar funcional."],
-      ["Prevención", "Trabajo preventivo para conservar calidad de vida a largo plazo."],
-    ],
-  },
-  {
-    id: "hidratacion",
-    title: "Hidratación Funcional",
-    intro: "Introducción al agua Kangen: agua alcalina ionizada tratada mediante electrólisis para alterar su pH y crear una estructura molecular única, con un pH más alto y propiedades antioxidantes.",
-    image: "/images/source/programa/hidratacion-funcional.webp",
-    items: [
-      ["Agua Kangen", "El agua pasa por una máquina de ionización que separa moléculas cargadas positiva y negativamente."],
-      ["pH alcalino", "Proceso orientado a obtener agua con pH más alto y propiedades antioxidantes."],
-      ["Socio autorizado Golden Health", "Golden Health presenta información y acceso a hidratación funcional."],
-      ["Bienestar diario", "Apoyo a hábitos de hidratación dentro del programa integral."],
-    ],
-  },
-  {
-    id: "ciencia-deporte",
-    title: "Ciencia del Deporte",
-    intro: "Programa para deportistas de alto rendimiento. Busca crear disciplina y estimular la capacidad de movimiento con intención, propósito, empoderamiento energético y excelente condición física para alcanzar objetivos día a día.",
-    image: "/images/source/programa/ciencia-deporte.webp",
-    items: [
-      ["Deportistas de alto rendimiento", "Trabajo orientado a disciplina, constancia y mejora física."],
-      ["Movimiento con propósito", "Estimula la capacidad de movimiento con intención y objetivos claros."],
-      ["Empoderamiento energético", "Enfoque para sostener energía, rendimiento y recuperación."],
-      ["Condición física", "Apoyo para alcanzar metas diarias y mejorar desempeño."],
-    ],
-  },
-  {
-    id: "cuerpo-mente-espiritu",
-    title: "Cuerpo, Mente y Espíritu",
-    intro: "Todo lo que necesitas para un estado óptimo de salud. Este programa se dedica a la motivación y generación de conductas que llevan a encontrar inspiración en la vida cotidiana por medio de experiencias con uno mismo y los demás.",
-    image: "/images/source/programa/cuerpo-mente-espiritu.webp",
-    items: [
-      ["Inspiración cotidiana", "Experiencias para ejercitar el espíritu y conectarse con el ser interior."],
-      ["Equilibrio integral", "No hay buena salud sin equilibrio entre cuerpo, mente y espíritu."],
-      ["Motivación", "Generación de conductas para sostener bienestar emocional y mental."],
-      ["Conexión interior", "Espacio para fortalecer presencia, propósito y calidad de vida."],
-    ],
-  },
-];
-
 const programPages = [
   {
     slug: "antroposofia",
@@ -1185,26 +1073,6 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
         </section>
 
         <section className="px-5 pb-24 lg:px-8">
-          <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-xl ring-1 ring-black/5 lg:p-12">
-	            {sourceSections.filter((section) => section.id === "programa").map((section) => (
-	              <article key={section.id}>
-	                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.therapiesEyebrow}</p>
-	                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.programDecisionTitle}</h2>
-	                <p className="mt-6 text-xl leading-8 text-[#607064]">{t.programDecisionIntro}</p>
-                <div className="mt-10 grid gap-5 md:grid-cols-2">
-	                  {t.programSummary.items.map(([title, text]) => (
-	                    <div key={title} className="rounded-2xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
-                      <h3 className="text-xl font-semibold text-[#14261c]">{title}</h3>
-                      <p className="mt-3 leading-7 text-[#607064]">{text}</p>
-                    </div>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="px-5 pb-24 lg:px-8">
           <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-[#e7d39b] p-8 shadow-sm ring-1 ring-black/5 lg:p-12">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
               <div>
@@ -1284,6 +1152,18 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                   </div>
                 </a>
               ))}
+            </div>
+            <div className="mt-14 rounded-[2.7rem] bg-white p-8 shadow-sm ring-1 ring-black/5 lg:p-12">
+              <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[#14261c] md:text-4xl">{t.programDecisionTitle}</h2>
+              <p className="mt-4 max-w-3xl leading-8 text-[#607064]">{t.programDecisionIntro}</p>
+              <div className="mt-8 grid gap-5 md:grid-cols-2">
+                {t.programSummary.items.map(([title, text]) => (
+                  <div key={title} className="rounded-2xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
+                    <h3 className="text-xl font-semibold text-[#14261c]">{title}</h3>
+                    <p className="mt-3 leading-7 text-[#607064]">{text}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
