@@ -2,40 +2,39 @@ const copy = {
   es: {
     nav: { home: "Inicio", program: "Programa Integral", history: "Historia", shop: "Tienda", consultations: "Consultas", news: "Noticias", contact: "Contacto" },
     cta: "Agenda tu valoración",
-    heroBadge: "Clínica de longevidad y bienestar integral en CDMX",
-    heroTitle: "Salud celular para vivir mejor, no solo vivir más.",
-    heroText: "Golden Health integra medicina preventiva, terapias biológicas, nutrición funcional y protocolos anti-aging para personas que buscan energía, equilibrio y bienestar medible.",
-    primaryCta: "Agendar valoración →",
-    secondaryCta: "Conocer el método",
-    keywords: ["Longevidad CDMX", "Anti-aging CDMX", "Salud celular CDMX", "Medicina preventiva CDMX", "Nutrición funcional CDMX", "Clínica de longevidad CDMX"],
-    methodEyebrow: "Método Golden Health",
-    methodTitle: "Una experiencia médica, estética y funcional en una sola ruta.",
-    methodText: "La valoración, el plan y el seguimiento se conectan para que cada persona comprenda qué se propone, por qué y cómo se revisará su evolución.",
+    heroBadge: "Consultas en Miguel Hidalgo y en línea",
+    heroTitle: "Empieza por una consulta médica, no por un tratamiento.",
+    heroText: "En Golden Health puedes solicitar una consulta presencial en Ciudad de México o una consulta en línea. La valoración sirve para revisar tus antecedentes, hábitos y motivo de consulta antes de recomendar los siguientes pasos.",
+    primaryCta: "Solicitar una consulta →",
+    secondaryCta: "Ver modalidades y precios",
+    methodEyebrow: "Cómo empezar",
+    methodTitle: "Tres pasos para saber qué atención necesitas.",
+    methodText: "Consulta primero las modalidades y precios. La elección de un producto o terapia se hace después de revisar tu situación individual.",
     method: [
-      ["01", "Diagnóstico", "Primero entendemos tu estado actual: energía, sueño, nutrición, estrés, hábitos y objetivos."],
-      ["02", "Protocolo", "Diseñamos una ruta personalizada con terapias, nutrición, suplementación y seguimiento."],
-      ["03", "Acompañamiento", "Medimos progreso, ajustamos el plan y construimos hábitos sostenibles a largo plazo."],
+      ["01", "Elige la modalidad", "Consulta en línea de 30 minutos o presencial en Miguel Hidalgo de 1 hora."],
+      ["02", "Prepara la consulta", "Ten a mano tus antecedentes, medicamentos, suplementos y estudios recientes, si los tienes."],
+      ["03", "Decide los siguientes pasos", "Comenta tus objetivos y preguntas con la profesional antes de elegir cualquier terapia o producto."],
     ],
     therapiesEyebrow: "Programa Integral",
-    therapiesTitle: "Áreas de atención que se integran según cada valoración.",
+    therapiesTitle: "Consulta las áreas de atención y lo que ofrece cada una.",
     therapiesText: "",
     details: "Ver detalle →",
     services: [
-      ["✦", "Medicina de longevidad", "Evaluación integral para entender energía, metabolismo, inflamación, hábitos y objetivos de salud."],
-      ["♡", "Anti-aging funcional", "Protocolos personalizados para vitalidad, prevención, recuperación y bienestar a largo plazo."],
-      ["◌", "Hidratación intravenosa", "Terapias de soporte con enfoque clínico para rendimiento, equilibrio y recuperación profunda."],
-      ["☘", "Nutrición celular", "Planes de alimentación y suplementación diseñados para mejorar salud metabólica y calidad de vida."],
-      ["⌁", "Ciencia del deporte", "Estrategias para personas activas que buscan fuerza, resistencia, descanso y mejor desempeño físico."],
-      ["◎", "Equilibrio cuerpo-mente", "Un enfoque integral que une medicina, hábitos, bienestar emocional y prevención inteligente."],
+      ["✦", "Consulta médica", "Revisión de antecedentes y motivo de consulta, presencial o en línea.", "/consultas"],
+      ["♡", "Medicina regenerativa", "Información sobre la valoración previa y las opciones que se estudian en esta área.", "/programa-integral/anti-aging"],
+      ["◌", "Terapias biológicas", "Descripción de las formas de aplicación que presenta Golden Health.", "/programa-integral/terapias-biologicas"],
+      ["☘", "Salud nutricional", "Información del BalanceTest, el kit BalanceOil y el seguimiento propuesto.", "/programa-integral/salud-nutricional"],
+      ["⌁", "Ciencia del deporte", "Área dirigida a personas que buscan trabajar movimiento y condición física.", "/programa-integral/ciencia-del-deporte"],
+      ["◎", "Menús y alimentación", "Dos menús descargables y la información del programa de alimentación.", "/programa-integral/arte-del-buen-comer-y-buen-beber"],
     ],
     patientEyebrow: "Experiencia del paciente",
-    patientTitle: "Información clara para tomar decisiones con confianza.",
-    patientText: "Explicamos el proceso, los objetivos y los límites de cada opción. Ningún tratamiento sustituye una valoración individual ni promete resultados idénticos para todas las personas.",
+    patientTitle: "Datos útiles antes de pedir una cita.",
+    patientText: "Las consultas publicadas tienen distinta duración y modalidad. Si no sabes cuál elegir, explica tu motivo al contactar al equipo.",
     patientCards: [
-      ["Consulta clara", "Explicación simple del proceso y próximos pasos."],
-      ["Contenido educativo", "Artículos y videos para preparar preguntas útiles antes de una consulta."],
-      ["Contacto accesible", "Formulario, teléfono y correo para solicitar orientación."],
-      ["Atención en CDMX", "Consulta presencial en Miguel Hidalgo y opciones de atención online."],
+      ["En línea", "30 minutos. Precio publicado: $500 MXN."],
+      ["Presencial", "1 hora. Precio publicado: $1,500 MXN."],
+      ["Ubicación", "Lago Zúrich 96, Ampliación Granada, Miguel Hidalgo, CDMX."],
+      ["Antes de la cita", "Prepara tus medicamentos, suplementos, estudios recientes y preguntas."],
     ],
     shopTitle: "Tienda Golden Health",
     shopText: "Una sección de productos más limpia, con categorías claras, fichas premium y llamadas a compra o consulta.",
@@ -44,9 +43,9 @@ const copy = {
     productText: "Ficha optimizada para confianza, SEO y conversión.",
     contactEyebrow: "Contacto",
     contactTitle: "Agenda tu valoración Golden Health.",
-    contactText: "Cuéntanos qué necesitas trabajar: longevidad, energía, nutrición funcional, anti-aging o bienestar integral. Nuestro equipo te orientará para elegir la valoración adecuada.",
-    proposalTitle: "Atención personalizada",
-    proposalText: "Cada valoración inicia con una revisión de tus objetivos, hábitos y estado actual para definir una ruta de acompañamiento clara y realista.",
+    contactText: "Indica por qué deseas consultar, si prefieres una cita presencial o en línea y qué horarios te convienen. El equipo podrá responderte para confirmar la modalidad y la disponibilidad.",
+    proposalTitle: "Qué escribir en tu solicitud",
+    proposalText: "Incluye tu nombre, teléfono y una breve descripción del motivo de consulta. No envíes información médica sensible que no sea necesaria para pedir la cita.",
     addressMeta: "Miguel Hidalgo, CP 11529, Ciudad de México",
     emailMeta: "Atención personalizada",
     phoneMeta: "WhatsApp / llamadas",
@@ -56,22 +55,25 @@ const copy = {
     submit: "Enviar solicitud",
     whatsapp: "WhatsApp / Agenda",
     slideLabel: "Mostrar slide",
-    programHomeTitle: "Longevidad y Anti-envejecimiento",
-    programHomeText: "El envejecimiento es un proceso natural. En Golden Health reunimos valoración médica, hábitos, nutrición y terapias de soporte para acompañar la vitalidad y el bienestar a lo largo del tiempo.",
+    programHomeTitle: "Áreas del Programa Integral",
+    programHomeText: "Estas páginas describen las áreas que presenta Golden Health: alimentación, nutrición, actividad física, terapias biológicas y otras opciones. La consulta inicial ayuda a decidir cuáles son pertinentes para cada persona.",
+    programDecisionTitle: "Qué conviene aclarar antes de empezar",
+    programDecisionIntro: "Las páginas describen áreas distintas, no un paquete único. Pide detalles concretos del servicio que te interese antes de contratarlo.",
     newsEyebrow: "Noticias",
     newsTitle: "Comunidad Golden Health",
     newsText: "Videos, entrevistas, cápsulas y testimonios de la comunidad Golden Health.",
-    shopIntro: "Tratamientos biológicos y protocolos funcionales con fichas completas, imagen real, precio y solicitud directa.",
+    shopIntro: "Consulta el nombre, precio y componentes declarados de cada opción. Antes de solicitar un producto o tratamiento, pide al equipo la composición completa, la forma de uso y las precauciones aplicables.",
     shopProducts: "Ver productos →",
     productSheet: "Ficha producto",
     viewSheet: "Ver ficha",
-    includes: "Incluye",
-    quantity: "Cantidad *",
-    addToCart: "Agregar al carrito",
+    includes: "Información publicada",
+    productBeforeRequest: "Esta ficha todavía no indica composición completa, dosis, vía de administración ni contraindicaciones. Solicita esos datos y una valoración profesional antes de decidir.",
+    productRequestCta: "Solicitar información completa",
     backToShop: "Volver a tienda",
     medicalConsultations: "Consultas Médicas",
-    ourServices: "Nuestros servicios",
-    bookNow: "Reservar ahora",
+    ourServices: "Modalidades de consulta",
+    bookNow: "Solicitar cita",
+    bookingExplain: "Envía una solicitud con el motivo de consulta y tus horarios disponibles. El equipo confirmará la cita; esta página no muestra disponibilidad en tiempo real.",
     back: "‹ Volver",
     scheduleService: "Programa tu servicio",
     scheduleText: "Revisa nuestra disponibilidad y reserva la fecha y hora que más te convengan",
@@ -91,8 +93,8 @@ const copy = {
     bookButton: "Reserva ahora",
     designedFor: "Diseñado para:",
     whatIsProgram: "¿Qué es este programa?",
-    howTo: "¿Cómo lograrlo?",
-    objectives: "¿Cuáles son los objetivos?",
+    howTo: "Antes de participar",
+    objectives: "Datos por confirmar",
     buy: "COMPRAR",
     strategicPartners: "Aliados estratégicos",
     pageTitles: {
@@ -109,10 +111,10 @@ const copy = {
     },
     programSummary: {
       items: [
-        ["Medicina Regenerativa", "Valoración y opciones de soporte orientadas a la salud celular, la vitalidad y un envejecimiento saludable."],
-        ["Acción regenerativa bio-celular", "Terapias biológicas que se consideran dentro de una ruta individual y con seguimiento profesional."],
-        ["Escuela del arte", "Conferencias, seminarios web, podcast, cocina saludable y mindfulness para sostener el bienestar a largo plazo."],
-        ["Deportistas de alto rendimiento", "Disciplina, movimiento, oxigenación y condición física para mejorar el funcionamiento físico y cognitivo."],
+        ["Qué servicio se propone", "Solicita el nombre exacto del producto, terapia o actividad y el motivo de la recomendación."],
+        ["Cómo se realiza", "Pregunta por duración, número de sesiones, vía de aplicación y profesional responsable cuando corresponda."],
+        ["Qué precauciones existen", "Revisa composición, contraindicaciones, posibles efectos adversos y alternativas antes de decidir."],
+        ["Cuánto cuesta", "Confirma el precio total, lo que incluye y si el seguimiento se cobra aparte."],
       ],
     },
     historyEyebrow: "Historia",
@@ -129,40 +131,39 @@ const copy = {
   en: {
     nav: { home: "Home", program: "Integral Program", history: "Story", shop: "Shop", consultations: "Consultations", news: "News", contact: "Contact" },
     cta: "Book your assessment",
-    heroBadge: "Longevity and integrated wellness clinic in CDMX",
-    heroTitle: "Cellular health to live better, not just longer.",
-    heroText: "Golden Health integrates preventive medicine, biological therapies, functional nutrition, and anti-aging protocols for people seeking measurable energy, balance, and wellbeing.",
-    primaryCta: "Book an assessment →",
-    secondaryCta: "Explore the method",
-    keywords: ["Longevity Mexico", "Anti-aging Mexico", "Cellular health Mexico", "Preventive medicine Mexico", "Functional nutrition Mexico", "Longevity clinic Mexico"],
-    methodEyebrow: "Golden Health Method",
-    methodTitle: "A medical, aesthetic, and functional experience in one clear path.",
-    methodText: "A structured approach designed to make every step clearer, more personal, and easier to follow.",
+    heroBadge: "Consultations in Mexico City and online",
+    heroTitle: "Start with a medical consultation, not a treatment.",
+    heroText: "At Golden Health you can request an in-person consultation in Mexico City or an online consultation. The assessment reviews your history, habits, and reason for visiting before any next steps are recommended.",
+    primaryCta: "Request a consultation →",
+    secondaryCta: "See formats and prices",
+    methodEyebrow: "Getting started",
+    methodTitle: "Three steps to find the right care.",
+    methodText: "Review the consultation formats and prices first. A product or therapy should be chosen only after your individual situation has been assessed.",
     method: [
-      ["01", "Diagnosis", "We first understand your current state: energy, sleep, nutrition, stress, habits, and goals."],
-      ["02", "Protocol", "We design a personalized path with therapies, nutrition, supplementation, and follow-up."],
-      ["03", "Guidance", "We measure progress, adjust the plan, and build sustainable long-term habits."],
+      ["01", "Choose a format", "A 30-minute online consultation or a one-hour visit in Miguel Hidalgo."],
+      ["02", "Prepare for your visit", "Bring your health history, medication, supplements, and recent test results if you have them."],
+      ["03", "Discuss next steps", "Review your goals and questions with the clinician before choosing any therapy or product."],
     ],
     therapiesEyebrow: "Therapies and services",
-    therapiesTitle: "Areas of care combined according to each assessment.",
+    therapiesTitle: "Explore each area of care and what it covers.",
     therapiesText: "Each service is explained with its purpose, process, and place within an individual care plan.",
     details: "View details →",
     services: [
-      ["✦", "Longevity medicine", "Comprehensive assessment of energy, metabolism, inflammation, habits, and health goals."],
-      ["♡", "Functional anti-aging", "Personalized protocols for vitality, prevention, recovery, and long-term wellbeing."],
-      ["◌", "IV hydration", "Clinically guided support therapies for performance, balance, and deep recovery."],
-      ["☘", "Cellular nutrition", "Nutrition and supplementation plans designed to improve metabolic health and quality of life."],
-      ["⌁", "Sports science", "Strategies for active people seeking strength, endurance, recovery, and better physical performance."],
-      ["◎", "Body-mind balance", "An integrated approach that connects medicine, habits, emotional wellbeing, and intelligent prevention."],
+      ["✦", "Medical consultations", "A review of your history and reason for visiting, in person or online.", "/consultas"],
+      ["♡", "Regenerative medicine", "Information about the initial assessment and options considered in this area.", "/programa-integral/anti-aging"],
+      ["◌", "Biological therapies", "A description of the administration methods presented by Golden Health.", "/programa-integral/terapias-biologicas"],
+      ["☘", "Nutritional health", "Information about BalanceTest, the BalanceOil kit, and proposed follow-up.", "/programa-integral/salud-nutricional"],
+      ["⌁", "Sports science", "An area for people working on movement and physical condition.", "/programa-integral/ciencia-del-deporte"],
+      ["◎", "Menus and healthy eating", "Two downloadable menus and information about the eating program.", "/programa-integral/arte-del-buen-comer-y-buen-beber"],
     ],
     patientEyebrow: "Patient experience",
-    patientTitle: "Clear information for confident decisions.",
-    patientText: "We explain the process, goals, and limits of each option. No treatment replaces an individual assessment or promises identical results for everyone.",
+    patientTitle: "Practical details before you request a visit.",
+    patientText: "The published consultations have different lengths and formats. If you are unsure which one to choose, explain your reason for visiting when you contact the team.",
     patientCards: [
-      ["Clear consultation", "Simple explanation of the process and next steps."],
-      ["Educational content", "Articles and videos that help you prepare useful questions before a consultation."],
-      ["Accessible contact", "Form, phone, and email options to request guidance."],
-      ["Care in Mexico City", "In-person consultations in Miguel Hidalgo and online options."],
+      ["Online", "30 minutes. Published price: MXN $500."],
+      ["In person", "One hour. Published price: MXN $1,500."],
+      ["Location", "Lago Zúrich 96, Ampliación Granada, Miguel Hidalgo, Mexico City."],
+      ["Before your visit", "Prepare your medication, supplements, recent results, and questions."],
     ],
     shopTitle: "Golden Health Shop",
     shopText: "A cleaner product section with clear categories, premium product cards, and calls to purchase or consult.",
@@ -171,9 +172,9 @@ const copy = {
     productText: "Card optimized for trust, SEO, and conversion.",
     contactEyebrow: "Contact",
     contactTitle: "Book your Golden Health assessment.",
-    contactText: "Tell us what you want to work on: longevity, energy, functional nutrition, anti-aging, or integral wellbeing. Our team will guide you toward the right assessment.",
-    proposalTitle: "Personalized care",
-    proposalText: "Each assessment starts with a review of your goals, habits, and current state to define a clear and realistic care path.",
+    contactText: "Tell us why you would like to consult, whether you prefer an in-person or online visit, and when you are available. The team can reply to confirm the format and availability.",
+    proposalTitle: "What to include in your request",
+    proposalText: "Include your name, phone number, and a brief reason for visiting. Avoid sending sensitive medical information that is not needed to request an appointment.",
     addressMeta: "Miguel Hidalgo, ZIP 11529, Mexico City",
     emailMeta: "Personalized care",
     phoneMeta: "WhatsApp / calls",
@@ -183,22 +184,25 @@ const copy = {
     submit: "Send request",
     whatsapp: "WhatsApp / Booking",
     slideLabel: "Show slide",
-    programHomeTitle: "Longevity and Anti-Aging",
-    programHomeText: "Aging cannot be stopped, but Golden Health offers treatments and programs designed to slow its effects, improve quality of life, and help prevent premature aging.",
+    programHomeTitle: "Areas of the Integral Program",
+    programHomeText: "These pages describe the areas Golden Health presents: food, nutrition, physical activity, biological therapies, and other options. An initial consultation helps decide which are relevant to each person.",
+    programDecisionTitle: "What to clarify before starting",
+    programDecisionIntro: "These pages describe different areas, not one fixed package. Ask for the details of the service you are considering before purchasing it.",
     newsEyebrow: "News",
     newsTitle: "Golden Health Community",
     newsText: "Videos, interviews, short capsules, and testimonials from the Golden Health community.",
-    shopIntro: "Biological treatments and functional protocols with complete sheets, real product images, pricing, and direct requests.",
+    shopIntro: "Review the name, price, and listed components of each option. Before requesting a product or treatment, ask the team for its full composition, directions for use, and relevant precautions.",
     shopProducts: "View products →",
     productSheet: "Product sheet",
     viewSheet: "View sheet",
-    includes: "Includes",
-    quantity: "Quantity *",
-    addToCart: "Add to cart",
+    includes: "Published information",
+    productBeforeRequest: "This listing does not yet provide the full composition, dose, route of administration, or contraindications. Request those details and professional assessment before deciding.",
+    productRequestCta: "Request full information",
     backToShop: "Back to shop",
     medicalConsultations: "Medical Consultations",
-    ourServices: "Our services",
-    bookNow: "Book now",
+    ourServices: "Consultation formats",
+    bookNow: "Request a visit",
+    bookingExplain: "Send a request with your reason for visiting and your available times. The team will confirm the appointment; this page does not show live availability.",
     back: "‹ Back",
     scheduleService: "Schedule your service",
     scheduleText: "Check our availability and reserve the date and time that work best for you",
@@ -218,8 +222,8 @@ const copy = {
     bookButton: "Book now",
     designedFor: "Designed for:",
     whatIsProgram: "What is this program?",
-    howTo: "How do we achieve it?",
-    objectives: "What are the objectives?",
+    howTo: "Before taking part",
+    objectives: "Details to confirm",
     buy: "BUY",
     strategicPartners: "Strategic partners",
     pageTitles: {
@@ -236,10 +240,10 @@ const copy = {
     },
     programSummary: {
       items: [
-        ["Regenerative Medicine", "Assessment and supportive options focused on cellular health, vitality, and healthy aging."],
-        ["Bio-cellular regenerative action", "Biological therapies considered within an individual care path and with professional follow-up."],
-        ["The art school", "Conferences, webinars, podcasts, healthy cooking, and mindfulness to sustain long-term wellbeing."],
-        ["High-performance athletes", "Discipline, movement, oxygenation, and physical conditioning to improve physical and cognitive performance."],
+        ["The exact service", "Ask for the name of the product, therapy, or activity and why it is being recommended."],
+        ["How it works", "Ask about duration, number of sessions, route of administration, and the responsible professional when applicable."],
+        ["Precautions", "Review composition, contraindications, possible adverse effects, and alternatives before deciding."],
+        ["Total cost", "Confirm what the price includes and whether follow-up is billed separately."],
       ],
     },
     historyEyebrow: "Story",
@@ -259,82 +263,116 @@ const programEnglish = {
   antroposofia: {
     title: "Anthroposophy",
     eyebrow: "Integral Program",
-    intro: "Andres Munoz Cardenas is an anthroposophical psychologist who teaches a different, more integrated understanding of health.",
-    profileTitle: "Andres Munoz Cardenas",
-    profileSubtitle: "Founder and CEO of Kamino Florido",
+    intro: "Meet Andrés Muñoz Cárdenas, an anthroposophical psychologist and founder of Kamino Florido. This page brings together two talks that introduce his approach.",
+    profileTitle: "Andrés Muñoz Cárdenas",
+    profileSubtitle: "Founder of Kamino Florido",
     videoText: "Ongoing L.U.S. activity: the first of 12 conferences on creating the reality we long for through the 7 Steps of Freedom. Psychoanalysis and Anthroposophy.",
   },
   "arte-del-buen-comer-y-buen-beber": {
     title: "The Art of Eating and Drinking Well",
     eyebrow: "The art of eating well, drinking well, and living well",
-    intro: "EATING IS A NEED, BUT EATING INTELLIGENTLY IS AN ART",
-    programHeading: "DISCOVER THE PROGRAM",
-    questionHeading: "What is it?",
-    finalText: "Our art of eating and drinking well program is a healthy, intelligent, and balanced way of eating, inspired by leading nutrition programs. We guide patients toward a healthier lifestyle reflected in disease prevention, especially degenerative conditions, premature aging prevention, increased energy, and immune-system support.",
+    intro: "Download the available menus. Cooking classes are listed as upcoming, with no date published yet.",
+    programHeading: "Available resources",
+    questionHeading: "Two PDF menus",
+    finalText: "These menus are general food resources. If you need to adjust ingredients or portions because of a medical condition, request individual guidance before following them.",
+    sections: [
+      { title: "Group cooking classes", kicker: "Upcoming", text: "No date, duration, or price has been published yet." },
+      { title: "Private cooking classes", kicker: "Upcoming", text: "Ask about availability and terms before requesting a class." },
+      { title: "Golden Health menus", text: "Open the Golden Health Menu and Meat Menu PDFs from the menus page." },
+      { title: "Drinks menu", text: "A downloadable drinks menu is not currently available on this page." },
+    ],
   },
   "menu-golden-health": {
     title: "Golden Health Menu",
-    eyebrow: "Golden Health Menus",
-    intro: "GOLDEN HEALTH MENUS",
+    eyebrow: "Downloadable menus",
+    intro: "Golden Health Menus",
+    menuIntro: "Download the two available PDF documents. They are general resources, not an individual meal plan.",
+    downloads: [
+      ["Golden Health Menu", "https://static.wixstatic.com/ugd/e47656_a5b631e3351a47448a73a2d560f98691.pdf"],
+      ["Meat Menu", "https://static.wixstatic.com/ugd/e47656_4d8ac404c4bd40c389267c6e92a9ccb2.pdf"],
+    ],
   },
   "anti-aging": {
     title: "Regenerative Medicine",
     eyebrow: "Regenerative Medicine",
-    intro: "These treatments aim to slow cellular degeneration and reactivate each person's health potential.",
-    introExtra: "The program supports healthy aging through individual assessment and follow-up.",
-    diagnosticTitle: "Healthy Ageing Diagnosis",
-    diagnosticText: "At the beginning of the program, a medical consultation helps determine which options may support healthy aging and quality of life in each case.",
-    regenerationTitle: "Advanced Cellular Regeneration Treatment",
+    intro: "This area includes different treatment options. The site does not define one procedure or suggest that every option is suitable for everyone.",
+    introExtra: "The first step is a medical consultation to review your history, goals, and the suitability of each option.",
+    diagnosticTitle: "Initial assessment",
+    diagnosticText: "The consultation reviews your history and reason for visiting. Ask the clinician to explain the proposed treatment, why it is recommended, and what alternatives exist.",
+    regenerationTitle: "What to know before starting",
+    regenerationText: [
+      "Ask for the name and composition of any proposed product, its route of administration, and the number of sessions.",
+      "Review precautions, possible adverse effects, follow-up, and total cost before agreeing to a procedure.",
+    ],
+    sections: [{ title: "Healthy Ageing", text: "The assessment determines whether an option in this area is relevant. There is no single treatment for everyone." }],
   },
   "terapias-biologicas": {
     title: "Biological Therapies",
     eyebrow: "Biological Medicine",
-    intro: "Biological medicine focuses on developing human potential through science, technology, and new health-care trends.",
+    intro: "Golden Health describes preparations that may be administered by intramuscular, subcutaneous, or subdermal routes. Ask about the composition and indication of a specific option during a consultation.",
+    sections: [
+      { title: "Substances mentioned", text: "The current description mentions enzymes, vitamins, and minerals, but does not publish the full composition of each preparation." },
+      { title: "Administration routes", text: "Intramuscular, subcutaneous, and subdermal routes are mentioned. Confirm which route is proposed, who administers it, and how many sessions are included." },
+      { title: "Information to request", text: "Ask for the preparation sheet, contraindications, possible adverse effects, total cost, and follow-up plan before deciding." },
+    ],
   },
   "hidratacion-funcional": {
     title: "Functional Hydration",
     eyebrow: "Golden Health Authorized Partner",
-    intro: "Kangen water is alkaline ionized water treated through electrolysis to alter its pH and create a unique molecular structure.",
+    intro: "This page presents Kangen ionized water. The device changes the water's pH through electrolysis; confirm the specifications of the model offered before buying it.",
+    sections: [
+      { title: "What the device does", text: "Water passes through an ionizer that uses electrolysis to produce water at different pH levels." },
+      { title: "What to ask", text: "Request the model, pH range, maintenance requirements, price, and warranty terms before deciding." },
+    ],
   },
   "ciencia-del-deporte": {
     title: "Sports Science",
     eyebrow: "Program for high-performance athletes",
-    intro: "\"You must cultivate the vigor of the body to preserve the spirit.\"",
-    description: "This program builds discipline and stimulates purposeful movement to reach a state of energetic empowerment and excellent physical condition for daily goals.",
-    designedFor: ["People who want to improve their physical condition or appearance.", "Learn new healthy habits to optimize natural detoxification."],
+    intro: "An area for people who want to work on movement and physical condition. A fixed session plan is not yet published on this page.",
+    description: "Before starting, ask what assessment is performed, who leads the activity, how many sessions are proposed, and how progress is reviewed.",
+    designedFor: ["People who want to set physical-activity goals before starting a program.", "Athletes who need to know the format, frequency, and follow-up before purchasing it."],
   },
   "equilibrio-mente-cuerpo-espiritu": {
     title: "Mind, Body, and Spirit Balance",
     eyebrow: "Body, Mind, and Spirit",
-    intro: "Everything you need for an optimal state of health",
-    objectivesIntro: "This program has two main objectives:",
-    objectives: ["1. Recover general wellbeing through a learning experience.", "2. Continue the learning process in daily life through the knowledge and lifestyle habits acquired at Golden Health."],
+    intro: "Golden Health presents talks, webinars, and podcasts about habits and emotional wellbeing. Ask for the topics and dates before enrolling.",
+    objectivesIntro: "Request this information before taking part:",
+    objectives: ["Topic and goals of the activity.", "Duration, format, facilitator, and price."],
+    sections: [{ title: "What is this program?", text: "The site mentions talks, webinars, and podcasts. It does not publish a calendar or a detailed syllabus for this area.", extra: "Ask for the topics, format, and the name of each facilitator before booking." }],
   },
   "salud-nutricional": {
     title: "Nutritional Health",
-    eyebrow: "Pioneers in test-based personalized nutrition",
-    intro: "Challenging the status quo since 2005",
-    nutritionTitle: "Introducing the new generation of nutrition",
-    balanceText: "Get a clear view of your body's Omega 6:3 ratio and see your individual results before and after the BalanceTest.",
-    deliveryItems: ["First delivery", "2 BalanceOil+, 300 ml", "2 BalanceOil, 100 ml", "2 BalanceTests*", "*One BalanceTest is included in your first delivery; the second is delivered after 120 days so you can compare before and after results."],
+    eyebrow: "BalanceTest and BalanceOil",
+    intro: "Dried blood spot test and oil kit",
+    brandText: [
+      "This page presents products from Zinzino, an external company: BalanceTest and BalanceOil. The purchase link opens its shop.",
+      "Before buying, check the current composition, price, and delivery terms directly with the supplier.",
+    ],
+    nutritionTitle: "What the test reports",
+    nutritionText: [
+      "BalanceTest uses a dried blood sample to report the omega 6:3 fatty acid ratio measured by the supplier.",
+      "The published information proposes repeating the test after about 120 days to compare results. Ask a qualified professional to interpret any result before changing your diet or supplements.",
+    ],
+    balanceText: "The published listing includes two 300 ml bottles of BalanceOil+, two 100 ml bottles of BalanceOil, and two BalanceTests. Check the current contents in the Zinzino shop before buying.",
+    deliveryItems: ["Listed contents", "2 BalanceOil+, 300 ml", "2 BalanceOil, 100 ml", "2 BalanceTests", "The listing says the second test is delivered after about 120 days. Confirm delivery terms with the supplier."],
   },
 };
 
 const productEnglish = {
-  "tratamientos-biologicos": ["Biological Treatments", "Biological support package for integral wellbeing and cellular balance.", ["10 sessions", "2 biological treatments", "Guidance to choose the protocol according to your goal"]],
-  "tratamiento-antioxidante": ["Antioxidant Treatment", "Endocrine antioxidant therapy designed to protect, repair, and support vitality.", ["Citoplacell formula", "Antioxidant support", "Anti-aging and energy focus"]],
-  "tratamiento-anti-inflamatorio": ["Anti-inflammatory Treatment", "Anti-inflammatory protocol to support recovery, mobility, and metabolic balance.", ["Bioenzym formula", "Anti-inflammatory support", "Focused on osteoarticular and systemic wellbeing"]],
-  "tratamiento-sindrome-metabolico": ["Metabolic Syndrome Treatment", "Therapy for metabolic support and functional regulation.", ["Revercell formula", "Metabolism support", "Medical consultation recommended"]],
-  "tratamiento-detox": ["Detox Treatment", "Protocol designed to support digestive wellbeing and healthy habits.", ["Celltox formula", "Oral chelation", "Healthy habit support"]],
-  "celulas-madre": ["Stem Cells", "Longevity activator focused on protection, repair, and revitalization.", ["Human Ultracell VI", "Treatment cycles", "Premium longevity protocol"]],
-  "tratamiento-hormonal-hombre": ["Men's Hormonal Treatment", "Functional support for male hormonal-cycle regulation.", ["Androcell formula", "Male hormonal support", "Medical evaluation recommended"]],
-  "tratamiento-hormonal-mujer": ["Women's Hormonal Treatment", "Functional support for female hormonal-cycle regulation.", ["Biofemin formula", "Female hormonal support", "Personalized follow-up"]],
+  "tratamientos-biologicos": ["Biological Treatments", "Advertised package of 10 sessions and two biological treatments. Ask what each session includes before deciding.", ["10 sessions", "2 biological treatments"]],
+  "tratamiento-antioxidante": ["Antioxidant Treatment", "Treatment identified as Citoplacell. Ask the team about its full composition, use, and precautions.", ["Citoplacell formula"]],
+  "tratamiento-anti-inflamatorio": ["Anti-inflammatory Treatment", "Treatment identified as Bioenzym. Ask the team about its full composition, use, and precautions.", ["Bioenzym formula"]],
+  "tratamiento-sindrome-metabolico": ["Metabolic Syndrome Treatment", "Treatment identified as Revercell. Request full information before using it for a metabolic condition.", ["Revercell formula"]],
+  "tratamiento-detox": ["Detox Treatment", "Treatment identified as Celltox, with oral chelation mentioned in its listing. Ask about its indications and precautions.", ["Celltox formula", "Oral chelation"]],
+  "celulas-madre": ["Stem Cells", "Product identified as Human Ultracell VI. Ask about its composition, origin, and procedure before deciding.", ["Human Ultracell VI"]],
+  "tratamiento-hormonal-hombre": ["Men's Hormonal Treatment", "Treatment identified as Androcell. Its use requires a review of your history, medication, and hormonal situation.", ["Androcell formula"]],
+  "tratamiento-hormonal-mujer": ["Women's Hormonal Treatment", "Treatment identified as Biofemin. Its use requires a review of your history, medication, and hormonal situation.", ["Biofemin formula"]],
 };
 
 const consultationEnglish = {
   "consulta-online-1": ["Online Consultation", "Available online", "30 min"],
   "consulta-presencial": ["In-person Consultation", "At the clinic", "1 hr"],
-  "consultas-en-madrid": ["Madrid Consultations", "Available online", "1 hr"],
+  "consultas-en-madrid": ["Online Consultation for Madrid", "Available online", "1 hr"],
 };
 
 const withLocale = (item, translations, language) => {
@@ -470,20 +508,15 @@ const programPages = [
     title: "Antroposofía",
     eyebrow: "Programa Integral",
     image: "/images/source/programa/andres-munoz-cardenas.webp",
-    intro: "Andrés Muñoz Cárdenas es psicólogo de orientación antroposófica que nos enseña una concepción diferente a la que conocíamos de lo que es la salud.",
-    profileTitle: "Andrés Muñoz Cardenas",
-    profileSubtitle: "Fundador de CEO de la escuela Kamino Florido",
+    intro: "Conoce a Andrés Muñoz Cárdenas, psicólogo de orientación antroposófica y fundador de Kamino Florido. Esta página reúne dos conferencias para conocer su enfoque.",
+    profileTitle: "Andrés Muñoz Cárdenas",
+    profileSubtitle: "Fundador de la escuela Kamino Florido",
     website: "https://www.kaminoflorido.com/",
     firstVideoUrl: "https://www.youtube.com/watch?v=f8nc4C0ZjIg&t=415s",
     videoTitle: "Los 7 Pasos de la Libertad - Crear realidad en tiempos de I.A. (inteligencia artificial)",
     videoUrl: "https://www.youtube.com/watch?v=Z-I3Vdl8VP0",
     videoText: "Actividad continua L.U.S. - 1era Conferencia del ciclo de 12 conferencias respecto de Crear la Realidad que Anhelamos a través de los 7 Pasos de la Libertad. Psicoanálisis y Antroposofía.",
     videoImage: "/images/source/programa/andres-munoz-antroposofia.webp",
-    socialLinks: [
-      ["Facebook", "http://www.facebook.com/WixEspanol", "f"],
-      ["Twitter", "http://twitter.com/MundoWix", "x"],
-      ["LinkedIn", "https://www.linkedin.com/company/wix-com", "in"],
-    ],
     sections: [
       {
         title: "Andrés Muñoz Cárdenas",
@@ -501,11 +534,11 @@ const programPages = [
     title: "Arte del Buen Comer y Buen Beber",
     eyebrow: "El arte del buen comer, buen beber y bien vivir",
     image: "/images/source/programa/arte-buen-comer.webp",
-    intro: "COMER ES UNA NECESIDAD, PERO COMER DE FORMA INTELIGENTE ES UN ARTE",
-    programHeading: "CONOCÉ EL PROGRAMA",
-    questionHeading: "¿Qué es?",
+    intro: "Descarga los menús disponibles. Las clases de cocina aparecen anunciadas como próximas y aún no tienen fecha publicada.",
+    programHeading: "Recursos disponibles",
+    questionHeading: "Dos menús en PDF",
     menusHref: "/programa-integral/menu-golden-health",
-    finalText: "Nuestro programa del arte del buen comer y el buen beber es una forma sana, inteligente y equilibrada de comer inspiradamente en las recomendaciones de los mejores programas de alimentación en el cual instruimos a nuestros pacientes a llevar un estilo de vida mas saludable que se ve reflejado en la prevención de enfermedades, especialmente las degenerativas, prevenir el envejecimiento prematuro, aumentar la energía e incrementar el sistema inmunológico.",
+    finalText: "Los menús son recursos generales de alimentación. Si necesitas adaptar cantidades o alimentos por una condición médica, pide orientación individual antes de seguirlos.",
     gallery: [
       ["/images/source/programa/ensalada-golden-health.webp", "ENSALADA GOLDEN HEALTHMX.jpeg"],
       ["/images/source/programa/menu-vegetariano-golden-health.webp", "MENU VEGETARIANO GOLDENHEALTHMX.jpeg"],
@@ -514,29 +547,30 @@ const programPages = [
       {
         title: "CLASES GRUPALES DE COCINA",
         kicker: "PROXIMAMENTE",
-        text: "Aprende de los mejores coach de alimentación y expertos en el campo. ofrecemos clases en línea en donde aprenderás las mejores recetas fáciles y saludables para llevar una vida mas sana",
+        text: "Actividad anunciada como próxima. Todavía no se publica fecha, duración ni precio.",
       },
       {
         title: "CLASE PRIVADA DE COCINA",
         kicker: "PROXIMAMENTE",
-        text: "Aprende de los mejores coach de alimentación y expertos en el campo. ofrecemos clases privadas en donde aprenderás las mejores recetas fáciles y saludables para llevar una vida mas sana.",
+        text: "Actividad anunciada como próxima. Consulta disponibilidad y condiciones antes de solicitarla.",
       },
       {
         title: "MENU GOLDEN HEALTH",
-        text: "Es fundamental que aprendamos nuevos hábitos saludables que nos ayuden a alcanzar el objetivo de vivir más y mejor. Descarga los mejores ménus para la semana.",
+        text: "Accede a los PDF «Menú Golden Health» y «Menú Carnes» desde la página de menús.",
       },
       {
         title: "MENÚ BEBIDAS",
-        text: "La nutrición es uno de los pilares fundamentales de nuestro programa, hemos diseñado un espacio para compartir los secretos de bebidas saludables",
+        text: "Esta página todavía no incluye un menú descargable de bebidas.",
       },
     ],
   },
   {
     slug: "menu-golden-health",
     title: "Menú Golden Health",
-    eyebrow: "Ménus Golden Health",
+    eyebrow: "Menús descargables",
     image: "/images/source/programa/alimentos-golden-health.webp",
-    intro: "MÉNUS GOLDEN HEALTH",
+    intro: "Menús Golden Health",
+    menuIntro: "Descarga los dos documentos PDF disponibles. Son materiales generales y no sustituyen un plan alimentario individual.",
     downloads: [
       ["MENÚ GOLDEN HEALTH", "https://static.wixstatic.com/ugd/e47656_a5b631e3351a47448a73a2d560f98691.pdf"],
       ["MENÚ CARNES", "https://static.wixstatic.com/ugd/e47656_4d8ac404c4bd40c389267c6e92a9ccb2.pdf"],
@@ -549,22 +583,20 @@ const programPages = [
     image: "/images/source/programa/anti-aging-captura.webp",
     secondaryImage: "/images/source/programa/anti-aging-celulas-1.webp",
     tertiaryImage: "/images/source/programa/anti-aging-celulas-2.webp",
-    intro: "Este programa reúne valoración y opciones de soporte orientadas a la salud celular, la vitalidad y un envejecimiento saludable.",
-    introExtra: "La propuesta se adapta a cada persona y se revisa mediante seguimiento profesional.",
-    diagnosticTitle: "Diagnóstico Healthy Ageing",
-    diagnosticText: "Al inicio del tratamiento se realiza una consulta médica con nuestra experta en salud, quien determinará que tratamiento es el más adecuado para retardar el proceso de envejecimiento y mejorar la calidad de vida en cada caso.",
+    intro: "Esta área reúne opciones de tratamiento distintas. El sitio no define un procedimiento único ni indica que todas sean adecuadas para cualquier persona.",
+    introExtra: "El primer paso es una consulta médica para revisar antecedentes, objetivos y la pertinencia de cada opción.",
+    diagnosticTitle: "Valoración inicial",
+    diagnosticText: "En la consulta se revisan tus antecedentes y el motivo de consulta. Pide que te expliquen el tratamiento propuesto, por qué se recomienda y qué alternativas existen.",
     reserveUrl: "/consultas",
-    regenerationTitle: "Lo mas avanzado en tratamiento de Regeneración Celular",
+    regenerationTitle: "Qué debes conocer antes de iniciar",
     regenerationText: [
-      "Resumen histórico de lo mas avanzado en tratamiento de regeneración celular para pacientes sanos y enfermos con la experiencia en Medicina Regenerativa y Anti envejecimiento.",
-      "La aventura comienza en la década de 1930. El profesor Paul Niehans, pionero de la longevidad, que lideró en este momento muchas investigaciones sobre la capacidad de adaptación de las células, se destaca como líder de esta práctica, más conocida hoy como celuloterapia.",
-      "¡Descubra la entrevista exclusiva del Prof. Dr. Ernst Theodor Rietschel, Jefe del equipo científico de Clinique La Prairie y adéntrese en el fantástico viaje del legendario Programa de Revitalización!",
+      "Solicita el nombre y la composición de cualquier producto que se proponga, así como la vía de administración y el número de sesiones.",
+      "Pregunta por las precauciones, los posibles efectos adversos, el seguimiento y el costo total antes de aceptar un procedimiento.",
     ],
-    expertName: "Prof. Dr. Ernst Theodor Rietschel",
     sections: [
       {
         title: "Healthy Ageing",
-        text: "Las opciones de acompañamiento se orientan a sostener vitalidad, hábitos saludables y bienestar durante el proceso natural de envejecimiento.",
+        text: "La valoración determina si alguna opción de esta área es pertinente. No hay un tratamiento único para todas las personas.",
       },
       {
         title: "Diagnóstico Healthy Ageing",
@@ -581,31 +613,19 @@ const programPages = [
     title: "Terapias Biológicas",
     eyebrow: "Medicina Biológica",
     image: "/images/source/programa/terapias-biologicas.webp",
-    intro: "La medicina biológica se enfoca en desarrollar el potencial humano apoyándose en la ciencia, la tecnología y nuevas tendencias para el cuidado de la salud.",
+    intro: "Golden Health presenta preparados que pueden administrarse por vía intramuscular, subcutánea o subdérmica. La composición y la indicación de cada opción deben aclararse en consulta.",
     sections: [
       {
-        title: "Acción regenerativa de la ciencia biocelular",
-        text: "Biotecnología orientada al envejecimiento prematuro, tratamientos sin efectos adversos, innovación médica enfocada en capacidades humanas y valor para una larga vida con salud.",
+        title: "Qué sustancias se mencionan",
+        text: "La descripción disponible habla de enzimas, vitaminas y minerales, pero no publica la composición completa de cada preparado.",
       },
       {
-        title: "Procedimiento",
-        text: "Introducción por vía intramuscular, subcutánea o subdérmica de enzimas, vitaminas, minerales y activadores de energía que estimulan órganos, tejidos y sistemas en el corto, mediano y largo plazo.",
+        title: "Vías de aplicación",
+        text: "Se mencionan vías intramuscular, subcutánea y subdérmica. Confirma cuál se propone para tu caso, quién la realiza y cuántas sesiones incluye.",
       },
       {
-        title: "Energía, estrés y revitalización",
-        text: "Tratamiento biológico para restaurar la vitalidad del cuerpo y restituir desgaste físico, mental y emocional.",
-      },
-      {
-        title: "Inmunológico",
-        text: "Tratamiento para reforzar el sistema inmunológico, fortalecer y estimular defensas contra agresiones del medio ambiente.",
-      },
-      {
-        title: "Osteoarticular",
-        text: "Tratamiento para lesiones específicas que mejora movilidad, regenera tejidos y aumenta fuerza y flexibilidad.",
-      },
-      {
-        title: "Cara, hormonal y detox",
-        text: "Protocolos para rostro y cuello, acompañamiento del equilibrio hormonal y opciones de apoyo digestivo dentro de un estilo de vida saludable.",
+        title: "Información previa necesaria",
+        text: "Pide la ficha del preparado, sus contraindicaciones, posibles efectos adversos, costo total y plan de seguimiento antes de decidir.",
       },
     ],
   },
@@ -614,15 +634,15 @@ const programPages = [
     title: "Hidratación Funcional",
     eyebrow: "Socio autorizado Golden Health",
     image: "/images/source/programa/hidratacion-funcional.webp",
-    intro: "El agua Kangen es un tipo de agua alcalina ionizada tratada mediante electrólisis para alterar su pH y crear una estructura molecular única.",
+    intro: "Esta página presenta el agua ionizada Kangen. El equipo modifica el pH del agua mediante electrólisis; confirma las características del modelo ofrecido antes de adquirirlo.",
     sections: [
       {
-        title: "Introducción al agua Kangen",
-        text: "Este proceso pasa el agua a través de una máquina de ionización que separa moléculas cargadas positiva y negativamente, creando agua con pH más alto y propiedades antioxidantes.",
+        title: "Qué hace el equipo",
+        text: "El agua pasa por un ionizador que utiliza electrólisis para obtener agua con distintos niveles de pH.",
       },
       {
-        title: "Hidratación dentro del programa",
-        text: "Golden Health presenta la hidratación funcional como parte de hábitos diarios para acompañar bienestar, equilibrio y prevención.",
+        title: "Qué conviene preguntar",
+        text: "Solicita el modelo, rango de pH, mantenimiento, precio y condiciones de garantía antes de decidir.",
       },
     ],
   },
@@ -632,12 +652,11 @@ const programPages = [
     eyebrow: "Programa para deportistas de alto rendimiento",
     image: "/images/source/programa/deporte-golden-health.webp",
     secondaryImage: "/images/source/programa/deporte-alto-rendimiento.webp",
-    intro: "“Tienes que cultivar el vigor del cuerpo para preservar el espíritu \"",
-    quoteAuthor: "Luc de Clapiers",
-    description: "Este programa busca crear disciplina y estimular la capacidad de movimiento que tenemos con una intensión y un propósito de alcanzar un estado de empoderamiento energético y una excelente condición física que nos permita alcanzar objetivos que tenemos día a día.",
+    intro: "Área dirigida a personas que desean trabajar movimiento y condición física. La página aún no publica un plan fijo de sesiones.",
+    description: "Antes de empezar, pregunta qué evaluación se realiza, quién dirige la actividad, cuántas sesiones se proponen y cómo se revisa el progreso.",
     designedFor: [
-      "Personas que deseen mejorar su estado o aspecto físico.",
-      "Aprende nuevos hábitos saludables para optimizar la desintoxicación natural.",
+      "Personas que quieren definir objetivos de actividad física antes de iniciar un programa.",
+      "Deportistas que necesitan conocer el formato, la frecuencia y el seguimiento antes de contratarlo.",
     ],
     sections: [
       {
@@ -656,17 +675,17 @@ const programPages = [
     eyebrow: "Cuerpo, Mente y Espíritu",
     image: "/images/source/programa/cuerpo-mente-programa.webp",
     secondaryImage: "/images/source/programa/cuerpo-mente-lograrlo.webp",
-    intro: "Todo lo que necesitas para un estado óptimo de salud",
-    objectivesIntro: "Este programa tiene 2 objetivos principales:",
+    intro: "Golden Health presenta conferencias, seminarios web y pódcast sobre hábitos y bienestar emocional. Consulta el temario y las fechas antes de inscribirte.",
+    objectivesIntro: "Antes de participar, pide esta información:",
     objectives: [
-      "1.-Recuperar el bienestar general gracias a una experiencia de aprendizaje.",
-      "2.- Dar continuidad al proceso de aprendizaje en la vida cotidiana, gracias a lo conocimientos y a los hábitos de vida adquiridos en Golden Health.",
+      "Tema y objetivos de la actividad.",
+      "Duración, modalidad, facilitador y precio.",
     ],
     sections: [
       {
         title: "¿Qué es este programa?",
-        text: "Este programa se dedica a la motivación y generación de conductas que nos llevan a encontrar inspiración en la vida cotidiana por medio de experiencias con uno mismo y los demás. Esta experiencia es una excelente oportunidad para ejercitar su espíritu y conectarse con su ser interior.",
-        extra: "Es imposible mantener una buena salud sin un equilibrio entre cuerpo, mente y espíritu. Es por ello que ofrecemos programas, conferencias, webinars y podcast enfocados en el equilibrio emocional y mental.",
+        text: "El sitio menciona conferencias, seminarios web y pódcast. No publica un calendario ni un programa detallado para esta área.",
+        extra: "Solicita el temario, la modalidad y el nombre de quien imparte cada actividad antes de reservar.",
       },
       {
         title: "¿Como lograrlo?",
@@ -681,30 +700,29 @@ const programPages = [
   {
     slug: "salud-nutricional",
     title: "Salud nutricional",
-    eyebrow: "Pioneros de la nutrición personalizada basada en pruebas",
+    eyebrow: "BalanceTest y BalanceOil",
     image: "/images/source/programa/balance-oil-and-test-situational.webp",
     secondaryImage: "/images/source/programa/zinzino-balance-oil.webp",
-    intro: "Desafiando el orden establecido desde 2005",
+    intro: "Prueba de sangre seca y kit de aceites",
     brandTitle: "ZINZINO",
     brandText: [
-      "Zinzino nació de un deseo de pensar diferente. La pareja emprendedora Hilde y Ørjan Sæle querían volver a sus raíces, a su gran pasión por compartir grandes experiencias de producto. Lo convirtieron en su misión para recuperar el enfoque centrado en el cliente en la venta directa. Un atrevido paso que también llevó su negocio a la vanguardia de la nutrición personalizada basada en pruebas.",
-      "Hoy en día, Zinzino ha pasado de ser una pequeña empresa emergente escandinava a ser incluida en Nasdaq First North como una de las empresas de venta directa de más rápido crecimiento en el rango de la salud y el bienestar, que sigue desafiando el orden establecido. Nuestros clientes son lo primero.",
+      "Esta página presenta productos de Zinzino, una empresa externa: BalanceTest y BalanceOil. El enlace de compra lleva a su tienda.",
+      "Antes de comprar, comprueba la composición, el precio vigente y las condiciones de entrega directamente en la tienda del proveedor.",
     ],
-    nutritionTitle: "Le presentamos la nueva generación de la nutrición",
+    nutritionTitle: "Qué información aporta la prueba",
     nutritionText: [
-      "Queremos evitarle la fase de prueba y error y que encuentre la mejor manera de mejorar su salud. Por eso, nuestras pruebas de sangre seca son un punto de partida natural. Le ofrecemos datos objetivos y le guiamos.",
-      "Le proporcionamos los suplementos adaptados a sus necesidades específicas y le ayudamos a mantenerse en el camino adecuado.",
-      "Comience su viaje hacia una vida en equilibrio con una prueba de mancha de sangre seca científica y confidencial. Averigüe el estado de su cuerpo y qué suplementos podría necesitar. Haga la prueba de nuevo cada 4 meses para seguir su progreso y ajustar su ingesta si fuese necesario.",
+      "BalanceTest utiliza una muestra de sangre seca para informar la relación de ácidos grasos omega 6:3 que mide el proveedor.",
+      "La información publicada propone repetir la prueba después de aproximadamente 120 días para comparar resultados. Pide ayuda profesional para interpretar cualquier resultado antes de cambiar tu alimentación o suplementación.",
     ],
     buyUrl: "https://www.zinzino.com/shop/2016732291/MX/es-ES/products/shop/home-health-tests/",
     balanceTitle: "BalanceOil Kit with Test",
-    balanceText: "Obtenga una visión clara sobre la relación Omega 6:3 de su cuerpo y vea los resultados individuales antes y después del BalanceTest. Luego, use Zinzino BalanceOil, una mezcla de primera calidad que contiene aceite natural de pescado, con alto contenido de Omega 3 (EPA + DHA), polifenoles de oliva y vitamina D3 para proteger las células de la oxidación y ajustar el equilibrio Omega 6:3 del cuerpo, promoviendo el funcionamiento normal del cerebro, el corazón y el sistema inmune.",
+    balanceText: "La ficha publicada enumera dos botellas de BalanceOil+ de 300 ml, dos de BalanceOil de 100 ml y dos pruebas BalanceTest. Verifica el contenido vigente en la tienda de Zinzino antes de comprar.",
     deliveryItems: [
-      "Primera entrega",
+      "Contenido indicado en la ficha",
       "2 BalanceOil+, 300 ml",
       "2 BalanceOil, 100 ml",
-      "2 BalanceTest*",
-      "* Puedes encontrar un BalanceTest en tu primera entrega; el segundo BalanceTest se entregará al cabo de 120 días para que puedas hacerlo en el momento correcto para ver los resultados del “antes” y del “después”.",
+      "2 BalanceTest",
+      "La ficha indica que la segunda prueba se entrega después de unos 120 días. Confirma las condiciones con el proveedor.",
     ],
     sections: [
       {
@@ -730,72 +748,85 @@ const products = [
     name: "Tratamientos Biológicos",
     price: "$2,300.00",
     image: "/images/source/products/tratamientos-biologicos.webp",
-    summary: "Paquete biológico de soporte para bienestar integral y equilibrio celular.",
-    details: ["10 sesiones", "2 tratamientos biológicos", "Acompañamiento para elegir protocolo según objetivo"],
+    summary: "Paquete anunciado con 10 sesiones y dos tratamientos biológicos. Solicita el detalle de cada sesión antes de decidir.",
+    details: ["10 sesiones", "2 tratamientos biológicos"],
   },
   {
     slug: "tratamiento-antioxidante",
     name: "Tratamiento Antioxidante",
     price: "$5,980.00",
     image: "/images/source/products/antioxidante.webp",
-    summary: "Terapia antioxidante endocrina orientada a proteger, reparar y apoyar la vitalidad.",
-    details: ["Fórmula Citoplacell", "Soporte antioxidante", "Enfoque anti-aging y energía"],
+    summary: "Tratamiento identificado como Citoplacell. Consulta su composición, forma de uso y precauciones con el equipo.",
+    details: ["Fórmula Citoplacell"],
   },
   {
     slug: "tratamiento-anti-inflamatorio",
     name: "Tratamiento Antiinflamatorio",
     price: "$4,200.00",
     image: "/images/source/products/antiinflamatorio.webp",
-    summary: "Protocolo antiinflamatorio para apoyar recuperación, movilidad y equilibrio metabólico.",
-    details: ["Fórmula Bioenzym", "Apoyo antiinflamatorio", "Orientado a bienestar osteoarticular y sistémico"],
+    summary: "Tratamiento identificado como Bioenzym. Consulta su composición, forma de uso y precauciones con el equipo.",
+    details: ["Fórmula Bioenzym"],
   },
   {
     slug: "tratamiento-sindrome-metabolico",
     name: "Tratamiento Síndrome Metabólico",
     price: "$7,250.00",
     image: "/images/source/products/sindrome-metabolico.webp",
-    summary: "Terapia para acompañamiento metabólico y regulación funcional.",
-    details: ["Fórmula Revercell", "Apoyo al metabolismo", "Seguimiento recomendado con consulta"],
+    summary: "Tratamiento identificado como Revercell. Solicita información completa antes de usarlo para un problema metabólico.",
+    details: ["Fórmula Revercell"],
   },
   {
     slug: "tratamiento-detox",
     name: "Tratamiento Detox",
     price: "$4,200.00",
     image: "/images/source/products/detox.webp",
-    summary: "Protocolo orientado a apoyar el bienestar digestivo y hábitos saludables.",
-    details: ["Fórmula Celltox", "Quelación oral", "Apoyo a hábitos saludables"],
+    summary: "Tratamiento identificado como Celltox, con quelación oral mencionada en la ficha. Consulta indicaciones y precauciones.",
+    details: ["Fórmula Celltox", "Quelación oral"],
   },
   {
     slug: "celulas-madre",
     name: "Células Madre",
     price: "$27,000.00",
     image: "/images/source/products/celulas-madre.webp",
-    summary: "Activador de longevidad orientado a protección, reparación y revitalización.",
-    details: ["Human Ultracell VI", "Ciclos de tratamiento", "Protocolo premium de longevidad"],
+    summary: "Producto identificado como Human Ultracell VI. Solicita información sobre composición, procedencia y procedimiento antes de decidir.",
+    details: ["Human Ultracell VI"],
   },
   {
     slug: "tratamiento-hormonal-hombre",
     name: "Tratamiento Hormonal Hombre",
     price: "$4,200.00",
     image: "/images/source/products/hormonal-hombre.webp",
-    summary: "Soporte funcional para regulación del ciclo hormonal masculino.",
-    details: ["Fórmula Androcell", "Apoyo hormonal hombre", "Evaluación médica recomendada"],
+    summary: "Tratamiento identificado como Androcell. Su uso requiere revisar antecedentes, medicamentos y situación hormonal.",
+    details: ["Fórmula Androcell"],
   },
   {
     slug: "tratamiento-hormonal-mujer",
     name: "Tratamiento Hormonal para la mujer",
     price: "$4,200.00",
     image: "/images/source/products/hormonal-mujer.webp",
-    summary: "Soporte funcional para regulación del ciclo hormonal femenino.",
-    details: ["Fórmula Biofemin", "Apoyo hormonal mujer", "Seguimiento personalizado"],
+    summary: "Tratamiento identificado como Biofemin. Su uso requiere revisar antecedentes, medicamentos y situación hormonal.",
+    details: ["Fórmula Biofemin"],
   },
 ];
 
 const consultations = [
   ["Consulta Online", "Disponible online", "30 min", "$500", "/images/source/consultas/consulta-online.webp", "consulta-online-1"],
-  ["Consulta Presencial", "En clinica", "1 h", "$1,500", "/images/golden-health/consulta-medica.webp", "consulta-presencial"],
-  ["Consultas en Madrid", "Disponible online", "1 h", "$1,500", "/images/source/consultas/consultas-madrid.webp", "consultas-en-madrid"],
+  ["Consulta Presencial", "En clínica", "1 h", "$1,500", "/images/golden-health/consulta-medica.webp", "consulta-presencial"],
+  ["Consulta online para Madrid", "Disponible online", "1 h", "$1,500", "/images/source/consultas/consultas-madrid.webp", "consultas-en-madrid"],
 ];
+
+const consultationDescriptions = {
+  es: {
+    "consulta-online-1": "Para explicar tu motivo de consulta y revisar antecedentes a distancia. No permite exploración física.",
+    "consulta-presencial": "En Lago Zúrich 96, Ciudad de México. Permite una exploración física cuando sea necesaria.",
+    "consultas-en-madrid": "Atención a distancia para personas en Madrid. Confirma la disponibilidad y la hora local antes de agendar.",
+  },
+  en: {
+    "consulta-online-1": "Discuss your reason for visiting and review your history remotely. A physical examination is not possible.",
+    "consulta-presencial": "At Lago Zúrich 96, Mexico City. Allows a physical examination when needed.",
+    "consultas-en-madrid": "Remote care for people in Madrid. Confirm availability and the local time before scheduling.",
+  },
+};
 
 const englishPathByRoute = {
   "/historia": "/story",
@@ -1083,19 +1114,11 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
 
               <p className="mt-7 max-w-2xl text-lg leading-8 text-white/82">{t.heroText}</p>
 
-              <div className="mt-7 flex flex-wrap gap-2">
-                {t.keywords.map((item) => (
-                  <span key={item} className="rounded-full border border-white/20 bg-white/12 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur">
-                    {item}
-                  </span>
-                ))}
-              </div>
-
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
                 <a href={localizedHref("/contacto")} onClick={(event) => navigate(event, "/contacto")} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d3aa45] px-7 py-4 font-semibold text-[#14261c] shadow-xl shadow-[#d3aa45]/25 transition hover:-translate-y-0.5 hover:bg-[#c99c32]">
                   {t.primaryCta}
                 </a>
-                <a href="#metodo" className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/12 px-7 py-4 font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20">
+                <a href={localizedHref("/consultas")} onClick={(event) => navigate(event, "/consultas")} className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/12 px-7 py-4 font-semibold text-white backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/20">
                   {t.secondaryCta}
                 </a>
               </div>
@@ -1144,11 +1167,11 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
             </div>
 
             <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {t.services.map(([icon, title, text]) => (
-                <a
-                  key={title}
-                  href={localizedHref("/programa-integral")}
-                  onClick={(event) => navigate(event, "/programa-integral")}
+                {t.services.map(([icon, title, text, href]) => (
+                  <a
+                    key={title}
+                    href={localizedHref(href)}
+                    onClick={(event) => navigate(event, href)}
                   className="group rounded-[2rem] bg-white p-7 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1f3b2c]/10"
                 >
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f4ead0] text-2xl text-[#9b7a2f] transition group-hover:bg-[#1f3b2c] group-hover:text-[#d3aa45]">{icon}</div>
@@ -1166,8 +1189,8 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
 	            {sourceSections.filter((section) => section.id === "programa").map((section) => (
 	              <article key={section.id}>
 	                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.therapiesEyebrow}</p>
-	                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.programHomeTitle}</h2>
-	                <p className="mt-6 text-xl leading-8 text-[#607064]">{t.programHomeText}</p>
+	                <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.programDecisionTitle}</h2>
+	                <p className="mt-6 text-xl leading-8 text-[#607064]">{t.programDecisionIntro}</p>
                 <div className="mt-10 grid gap-5 md:grid-cols-2">
 	                  {t.programSummary.items.map(([title, text]) => (
 	                    <div key={title} className="rounded-2xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
@@ -1291,15 +1314,8 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                     <a href={selectedProgram.website} target="_blank" rel="noreferrer" className="mt-6 inline-flex w-fit text-lg font-semibold text-[#9b7a2f] underline underline-offset-4">
                       {selectedProgram.website}
                     </a>
-                    <div className="mt-6 flex gap-3">
-                      {selectedProgram.socialLinks.map(([label, href, icon]) => (
-                        <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="flex h-11 w-11 items-center justify-center rounded-full bg-[#a8a8a8] text-sm font-semibold text-white transition hover:bg-[#1f3b2c]">
-                          {icon}
-                        </a>
-                      ))}
-                    </div>
                     <a href={selectedProgram.firstVideoUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex w-fit rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424]">
-                      Ver primero video
+                      {t.firstVideo}
                     </a>
                   </div>
                 </div>
@@ -1308,7 +1324,7 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                     <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[#14261c] md:text-4xl">{selectedProgram.videoTitle}</h2>
                     <p className="mt-6 text-lg leading-8 text-[#607064]">{selectedProgram.videoText}</p>
                     <a href={selectedProgram.videoUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex w-fit self-center rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424] lg:self-start">
-                      VER VIDEO
+                      {t.watchVideo}
                     </a>
                   </div>
                   <img src={selectedProgram.videoImage} alt={language === "en" ? "Anthroposophy talk by Andres Munoz Cardenas" : "Conferencia de antroposofía de Andrés Muñoz Cárdenas"} className="w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
@@ -1323,7 +1339,7 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
               <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
                 <div className="p-8 text-center lg:p-12">
                   <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.nav.program}</p>
-                  <h1 className="mt-4 text-4xl font-semibold uppercase tracking-[-0.03em] text-[#14261c] md:text-6xl">EL ARTE DEL BUEN COMER Y BUEN BEBER</h1>
+                  <h1 className="mt-4 text-4xl font-semibold tracking-[-0.03em] text-[#14261c] md:text-6xl">{selectedProgram.title}</h1>
                   <p className="mx-auto mt-6 max-w-4xl text-xl font-semibold uppercase leading-8 text-[#607064]">{selectedProgram.intro}</p>
                   <img src={selectedProgram.image} alt={language === "en" ? "Healthy eating and drinking program at Golden Health" : "Programa de buen comer y buen beber de Golden Health"} className="mx-auto mt-10 aspect-square w-full max-w-2xl rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
@@ -1332,11 +1348,11 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                   <h2 className="text-4xl font-semibold uppercase tracking-[-0.03em] text-[#14261c]">{selectedProgram.programHeading}</h2>
                   <p className="mt-4 text-3xl font-semibold text-[#14261c]">{selectedProgram.questionHeading}</p>
                   <a
-                    href={selectedProgram.menusHref}
+                    href={localizedHref(selectedProgram.menusHref)}
                     onClick={(event) => navigate(event, selectedProgram.menusHref)}
                     className="mt-8 inline-flex text-4xl font-semibold text-[#9b7a2f] underline underline-offset-8"
                   >
-                    MENUS
+                    {language === "en" ? "View menus" : "Ver menús"}
                   </a>
                 </div>
 
@@ -1373,6 +1389,7 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                   <div className="flex flex-col justify-center">
                     <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.nav.program}</p>
                     <h1 className="mt-4 text-5xl font-semibold uppercase tracking-[-0.04em] text-[#14261c] md:text-7xl">{selectedProgram.intro}</h1>
+                    <p className="mt-6 max-w-xl leading-8 text-[#607064]">{selectedProgram.menuIntro}</p>
                     <div className="mt-10 flex flex-col gap-4 sm:max-w-md">
                       {selectedProgram.downloads.map(([label, href]) => (
                         <a
@@ -1419,7 +1436,7 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                     <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{selectedProgram.diagnosticTitle}</h2>
                     <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.diagnosticText}</p>
                     <a href={localizedHref(selectedProgram.reserveUrl)} onClick={(event) => navigate(event, selectedProgram.reserveUrl)} className="mt-8 inline-flex w-fit rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424]">
-                      Reserva ahora
+                      {t.bookButton}
                     </a>
                   </div>
                   <img src={selectedProgram.secondaryImage} alt={language === "en" ? "Medical assessment for regenerative and anti-aging treatment" : "Valoración médica para tratamiento regenerativo y anti-envejecimiento"} className="h-full min-h-[460px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
@@ -1434,7 +1451,6 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                         <p key={paragraph}>{paragraph}</p>
                       ))}
                     </div>
-                    <p className="mt-8 text-lg font-semibold text-[#9b7a2f]">{selectedProgram.expertName}</p>
                   </div>
                 </div>
 
@@ -1448,11 +1464,8 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
               <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
                 <div className="p-8 text-center lg:p-12">
                   <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.nav.program}</p>
-                  <h1 className="mx-auto mt-4 max-w-5xl text-4xl font-semibold uppercase tracking-[-0.03em] text-[#14261c] md:text-6xl">PROGRAMA PARA DEPORTISTAS DE ALTO RENDIMIENTO</h1>
-                  <blockquote className="mx-auto mt-8 max-w-3xl text-xl leading-8 text-[#607064]">
-                    <p>{selectedProgram.intro}</p>
-                    <footer className="mt-2 font-semibold text-[#9b7a2f]">{selectedProgram.quoteAuthor}</footer>
-                  </blockquote>
+                  <h1 className="mx-auto mt-4 max-w-5xl text-4xl font-semibold tracking-[-0.03em] text-[#14261c] md:text-6xl">{selectedProgram.title}</h1>
+                  <p className="mx-auto mt-8 max-w-3xl text-xl leading-8 text-[#607064]">{selectedProgram.intro}</p>
                 </div>
 
                 <div className="grid gap-10 px-8 pb-12 lg:grid-cols-[0.85fr_1.15fr] lg:px-12">
@@ -1488,7 +1501,7 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
               <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
                 <div className="p-8 text-center lg:p-12">
                   <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.nav.program}</p>
-                  <h1 className="mt-4 text-5xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-7xl">Cuerpo, Mente y Espíritu</h1>
+                  <h1 className="mt-4 text-5xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-7xl">{selectedProgram.title}</h1>
                   <p className="mt-6 text-xl leading-8 text-[#607064]">{selectedProgram.intro}</p>
                 </div>
 
@@ -1534,7 +1547,7 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                       ))}
                     </div>
                     <a href={selectedProgram.buyUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex w-fit rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424]">
-                      COMPRAR
+                      {t.buy}
                     </a>
                   </div>
                   <img src={selectedProgram.image} alt={language === "en" ? "Personalized nutrition assessment with BalanceTest" : "Evaluación de nutrición personalizada con BalanceTest"} className="h-full min-h-[460px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
@@ -1562,7 +1575,7 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                       ))}
                     </ul>
                     <a href={selectedProgram.buyUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex w-fit rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424]">
-                      COMPRAR
+                      {t.buy}
                     </a>
                   </div>
                   <img src={selectedProgram.secondaryImage} alt={language === "en" ? "Zinzino BalanceOil kit with nutrition test" : "Kit Zinzino BalanceOil con prueba nutricional"} className="h-full min-h-[460px] w-full rounded-[1.5rem] object-contain shadow-lg ring-1 ring-black/5" />
@@ -1712,16 +1725,9 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                     ))}
                   </ul>
                 </div>
-                <div className="mt-8">
-	                  <p className="text-sm font-semibold text-[#607064]">{t.quantity}</p>
-                  <div className="mt-3 inline-flex h-14 items-center overflow-hidden border border-[#14261c]/25 bg-white">
-                    <button type="button" className="h-full w-14 text-2xl text-[#9b9b9b]">−</button>
-                    <span className="flex h-full w-14 items-center justify-center border-x border-[#14261c]/15 text-[#14261c]">1</span>
-                    <button type="button" className="h-full w-14 text-2xl text-[#14261c]">+</button>
-                  </div>
-                </div>
+                <p className="mt-8 leading-7 text-[#607064]">{t.productBeforeRequest}</p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-	                  <button type="button" className="inline-flex justify-center rounded-none bg-[#3f3f3f] px-10 py-4 font-serif text-xl text-white transition hover:bg-[#242424] sm:min-w-80">{t.addToCart}</button>
+	                  <a href={localizedHref("/contacto")} onClick={(event) => navigate(event, "/contacto")} className="inline-flex justify-center rounded-none bg-[#3f3f3f] px-10 py-4 font-serif text-xl text-white transition hover:bg-[#242424] sm:min-w-80">{t.productRequestCta}</a>
 	                  <a href={localizedHref("/tienda")} onClick={(event) => navigate(event, "/tienda")} className="inline-flex justify-center rounded-none border border-[#14261c]/20 px-7 py-4 font-semibold text-[#14261c]">{t.backToShop}</a>
                 </div>
               </div>
@@ -1744,11 +1750,12 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                   <div className="p-7">
                     <p className="text-xl font-semibold text-[#14261c]">{name}</p>
                     <p className="mt-2 text-sm text-[#9b7a2f]">{meta}</p>
+                    <p className="mt-4 min-h-20 text-sm leading-6 text-[#607064]">{consultationDescriptions[language][slug]}</p>
                     <div className="mt-6 flex items-end justify-between gap-4 border-t border-[#e5dfd1] pt-6">
                       <p className="text-[#607064]">{duration}</p>
-                      <p className="text-3xl font-semibold text-[#14261c]">{price}</p>
+                      <p className="text-2xl font-semibold text-[#14261c]">{price} MXN</p>
                     </div>
-	                    <a href={localizedHref(`/booking-calendar/${slug}`)} onClick={(event) => navigate(event, `/booking-calendar/${slug}`)} className="mt-6 inline-flex w-full justify-center rounded-full bg-[#1f3b2c] px-5 py-3 font-semibold text-white">{t.bookNow}</a>
+	                    <a href={localizedHref("/contacto")} onClick={(event) => navigate(event, "/contacto")} className="mt-6 inline-flex w-full justify-center rounded-full bg-[#1f3b2c] px-5 py-3 font-semibold text-white">{t.bookNow}</a>
                   </div>
                 </div>
               ))}
@@ -1761,48 +1768,17 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
         <section className="px-5 py-32 lg:px-8">
           <div className="mx-auto max-w-7xl rounded-[2.7rem] bg-white p-8 shadow-xl ring-1 ring-black/5 lg:p-12">
             <a href={localizedHref("/consultas")} onClick={(event) => navigate(event, "/consultas")} className="inline-flex items-center gap-2 text-lg text-[#607064]">{t.back}</a>
-            <div className="mt-16">
-	              <h1 className="font-serif text-5xl text-[#3f3f3f]">{t.scheduleService}</h1>
-	              <p className="mt-6 text-xl leading-8 text-[#607064]">{t.scheduleText}</p>
+            <div className="mt-12 max-w-3xl">
+              <h1 className="text-4xl font-semibold text-[#14261c] md:text-5xl">{selectedConsultation[0]}</h1>
+              <p className="mt-5 text-lg leading-8 text-[#607064]">{consultationDescriptions[language][selectedConsultation[5]]}</p>
             </div>
-            <div className="mt-20 grid gap-12 lg:grid-cols-[1fr_0.55fr]">
-              <div>
-                <div className="flex flex-wrap items-end justify-between gap-4 border-b border-[#d6d2ca] pb-4">
-	                  <h2 className="font-serif text-3xl text-[#3f3f3f]">{t.selectDateTime}</h2>
-	                  <p className="text-[#aaa39b]">{t.timezone}</p>
-                </div>
-                <div className="mt-8 flex items-center justify-center gap-14 text-2xl text-[#777]">
-                  <span>‹</span>
-                  <span>May - Jun 2026</span>
-                  <span>›</span>
-                </div>
-                <div className="mt-10 grid grid-cols-7 text-center text-[#c8c3bd]">
-	                  {t.weekdays.map((day, index) => (
-                    <div key={day} className="space-y-3">
-                      <p>{day}</p>
-                      <p className="text-2xl">{index === 0 ? "31" : index}</p>
-                    </div>
-                  ))}
-                </div>
-	                <p className="mt-28 text-center text-2xl text-[#8a8580]">{t.noAvailability}</p>
-                <div className="mt-12 flex justify-center">
-                  <button type="button" className="w-full bg-[#9e9e9e] px-6 py-5 font-serif text-xl text-white sm:w-auto sm:px-24 sm:text-2xl">{t.nextSession}</button>
-                </div>
-              </div>
-              <aside>
-	                <h2 className="border-b border-[#d6d2ca] pb-4 font-serif text-3xl text-[#3f3f3f]">{t.serviceDetails}</h2>
-                <div className="mt-8 space-y-5 text-xl text-[#607064]">
-                  <p>{selectedConsultation[0]}</p>
-                  <p>{selectedConsultation[2]}</p>
-                  <p>{selectedConsultation[3]}</p>
-                  <details className="border-t border-[#e2ddd4] pt-5">
-	                    <summary className="cursor-pointer">{t.moreDetails}</summary>
-	                    <p className="mt-4 text-base leading-7">{t.servicePlaceholder}</p>
-                  </details>
-                </div>
-	                <button type="button" className="mt-10 w-full bg-[#c7c7c7] px-8 py-5 font-serif text-2xl text-white">{t.next}</button>
-              </aside>
+            <div className="mt-10 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-2xl bg-[#fbf8ef] p-6"><p className="text-sm text-[#607064]">{language === "en" ? "Format" : "Modalidad"}</p><p className="mt-2 font-semibold text-[#14261c]">{selectedConsultation[1]}</p></div>
+              <div className="rounded-2xl bg-[#fbf8ef] p-6"><p className="text-sm text-[#607064]">{language === "en" ? "Duration" : "Duración"}</p><p className="mt-2 font-semibold text-[#14261c]">{selectedConsultation[2]}</p></div>
+              <div className="rounded-2xl bg-[#fbf8ef] p-6"><p className="text-sm text-[#607064]">{language === "en" ? "Published price" : "Precio publicado"}</p><p className="mt-2 font-semibold text-[#14261c]">{selectedConsultation[3]} MXN</p></div>
             </div>
+            <p className="mt-10 max-w-3xl leading-7 text-[#607064]">{t.bookingExplain}</p>
+            <a href={localizedHref("/contacto")} onClick={(event) => navigate(event, "/contacto")} className="mt-6 inline-flex rounded-full bg-[#1f3b2c] px-7 py-4 font-semibold text-white">{t.bookNow}</a>
           </div>
         </section>
         )}
