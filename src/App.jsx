@@ -1,3 +1,5 @@
+import MedicalProgram, { ProgramOverview } from "./components/ProgramEditorial.jsx";
+
 const copy = {
   es: {
     nav: { home: "Inicio", program: "Programa Integral", history: "Historia", shop: "Tienda", consultations: "Consultas", news: "Noticias", contact: "Contacto" },
@@ -1126,51 +1128,13 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
         </section>
         )}
 
-        {page === "programa" && (
-        <section id="programa-integral" className="px-5 py-32 lg:px-8">
-          <div className="mx-auto max-w-7xl">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.therapiesEyebrow}</p>
-              <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-5xl">{t.programHomeTitle}</h1>
-              <p className="mt-5 text-lg leading-8 text-[#607064]">{t.programHomeText}</p>
-            </div>
+        {page === "programa" && <ProgramOverview language={language} programs={localizedPrograms} localizedHref={localizedHref} />}
 
-            <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {localizedPrograms.map((program) => (
-                <a
-                  key={program.slug}
-                  href={localizedHref(`/programa-integral/${program.slug}`)}
-                  onClick={(event) => navigate(event, `/programa-integral/${program.slug}`)}
-                  className="group overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#1f3b2c]/10"
-                >
-                  <img src={program.image} alt={program.title} className="aspect-[4/3] w-full object-cover" />
-                  <div className="p-7">
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9b7a2f]">{program.eyebrow}</p>
-                    <h2 className="mt-3 text-xl font-semibold text-[#14261c]">{program.title}</h2>
-                    <p className="mt-3 line-clamp-4 leading-7 text-[#607064]">{program.intro}</p>
-	                    <p className="mt-6 inline-flex text-sm font-semibold text-[#9b7a2f]">{t.details}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
-            <div className="mt-14 rounded-[2.7rem] bg-white p-8 shadow-sm ring-1 ring-black/5 lg:p-12">
-              <h2 className="text-3xl font-semibold tracking-[-0.03em] text-[#14261c] md:text-4xl">{t.programDecisionTitle}</h2>
-              <p className="mt-4 max-w-3xl leading-8 text-[#607064]">{t.programDecisionIntro}</p>
-              <div className="mt-8 grid gap-5 md:grid-cols-2">
-                {t.programSummary.items.map(([title, text]) => (
-                  <div key={title} className="rounded-2xl bg-[#fbf8ef] p-6 ring-1 ring-[#efe6cd]">
-                    <h3 className="text-xl font-semibold text-[#14261c]">{title}</h3>
-                    <p className="mt-3 leading-7 text-[#607064]">{text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
+        {page === "programaDetalle" && ["anti-aging", "terapias-biologicas"].includes(selectedProgram?.slug) && (
+          <MedicalProgram slug={selectedProgram.slug} language={language} localizedHref={localizedHref} />
         )}
 
-        {page === "programaDetalle" && selectedProgram && (
+        {page === "programaDetalle" && selectedProgram && !["anti-aging", "terapias-biologicas"].includes(selectedProgram.slug) && (
         <section className="px-5 py-32 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="mb-8 text-sm text-[#607064]">
@@ -1287,53 +1251,6 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                   </div>
                   <img src={selectedProgram.image} alt={language === "en" ? "Healthy foods from the Golden Health menu" : "Alimentos saludables del menú Golden Health"} className="mx-auto aspect-[2/3] max-h-[760px] w-full max-w-md rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
                 </div>
-                <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
-                  <a href={localizedHref("/programa-integral")} onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
-                    {t.programBack}
-                  </a>
-                </div>
-              </article>
-            ) : selectedProgram.slug === "anti-aging" ? (
-              <article className="overflow-hidden rounded-[2.7rem] bg-white shadow-xl ring-1 ring-black/5">
-                <div className="p-8 text-center lg:p-12">
-                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#9b7a2f]">{t.nav.program}</p>
-                  <h1 className="mt-4 text-5xl font-semibold tracking-[-0.04em] text-[#14261c] md:text-7xl">{selectedProgram.title}</h1>
-                  <h2 className="mt-8 text-3xl font-semibold tracking-[-0.03em] text-[#14261c]">{t.whatItIncludes}</h2>
-                  <p className="mx-auto mt-5 max-w-4xl text-xl leading-9 text-[#607064]">{selectedProgram.intro}</p>
-                  <p className="mx-auto mt-4 max-w-4xl text-xl leading-9 text-[#607064]">{selectedProgram.introExtra}</p>
-                </div>
-
-                <div className="grid gap-10 px-8 pb-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-12">
-                  <img src={selectedProgram.image} alt={language === "en" ? "Healthy Ageing regenerative medicine program" : "Programa Healthy Ageing de medicina regenerativa"} className="h-full min-h-[420px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
-                  <div className="flex flex-col justify-center">
-                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">Healthy Ageing</h2>
-                    <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.sections[0].text}</p>
-                  </div>
-                </div>
-
-                <div className="grid gap-10 border-t border-[#efe6cd] bg-[#fbf8ef] p-8 lg:grid-cols-[1fr_0.95fr] lg:p-12">
-                  <div className="flex flex-col justify-center">
-                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{selectedProgram.diagnosticTitle}</h2>
-                    <p className="mt-6 text-xl leading-9 text-[#607064]">{selectedProgram.diagnosticText}</p>
-                    <a href={localizedHref(selectedProgram.reserveUrl)} onClick={(event) => navigate(event, selectedProgram.reserveUrl)} className="mt-8 inline-flex w-fit rounded-none bg-[#3f3f3f] px-8 py-4 font-serif text-xl text-white transition hover:bg-[#242424]">
-                      {t.bookButton}
-                    </a>
-                  </div>
-                  <img src={selectedProgram.secondaryImage} alt={language === "en" ? "Medical assessment for regenerative and anti-aging treatment" : "Valoración médica para tratamiento regenerativo y anti-envejecimiento"} className="h-full min-h-[460px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
-                </div>
-
-                <div className="grid gap-10 border-t border-[#efe6cd] p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-12">
-                  <img src={selectedProgram.tertiaryImage} alt={language === "en" ? "Cellular regeneration and healthy longevity treatment" : "Tratamiento de regeneración celular y longevidad saludable"} className="h-full min-h-[460px] w-full rounded-[1.5rem] object-cover shadow-lg ring-1 ring-black/5" />
-                  <div className="flex flex-col justify-center">
-                    <h2 className="text-4xl font-semibold tracking-[-0.03em] text-[#14261c]">{selectedProgram.regenerationTitle}</h2>
-                    <div className="mt-6 space-y-5 text-xl leading-9 text-[#607064]">
-                      {selectedProgram.regenerationText.map((paragraph) => (
-                        <p key={paragraph}>{paragraph}</p>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
                 <div className="border-t border-[#efe6cd] px-8 py-7 lg:px-12">
                   <a href={localizedHref("/programa-integral")} onClick={(event) => navigate(event, "/programa-integral")} className="inline-flex rounded-full border border-[#14261c]/20 px-6 py-3 font-semibold text-[#14261c] hover:bg-[#f4ead0]">
                     {t.programBack}

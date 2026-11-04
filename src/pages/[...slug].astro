@@ -4,6 +4,7 @@ import GoldenHealth from "../App.jsx";
 import OliviaChat from "../OliviaChat.jsx";
 import SeoContent from "../components/SeoContent.astro";
 import { getSeoContent } from "../data/seo-content.js";
+import { editorialCopy } from "../data/program-editorial.js";
 
 const siteUrl = "https://www.goldenhealth.com.mx";
 
@@ -39,13 +40,13 @@ const programPages = {
   "anti-aging": {
     title: "Medicina Regenerativa y Anti Aging en CDMX | Golden Health",
     name: "Medicina Regenerativa",
-    description: "Conoce cómo solicitar una valoración inicial y qué datos pedir sobre composición, aplicación, riesgos y costo antes de iniciar un tratamiento.",
+    description: "Comprende longevidad, anti-aging y medicina regenerativa: evidencia, objetivos, seguimiento y un carnet de preguntas para preparar tu consulta en CDMX.",
     image: "/images/source/programa/anti-aging-captura.webp",
   },
   "terapias-biologicas": {
     title: "Terapias Biológicas en CDMX | Golden Health MX",
     name: "Terapias Biológicas",
-    description: "Información sobre preparados y vías de aplicación mencionadas por Golden Health. Solicita composición y precauciones antes de decidir.",
+    description: "Una guía para comprender preparados, vías de aplicación, evidencia y riesgos de las terapias biológicas. Prepara tus preguntas antes de decidir.",
     image: "/images/source/programa/terapias-biologicas.webp",
   },
   "hidratacion-funcional": {
@@ -202,11 +203,11 @@ const englishMetaByRoute = {
   },
   "/programa-integral/anti-aging": {
     title: "Regenerative Medicine and Anti-Aging in Mexico City | Golden Health",
-    description: "Learn how to request an initial assessment and what to ask about a treatment's composition, administration, risks, and cost.",
+    description: "Understand longevity, anti-aging, and regenerative medicine: evidence, goals, follow-up, and a question notebook for your consultation in Mexico City.",
   },
   "/programa-integral/terapias-biologicas": {
     title: "Biological Therapies in Mexico City | Golden Health MX",
-    description: "Read about the preparations and administration routes mentioned by Golden Health. Request composition and precautions before deciding.",
+    description: "A guide to biological therapy preparations, administration routes, evidence, and risks. Prepare your consultation questions before deciding.",
   },
   "/programa-integral/hidratacion-funcional": {
     title: "Functional Hydration | Golden Health MX",
@@ -283,7 +284,7 @@ const pageMeta = {
   },
   "/programa-integral": {
     title: "Programa Integral de Longevidad | Golden Health MX",
-    description: "Explora las áreas del Programa Integral y conoce qué información pedir sobre un servicio antes de iniciarlo.",
+    description: "Explora el Programa Integral: atención médica, alimentación, movimiento y bienestar. Encuentra tu punto de partida y prepara una consulta informada.",
     image: "/images/source/programa/anti-aging-captura.webp",
   },
   "/tienda": {
@@ -319,7 +320,7 @@ const enOverrides = {
   },
   "/programa-integral": {
     title: "Integral Longevity Program | Golden Health MX",
-    description: "Explore the areas of the Golden Health Integral Program and the details to request before starting a service.",
+    description: "Explore the Integral Program: medical care, food, movement, and wellbeing. Find your starting point and prepare for an informed consultation.",
   },
   "/tienda": {
     title: "Golden Health Shop | Treatments and Functional Protocols",
@@ -442,6 +443,7 @@ const alternateEn = new URL(`/en${routePath === "/" ? "" : englishRoutePath}`, s
 const isBookingPage = segments[0] === "booking-calendar";
 const robots = isBookingPage ? "noindex, follow" : "index, follow, max-image-preview:large";
 const seoContent = getSeoContent(routePath, isEnglish);
+const hasProgramEditorial = ["/programa-integral", "/programa-integral/anti-aging", "/programa-integral/terapias-biologicas"].includes(routePath);
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
@@ -541,10 +543,11 @@ const webPageJsonLd = {
   isPartOf: { "@id": `${siteUrl}/#website` },
   about: { "@id": `${siteUrl}/#clinic` },
 };
-const faqJsonLd = seoContent?.faqs?.length ? {
+const pageFaqs = (hasProgramEditorial && editorialCopy[isEnglish ? "en" : "es"].medical[slug]?.faqs) || seoContent?.faqs;
+const faqJsonLd = pageFaqs?.length ? {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: seoContent.faqs.map(([question, answer]) => ({
+  mainEntity: pageFaqs.map(([question, answer]) => ({
     "@type": "Question",
     name: question,
     acceptedAnswer: { "@type": "Answer", text: answer },
@@ -596,6 +599,7 @@ const jsonLd = [websiteJsonLd, organizationJsonLd, webPageJsonLd, breadcrumbJson
       <SeoContent routePath={routePath} isEnglish={isEnglish} />
     </GoldenHealth>
     <OliviaChat client:idle={{ timeout: 1500 }} />
+    {hasProgramEditorial && <script src="../scripts/program-notebook.js"></script>}
     <script>
       const menuToggle = document.querySelector("[data-gh-menu-toggle]");
       const mobileMenu = document.querySelector("[data-gh-mobile-menu]");
