@@ -1,5 +1,6 @@
 import MedicalProgram from "./components/ProgramEditorial.jsx";
 import "./components/HomeHero.css";
+import { footerSeoKeywords } from "./data/seo-keywords.js";
 
 const copy = {
   es: {
@@ -1882,7 +1883,8 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
         {children}
       </main>
 
-      <footer className="bg-[#f3f3f3] px-5 py-14 text-[#779087] lg:px-8">
+      <footer className="bg-[#f3f3f3] text-[#779087]">
+        <div className="px-5 py-14 lg:px-8">
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.75fr_1.25fr]">
           <div className="text-center md:text-left">
             <img src="/images/source/footer/logo.png" alt="Golden Health by Silvia del Moral" className="mx-auto h-auto w-52 md:mx-0" />
@@ -1922,6 +1924,12 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
               <img src="/images/source/footer/royal-prestige.webp" alt="Royal Prestige" className="max-h-24 w-auto object-contain" />
             </div>
           </div>
+        </div>
+        </div>
+        <div className="bg-black px-5 pt-8 pb-24 lg:px-8">
+          <p data-gh-footer-keywords className="mx-auto max-w-6xl text-center text-xs leading-7 text-[#999]">
+            {footerSeoKeywords[language].join(" · ")}
+          </p>
         </div>
       </footer>
 
