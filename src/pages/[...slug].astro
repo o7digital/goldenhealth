@@ -549,6 +549,7 @@ const jsonLd = [websiteJsonLd, organizationJsonLd, webPageJsonLd, breadcrumbJson
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {routePath === "/" && <link rel="preload" as="image" href="/images/golden-health/golden-health-salud-celular-web.webp" fetchpriority="high" />}
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Golden Health MX" />

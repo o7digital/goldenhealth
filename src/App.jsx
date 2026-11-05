@@ -345,10 +345,12 @@ const withLocale = (item, translations, language) => {
 };
 
 const sliderImages = [
-  { src: "/images/golden-health/consulta-medica.webp", alt: { es: "Consulta médica Golden Health", en: "Golden Health medical consultation" } },
-  { src: "/images/golden-health/terapia-iv.webp", alt: { es: "Terapia intravenosa Golden Health", en: "Golden Health IV therapy" } },
-  { src: "/images/golden-health/nutricion.webp", alt: { es: "Nutrición funcional Golden Health", en: "Golden Health functional nutrition" } },
-  { src: "/images/golden-health/comunidad.webp", alt: { es: "Comunidad Golden Health", en: "Golden Health community" } },
+  { src: "/images/golden-health/golden-health-salud-celular-web.webp", alt: { es: "Trabajo de biología celular con microscopio y cultivos en laboratorio", en: "Cell biology work with a microscope and laboratory cultures" } },
+  { src: "/images/golden-health/golden-health-nutricion-funcional-web.webp", alt: { es: "Preparación de una comida variada con vegetales y alimentos integrales", en: "Preparing a varied meal with vegetables and whole foods" } },
+  { src: "/images/golden-health/golden-health-longevidad-vitalidad-web.webp", alt: { es: "Pareja madura caminando al aire libre", en: "Mature couple walking outdoors" } },
+  { src: "/images/golden-health/golden-health-medicina-preventiva-web.webp", alt: { es: "Medición de la presión arterial durante una valoración preventiva", en: "Blood pressure measurement during a preventive assessment" } },
+  { src: "/images/golden-health/golden-health-preparacion-clinica-web.webp", alt: { es: "Preparación cuidadosa de frascos en un entorno clínico", en: "Careful preparation of vials in a clinical setting" } },
+  { src: "/images/golden-health/golden-health-movilidad-energia-web.webp", alt: { es: "Mujer madura realizando estiramientos al aire libre", en: "Mature woman stretching outdoors" } },
 ];
 
 
@@ -1061,7 +1063,12 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                 data-gh-slide={index}
                 src={slide.src}
                 alt={slide.alt[language]}
-                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+                width={2560}
+                height={1429}
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "low"}
+                decoding="async"
+                className={`absolute inset-0 h-full w-full object-cover object-[80%_center] transition-opacity duration-700 lg:object-center ${
                   activeSlide === index ? "opacity-100" : "opacity-0"
                 }`}
               />
