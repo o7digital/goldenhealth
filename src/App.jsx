@@ -1,4 +1,5 @@
 import MedicalProgram from "./components/ProgramEditorial.jsx";
+import "./components/HomeHero.css";
 
 const copy = {
   es: {
@@ -929,7 +930,7 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
   const switchLanguage = () => undefined;
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#f7f3ea] text-[#17231c] selection:bg-[#d3aa45]/30">
+    <div className="min-h-screen overflow-x-clip bg-[#f7f3ea] text-[#17231c] selection:bg-[#d3aa45]/30">
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/30 bg-[#f7f3ea]/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
           <div className="flex items-center gap-3">
@@ -1057,8 +1058,8 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
       <main>
         {page === "home" && (
           <>
-        <section data-gh-slider className="relative min-h-[90vh] overflow-hidden">
-          <div className="absolute inset-0">
+        <section data-gh-slider className="gh-home-hero relative min-h-[90vh] overflow-hidden">
+          <div className="gh-hero-media absolute inset-0">
             {sliderImages.map((slide, index) => (
               <img
                 key={slide.src}
@@ -1070,27 +1071,28 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                 loading={index === 0 ? "eager" : "lazy"}
                 fetchPriority={index === 0 ? "high" : "low"}
                 decoding="async"
-                className={`absolute inset-0 h-full w-full object-cover object-[80%_center] transition-opacity duration-700 lg:object-center ${
+                aria-hidden={activeSlide !== index}
+                className={`gh-hero-slide absolute inset-0 h-full w-full object-cover transition-opacity duration-700 lg:object-center ${
                   activeSlide === index ? "opacity-100" : "opacity-0"
                 }`}
               />
             ))}
           </div>
 
-          <div className="relative z-10 mx-auto flex min-h-[90vh] max-w-7xl items-center px-5 pt-28 lg:px-8">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center rounded-full border border-white/25 bg-white/15 px-4 py-2 text-sm font-medium text-white shadow-sm backdrop-blur">
+          <div className="gh-hero-content relative z-10 mx-auto flex min-h-[90vh] max-w-7xl items-center px-5 pt-28 lg:px-8">
+            <div className="gh-hero-copy max-w-3xl">
+              <div className="gh-hero-badge inline-flex items-center rounded-full border border-white/25 bg-white/15 px-4 py-2 text-sm font-medium text-white shadow-sm backdrop-blur">
                 <span className="mr-2 h-2 w-2 rounded-full bg-[#d3aa45]" />
                 {t.heroBadge}
               </div>
 
-              <h1 className="mt-8 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-white [text-shadow:0_2px_8px_rgb(0_0_0/0.65)] md:text-7xl">
+              <h1 className="gh-hero-title mt-8 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-white [text-shadow:0_2px_8px_rgb(0_0_0/0.65)] md:text-7xl">
                 {t.heroTitle}
               </h1>
 
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-white/82 [text-shadow:0_1px_4px_rgb(0_0_0/0.8)]">{t.heroText}</p>
+              <p className="gh-hero-summary mt-7 max-w-2xl text-lg leading-8 text-white/82 [text-shadow:0_1px_4px_rgb(0_0_0/0.8)]">{t.heroText}</p>
 
-              <div className="mt-7 flex flex-wrap gap-2">
+              <div className="gh-hero-keywords mt-7 flex flex-wrap gap-2">
                 {t.keywords.map((item) => (
                   <span key={item} className="rounded-full border border-white/20 bg-white/12 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur">
                     {item}
@@ -1098,7 +1100,7 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                 ))}
               </div>
 
-              <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+              <div className="gh-hero-actions mt-9 flex flex-col gap-4 sm:flex-row">
                 <a href={localizedHref("/contacto")} onClick={(event) => navigate(event, "/contacto")} className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d3aa45] px-7 py-4 font-semibold text-[#14261c] shadow-xl shadow-[#d3aa45]/25 transition hover:-translate-y-0.5 hover:bg-[#c99c32]">
                   {t.primaryCta}
                 </a>
@@ -1107,15 +1109,18 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                 </a>
               </div>
 
-              <div className="mt-10 flex gap-2">
+              <div className="gh-hero-controls" role="group" aria-label={language === "en" ? "Choose a photo" : "Elegir una foto"}>
                 {sliderImages.map((slide, index) => (
                   <button
                     key={slide.src}
                     type="button"
                     data-gh-slide-button={index}
                     aria-label={`${t.slideLabel} ${index + 1}`}
-                    className={`h-2 rounded-full transition-all ${activeSlide === index ? "w-12 bg-[#d3aa45]" : "w-6 bg-white/35"}`}
-                  />
+                    aria-pressed={activeSlide === index}
+                    className="gh-hero-control"
+                  >
+                    <span className="gh-hero-control-mark" aria-hidden="true" />
+                  </button>
                 ))}
               </div>
             </div>

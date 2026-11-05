@@ -591,6 +591,7 @@ const jsonLd = [websiteJsonLd, organizationJsonLd, webPageJsonLd, breadcrumbJson
     </GoldenHealth>
     <OliviaChat client:idle={{ timeout: 1500 }} />
     {hasProgramEditorial && <script src="../scripts/program-notebook.js"></script>}
+    {routePath === "/" && <script src="../scripts/home-slider.js"></script>}
     <script>
       const menuToggle = document.querySelector("[data-gh-menu-toggle]");
       const mobileMenu = document.querySelector("[data-gh-mobile-menu]");
@@ -615,31 +616,6 @@ const jsonLd = [websiteJsonLd, organizationJsonLd, webPageJsonLd, breadcrumbJson
         if (event.key === "Escape") setMenuOpen(false);
       });
 
-      document.querySelectorAll("[data-gh-slider]").forEach((slider) => {
-        const slides = Array.from(slider.querySelectorAll("[data-gh-slide]"));
-        const buttons = Array.from(slider.querySelectorAll("[data-gh-slide-button]"));
-        let activeIndex = 0;
-
-        const showSlide = (index) => {
-          activeIndex = index;
-          slides.forEach((slide, slideIndex) => {
-            slide.classList.toggle("opacity-100", slideIndex === activeIndex);
-            slide.classList.toggle("opacity-0", slideIndex !== activeIndex);
-          });
-          buttons.forEach((button, buttonIndex) => {
-            const active = buttonIndex === activeIndex;
-            button.classList.toggle("w-12", active);
-            button.classList.toggle("bg-[#d3aa45]", active);
-            button.classList.toggle("w-6", !active);
-            button.classList.toggle("bg-white/35", !active);
-          });
-        };
-
-        buttons.forEach((button, index) => button.addEventListener("click", () => showSlide(index)));
-        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && slides.length > 1) {
-          window.setInterval(() => showSlide((activeIndex + 1) % slides.length), 4000);
-        }
-      });
     </script>
   </body>
 </html>
