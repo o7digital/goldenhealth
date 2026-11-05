@@ -1073,8 +1073,6 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                 }`}
               />
             ))}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#102017]/90 via-[#102017]/55 to-[#102017]/20" />
-            <div className="absolute inset-0 bg-[#102017]/10" />
           </div>
 
           <div className="relative z-10 mx-auto flex min-h-[90vh] max-w-7xl items-center px-5 pt-28 lg:px-8">
@@ -1084,11 +1082,11 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
                 {t.heroBadge}
               </div>
 
-              <h1 className="mt-8 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-white md:text-7xl">
+              <h1 className="mt-8 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.055em] text-white [text-shadow:0_2px_8px_rgb(0_0_0/0.65)] md:text-7xl">
                 {t.heroTitle}
               </h1>
 
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-white/82">{t.heroText}</p>
+              <p className="mt-7 max-w-2xl text-lg leading-8 text-white/82 [text-shadow:0_1px_4px_rgb(0_0_0/0.8)]">{t.heroText}</p>
 
               <div className="mt-7 flex flex-wrap gap-2">
                 {t.keywords.map((item) => (
