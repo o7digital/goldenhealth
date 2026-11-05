@@ -1927,7 +1927,7 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
         </div>
         </div>
         <div className="bg-black px-5 pt-8 pb-24 lg:px-8">
-          <p data-gh-footer-keywords className="mx-auto max-w-6xl text-center text-xs leading-7 text-[#999]">
+          <p data-gh-footer-keywords className="w-full text-center text-xs leading-7 text-[#999]">
             {footerSeoKeywords[language].join(" · ")}
           </p>
         </div>
