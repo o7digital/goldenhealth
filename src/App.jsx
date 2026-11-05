@@ -1,3 +1,5 @@
+import MedicalProgram from "./components/ProgramEditorial.jsx";
+
 const copy = {
   es: {
     nav: { home: "Inicio", program: "Programa Integral", history: "Historia", shop: "Tienda", consultations: "Consultas", news: "Noticias", contact: "Contacto" },
@@ -1272,7 +1274,11 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
 
         )}
 
-        {page === "programaDetalle" && selectedProgram && (
+        {page === "programaDetalle" && ["anti-aging", "terapias-biologicas"].includes(selectedProgram?.slug) && (
+          <MedicalProgram slug={selectedProgram.slug} language={language} localizedHref={localizedHref} />
+        )}
+
+        {page === "programaDetalle" && selectedProgram && !["anti-aging", "terapias-biologicas"].includes(selectedProgram.slug) && (
         <section className="px-5 py-32 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="mb-8 text-sm text-[#607064]">

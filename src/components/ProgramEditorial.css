@@ -1,0 +1,213 @@
+.gh-program {
+  --ghp-ink: #18382a;
+  --ghp-muted: #59675e;
+  --ghp-gold: #896a2b;
+  --ghp-line: #dedfd2;
+  --ghp-paper: #fffdf7;
+  padding: 140px 28px 72px;
+  color: var(--ghp-ink);
+  background: #f7f3ea;
+}
+.gh-program .ghp-shell { max-width: 1200px; margin: 0 auto; }
+.gh-program h1, .gh-program h2, .gh-program h3, .gh-program h4, .gh-program p, .gh-program figure { margin: 0; }
+.gh-program h1, .gh-program h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; text-wrap: balance; }
+.gh-program h1 { font-size: clamp(44px, 4.4vw, 65px); line-height: 1.08; letter-spacing: -.045em; }
+.gh-program h2 { font-size: clamp(32px, 3.25vw, 46px); line-height: 1.16; letter-spacing: -.03em; }
+.gh-program h3 { font-size: 21px; font-weight: 550; line-height: 1.35; letter-spacing: -.025em; }
+.gh-program p { color: var(--ghp-muted); font-size: 16px; line-height: 1.85; }
+.gh-program a { text-underline-offset: 4px; }
+.gh-program a:focus-visible, .gh-program button:focus-visible, .gh-program summary:focus-visible { outline: 3px solid #9d7e37; outline-offset: 5px; }
+.gh-program .ghp-eyebrow { color: var(--ghp-gold); font-size: 10px; line-height: 1.6; font-weight: 650; letter-spacing: .18em; text-transform: uppercase; }
+.gh-program .ghp-lead { font-size: 17px; line-height: 1.9; }
+.gh-program .ghp-source { display: inline-block; color: var(--ghp-gold); font-size: 11px; font-weight: 650; text-decoration: underline; white-space: nowrap; }
+.gh-program .ghp-source:hover { color: var(--ghp-ink); }
+.gh-program .ghp-button { display: inline-flex; justify-content: center; align-items: center; gap: 22px; min-height: 50px; padding: 14px 22px; border: 1px solid var(--ghp-ink); background: var(--ghp-ink); color: white; font-size: 13px; font-weight: 550; line-height: 1.5; text-decoration: none; cursor: pointer; transition: background 160ms; }
+.gh-program .ghp-button:hover { background: #2e503c; }
+.gh-program .ghp-button > span { font-size: 20px; }
+.gh-program .ghp-text-button { display: inline-flex; min-height: 44px; align-items: center; gap: 10px; background: none; border: 0; color: var(--ghp-ink); font-size: 13px; font-weight: 600; text-decoration: underline; cursor: pointer; }
+.gh-program .ghp-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; }
+.gh-program .ghp-hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 70px; align-items: center; }
+.gh-program .ghp-hero-copy { padding: 20px 0; }
+.gh-program .ghp-hero-copy h1 { margin: 22px 0; }
+.gh-program .ghp-hero-copy .ghp-actions { margin-top: 32px; }
+.gh-program .ghp-hero-image { position: relative; height: 540px; overflow: hidden; border-radius: 2px 100px 2px 2px; background: #d4d9cb; }
+.gh-program .ghp-hero-image::after { content: ""; position: absolute; inset: 40% 0 0; background: linear-gradient(transparent, #10271de6); pointer-events: none; }
+.gh-program .ghp-hero-image img { width: 100%; height: 100%; object-fit: cover; }
+.gh-program .ghp-hero-image figcaption { position: absolute; z-index: 1; left: 30px; right: 30px; bottom: 28px; color: #fffdf7; font-family: Georgia, serif; font-size: 26px; line-height: 1.35; text-wrap: balance; }
+.gh-program .ghp-hero-note { display: flex; align-items: center; gap: 12px; margin-top: 32px; font-size: 12px; }
+.gh-program .ghp-hero-note > span { font-size: 22px; color: var(--ghp-gold); }
+.gh-program .ghp-breadcrumb { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; font-size: 11px; color: var(--ghp-muted); }
+.gh-program .ghp-breadcrumb a { text-decoration: underline; }
+.gh-program .ghp-meta { display: flex; flex-wrap: wrap; gap: 12px; padding: 24px 0 15px; color: var(--ghp-muted); font-size: 11px; }
+.gh-program .ghp-meta span + span::before { content: "·"; margin-right: 12px; }
+.gh-program .ghp-toc { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px 26px; padding: 24px 0; margin-top: 48px; border-block: 1px solid var(--ghp-line); }
+.gh-program .ghp-toc a { display: inline-flex; align-items: center; gap: 10px; padding-block: 8px; color: var(--ghp-ink); font-size: 12px; text-decoration: none; }
+.gh-program .ghp-toc a:hover { text-decoration: underline; }
+.gh-program .ghp-toc span { color: var(--ghp-gold); font-size: 10px; }
+.gh-program .ghp-section { margin-top: 96px; scroll-margin-top: 110px; }
+.gh-program .ghp-section-heading { display: grid; grid-template-columns: 65px 1fr; gap: 20px; max-width: 900px; margin-bottom: 42px; }
+.gh-program .ghp-section-heading:not(:has(.ghp-number)) { display: block; }
+.gh-program .ghp-number { color: var(--ghp-gold); font-family: Georgia, serif; font-size: 38px; line-height: 1.2; }
+.gh-program .ghp-section-heading .ghp-eyebrow { margin-bottom: 14px; }
+.gh-program .ghp-section-heading .ghp-lead { max-width: 730px; margin-top: 18px; font-size: 16px; }
+.gh-program .ghp-definition-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-block: 1px solid var(--ghp-line); }
+.gh-program .ghp-definition { padding: 35px 30px; }
+.gh-program .ghp-definition + .ghp-definition { border-left: 1px solid var(--ghp-line); }
+.gh-program .ghp-small-number { color: var(--ghp-gold); font-size: 11px; }
+.gh-program .ghp-definition h3 { margin-top: 24px; }
+.gh-program .ghp-definition p { margin: 14px 0; font-size: 15px; }
+.gh-program .ghp-takeaway { display: flex; align-items: center; gap: 30px; background: #e9ecdf; margin-top: 42px; padding: 26px 40px; }
+.gh-program .ghp-takeaway > span { color: var(--ghp-gold); font-size: 36px; }
+.gh-program .ghp-takeaway p { color: var(--ghp-ink); font-family: Georgia, serif; font-size: 26px; line-height: 1.4; }
+.gh-program .ghp-assessment { display: grid; grid-template-columns: 1fr 1fr; gap: 0 50px; }
+.gh-program .ghp-assessment > div { display: flex; align-items: flex-start; gap: 22px; padding: 28px 0; border-top: 1px solid var(--ghp-line); }
+.gh-program .ghp-assessment > div > span { color: var(--ghp-gold); padding-top: 5px; font-size: 11px; }
+.gh-program .ghp-assessment p { margin-top: 10px; font-size: 15px; }
+.gh-program .ghp-example { padding: 30px 36px; margin-top: 30px; border-left: 3px solid #a78c4e; background: var(--ghp-paper); }
+.gh-program .ghp-example-change { display: grid; grid-template-columns: 1fr 30px 1.3fr; align-items: center; gap: 26px; margin: 24px 0; }
+.gh-program .ghp-example-change p { font-family: Georgia, serif; font-size: 23px; line-height: 1.4; }
+.gh-program .ghp-example-change p:last-child { color: var(--ghp-ink); }
+.gh-program .ghp-example > p:last-child { font-size: 14px; }
+.gh-program .ghp-evidence { padding: 46px; background: var(--ghp-ink); color: var(--ghp-paper); }
+.gh-program .ghp-evidence .ghp-number { color: #dbc083; }
+.gh-program .ghp-evidence p { color: #d7ded4; }
+.gh-program .ghp-evidence-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px; }
+.gh-program .ghp-evidence-grid > div { border-top: 1px solid #ffffff35; padding-top: 25px; }
+.gh-program .ghp-evidence-dot { display: inline-grid; place-items: center; width: 32px; height: 32px; margin-bottom: 20px; border: 1px solid #dbc08366; border-radius: 50%; color: #dbc083; font-size: 10px; }
+.gh-program .ghp-evidence-grid h3 { font-size: 19px; }
+.gh-program .ghp-evidence-grid p { margin: 14px 0; font-size: 14px; }
+.gh-program .ghp-evidence .ghp-source { color: #dbc083; }
+.gh-program .ghp-follow { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+.gh-program .ghp-follow ol { list-style: none; padding: 0; margin: 0; border-left: 1px solid var(--ghp-line); }
+.gh-program .ghp-follow li { position: relative; padding: 0 0 30px 40px; }
+.gh-program .ghp-follow li > span { position: absolute; left: -13px; top: 1px; background: #f7f3ea; padding: 4px; color: var(--ghp-gold); font-size: 11px; }
+.gh-program .ghp-follow li:last-child { padding-bottom: 0; }
+.gh-program .ghp-follow li p { margin-top: 8px; font-size: 15px; }
+.gh-program .ghp-faqs { display: grid; grid-template-columns: .7fr 1.3fr; gap: 50px; }
+.gh-program .ghp-faqs .ghp-section-heading { grid-template-columns: 42px 1fr; gap: 16px; }
+.gh-program .ghp-faq { border-bottom: 1px solid var(--ghp-line); }
+.gh-program .ghp-faq:first-child { border-top: 1px solid var(--ghp-line); }
+.gh-program .ghp-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 23px; list-style: none; font-size: 16px; font-weight: 550; cursor: pointer; }
+.gh-program summary::-webkit-details-marker { display: none; }
+.gh-program .ghp-plus { flex-shrink: 0; font-size: 24px; font-weight: 400; transition: transform 150ms; color: var(--ghp-gold); }
+.gh-program details[open] > summary .ghp-plus { transform: rotate(45deg); }
+.gh-program .ghp-faq > p { font-size: 15px; padding-bottom: 24px; }
+.gh-program .ghp-notebook { display: grid; grid-template-columns: .85fr 1.15fr; gap: 60px; padding: 48px; border: 1px solid #d6d1bd; background: var(--ghp-paper); }
+.gh-program .ghp-notebook-mark { display: inline-flex; flex-direction: column; gap: 12px; padding: 18px; margin-bottom: 32px; border: 1px solid #b1a47f; font-family: Georgia, serif; font-size: 33px; letter-spacing: -.08em; }
+.gh-program .ghp-notebook-mark span { font-family: sans-serif; letter-spacing: .1em; font-size: 8px; }
+.gh-program .ghp-notebook h2 { margin-top: 18px; font-size: 36px; }
+.gh-program .ghp-notebook-intro > p:not(.ghp-eyebrow) { margin-top: 22px; font-size: 15px; }
+.gh-program .ghp-notebook-intro .ghp-private { padding-top: 18px; border-top: 1px solid var(--ghp-line); font-size: 11px !important; }
+.gh-program gh-consultation-notebook { display: block; }
+.gh-program fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+.gh-program .ghp-question { display: grid; grid-template-columns: 18px 20px 1fr; gap: 12px; align-items: start; padding: 18px 0; border-bottom: 1px solid var(--ghp-line); font-size: 14px; line-height: 1.65; cursor: pointer; }
+.gh-program .ghp-question input { width: 17px; height: 17px; margin: 4px 0 0; accent-color: var(--ghp-ink); cursor: pointer; }
+.gh-program .ghp-question input:focus-visible { outline: 2px solid var(--ghp-gold); outline-offset: 3px; }
+.gh-program .ghp-question-number { color: var(--ghp-gold); font-size: 10px; padding-top: 3px; }
+.gh-program .ghp-count { margin: 22px 0 14px; font-size: 11px; }
+.gh-program .ghp-notebook-actions[hidden] { display: none; }
+.gh-program .ghp-notebook-actions button:disabled { opacity: .45; cursor: not-allowed; }
+.gh-program .ghp-status { min-height: 26px; margin-top: 8px; font-size: 11px; }
+.gh-program .ghp-sources { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; margin-top: 50px; padding-top: 30px; border-top: 1px solid var(--ghp-line); }
+.gh-program .ghp-sources > div > p:last-child { margin-top: 10px; font-size: 11px; }
+.gh-program .ghp-sources ul { list-style: none; padding: 0; margin: 0; }
+.gh-program .ghp-sources li + li { margin-top: 10px; }
+.gh-program .ghp-sources li a { color: var(--ghp-muted); font-size: 11px; text-decoration: underline; }
+.gh-program .ghp-sources li a > span:first-child { margin-right: 12px; color: var(--ghp-ink); font-weight: 600; }
+.gh-program .ghp-related { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 30px 0; margin-top: 55px; border-block: 1px solid var(--ghp-line); text-decoration: none; }
+.gh-program .ghp-related h3 { margin-top: 10px; font-family: Georgia, serif; font-size: 26px; font-weight: 400; }
+.gh-program .ghp-related > span { color: var(--ghp-gold); font-size: 32px; }
+.gh-program .ghp-consultation { display: flex; align-items: center; justify-content: space-between; gap: 50px; margin-top: 76px; }
+.gh-program .ghp-consultation > div { max-width: 700px; }
+.gh-program .ghp-consultation h2 { font-size: 34px; margin-top: 12px; }
+.gh-program .ghp-consultation p:last-child { margin-top: 16px; font-size: 14px; }
+.gh-program .ghp-consultation .ghp-button { flex-shrink: 0; }
+.gh-program .ghp-educational { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--ghp-line); font-size: 11px; }
+.gh-program .ghp-knowledge-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.gh-program .ghp-knowledge-grid > div { padding-top: 26px; border-top: 1px solid var(--ghp-line); }
+.gh-program .ghp-knowledge-grid .ghp-knowledge-value { color: var(--ghp-gold); font-family: Georgia, serif; font-size: clamp(30px, 3.2vw, 44px); line-height: 1.2; margin-bottom: 22px; }
+.gh-program .ghp-knowledge-grid h3 { font-size: 17px; }
+.gh-program .ghp-knowledge-grid p:not(.ghp-knowledge-value) { margin: 12px 0; font-size: 14px; }
+.gh-program .ghp-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.gh-program .ghp-goals { border-top: 1px solid var(--ghp-line); }
+.gh-program .ghp-goal { border-bottom: 1px solid var(--ghp-line); }
+.gh-program .ghp-goal summary { display: flex; align-items: center; gap: 25px; padding: 26px 10px; list-style: none; cursor: pointer; }
+.gh-program .ghp-goal-index { color: var(--ghp-gold); font-size: 11px; }
+.gh-program .ghp-goal h3 { flex: 1; font-family: Georgia, serif; font-size: 28px; font-weight: 400; }
+.gh-program .ghp-goal-content { padding: 0 55px 25px; max-width: 860px; }
+.gh-program .ghp-goal-content .ghp-text-button { margin-top: 12px; }
+.gh-program .ghp-area-group { padding-top: 35px; margin-top: 36px; border-top: 1px solid var(--ghp-line); }
+.gh-program .ghp-group-heading { display: flex; align-items: flex-start; gap: 22px; margin-bottom: 25px; }
+.gh-program .ghp-group-index { display: grid; place-items: center; width: 35px; height: 35px; border-radius: 50%; flex-shrink: 0; border: 1px solid #b1a47f; color: var(--ghp-gold); font-size: 11px; }
+.gh-program .ghp-group-heading h3 { font-size: 23px; }
+.gh-program .ghp-group-heading p { max-width: 750px; margin-top: 8px; font-size: 14px; }
+.gh-program .ghp-program-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.gh-program .ghp-program-grid-medical { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gh-program .ghp-program-card { display: flex; flex-direction: column; text-decoration: none; background: var(--ghp-paper); border: 1px solid #e7e3d6; }
+.gh-program .ghp-card-image { overflow: hidden; height: 190px; }
+.gh-program .ghp-program-grid-medical .ghp-card-image { height: 250px; }
+.gh-program .ghp-card-image img { height: 100%; width: 100%; object-fit: cover; transition: transform 300ms; }
+.gh-program .ghp-program-card:hover img { transform: scale(1.035); }
+.gh-program .ghp-card-copy { flex: 1; display: flex; flex-direction: column; padding: 26px; }
+.gh-program .ghp-card-copy h4 { font-family: Georgia, serif; font-size: 25px; line-height: 1.25; font-weight: 400; text-wrap: balance; }
+.gh-program .ghp-card-copy p { margin: 15px 0 24px; font-size: 14px; }
+.gh-program .ghp-card-link { display: flex; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 18px; border-top: 1px solid var(--ghp-line); font-size: 12px; color: var(--ghp-gold); }
+.gh-program .ghp-route ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; padding: 0; list-style: none; }
+.gh-program .ghp-route li { padding-top: 24px; border-top: 1px solid var(--ghp-line); }
+.gh-program .ghp-route li > span { color: var(--ghp-gold); font-size: 11px; }
+.gh-program .ghp-route h3 { margin-top: 20px; font-size: 19px; }
+.gh-program .ghp-route li p { margin-top: 12px; font-size: 14px; }
+@media (max-width: 1000px) {
+  .gh-program .ghp-hero { gap: 36px; }
+  .gh-program .ghp-hero-image { height: 500px; }
+  .gh-program .ghp-notebook { padding: 30px; gap: 35px; }
+  .gh-program .ghp-program-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gh-program .ghp-follow { gap: 40px; }
+  .gh-program .ghp-consultation { align-items: flex-start; flex-direction: column; gap: 25px; }
+}
+@media (max-width: 767px) {
+  .gh-program { padding: 110px 20px 48px; }
+  .gh-program h1 { font-size: clamp(38px, 9.5vw, 58px) !important; letter-spacing: -.04em !important; line-height: 1.1 !important; }
+  .gh-program h2 { font-size: 32px !important; letter-spacing: -.025em !important; line-height: 1.18 !important; }
+  .gh-program .ghp-hero { grid-template-columns: 1fr; gap: 25px; }
+  .gh-program .ghp-hero-copy { padding: 0; }
+  .gh-program .ghp-lead { font-size: 16px; }
+  .gh-program .ghp-hero-image { height: 350px; border-top-right-radius: 75px; }
+  .gh-program .ghp-medical .ghp-hero-image { height: 360px; }
+  .gh-program .ghp-hero-image figcaption { left: 24px; bottom: 24px; font-size: 24px; }
+  .gh-program .ghp-section { margin-top: 65px; }
+  .gh-program .ghp-section-heading { grid-template-columns: 35px 1fr; gap: 12px; margin-bottom: 28px; }
+  .gh-program .ghp-number { font-size: 28px; }
+  .gh-program .ghp-toc { justify-content: flex-start; gap: 5px 22px; margin-top: 30px; padding-block: 16px; }
+  .gh-program .ghp-toc a { font-size: 11px; }
+  .gh-program .ghp-definition-grid, .gh-program .ghp-evidence-grid, .gh-program .ghp-follow, .gh-program .ghp-faqs, .gh-program .ghp-notebook, .gh-program .ghp-sources { grid-template-columns: 1fr; }
+  .gh-program .ghp-definition { padding: 25px 0; }
+  .gh-program .ghp-definition + .ghp-definition { border-left: 0; border-top: 1px solid var(--ghp-line); }
+  .gh-program .ghp-definition h3 { margin-top: 10px; }
+  .gh-program .ghp-takeaway { padding: 24px; gap: 18px; }
+  .gh-program .ghp-takeaway p { font-size: 22px; }
+  .gh-program .ghp-assessment { grid-template-columns: 1fr; }
+  .gh-program .ghp-example { padding: 24px; }
+  .gh-program .ghp-example-change { grid-template-columns: 1fr; gap: 15px; }
+  .gh-program .ghp-example-change > span { transform: rotate(90deg); justify-self: start; }
+  .gh-program .ghp-example-change p { font-size: 21px; }
+  .gh-program .ghp-evidence { padding: 30px 24px; }
+  .gh-program .ghp-evidence .ghp-section-heading { display: block; }
+  .gh-program .ghp-evidence .ghp-number { display: inline-block; margin-bottom: 12px; }
+  .gh-program .ghp-evidence-grid { gap: 30px; }
+  .gh-program .ghp-follow, .gh-program .ghp-faqs { gap: 10px; }
+  .gh-program .ghp-notebook { padding: 26px 22px; gap: 18px; }
+  .gh-program .ghp-notebook-mark { margin-bottom: 25px; }
+  .gh-program .ghp-question { gap: 9px; font-size: 13px; }
+  .gh-program .ghp-sources { gap: 20px; }
+  .gh-program .ghp-program-grid, .gh-program .ghp-program-grid-medical { grid-template-columns: 1fr; }
+  .gh-program .ghp-knowledge-grid { grid-template-columns: 1fr; }
+  .gh-program .ghp-program-grid-medical .ghp-card-image { height: 220px; }
+  .gh-program .ghp-route ol { grid-template-columns: 1fr 1fr; gap: 26px; }
+  .gh-program .ghp-goal h3 { font-size: 23px; }
+  .gh-program .ghp-goal summary { gap: 16px; padding: 24px 0; }
+  .gh-program .ghp-goal-content { padding: 0 0 25px 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gh-program .ghp-card-image img, .gh-program .ghp-plus, .gh-program .ghp-button { transition: none; }
+}

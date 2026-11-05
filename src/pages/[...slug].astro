@@ -4,6 +4,7 @@ import GoldenHealth from "../App.jsx";
 import OliviaChat from "../OliviaChat.jsx";
 import SeoContent from "../components/SeoContent.astro";
 import { getSeoContent } from "../data/seo-content.js";
+import { editorialCopy } from "../data/program-editorial.js";
 
 const siteUrl = "https://www.goldenhealth.com.mx";
 
@@ -39,13 +40,13 @@ const programPages = {
   "anti-aging": {
     title: "Medicina Regenerativa y Anti Aging en CDMX | Golden Health",
     name: "Medicina Regenerativa",
-    description: "Tratamientos de medicina regenerativa y anti aging en CDMX para apoyar salud celular, vitalidad y prevención del envejecimiento prematuro.",
+    description: "Comprende longevidad, anti-aging y medicina regenerativa: evidencia, objetivos, seguimiento y un carnet de preguntas para preparar tu consulta en CDMX.",
     image: "/images/source/programa/anti-aging-captura.webp",
   },
   "terapias-biologicas": {
     title: "Terapias Biológicas en CDMX | Golden Health MX",
     name: "Terapias Biológicas",
-    description: "Terapias biológicas orientadas a vitalidad, equilibrio celular, sistema inmune y bienestar integral en Golden Health CDMX.",
+    description: "Una guía para comprender preparados, vías de aplicación, evidencia y riesgos de las terapias biológicas. Prepara tus preguntas antes de decidir.",
     image: "/images/source/programa/terapias-biologicas.webp",
   },
   "hidratacion-funcional": {
@@ -202,11 +203,11 @@ const englishMetaByRoute = {
   },
   "/programa-integral/anti-aging": {
     title: "Regenerative Medicine and Anti-Aging in Mexico City | Golden Health",
-    description: "Regenerative medicine and anti-aging treatments in Mexico City focused on cellular health, vitality, and prevention of premature aging.",
+    description: "Understand longevity, anti-aging, and regenerative medicine: evidence, goals, follow-up, and a question notebook for your consultation in Mexico City.",
   },
   "/programa-integral/terapias-biologicas": {
     title: "Biological Therapies in Mexico City | Golden Health MX",
-    description: "Biological therapies focused on vitality, cellular balance, immune support, and integral wellbeing at Golden Health Mexico City.",
+    description: "A guide to biological therapy preparations, administration routes, evidence, and risks. Prepare your consultation questions before deciding.",
   },
   "/programa-integral/hidratacion-funcional": {
     title: "Functional Hydration | Golden Health MX",
@@ -430,6 +431,7 @@ const alternateEn = new URL(`/en${routePath === "/" ? "" : englishRoutePath}`, s
 const isBookingPage = segments[0] === "booking-calendar";
 const robots = isBookingPage ? "noindex, follow" : "index, follow, max-image-preview:large";
 const seoContent = getSeoContent(routePath, isEnglish);
+const hasProgramEditorial = ["/programa-integral/anti-aging", "/programa-integral/terapias-biologicas"].includes(routePath);
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
@@ -529,12 +531,13 @@ const webPageJsonLd = {
   inLanguage: language,
   isPartOf: { "@id": `${siteUrl}/#website` },
   about: { "@id": `${siteUrl}/#clinic` },
-  dateModified: "2026-09-07",
+  ...(!hasProgramEditorial && { dateModified: "2026-09-07" }),
 };
-const faqJsonLd = seoContent?.faqs?.length ? {
+const pageFaqs = hasProgramEditorial ? editorialCopy[isEnglish ? "en" : "es"].medical[slug].faqs : seoContent?.faqs;
+const faqJsonLd = pageFaqs?.length ? {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: seoContent.faqs.map(([question, answer]) => ({
+  mainEntity: pageFaqs.map(([question, answer]) => ({
     "@type": "Question",
     name: question,
     acceptedAnswer: { "@type": "Answer", text: answer },
@@ -584,9 +587,10 @@ const jsonLd = [websiteJsonLd, organizationJsonLd, webPageJsonLd, breadcrumbJson
   </head>
   <body>
     <GoldenHealth initialPath={pathname}>
-      <SeoContent routePath={routePath} isEnglish={isEnglish} />
+      {!hasProgramEditorial && <SeoContent routePath={routePath} isEnglish={isEnglish} />}
     </GoldenHealth>
     <OliviaChat client:idle={{ timeout: 1500 }} />
+    {hasProgramEditorial && <script src="../scripts/program-notebook.js"></script>}
     <script>
       const menuToggle = document.querySelector("[data-gh-menu-toggle]");
       const mobileMenu = document.querySelector("[data-gh-mobile-menu]");
