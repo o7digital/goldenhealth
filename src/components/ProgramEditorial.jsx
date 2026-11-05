@@ -111,7 +111,7 @@ export default function MedicalProgram({ slug, language, localizedHref }) {
       <nav className="ghp-breadcrumb" aria-label={ui.overview}><a href={localizedHref("/programa-integral")}>{ui.overview}</a><span aria-hidden="true">/</span><span>{content.eyebrow}</span></nav>
       <header className="ghp-hero">
         <div className="ghp-hero-copy"><p className="ghp-eyebrow">{content.eyebrow}</p><h1>{content.title}</h1><p className="ghp-lead">{content.intro}</p><div className="ghp-meta"><span>{ui.guide}</span><span>{ui.read}</span></div><a href="#comprender" className="ghp-text-button">{ui.understand} <span aria-hidden="true">↓</span></a></div>
-        <figure className="ghp-hero-image"><img src={content.image} alt={content.imageAlt} width="900" height="1000" fetchPriority="high" /><figcaption>{content.imageCaption}</figcaption></figure>
+        <figure className="ghp-hero-image"><img src={content.image} alt={content.imageAlt} style={{ objectPosition: content.imagePosition }} width="900" height="1000" fetchPriority="high" /><figcaption>{content.imageCaption}</figcaption></figure>
       </header>
       <nav className="ghp-toc" aria-label={ui.inPage}>{anchors.map(([id, label], index) => <a key={id} href={`#${id}`}><span aria-hidden="true">0{index + 1}</span>{label}</a>)}</nav>
 

@@ -1633,9 +1633,11 @@ export default function GoldenHealthMockup({ initialPath = "/", children }) {
               <h1 className="mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-5xl">Dra. Silvia del Moral</h1>
               <p className="mt-3 text-xl text-white/80">{t.historySubtitle}</p>
               <img
-                src="/images/source/history/dra-silvia.webp"
-                alt="Dra. Silvia del Moral, fundadora de Golden Health"
-                className="aspect-[4/5] w-full max-w-sm rounded-[2rem] object-cover shadow-2xl shadow-black/25"
+                src="/images/source/history/dra-silvia-portrait-2026.jpeg"
+                alt={language === "en" ? "Dr. Silvia del Moral, founder of Golden Health" : "Dra. Silvia del Moral, fundadora de Golden Health"}
+                width={696}
+                height={1024}
+                className="aspect-[4/5] w-full max-w-sm rounded-[2rem] object-cover object-top shadow-2xl shadow-black/25"
               />
             </div>
             <div className="space-y-5 leading-8 text-white/74">

@@ -128,7 +128,7 @@ export const editorialCopy = {
         eyebrow: "Terapias biológicas",
         title: "Antes de una terapia, conoce exactamente qué recibes.",
         intro: "El nombre de una categoría no explica un tratamiento. Lo que permite tomar una decisión es conocer el preparado, para qué se propone, cómo se aplica y qué resultados y riesgos se han estudiado.",
-        image: "/images/source/history/dra-silvia.webp", imageAlt: "Dra. Silvia del Moral, fundadora de Golden Health", imageCaption: "Comprender el preparado es parte de comprender la terapia.",
+        image: "/images/source/history/dra-silvia-portrait-2026.jpeg", imagePosition: "center top", imageAlt: "Dra. Silvia del Moral, fundadora de Golden Health", imageCaption: "Comprender el preparado es parte de comprender la terapia.",
         takeaway: "La pregunta de partida: ¿qué producto, para qué objetivo?",
         definitionTitle: "Lee una propuesta en tres partes.",
         definitionIntro: "Golden Health describe preparados con enzimas, vitaminas y minerales, y menciona aplicaciones intramusculares, subcutáneas o subdérmicas. Cada propuesta necesita su propia explicación.",
@@ -235,7 +235,7 @@ export const editorialCopy = {
       "terapias-biologicas": {
         eyebrow: "Biological therapies", title: "Before a therapy, understand exactly what you receive.",
         intro: "A category name does not explain a treatment. An informed decision needs the preparation's identity, proposed purpose, administration method, and studied outcomes and risks.",
-        image: "/images/source/history/dra-silvia.webp", imageAlt: "Dr. Silvia del Moral, founder of Golden Health", imageCaption: "Understanding the preparation is part of understanding the therapy.", takeaway: "Start with: which product, for which goal?",
+        image: "/images/source/history/dra-silvia-portrait-2026.jpeg", imagePosition: "center top", imageAlt: "Dr. Silvia del Moral, founder of Golden Health", imageCaption: "Understanding the preparation is part of understanding the therapy.", takeaway: "Start with: which product, for which goal?",
         definitionTitle: "Read a proposal in three parts.", definitionIntro: "Golden Health describes preparations with enzymes, vitamins, and minerals, and mentions intramuscular, subcutaneous, or subdermal administration. Each proposal needs its own explanation.",
         definitions: [["The preparation", "Its name, ingredients, and amount of each component. ‘Vitamins’ or ‘enzymes’ names a family of substances, rather than a complete composition."], ["The indication", "The problem it is intended to address, and why this option is proposed for your situation."], ["The evidence", "Studies on that product and use, the benefit observed, and its limits. Explaining a mechanism alone does not demonstrate an outcome."]],
         assessmentTitle: "The route matters. So does the indication.", assessmentIntro: "These terms describe where a preparation is administered. On their own, they do not show greater effectiveness, tissue regeneration, or suitability for everyone.",
